@@ -1,0 +1,37 @@
+baseurl = "/"
+title = "Credibly Curious"
+theme = "hugo-xmin"
+googleAnalytics = ""
+disqusShortname = ""
+enableEmoji = true
+ignoreFiles = ["\\.Rmd$", "_files$", "_cache$"]
+footnotereturnlinkcontents = "↩"
+
+[permalinks]
+    post = "/post/:year/:month/:day/:slug/"
+    note = "/note/:year/:month/:day/:slug/"
+
+[[menu.main]]
+    name = "Blog"
+    url = "/"
+    weight = 1
+[[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 2
+[[menu.main]]
+    name = "Publications"
+    url = "/publications/"
+    weight = 3
+[[menu.main]]
+    name = "Resources"
+    url = "/resources/"
+    weight = 4
+[[menu.main]]
+    name = "CV"
+    url = "/cv/"
+    weight = 5
+
+[params]
+    description = "Credibly Curious"
+    copyright = "&copy; [Nicholas Tierney](https://njtierney.com) 2017 | [Github](https://github.com/njtierney) | [Twitter](https://twitter.com/nj_tierney)"

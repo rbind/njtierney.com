@@ -1,0 +1,67 @@
+---
+title: "Using table the dplyr way"
+date: "2015-11-03"
+categories:
+- R
+slug: tally-dplyr-table
+---
+
+
+
+<p>In this post I describe how to use <code>tally</code>, the <code>dplyr</code> equivalent of <code>table</code>.</p>
+<p><code>table</code> gives you the frequencies of something in a category. Let’s use the <code>iris</code> dataset to illustrate. Let’s say we want to know how many are in each species in <code>iris</code>.</p>
+<pre class="r"><code>table(iris$Species)</code></pre>
+<pre><code>## 
+##     setosa versicolor  virginica 
+##         50         50         50</code></pre>
+<p>So there happen to be 50 in each of the species.</p>
+<p>But if you want to present this in a tidy dataframe, where each column is a variable, and each row is an observation, you’d have to do some annoying reformating. But need not dispair, <code>dplyr</code> has us covered.</p>
+<pre class="r"><code>library(dplyr)</code></pre>
+<pre><code>## 
+## Attaching package: &#39;dplyr&#39;</code></pre>
+<pre><code>## The following objects are masked from &#39;package:stats&#39;:
+## 
+##     filter, lag</code></pre>
+<pre><code>## The following objects are masked from &#39;package:base&#39;:
+## 
+##     intersect, setdiff, setequal, union</code></pre>
+<pre class="r"><code>iris.tally &lt;- iris %&gt;%
+  group_by(Species) %&gt;% 
+  tally
+
+iris.tally</code></pre>
+<pre><code>## # A tibble: 3 x 2
+##      Species     n
+##       &lt;fctr&gt; &lt;int&gt;
+## 1     setosa    50
+## 2 versicolor    50
+## 3  virginica    50</code></pre>
+<p>This gives us a neat dataframe, where we get Species as a column, and the number of observations in each Species.</p>
+<p>One of the reasons I like this is because it means I can do something like create a table using <code>knitr::kable</code> if I need to for a report.</p>
+<p>So I could now do this:</p>
+<pre class="r"><code>library(knitr)
+
+kable(iris.tally)</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Species</th>
+<th align="right">n</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">setosa</td>
+<td align="right">50</td>
+</tr>
+<tr class="even">
+<td align="left">versicolor</td>
+<td align="right">50</td>
+</tr>
+<tr class="odd">
+<td align="left">virginica</td>
+<td align="right">50</td>
+</tr>
+</tbody>
+</table>
+<p>Thanks to <a href="http://stackoverflow.com/questions/24409376/dplyr-how-can-i-write-equivalent-to-table-base-function-and-preserve-column-n">this SO post</a> for providing me with knowledge of <code>tally</code> and providing inspiration for this post.</p>
