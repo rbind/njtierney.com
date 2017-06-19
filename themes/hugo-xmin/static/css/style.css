@@ -32,7 +32,10 @@ li {
 footer a { text-decoration: none; }
 hr {
   border-style: dashed;
-  color: #ddd;
+  /*color: #ddd;*/
+  color: #268bd2;
+  
+  
 }
 
 /* code */
@@ -49,7 +52,7 @@ pre code { background: none; }
 img, iframe, video { max-width: 100%; }
 main { hyphens: auto; }
 blockquote {
-  background: #f9f9f9;
+  font-style: italic;
   border-left: 5px solid #ffa500;
   padding: 3px 1em 3px;
 }
