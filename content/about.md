@@ -2,7 +2,7 @@
 title: About
 ---
 
-![wat](njt-headshot-climb.jpg)
+![photo of me MCing at the National Lead Climbing Competition](https://njtierney.updog.co/img/nick_lead_comp_headshot_2015.jpg)
 
 My name is Nick Tierney. I am a Research Fellow in Statistics at Monash University under the supervision of [Rob Hyndman](https://robjhyndman.com/) and [Di Cook](http://dicook.org/). My research is currently about making better tools to wrangle missing data. I have  and currently has two R packages associated with it [narnia](https://github.com/njtierney/narnia) and [visdat](https://github.com/njtierney/visdat).
 

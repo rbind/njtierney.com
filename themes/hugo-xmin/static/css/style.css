@@ -32,7 +32,6 @@ li {
 footer a { text-decoration: none; }
 hr {
   border-style: dashed;
-  /*color: #ddd;*/
   color: #268bd2;
   
   
@@ -45,7 +44,9 @@ pre {
   padding: 1em;
   overflow-x: auto;
 }
-code { background: none; }
+code {
+  background: none; /*#ddd; */
+}
 pre code { background: none; }
 
 /* misc elements */

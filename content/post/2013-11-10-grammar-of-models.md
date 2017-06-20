@@ -15,7 +15,7 @@ I came across [this interview](http://statr.me/2013/09/a-conversation-with-hadle
 > Another thing I’d like to think is the Lasso-type method. In one of my classes, I want to show that now you should always try stablized regression, you should always try to do Lasso and the similar. I think there are 13 packages that would do Lasso, and I tried them all. But every single one of them broke for a different reason. For example, it didn’t support missing values, it didn’t support categorical variables, it didn’t do predictions and standard errors, or it didn’t automatically find the lambda parameter. Maybe that’s because the authors are more interested in the theoretical papers, not in providing a tool that you can use in data analysis. So I want to integrate them together to form a tool that is fast and works well.
 
 
-And it got me thinking, would it be possible for statistical models to be written like ggplot, with a grammar of models?  It seems impossible, and maybe I'm totally not reading the interview correctly, but it got me thinking. What would it look like? Something like this?
+And it got me thinking, would it be possible for statistical models to be written like ggplot, with a grammar of models? It seems impossible, and maybe I'm totally not reading the interview correctly, but it got me thinking. What would it look like? Something like this?
 
 ```r
 ggmodel(data = my.data,

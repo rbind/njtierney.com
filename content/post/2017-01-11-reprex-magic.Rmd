@@ -28,7 +28,7 @@ In the fashion of the times right now, I'll illustrate `reprex` with a gif, whic
 
 <p>
 <div style="height: auto">
-<img src="{{ site.baseurl }}/assets/reprex-run.gif" alt="Gif of reprex copying code, running reprex, and demonstrating the html preview of the code text" style="width: 100%;max-height: 100%" />
+<img src="https://njtierney.updog.co/img/reprex-run.gif" alt="Gif of reprex copying code, running reprex, and demonstrating the html preview of the code text" style="width: 100%;max-height: 100%" />
 </div>
 </p>
 
@@ -38,7 +38,7 @@ This means you can copy this to say, GitHub (`reprex(venue = "gh")`) (the defaul
 
 <p>
 <div style="height: auto">
-<img src="{{ site.baseurl }}/assets/reprex-github.gif" alt="Gif of reprex copying code, running reprex, and demonstrating the html preview of the code text" style="width: 100%;max-height: 100%" />
+<img src="https://njtierney.updog.co/img/reprex-github.gif" alt="Gif of reprex copying code, running reprex, and demonstrating the html preview of the code text" style="width: 100%;max-height: 100%" />
 </div>
 </p>
 
@@ -49,7 +49,7 @@ This means that `reprex` will fail hard and fail early if your examples aren't r
 
 <p>
 <div style="height: auto">
-<img src="{{ site.baseurl }}/assets/reprex-fail-1.gif" alt="Gif of reprex copying code, running reprex, and demonstrating the html preview of the code text" style="width: 100%;max-height: 100%" />
+<img src="https://njtierney.updog.co/img/reprex-fail-1.gif" alt="Gif of reprex copying code, running reprex, and demonstrating the html preview of the code text" style="width: 100%;max-height: 100%" />
 </div>
 </p>
 
@@ -57,7 +57,7 @@ But then when you fix that, by adding library calls to [`visdat`](https://github
 
 <p>
 <div style="height: auto">
-<img src="{{ site.baseurl }}/assets/reprex-success-1.gif" alt="Gif of reprex copying code, running reprex, and demonstrating the html preview of the code text using visdat, naniar, and ggplot2 packages" style="width: 100%;max-height: 100%" />
+<img src="https://njtierney.updog.co/img/reprex-success-1.gif" alt="Gif of reprex copying code, running reprex, and demonstrating the html preview of the code text using visdat, naniar, and ggplot2 packages" style="width: 100%;max-height: 100%" />
 </div>
 </p>
 
@@ -148,7 +148,7 @@ You can even show the results of the `session_info`, for maximum reproducibility
 
 <p>
 <div style="height: auto">
-<img src="{{ site.baseurl }}/assets/reprex-si.gif" alt="Gif of reprex copying code, running reprex, showing option SI = TRUE" style="width: 100%;max-height: 100%" />
+<img src="https://njtierney.updog.co/img/reprex-si.gif" alt="Gif of reprex copying code, running reprex, showing option SI = TRUE" style="width: 100%;max-height: 100%" />
 </div>
 </p>
 
@@ -162,7 +162,7 @@ You save time and energy, and can focus more on **doing what you want to do**, a
 
 <p>
 <div style="height: auto">
-<img src="{{ site.baseurl }}/assets/ProgrammerInterrupted.png" alt="Why you shouldn't interrupt a programmer" style="max-height: 100%"/>
+<img src="https://njtierney.updog.co/img/ProgrammerInterrupted.png" alt="Why you shouldn't interrupt a programmer" style="max-height: 100%"/>
 </div>
 </p>
 

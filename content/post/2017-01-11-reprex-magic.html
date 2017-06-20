@@ -26,26 +26,26 @@ slug: magic-reprex
 </ol>
 <p>
 <div style="height: auto">
-<p><img src="{{ site.baseurl }}/assets/reprex-run.gif" alt="Gif of reprex copying code, running reprex, and demonstrating the html preview of the code text" style="width: 100%;max-height: 100%" /></p>
+<p><img src="https://njtierney.updog.co/img/reprex-run.gif" alt="Gif of reprex copying code, running reprex, and demonstrating the html preview of the code text" style="width: 100%;max-height: 100%" /></p>
 </div>
 </p>
 <p>This means you can copy this to say, GitHub (<code>reprex(venue = &quot;gh&quot;)</code>) (the default) to help you file an issue:</p>
 <p>
 <div style="height: auto">
-<p><img src="{{ site.baseurl }}/assets/reprex-github.gif" alt="Gif of reprex copying code, running reprex, and demonstrating the html preview of the code text" style="width: 100%;max-height: 100%" /></p>
+<p><img src="https://njtierney.updog.co/img/reprex-github.gif" alt="Gif of reprex copying code, running reprex, and demonstrating the html preview of the code text" style="width: 100%;max-height: 100%" /></p>
 </div>
 </p>
 <p>There is also an option for Stack Overflow(<code>reprex(venue = &quot;so&quot;)</code>.</p>
 <p>How does this work? <code>reprex</code> takes the section of copied code and then runs <code>rmarkdown::render</code> on it, which starts a fresh environment, and runs the code. This means that <code>reprex</code> will fail hard and fail early if your examples aren’t reproducible. If you don’t have the correct library loaded, it will show the error messages.</p>
 <p>
 <div style="height: auto">
-<p><img src="{{ site.baseurl }}/assets/reprex-fail-1.gif" alt="Gif of reprex copying code, running reprex, and demonstrating the html preview of the code text" style="width: 100%;max-height: 100%" /></p>
+<p><img src="https://njtierney.updog.co/img/reprex-fail-1.gif" alt="Gif of reprex copying code, running reprex, and demonstrating the html preview of the code text" style="width: 100%;max-height: 100%" /></p>
 </div>
 </p>
 <p>But then when you fix that, by adding library calls to <a href="https://github.com/njtierney/visdat"><code>visdat</code></a>, <a href="https://github.com/tidyverse/ggplot2"><code>ggplot2</code></a> and <a href="https://github.com/njtierney/naniar"><code>naniar</code></a>, and you get what you want:</p>
 <p>
 <div style="height: auto">
-<p><img src="{{ site.baseurl }}/assets/reprex-success-1.gif" alt="Gif of reprex copying code, running reprex, and demonstrating the html preview of the code text using visdat, naniar, and ggplot2 packages" style="width: 100%;max-height: 100%" /></p>
+<p><img src="https://njtierney.updog.co/img/reprex-success-1.gif" alt="Gif of reprex copying code, running reprex, and demonstrating the html preview of the code text using visdat, naniar, and ggplot2 packages" style="width: 100%;max-height: 100%" /></p>
 </div>
 </p>
 <p>So you know that when you run <code>reprex</code>, and it gives you a reproducible example, it will work!</p>
@@ -122,7 +122,7 @@ ggplot(data = lm_augmented,
 <p>You can even show the results of the <code>session_info</code>, for maximum reproducibility, by adding the argument: <code>reprex::reprex(si = TRUE)</code>, which adds a super nifty drop down box for the session info.</p>
 <p>
 <div style="height: auto">
-<p><img src="{{ site.baseurl }}/assets/reprex-si.gif" alt="Gif of reprex copying code, running reprex, showing option SI = TRUE" style="width: 100%;max-height: 100%" /></p>
+<p><img src="https://njtierney.updog.co/img/reprex-si.gif" alt="Gif of reprex copying code, running reprex, showing option SI = TRUE" style="width: 100%;max-height: 100%" /></p>
 </div>
 </p>
 <p>I really like these sorts of small tools in R. Squinting at a distance you might make the mistake of thinking:</p>
@@ -133,7 +133,7 @@ ggplot(data = lm_augmented,
 <p>You save time and energy, and can focus more on <strong>doing what you want to do</strong>, and less on <strong>fighting against interruptions</strong>. This comic by <a href="http://heeris.id.au/2013/this-is-why-you-shouldnt-interrupt-a-programmer/">Jason Heeris</a> illustrates this point nicely, I think:</p>
 <p>
 <div style="height: auto">
-<p><img src="{{ site.baseurl }}/assets/ProgrammerInterrupted.png" alt="Why you shouldn't interrupt a programmer" style="max-height: 100%"/></p>
+<p><img src="https://njtierney.updog.co/img/ProgrammerInterrupted.png" alt="Why you shouldn't interrupt a programmer" style="max-height: 100%"/></p>
 </div>
 </p>
 <p>Once again thank you to Jenny Bryan for making our lives easier. Jenny will be joining the RStudio team this year and I am really looking forward to seeing what she gets up to.</p>
