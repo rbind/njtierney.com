@@ -1,0 +1,3 @@
+/slides/*     https://slides.njtierney.com/:splat
+https://njtierney.netlify.com/*  https://njtierney.name/:splat  301!
+http://njtierney.netlify.com/*   https://njtierney.name/:splat  301!
