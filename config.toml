@@ -1,8 +1,8 @@
 baseurl = "/"
 title = "Credibly Curious"
 theme = "hugo-xmin"
-googleAnalytics = ""
-disqusShortname = ""
+googleAnalytics = "UA-69408097-1"
+disqusShortname = "njtierney"
 enableEmoji = true
 ignoreFiles = ["\\.Rmd$", "_files$", "_cache$"]
 footnotereturnlinkcontents = "↩"
