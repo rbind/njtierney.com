@@ -8,6 +8,7 @@ body {
 
 p {
   line-height: 1.6em;
+  font-size: 1.2em;
 }
 
 li {
@@ -37,8 +38,12 @@ pre {
   border-top: 1px solid #e4e4e4;
   border-bottom: 1px solid #e4e4e4;
   padding: 1em;
+  background: #f8f8f8;
   overflow-x: auto;
+  font-size: 1.1em;
+  /*width: 150%;*/
 }
+
 code {
   background: none; /*#ddd; */
 }
