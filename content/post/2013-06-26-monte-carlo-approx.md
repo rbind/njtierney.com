@@ -12,14 +12,15 @@ Here is one that worked for me.
 
 A famous mathematician named Stan Ulam liked solitaire.
 
-He wanted to work out the probability of getting a perfect solitaire hand.
+He wanted to work out the probability of getting a perfect solitaire hand.
 
 Being a mathematician, he also wanted to work this out analytically.
 
-What does analytical mean?  It's a fair question, as it's <a href="http://en.wikipedia.org/wiki/Analytic">wikipedia page shows that there are many definitions</a>
+What does analytical mean? It's a fair question, as it's [wikipedia page](http://en.wikipedia.org/wiki/Analytic) shows that there are many definitions
+
 <p style="text-align: center;"><strong>Wikipedia definition:</strong></p>
 <p style="text-align: center;"><em>"Analytic Solution" </em></p>
-<p style="text-align: center;"><em>- A solution to a problem that can be written in "closed form" in terms of known functions, constants, etc.</em></p>
+<p style="text-align: center;"><em>- A solution to a problem that can be written in"closed form" in terms of known functions, constants, etc.</em></p>
 <p style="text-align: left;">I find that such a definition relies on the reader knowing what the words 'closed form', 'known functions' and 'constants' are.</p>
 <p style="text-align: center;">So here's <strong>my definition:</strong></p>
 <p style="text-align: center;"><em>"Analytic Solution"</em></p>
@@ -38,11 +39,11 @@ When Stan Ulam said that he wanted to find the probability of getting a perfect 
 </ul>
 </li>
 	<li>And a pen and paper</li>
-	<li>(and maybe a calculator, but this was the 1940s so it is less likely.  But then, he <em>was</em> a famous mathematician - it is more likely he would have had access to a computer)  to arrive at a 'perfect solution'.</li>
+	<li>(and maybe a calculator, but this was the 1940s so it is less likely. But then, he <em>was</em> a famous mathematician - it is more likely he would have had access to a computer) to arrive at a 'perfect solution'.</li>
 </ul>
 The analytic solution ends up looking really complicated, and is<em> quite</em> complex.
 
-So instead of finding an analytical solution, he wanted to <em>approximate </em>a solution.
+So instead of finding an analytical solution, he wanted to <em>approximate </em>a solution.
 
 Basically you follow these steps,
 <ol>
@@ -68,4 +69,4 @@ Monte Carlo provides a simpler solution than the analytic method.I shall write a
 
 Let me know if what I wrote makes sense for you!
 
-Reference: - <a href="http://www.youtube.com/watch?v=7TybpwBlcMk">MathematicalMonk's Youtube Channel</a>
+Reference: [MathematicalMonk's Youtube channel](http://www.youtube.com/watch?v=7TybpwBlcMk).

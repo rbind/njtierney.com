@@ -21,7 +21,7 @@ And statistics...
 
 The same goes for statistics, you could perform a variety of tests to support a particular point.
 
-However, your argument depends  on the suitability of your statistical test for what you are **trying to prove or demonstrate**
+However, your argument depends on the suitability of your statistical test for what you are **trying to prove or demonstrate**
 
 Statistics are used to articulate a particular point. The author has the responsibility of ensuring they are **correctly** using a statistic to prove this point.
 

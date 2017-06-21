@@ -1,7 +1,9 @@
 ---
 title: Publications
 ---
-[You can check out my CV here]({{ site.baseurl }}/assets/2016-08-23-1904-njtierney-cv.pdf)
+
+<!-- [You can check out my CV here](https://njtierney.updog.co/img/2016-08-23-1904-njtierney-cv.pdf)
+-->
 
 # Journal Publications
 

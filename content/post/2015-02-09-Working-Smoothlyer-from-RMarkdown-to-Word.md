@@ -35,12 +35,12 @@ Both didn't really work.
 
 So then I then tried to solve this problem using a macro in word.
 
-I've never _touched_ macros in Word. They always seemed weird and odd to me. Regardless, in I went to the macro editor. I hit the record button, and did all of the font changes, colour changes, and spacing changes I always do. Then I saved this macro.
+I've never _touched_ macros in Word. They always seemed weird and odd to me. Regardless, in I went to the macro editor. I hit the record button, and did all of the font changes, colour changes, and spacing changes I always do. Then I saved this macro.
 
-Then I went on to find a way to change the image sizes. I took a wrong turn into a [blog that had me developing a GUI](https://cybertext.wordpress.com/2014/02/07/word-resize-all-images-in-a-document-to-the-same-width/)...which didn't end up working for me. There's 30 minutes I won't be getting back. But then I found this [snippet of code](http://yuriy-okhmat.blogspot.co.uk/2011/07/how-to-resize-all-images-in-word.html) snippet of code, which resizes everything to 16 cm, maintaining the aspect ratio.
+Then I went on to find a way to change the image sizes. I took a wrong turn into a [blog that had me developing a GUI](https://cybertext.wordpress.com/2014/02/07/word-resize-all-images-in-a-document-to-the-same-width/)...which didn't end up working for me. There's 30 minutes I won't be getting back. But then I found this [snippet of code](http://yuriy-okhmat.blogspot.co.uk/2011/07/how-to-resize-all-images-in-word.html) snippet of code, which resizes everything to 16 cm, maintaining the aspect ratio.
 
-I created a new macro from scratch and pasted this code in. Boom! Another Macro is born. Then I finished this up by creating a macro that recorded me running those two macros. Not elegant, but effective.
+I created a new macro from scratch and pasted this code in. Boom! Another Macro is born. Then I finished this up by creating a macro that recorded me running those two macros. Not elegant, but effective.
 
-So, total time expended screwing around and making this macro?  2 Hours.
+So, total time expended screwing around and making this macro? 2 Hours.
 
-Total time saved?  15 minutes per Word doc that I compile. I think that is worth it.
+Total time saved? 15 minutes per Word doc that I compile. I think that is worth it.
