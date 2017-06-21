@@ -19,22 +19,17 @@ li {
 .article-meta, .menu a {
   text-decoration: none;
   color: none;
-  /*background: #eee;*/
-  padding: 5px;
-  border-radius: 5px;
 }
+.terms { font-size: .9em; }
 .menu, .article-meta, footer { text-align: center; }
 .title { 
   font-size: 1.1em; 
   text-align: left;
-  /*color: #ffa500;*/
 }
 footer a { text-decoration: none; }
 hr {
   border-style: dashed;
   color: #268bd2;
-  
-  
 }
 
 /* code */
