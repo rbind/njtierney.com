@@ -13,4 +13,3 @@ Outside of research, I enjoy rock climbing, playing guitar, [taking photos](http
 I've recently moved my website from [jekyll](http://jekyllrb.com/) to [blogdown](https://github.com/rstudio/blogdown), and am using a slightly tweaked version of Yihui's awesome minimal theme.
 
 Feel free to send me an email at <a href="mailto:nicholas.tierney@gmail.com">nicholas.tierney@gmail.com</a>.
-
