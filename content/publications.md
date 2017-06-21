@@ -13,7 +13,7 @@ title: Publications
 
 `2017` **Tierney, NJ.** Mengersen, K., Harden, F., Harden, M., "Bayesian Approaches to Modelling Occupational Health." _Occupational and Environmental Medicine_. __In Preparation__
 
-`2017` **Tierney, NJ.**, Mira, A., Reinhold, J., Mengersen, KL., Aurrichio, A.  "Optimising placement of AEDs in cases of geographic variability" _Circulation_. __In Preparation__
+`2017` **Tierney, NJ.**, Mira, A., Reinhold, J., Mengersen, KL., Aurrichio, A.  "Optimising placement of AEDs in cases of geographic variability" _Resuscitation_. __In Preparation__
 
 # Pre-Print
 
