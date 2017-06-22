@@ -38,5 +38,5 @@ footnotereturnlinkcontents = "↩"
 
 [params]
     description = "Credibly Curious"
-    GithubEdit = "https://github.com/rbind/njtierney.com/edit/feature/github-edit/exampleSite/content/"
+    GithubEdit = "https://github.com/rbind/njtierney.com/edit/master/content/"
     footer = "&copy; [Nicholas Tierney](https://njtierney.com) 2017 | [Github](https://github.com/njtierney) | [Twitter](https://twitter.com/nj_tierney)"
