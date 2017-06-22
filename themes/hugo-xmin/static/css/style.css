@@ -1,9 +1,8 @@
 body {
-  max-width: 600px;
+  max-width: 650px;
   /*color: #595959;*/
   margin: auto;
   padding: 1em;
-  font-size: 1.1em;
 }
 
 p {
