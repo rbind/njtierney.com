@@ -1,8 +1,8 @@
 {{ partial "header.html" . }}
 <div class="article-meta">
-<h1><span class="title">{{ .Title }}</span></h1>
-{{ with .Params.author }}<h2 class="author">{{ . }}</h2>{{ end }}
-{{ if .Params.date }}<h2 class="date">{{ $.Date.Format "2006/01/02" }}</h2>{{ end }}
+<!--<h2><span class="title">{{ .Title }}</span></h2>-->
+<h2><span class="title" style = "color:#ffa500; font-weight:bold">{{ .Title }}</span> {{ if .Params.date }}<span class="date" style = "color:#268bd2; font-weight:bold">{{ $.Date.Format "2006/01/02" }}{{ end }} </span></h2>
+<!--{{ with .Params.author }}<h4 class="author">{{ . }}</h4>{{ end }}-->
 <p class="terms">
   {{ range $i := (slice "categories" "tags") }}
   {{ with ($.Param $i) }}
