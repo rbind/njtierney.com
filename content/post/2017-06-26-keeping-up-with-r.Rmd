@@ -1,0 +1,52 @@
+---
+title: Keeping up with R
+author: ''
+date: '2017-06-26'
+slug: keeping-up
+categories:
+  - R
+tags: []
+---
+
+R is a great language, one of the greatest things that I like so much about it
+is the community that it brings with it.  
+
+For the most part, it is fast enough for most things, it is also developing fast
+as well, there are releases of the language every 3-6 months, and there is an ever expanding number of R packages that come out.
+
+So, how do you keep up with R?
+
+I have a little routine that I go through every morning, some might call it procrastination, but I like to call is `cranstanatation`. I just made that up then, but seriously, it's useful.
+
+The (simplified) process:
+
+1. Check my github feed
+1. Watch R people on github
+1. Listen to the latest NSSD podcast
+1. Check #rstats twitter for latest conversations
+1. Check my twitter highlights to see if there's anything interesting going on
+1. Check activity on rbind
+1. Read every blog.rstudio post
+1. Read every rviews package picks
+1. Check r-bloggers posts for the past day, and read ones that are of interest
+
+I try and do this every day, sometimes multiple times a day, sometimes once every few days. I'll go into a big of detail into each of these, and what it involves.
+
+## Checking my github feed
+
+I follow a few people on GitHub - this means
+
+I find that this helps me stay abreast of the current cool things happening in R, and allows me to think more carefully about what I'm working on - maybe someone has come up with something better, maybe they are missing something. 
+
+One thing that I haven't recently started doing is browse `cranberries` - a really cool aggregator run by Dirk Eddelbuettel that describes recent changes to CRAN.
+
+But then what if you want to browse not just the current things? I have an idea
+that I'm working on - I call it `cranscan`, and it completely inspired by `papr`, 
+by Lucy D'Agostino-McGowan and ...
+
+The idea would be to explore CRAN packages that are most relevant to you, and also to be able to browse cranberries. These packages would then get stored in a neat pile for you to browse through at your own convenience.
+
+Up = Yes
+Down = No
+Left = Maybe
+Right = Maybe

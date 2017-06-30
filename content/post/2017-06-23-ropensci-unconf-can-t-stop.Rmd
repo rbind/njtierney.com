@@ -1,0 +1,32 @@
+---
+title: 'rOpenSci Unconf: Can’t Stop'
+author: ''
+date: '2017-06-23'
+slug: ropensci-unconf-can-t-stop
+categories:
+  - R
+  - rOpenSci
+tags: []
+---
+
+A few weeks ago now, I went to the [rOpenSci unconf](), and it was amazing.
+
+I've been following rOpenSci now for a few years, since about 2014. I heard that they were going to 
+
+The event was coming to a close on the Saturday, we managed to get a Philz coffee (with mint! Weird, but cool!), and some delicious mexican food.
+
+As we finished the unconf we (Amelia McNamarra, Hannah Frick, Miles and Myself) 
+
+We posted this tweet:
+
+> It's not over till it's over
+
+And then there were a few other tweets of a similar vein
+
+The unconf doesn't stop until ...
+
+The thing is, saying goodbye to all these people, it felt a little bit sad sure, 
+but there was this general feeling of "I'll see you tomorrow", or something.
+And it's just occurred to me in writing this that the rOpenSci unconf doens't really stop - it just starts. It's a new beginning of so many things - friendships, collaborations, and ideas. And these are pretty special things to start.
+
+

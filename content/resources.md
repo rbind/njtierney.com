@@ -89,6 +89,10 @@ shiny is a really awesome way to enhance your R script, package, or method. Shin
 - Use [tidyr](https://github.com/hadley/tidyr) to change the data format; gathering data into long format, and spreading them into wide format, etc. It also has heaps of other little handy tools, like `tidyr::replace_na`.
 - Use [broom](https://github.com/dgrtwo/broom#broom-lets-tidy-up-a-bit) to create **tidy dataframes** of statistical models. [Here is a helpful lesson](http://127.0.0.1:22465/session/Rvig.15c681ac18b1d.html)
 
+# R Webinars
+
+https://github.com/rstudio/webinars
+
 # Reproducible Reporting
 
 Probably the coolest thing ever. `knitr` is this amazing package that allows the user to combine their code and document text, making research easier to reproduce, and it does this while looking slick and classy. The idea is essentially to let the human do the writing, and the computer handle displaying the results, so that reports can be easily constructed, and most importantly, reproduced easily.

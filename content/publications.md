@@ -36,22 +36,6 @@ title: Publications
 
 Integrating Occupational Hygiene, Medicine and Engineering in a Mining Context. Maurice Harden, Charles Steer, Fiona Harden, Geoff Butler, Kerrie Mengersen, **Nicholas Tierney**, Ann. Occup. Hyg., 2015, Vol. 59, No. Supplement 1, 1–47 doi:10.1093/annhyg/meu119 [PDF](http://annhyg.oxfordjournals.org/content/59/suppl_1/1.full.pdf?etoc%20)
 
-# R Packages
-
-
-`2016-` [__maxcovr:__ Tools for solving the Maximal Covering Location Problem in R](https://github.com/njtierney/maxcovr).
-
-`2016-` [__treezy:__ Tools for working with decision trees in R](https://github.com/njtierney/treezy).
-
-`2016-` [__ukpolice:__ R package to pull police data from the uk police data repository](https://github.com/njtierney/ukpolice).
-
-`2016-` [__visdat:__ Visualise a whole dataframe at once](https://github.com/njtierney/visdat).
-
-`2015-` [__narnia:__ Tools for numerical and visual summaries of NAs](https://github.com/njtierney/naniar).
-
-`2014-`[__mmcc:__ ]()
-
-
 # Honours Thesis
 
 **Tierney, N. J.** (2012). How Sharp is Sharp? The Effect of Monocular Texture on Enhancing Sharpness. _Unpublished Honours Thesis_, The University of Queensland, Brisbane, Australia. **[Awarded First Class Honours]** [PDF](https://drive.google.com/file/d/0B3vC_840TbilT3d3c0VDUjBRbUE/view).

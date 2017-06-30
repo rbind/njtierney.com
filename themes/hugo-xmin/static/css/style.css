@@ -1,5 +1,5 @@
 body {
-  max-width: 700px;
+  max-width: 680px;
   /*color: #595959;*/
   margin: auto;
   padding: 1em;
@@ -15,7 +15,9 @@ li {
 }
 
 /* header and footer areas */
-.menu li { display: inline-block; }
+.menu li { 
+  display: inline-block; 
+}
 .article-meta, .menu a {
   text-decoration: none;
   color: none;

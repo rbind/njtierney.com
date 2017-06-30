@@ -1,0 +1,66 @@
+---
+title: 'The Hardest Thing in Computer Science: Naming Things'
+author: ''
+date: '2017-06-25'
+slug: naming-things
+categories:
+  - R
+  - Teaching
+tags: []
+---
+
+Naming things is hard, Hadley wickham makes this point in his book
+
+> Quote about the hard things in computer science
+
+# Naming Packages
+
+I was recently at the rOpenSci Unconf in the USA, and Noam Ross made the point that there are a few different ways to thing about naming packages in R, which he described fell into three styles, the oldschool, the modern, and the post modern.
+
+## The oldschool (mixedCaseRs)
+
+The oldSchool namer generally mixes case in an R package, often capitalising the 
+"R".
+
+Examples:
+
+- [twitteR]()
+- [formatR]()
+- 
+
+## The Modern (lowercasers)
+
+The modern namer has everything in lowercase and carefully places an `r`. For
+example:
+
+- dplyr
+- tidyr
+- 
+
+## The Post Modern (names)
+
+This involves using just the original name, as is. This name must also be a thing.
+
+Examples:
+
+- broom
+- checkers
+- narnia
+- forecast 
+- reshape
+
+# How to make a name?
+
+Coming up with package name is usually really hard. A lot of thought goes into it.
+Personally I've changed the names of the packages `visdat` and `narnia` three times. `visdat` was initially [`footprintr`](https://github.com/njtierney/visdat/commit/a350e50d210ab99939b53b22e2e2013e7e492f80), then `vizdat`, and then finally `visdat`. `narnia` was initiallly [`ggmissing`](https://github.com/njtierney/narnia/commit/a161b7c5707e0c5041467d8f7228c11afb5e2b29), then `naniar`, then finally `naniar`.
+
+I find that I generally need to sit on a name for a while and use it, describe
+it to a few people. I find that once I state the name of the package to them, they often have to ask how to spell it, and if that process feels difficult multiple times, and if I can't work out how to explain why I named it that, then I generally try and rename it. Often this comes down to a few things:
+
+- Is the package name hard to say?
+- Is the 
+
+Nowadays, I would look at the `available` package for checking if the name exists, and it might even one day come up with something really creative or unusual.
+
+Hadley has a great guide to naming packages, but this process is generally hard.
+
