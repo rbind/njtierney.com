@@ -21,6 +21,7 @@ I'm a PhD candidate in my final year of a 4 year program through the [Industry D
 ## Education
 
 ### Postgraduate
+
 `2013-17` __PhD Statistics__, Queensland University of Technology. Supervisors: Kerrie Mengersen, Fiona Harden, Maurice Harden, Antonietta Mira, Angelo Auricchio
 
 `Award` __APA ($24,500 Annually for 4 years)__ ; __IDTC Top Up ($10,000 Annually for 4 years)__ .
@@ -28,6 +29,7 @@ I'm a PhD candidate in my final year of a 4 year program through the [Industry D
 `Research` Research covers model-based exploration methods of missing data, Bayesian longitudinal modelling of individual and group health in a mining site, optimal placement of Automatic Electronic Defibrillators (AEDs), modelling geospatial cardiac risk, and the production of R packages to facilitate research impact.
 
 ### Undergraduate
+
 `2008-12` __B. PsychSc (Honours)__, University of Queensland. Supervisor: Philip Grove.
 
 `Research` Conducted psychophysical research on whether sharpness of a leading edge in a 3D environment improves under specific scenarios of monocular occlusion in the thesis: _"How Sharp is Sharp?: The Effect of Monocular Texture on Enhancing Sharpness."_ __Awarded first class honours__.
@@ -62,15 +64,15 @@ I'm a PhD candidate in my final year of a 4 year program through the [Industry D
 
 ### R packages
 
-`2016-` [__maxcovr:__ Tools for solving the Maximal Covering Location Problem in R](https://github.com/njtierney/maxcovr).
+`2015-` [__narnia:__ Tidy data structures, summaries, and visualisations for missing data](https://github.com/njtierney/narnia).
+
+`2016-` [__visdat:__ Preliminary exploratory visualisation of data once](https://github.com/njtierney/visdat).
 
 `2016-` [__treezy:__ Tools for working with decision trees in R](https://github.com/njtierney/treezy).
 
-`2016-` [__visdat:__ Visualise a whole dataframe at once](https://github.com/njtierney/visdat).
+`2017-` [__mmcc:__ Fast and tidy methods for summarising mcmc chains using data.table](https://github.com/njtierney/mmcc)
 
-`2015-` [narnia:__ Extend ggplot to account for missing data](https://github.com/njtierney/narnia).
-
-`2014-`[__neato:__ Miscellaneous Utility functions in R](https://github.com/njtierney/neato).
+`2014-` [__neato:__ Miscellaneous Utility functions in R](https://github.com/njtierney/neato)
 
 ### Blog
 
@@ -80,9 +82,13 @@ I'm a PhD candidate in my final year of a 4 year program through the [Industry D
 
 ### Contributed Talks
 
-`2017` ["Towards Tidy Missing Data", __Tierney, N.J.__ _Workshop Organised by Monash Business Analytics Team (WOMBAT)_. NAB, Melbourne, Australia.]()
+`2017` ["Narnia: Data structures and functions for consistent exploration of missing data", _UseR!2017_ Brussels, Belgium](https://talks.updog.co/user2017/2017-07-06-user.html#1)
 
-`2016` ["Be a Hawk Not a Turkey: How A Bird's Eye View can Streamline Data Analysis", __Tierney, N.J.__ _Workshop Organised by Monash Business Analytics Team (WOMBAT)_. Melbourne Zoo, Melbourne, Australia.](https://speakerdeck.com/njtierney/be-a-hawk-not-a-turkey-how-a-birds-eye-view-of-your-data-can-streamline-data-analysis)
+`2017` ["Narnia: Data structures and functions for consistent exploration of missing data" _Angletr_ Anglet, France](https://talks.updog.co/2017-angletr/2017-06-02-tidy-miss.html#1)
+
+`2017` ["Towards Tidy Missing Data", _Workshop Organised by Monash Business Analytics Team (WOMBAT)_. NAB, Melbourne, Australia.](https://talks.updog.co/wombat2017/2017-06-02-tidy-miss.html#1)
+
+`2016` ["Be a Hawk Not a Turkey: How A Bird's Eye View can Streamline Data Analysis", _Workshop Organised by Monash Business Analytics Team (WOMBAT)_. Melbourne Zoo, Melbourne, Australia.](https://speakerdeck.com/njtierney/be-a-hawk-not-a-turkey-how-a-birds-eye-view-of-your-data-can-streamline-data-analysis)
 
 `2014` [__Tierney, N.J.__,  Mengersen, K., Pitchforth, J. "Understanding Missing Data: The Use of Classification and Regression Trees, and Boosted Regression Trees", _ASC / IMS Meeting. Sydney, Australia_.](https://speakerdeck.com/njtierney/understanding-missing-data-the-use-of-classification-and-regression-trees-and-boosted-regression-trees)
 
@@ -98,6 +104,8 @@ I'm a PhD candidate in my final year of a 4 year program through the [Industry D
 
 ### Tutorial
 
+`2017` Reproducible documents with Rstudio, Markdown, Github, _Angletr_, Anglet, France. (Invited Speaker)
+
 `2015` Developing Bayesian Models for Ranking Academic Papers, _Bayes on the Beach_, Gold Coast, Australia.
 
 ## Presentations
@@ -111,6 +119,8 @@ I'm a PhD candidate in my final year of a 4 year program through the [Industry D
 ## Professional Experience
 
 ### Invited Academic
+
+`2017` Inter-Disciplinary Institute of Data Science at Università della Svizzera italiana (USI), Lugano, Switzerland, July 10 - July 14. Collaboration with Professor Antonietta Mira of USI and Professor Angelo Auricchio of the Center for Computational Medicine in Cardiology (CCMC) on optimising placement of Automatic Electronic Defibrillators (AEDs) in Switzerland.
 
 `2016` Inter-Disciplinary Institute of Data Science at Università della Svizzera italiana (USI), Lugano, Switzerland, June 18 - July 9. Collaboration with Professor Antonietta Mira of USI and Professor Angelo Auricchio of the Center for Computational Medicine in Cardiology (CCMC) on optimising placement of Automatic Electronic Defibrillators (AEDs) in Switzerland.
 
@@ -129,6 +139,7 @@ I'm a PhD candidate in my final year of a 4 year program through the [Industry D
 `2016` Organiser of the first [rOpenSci Unconference in Australia](auunconf.ropensci.org).
 
 ### SSAI
+
 `2013-` [SSAI](http://www.statsoc.org.au/) Assistant Chair of Biostatistics.
 
 `2013-16` [SSAI](http://www.statsoc.org.au/) Young Statisticians Representative for Queensland.
@@ -176,15 +187,7 @@ I'm a PhD candidate in my final year of a 4 year program through the [Industry D
 
 ## References
 
-`Fellowship` __Professor Di Cook__
-[dicook@monash.edu](mailto:dicook@monash.edu)
-
-`PhD` __Professor Kerrie Mengersen__ [k.mengersen@qut.edu.au](mailto:k.mengersen@qut.edu.au)
-
-`Honours` __Dr. Phillip Grove__ [p.grove@uq.edu.au](mailto:p.grove@uq.edu.au)
-
-`Teaching` __Dr. Sam Clifford__ [samuel.clifford@qut.edu.au](mailto:samuel.clifford@qut.edu.au)
-
+Available upon request
 
 <!-- ## Links
 
