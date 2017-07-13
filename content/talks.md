@@ -9,3 +9,5 @@ title: Talks
 - [2017/06/30: **Angletr** "Narnia: Data structures and functions for consistent exploration of missing data" Anglet, France](https://talks.updog.co/2017-angletr/2017-06-02-tidy-miss.html#1)
 
 - [2017/06/02: **Wombat / MeDaScin** Tidy Approaches to Missing Data, Melbourne, Australia](https://talks.updog.co/wombat2017/2017-06-02-tidy-miss.html#1)
+
+- [test](http://52.65.44.120/rstudio/auth-sign-in)
