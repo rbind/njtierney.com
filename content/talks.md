@@ -10,4 +10,3 @@ title: Talks
 
 - [2017/06/02: **Wombat / MeDaScin** Tidy Approaches to Missing Data, Melbourne, Australia](https://talks.updog.co/wombat2017/2017-06-02-tidy-miss.html#1)
 
-- [test](http://52.65.44.120/rstudio/auth-sign-in)
