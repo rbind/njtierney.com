@@ -54,7 +54,7 @@ I have also written a [blog post](http://www.njtierney.com/r/missing%20data/rblo
 
 If you are going to do a plot in R, it should be in ggplot. It takes about 5 minutes to get the hang of, and once you've got it down you can create plots that make sense, behave how you expect, and look fantastic.
 
-ggplot ollows a logical syntax adapted from the book "The Grammar of Graphics". It makes visualisation make sense. And there are lots of other packages that build upon it to make it more awesome, such as [GGally](), [ggalt](), [ggExtra](), [ggforce](), [gganimate](), and [ggbeeswarm](), to name a few!
+ggplot ollows a logical syntax adapted from the book "The Grammar of Graphics". It makes visualisation make sense. And there are lots of other packages that build upon it to make it more awesome, such as [GGally](https://ggobi.github.io/ggally/), [ggalt](https://github.com/hrbrmstr/ggalt), [ggExtra](https://cran.r-project.org/web/packages/ggExtra/index.html), [ggforce](https://cran.r-project.org/web/packages/ggforce/index.html), [gganimate](https://github.com/dgrtwo/gganimate), and [ggbeeswarm](https://cran.r-project.org/web/packages/ggbeeswarm/index.html), to name a few!
 
 Here are some ggplot resources in order of usefulness
 
@@ -91,7 +91,7 @@ shiny is a really awesome way to enhance your R script, package, or method. Shin
 
 # R Webinars
 
-https://github.com/rstudio/webinars
+The [RStudio webinars](https://github.com/rstudio/webinars) page is in my opinion an untapped resource of the R community! 
 
 # Reproducible Reporting
 
@@ -146,6 +146,10 @@ For more thoughts on R for spatial data analysis:
 For interactive visualisation of spatial data, I really like RStudio's [leaflet](https://rstudio.github.io/leaflet/), which is a port of the excellent [JavaScript leaflet library](http://leafletjs.com/) is my go to place. 
 
 [ggmap](https://cran.r-project.org/web/packages/ggmap), is also great, as it produces static maps.
+
+# git
+
+For a nice overview, check out [these slides](http://slides.com/michaelfreeman/git-collaboration#/1).
 
 # STATA Related Resources
 
