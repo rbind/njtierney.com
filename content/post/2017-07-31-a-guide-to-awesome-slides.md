@@ -31,6 +31,8 @@ I really like using [Yihui Xie's](https://yihui.name) rmarkdown slide package, [
 
 That being said, I'm actually really pleasantly surprised with what you can do with `xaringan`. Not having all of the bells and whistles that keynote and powerpoint do forces you to present your work simply, and I think that when you do this properly, it is very powerful.
 
+I'm interested though - what do other people use to create their slide decks?
+
 # Other tips/resources for presentations
 
 - [flickr creative commons pictures](https://www.flickr.com/creativecommons/)

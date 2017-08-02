@@ -22,7 +22,7 @@ I'm a PhD candidate in my final year of a 4 year program through the [Industry D
 
 ### Postgraduate
 
-`2013-17` __PhD Statistics__, Queensland University of Technology. Supervisors: Kerrie Mengersen, Fiona Harden, Maurice Harden, Antonietta Mira, Angelo Auricchio
+`2013-17` __PhD Statistics__, Queensland University of Technology. Supervisor: Kerrie Mengersen
 
 `Award` __APA ($24,500 Annually for 4 years)__ ; __IDTC Top Up ($10,000 Annually for 4 years)__ .
 
@@ -64,9 +64,9 @@ I'm a PhD candidate in my final year of a 4 year program through the [Industry D
 
 ### R packages
 
-`2015-` [__narnia:__ Tidy data structures, summaries, and visualisations for missing data](https://github.com/njtierney/narnia).
+`2015-` [__naniar:__ Tidy data structures, summaries, and visualisations for missing data](https://github.com/njtierney/naniar).
 
-`2016-` [__visdat:__ Preliminary exploratory visualisation of data once](https://github.com/njtierney/visdat).
+`2016-` [__visdat:__ Preliminary exploratory visualisation of data once](https://github.com/ropensci/visdat).
 
 `2016-` [__treezy:__ Tools for working with decision trees in R](https://github.com/njtierney/treezy).
 
