@@ -11,11 +11,11 @@ Recently on Twitter I saw [Jenny Bryan](https://github.com/jennybc) post this gu
 
 {{< tweet 891372076010946560 >}}
 
-I feel very strongly about good design of slides, and this slidedeck does a really great job of discussing good principles in a digestible manner, stating that the goal of a presentation is:
+I think that good design of slides is super important, and this slidedeck does a really great job of discussing good principles in a digestible manner, stating that the goal of a presentation is:
 
 > To allow your audience to absort your information.
 
-It then goes on to describe 4 excellent principles of slide design, which I won't repeat here - you should go through the slides and read them, like, right now. They are excellent.
+It then goes on to describe 4 excellent principles of slide design, which I won't repeat here - you should go through the slides and read them, like, [right now](https://speakerdeck.com/mseckington/the-art-of-slide-design). They are excellent.
 
 BUT, if I were to take one thing from the presentation to recommend it would be this:
 
@@ -27,14 +27,14 @@ I find it very frustrating when a speaker loads up a page full of points that se
 
 # What to build slides in?
 
-I really like using [Yihui Xie's](https://yihui.name) rmarkdown slide package, [`xaringan`](https://github.com/yihui/xaringan), it is simple, quick, and fun.
+I really like using [Yihui Xie's](https://yihui.name) rmarkdown slide package, [`xaringan`](https://github.com/yihui/xaringan), it is simple, quick, and fun, and I think that you can follow most of the design slides principles quite easily. However, for me to use 100% of the principles I think I would have to use a WYSIWYG (What You See Is What You Get) editor like Keynote or Powerpoint. I say this as I'm just not really across HTML/CSS/JS - I would get bogged down in the details, and also probably make some web designer somewhere cry when they read my CSS. There are probably also tools or tricks that make it easier to get the control I want in HTML/CSS/JS, if so, I'm keen to hear about them!
 
-However, I think that to fully use all of the techniques described in "The Art of Slide Design", you will be better off using WYSIWYG presentation software like powerpoint or keynote. To get the same degree of exact placement of figures/text/fonts on a html slide deck I feel like I would fall down a rabbithole of HTML/CSS/JS. Going down this rabbithole can be fine sometimes, but I would rather focus on the talk. 
+That being said, I'm actually really pleasantly surprised with what you can do with `xaringan`. Not having all of the bells and whistles that keynote and powerpoint do forces you to present your work simply, and I think that when you do this properly, it is very powerful.
 
-That being said, it is entirely possible that there are some tools or tricks that make it easier to get the control I want in HTML/CSS/JS, if so, I'm keen to hear about them!
+# Other tips/resources for presentations
 
-# Other tips for presentations
-
+- [flickr creative commons pictures](https://www.flickr.com/creativecommons/)
+- [pexels](https://www.pexels.com/)
 - Butterick's Practical Typography [guide to presentations](http://practicaltypography.com/presentations.html).
 - [Presentation Patterns: Techniques for Crafting Better Presentations](https://www.amazon.com/dp/0321820800/ref=cm_sw_su_dp).
 - The Leeks group [guide to giving Academic Talks](https://github.com/jtleek/talkguide).
