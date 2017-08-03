@@ -22,7 +22,9 @@ vis_dat(airquality)
 
 ## [naniar](http://naniar.njtierney.com)
 
-[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/njtierney/narnia?branch=master&svg=true)](https://ci.appveyor.com/project/njtierney/narnia)[![Travis-CI Build Status](https://travis-ci.org/njtierney/narnia.svg?branch=master)](https://travis-ci.org/njtierney/narnia)[![Coverage Status](https://img.shields.io/codecov/c/github/njtierney/narnia/master.svg)](https://codecov.io/github/njtierney/narnia?branch=master)
+[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/njtierney/naniar?branch=master&svg=true)](https://ci.appveyor.com/project/njtierney/naniar)
+[![Travis-CI Build Status](https://travis-ci.org/njtierney/naniar.svg?branch=master)](https://travis-ci.org/njtierney/naniar)
+[![Coverage Status](https://img.shields.io/codecov/c/github/njtierney/naniar/master.svg)](https://codecov.io/github/njtierney/naniar?branch=master)
 
 Tidy data structures, summaries, and visualisations for missing data.
 
