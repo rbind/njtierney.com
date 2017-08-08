@@ -149,7 +149,11 @@ For interactive visualisation of spatial data, I really like RStudio's [leaflet]
 
 # git
 
-For a nice overview, check out [these slides](http://slides.com/michaelfreeman/git-collaboration#/1).
+For a nice overview, check out:
+
+- [these slides](http://slides.com/michaelfreeman/git-collaboration#/1)
+- [git - the simple guide](https://rogerdudler.github.io/git-guide/)
+- [oh shit, git!](http://ohshitgit.com/)
 
 # STATA Related Resources
 
