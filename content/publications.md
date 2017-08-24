@@ -9,16 +9,19 @@ title: Publications
 
 [**Tierney, Nicholas J.**, Fiona A. Harden, Maurice J. Harden, and Kerrie L. Mengersen. 2015. “Using Decision Trees to Understand Structure in Missing Data.” _BMJ Open_ 5 (6). bmjopen.bmj.com: e007450.](http://bmjopen.bmj.com/content/5/6/e007450.full)
 
+[**Tierney, Nicholas J.** "visdat: Visualising Whole Data Frames", _The Journal of Open Source Software_ 2 (16) doi: 10.21105/joss.00355](http://joss.theoj.org/papers/10.21105/joss.00355)
+
 # Under Review or in Preparation
 
-`2017` **Tierney, NJ.** Mengersen, K., Harden, F., Harden, M., "Bayesian Approaches to Modelling Occupational Health." _Occupational and Environmental Medicine_. __In Preparation__
+`2017` **Tierney, NJ.** Cook, D._, "Tidy Missing Data" _Journal of Computational and Graphical Statistics_. __In Preparation__
+
+`2017` **Tierney, NJ.** Mengersen, K., Clifford, S., Drovandi, S., "Bayesian Approaches to Modelling Occupational Health." _Occupational and Environmental Medicine_. __In Preparation__
 
 `2017` **Tierney, NJ.**, Mira, A., Reinhold, J., Mengersen, KL., Aurrichio, A.  "Optimising placement of AEDs in cases of geographic variability" _Resuscitation_. __Submitted__
 
 # Pre-Print
 
 `2016` **Tierney, NJ.** “S3 Methods: A Simple Guide.” [[Pre-print](https://arxiv.org/abs/1608.07161)]
-
 
 ### Posters
 
