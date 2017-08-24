@@ -2,7 +2,7 @@
 title: A Grammar of Models?
 date: 2013-11-10
 categories:
-- R
+- rstats
 - Statistics
 slug: grammar-of-models
 ---

@@ -2,7 +2,7 @@
 title: Fix for gbm.plot
 date: "2014-04-22"
 categories:
-- R
+- rstats
 slug: gbm-plot-fix
 ---
 

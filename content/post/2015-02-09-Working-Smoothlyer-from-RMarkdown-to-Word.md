@@ -3,7 +3,7 @@ title: Working Smoothly(er) from RMarkdown to Word.
 date: "2015-02-09"
 categories:
 - rmarkdown
-- R
+- rstats
 slug: smoothlyer-rmd-docx
 ---
 
