@@ -11,4 +11,12 @@ MathJax.Hub.Config({
 
 <script async src="https://yihui.name/js/center-img.js"></script>
 
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/r.min.js"></script>
+<script>
+hljs.configure({languages: []});
+hljs.initHighlightingOnLoad();
+</script>
+
 {{ template "_internal/disqus.html" . }}
+{{ template "_internal/google_analytics.html" . }}
