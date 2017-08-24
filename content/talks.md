@@ -2,6 +2,8 @@
 title: Talks
 ---
 
+- [2017/08/25: ≥ 5 things you (maybe) didn't know about the world of R and statistics](https://talks.updog.co/mcri2017/mcri-pres.html#1)
+
 - [2017/08/04: UseR2017 summary](https://talks.updog.co/numbatuser2017/usersummary.html#1)
 
 - [2017/07/26: **Melbourne Maths and Science Meetup**  Missing Data Challenges, Melbourne, Australia](https://talks.updog.co/scimathmeetup/2017-07-26-sci-math-meetup.html)
