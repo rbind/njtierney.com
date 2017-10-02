@@ -149,11 +149,21 @@ For interactive visualisation of spatial data, I really like RStudio's [leaflet]
 
 # git
 
-For a nice overview, check out:
+If you write code or plain text (LaTeX, RMarkdown, Markdown, R, c++ or even .txt), you should really consider using git to help manage your workflow. It's like Dropbox on steriod.
+
+To get started I would recommend 2 things to get started:
+
+1. Read Jenny Bryan's awesome book, [Happy git with R](http://happygitwithr.com/).
+
+2. [Download GitKraken](https://www.gitkraken.com/), it's the best free GUI for interacting with git.
+
+Some other great resources include:
 
 - [these slides](http://slides.com/michaelfreeman/git-collaboration#/1)
 - [git - the simple guide](https://rogerdudler.github.io/git-guide/)
 - [oh shit, git!](http://ohshitgit.com/)
+
+I would also really recommend reading an article by [Karthik Ram](http://inundata.org/), ["Git can facilitate greater reproducibility and increased transparency in science"](https://scfbm.biomedcentral.com/track/pdf/10.1186/1751-0473-8-7?site=scfbm.biomedcentral.com).
 
 # STATA Related Resources
 
