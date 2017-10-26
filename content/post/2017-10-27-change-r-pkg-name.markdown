@@ -9,13 +9,22 @@ tags: []
 
 I've had to change my R package names a few times. 
 
-ggmissing became naniar
 
-naniar became narnia
+[ggmissing became naniar.](https://github.com/njtierney/naniar/commit/6607a02415053be2386822b5d1f3b8ac0c897106)
 
-narnia went back to naniar.
+
+
+[naniar became narnia.](https://github.com/njtierney/naniar/commit/154256718dcae9e5f661597a1b0f90167028c378)
+
+
+
+[narnia went back to naniar.](https://github.com/njtierney/naniar/commit/c8040a9cb9ea9527b7258cd8ce8f6f0d92800660)
+
+
 
 Every time I've had to do this, there were a few things I had to remember to do. Here's a blog post that describes how to do that.
+
+
 
 There are two parts, changing the R package name, and changing the git/github settings.
 
@@ -32,6 +41,8 @@ When you change your package name, here is a list of things you need to do.
 7. Do a search (Cmd/Ctr + Shift + F) and look for mentions of your package nbame
 
 And that's basically it!
+
+
 
 Hooray, now to handle the git business.
 
@@ -88,15 +99,15 @@ fatal: 'origin' does not appear to be a git repository
 fatal: Could not read from remote repository.
 ```
 
-Great.
-
-Now, add the new origin.
+Great. Now, add the new origin.
 
 ```
 git remote add origin https://github.com/<USERNAME/ORGANISATION>/<YOUR-NEW-REPO-NAME>.git
 ```
 
 Nothing will happen. This is good.
+
+
 
 Now, check that the remote has been set.
 
@@ -138,7 +149,11 @@ To push the current branch and set the remote as upstream, use
 
 This is fine.
 
+
+
 Before we can push these changes onto github, we need to tell it where to push to.
+
+
 
 Do this with
 
@@ -148,7 +163,11 @@ git push -u https://github.com/<USERNAME/ORGANISATION>/<YOUR-NEW-REPO-NAME>.git
 
 This tells git where you want to push to, and to keep pushing there.
 
+
+
 And that's it!
+
+
 
 Happy coding
 
