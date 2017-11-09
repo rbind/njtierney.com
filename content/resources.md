@@ -20,7 +20,9 @@ To learn R, you need to learn [how to get unstuck with R](http://stat545.com/hel
 
 To learn a new function or package, [Quick-R](http://www.statmethods.net), provides nice quick description of functions and other R-related things.
 
-For all my other problems, I usually google the error message, or try my darndest to ask an reasonable question to google that describes my current dilemna, and then look read the appropriate blog post, or [StackOVerflow Answer](http://stackoverflow.com). [RSeek](http://rseek.org/) is also basically a google search that filters by R related content.
+For all my other problems, I usually google the error message, or try my darndest to ask an reasonable question to google that describes my current dilemna, and then look read the appropriate blog post, or [StackOVerflow Answer](http://stackoverflow.com). [RSeek](http://rseek.org/) is also basically a google search that filters by R related content. 
+
+A new community really worth checking out is [the RStudio community](https://community.rstudio.com/), which aims to provide a nice, friendly space to ask questions that don't necessarily fit into GitHub issues, bug reports, or Stack Overflow. You can read more about it here in [their announcement of the community](https://blog.rstudio.com/2017/09/14/rstudio-community/).
 
 I would also recommend checking out RStudio's [list of resources for learning R](http://www.rstudio.com/resources/training/online-learning/#R), and [this blog post](http://www3.nd.edu/~mclark19/projects.html), which describes learning R from a social sciences background.
 
