@@ -13,17 +13,20 @@ title: Publications
 
 # Under Review or in Preparation
 
+`2017` **Tierney, NJ.**, Mira, A., Reinhold, J., Mengersen, KL., Aurrichio, A.  "Optimising placement of AEDs in cases of geographic variability" _Resuscitation_. __Submitted__
+
 `2017` **Tierney, NJ.** Cook, D., Fay, C._, "Tidy Missing Data" _Journal of Computational and Graphical Statistics_. __In Preparation__
 
-`2017` **Tierney, NJ.** Mengersen, K., Clifford, S., Drovandi, S., "Bayesian Approaches to Modelling Occupational Health." _Occupational and Environmental Medicine_. __In Preparation__
+`2018` **Tierney, NJ.** Mengersen, K., Clifford, S., Drovandi, S., "Bayesian Approaches to Modelling Occupational Health." _BM Open_. __In Preperation__
 
-`2017` **Tierney, NJ.**, Mira, A., Reinhold, J., Mengersen, KL., Aurrichio, A.  "Optimising placement of AEDs in cases of geographic variability" _Resuscitation_. __Submitted__
 
 # Pre-Print
 
 `2016` **Tierney, NJ.** “S3 Methods: A Simple Guide.” [[Pre-print](https://arxiv.org/abs/1608.07161)]
 
 # Posters
+
+`2017` "Now you see it? Now you don’t? The role of graphics in identifying MCMC convergence" **Tierney, NJ.**, Cook, D, McBain, M. _Bayes on the Beach, Gold Coast, Australia_. [PDF](https://njtierney.updog.co/img/2017-11-29-poster-ppt-botb.pdf) 
 
 `2016` "Bayesian Approachs in Occupational Health Surveillance" **Tierney, NJ.**, Mengersen, K., Clifford, S., Drovandi, C., Harden, F., Harden, M. _World Meeting for the International Society for Bayesian Analysis_
 
