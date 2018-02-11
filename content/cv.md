@@ -22,11 +22,11 @@ I'm a PhD candidate in my final year of a 4 year program through the [Industry D
 
 ### Postgraduate
 
-`2013-17` __PhD Statistics__, Queensland University of Technology. Supervisor: Kerrie Mengersen
+`2013-17` __PhD, Statistics__, Queensland University of Technology. Supervisor: Kerrie Mengersen
 
 `Award` __APA ($24,500 Annually for 4 years)__ ; __IDTC Top Up ($10,000 Annually for 4 years)__ .
 
-`Research` Research covers model-based exploration methods of missing data, Bayesian longitudinal modelling of individual and group health in a mining site, optimal placement of Automatic Electronic Defibrillators (AEDs), modelling geospatial cardiac risk, and the production of R packages to facilitate research impact.
+`Thesis` Thesis research covers model-based exploration methods of missing data, Bayesian longitudinal modelling of individual and group health in a mining site, optimal placement of Automatic Electronic Defibrillators (AEDs), modelling geospatial cardiac risk, and the production of R packages to facilitate research impact.
 
 ### Undergraduate
 
@@ -54,11 +54,14 @@ I'm a PhD candidate in my final year of a 4 year program through the [Industry D
 
 `2015` [“Using Decision Trees to Understand Structure in Missing Data.” **Tierney, N.J.,** Mengersen, K., Harden, F., Harden M.  _BMJ Open_ 5 (6).  doi:10.1136/bmjopen-2014-007450](http://bmjopen.bmj.com/content/5/6/e007450.full).
 
+[**Tierney, Nicholas J.** "visdat: Visualising Whole Data Frames", _The Journal of Open Source Software_ 2 (16) doi: 10.21105/joss.00355](http://joss.theoj.org/papers/10.21105/joss.00355)
+
+`2018`  "Optimising placement of AEDs in cases of geographic variability", **Tierney, N.J.**, Mira, A., Jost, Mengersen, KL., Aurrichio, A.  _Resuscitation_. __In Press__.
+
 `2016` "S3 Methods: A Simple Guide." **Tierney, N.J.**  _The R Journal_. __Submitted__. [[Pre-print](https://arxiv.org/abs/1608.07161)]
 
-`2016` "Bayesian Approaches to Modelling Occupational Health." **Tierney, N.J.** Mengersen, K., Harden, F., Harden, M. _Occupational and Environmental Medicine_. __In Preparation__.
+`2018` "Bayesian Approaches to Modelling Occupational Health." **Tierney, N.J.** Mengersen, K., Harden, F., Harden, M. _Occupational and Environmental Medicine_. __In Preparation__.
 
-`2016`  "Optimising placement of AEDs in cases of geographic variability", **Tierney, N.J.**, Mira, A., Jost, Mengersen, KL., Aurrichio, A.  _Circulation_. __In Preparation__.
 
 ## Projects
 
@@ -72,7 +75,7 @@ I'm a PhD candidate in my final year of a 4 year program through the [Industry D
 
 `2017-` [__mmcc:__ Fast and tidy methods for summarising mcmc chains using data.table](https://github.com/njtierney/mmcc)
 
-`2014-` [__neato:__ Miscellaneous Utility functions in R](https://github.com/njtierney/neato)
+`2014-` [__broomstick:__ Tidy up model output from decision trees](https://github.com/njtierney/broomstick)
 
 ### Blog
 
@@ -94,6 +97,10 @@ I'm a PhD candidate in my final year of a 4 year program through the [Industry D
 
 ### Posters
 
+`2018` "Tidy Principles for Missing Data Exploration and Analysis using `naniar`" **Tierney, NJ.** _rstudioconf18, San Diego, USA_.
+
+`2017` "Now you see it? Now you don’t? The role of graphics in identifying MCMC convergence" **Tierney, NJ.**, Cook, D, McBain, M. _Bayes on the Beach, Gold Coast, Australia_. [PDF](https://njtierney.updog.co/img/2017-11-29-poster-ppt-botb.pdf) 
+
 `2016` "Bayesian Approachs in Occupational Health Surveillance" **Tierney, N.J.**, Mengersen, K., Clifford, S., Drovandi, C., Harden, F., Harden, M. _World Meeting for the International Society for Bayesian Analysis_.
 
 `2015` "The Sharpest Tool in the Shed" **Tierney, N.J.**, Mengersen, K., Harden, F., Harden, M. _Bayes on the Beach_.
@@ -112,6 +119,8 @@ I'm a PhD candidate in my final year of a 4 year program through the [Industry D
 
 ### Invited Talks
 
+`2018` "Why is that missing, and what can we do about it? Tools for missing data and beyond.", __Nicholas Tierney__, Genentech, San Francisco, USA.
+
 `2016` "Interactive Maps in R: Getting a lay of the land", __Nicholas Tierney__, Gates Cambridge group, Cambridge University, UK.
 
 `2016` ["Data Mining Mining Data: Statistical Approaches in Occupational Health for a Mining Site" __Nicholas Tierney__, Università della Svizzera italiana Lugano, Switzerland](https://speakerdeck.com/njtierney/data-mining-in-mining-data-statistical-approaches-in-occupational-health-surveillance-for-a-mining-site).
@@ -119,6 +128,8 @@ I'm a PhD candidate in my final year of a 4 year program through the [Industry D
 ## Professional Experience
 
 ### Invited Academic
+
+`2018` Berkeley Institute of Data Science, at University of California, Berkeley, USA, February 5 - Feb 9. Collaboration with Dr. Karthik Ram on current technology and issues in modern data science.
 
 `2017` Inter-Disciplinary Institute of Data Science at Università della Svizzera italiana (USI), Lugano, Switzerland, July 10 - July 14. Collaboration with Professor Antonietta Mira of USI and Professor Angelo Auricchio of the Center for Computational Medicine in Cardiology (CCMC) on optimising placement of Automatic Electronic Defibrillators (AEDs) in Switzerland.
 
@@ -136,13 +147,17 @@ I'm a PhD candidate in my final year of a 4 year program through the [Industry D
 
 ### rOpenSci
 
+`2017` Organiser of the second [rOpenSci ozUnconference in Australia](ozunconf18.ropensci.org).
+
 `2016` Organiser of the first [rOpenSci Unconference in Australia](auunconf.ropensci.org).
 
-### SSAI
+### SSA
 
-`2013-` [SSAI](http://www.statsoc.org.au/) Assistant Chair of Biostatistics.
+`2017-` [SSA](http://www.statsoc.org.au/) Ordinary Member of Victoria Branch.
 
-`2013-16` [SSAI](http://www.statsoc.org.au/) Young Statisticians Representative for Queensland.
+`2013-16` [SSA](http://www.statsoc.org.au/) Assistant Chair of Biostatistics.
+
+`2013-16` [SSA](http://www.statsoc.org.au/) Young Statisticians Representative for Queensland.
 
 ### BRAG
 

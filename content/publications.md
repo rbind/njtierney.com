@@ -11,9 +11,9 @@ title: Publications
 
 [**Tierney, Nicholas J.** "visdat: Visualising Whole Data Frames", _The Journal of Open Source Software_ 2 (16) doi: 10.21105/joss.00355](http://joss.theoj.org/papers/10.21105/joss.00355)
 
-# Under Review or in Preparation
+[**Tierney, NJ.**,  Reinhold, J., Mira, A., Weiser, M., Burkart, R., Benvenuti, C., Aurrichio, A.  "Novel relocation methods for automatic external defibrillator improve out-of-hospital cardiac arrest coverage under limited resources" _Resuscitation , Volume 125 , 83 - 89_. doi: 10.1016/j.resuscitation.2018.01.055](ttps://doi.org/10.1016/j.resuscitation.2018.01.055)
 
-`2017` **Tierney, NJ.**, Mira, A., Reinhold, J., Mengersen, KL., Aurrichio, A.  "Optimising placement of AEDs in cases of geographic variability" _Resuscitation_. __Submitted__
+# Under Review or in Preparation
 
 `2017` **Tierney, NJ.** Cook, D., Fay, C._, "Tidy Missing Data" _Journal of Computational and Graphical Statistics_. __In Preparation__
 
