@@ -8,22 +8,30 @@ categories:
 tags: []
 ---
 
-Last week I got "the letter" from the university to say "You, are a Dr. and can use
-that title".
-
-Which means I can finally say:
-
-"Hi Everybody, I'm Dr. Nick!"
+Last week I got "the letter" from the university that basically says "You, Nicholas Tierney, are a Dr.".
 
 ![](https://njtierney.updog.co/gifs/njt-dr-nick.gif)
 
-I can also say to everyone:
+I can now (finally) say:
 
 > Yes, I have finished my PhD.
 
 And I can say to myself:
 
 > It is finally over.
+
+Now, some of your might be wondering "haven't you already been doing a post doc, why is this only happening now?"
+
+Yes, I've been (very much) enjoying a great post doc at Monash, working with [Di Cook](http://dicook.github.io/) and [Rob Hyndman](https://robjhyndman.com/). 
+I get to work on developing R packages, publishing best practices for working with missing data, and making data analysis easier and more powerful. Honestly, there's not many other places in the world I would rather be.
+
+But, there is a particularly long tail end of my PhD, here's a rough timeline:
+
+- April 2017: Defend thesis to internal committee, receive feedback.
+- May 2017: Submit thesis changes to external committee (in Australia, the thesis is sent to two external reviewers, who may be overseas)
+- November 2017: Receive feedback from external committee
+- December 2017: Submit final thesis changes
+- January 2018: Official letter re PhD ("You are now a Dr.")
 
 My thesis ("Statistical Approaches to Revealing Structure in Complex Health Data") will soon be made available through QUT's eprint system, but I thought it would be nice to share the acknowledgements section below - there are a lot of people to thank!
 
@@ -84,9 +92,7 @@ love me always, even when I am at my worst.
 
 > It has been an amazing four years, I look forward to seeing what happens next.
 
-## What IS next? 
-
-I'm (very much) enjoying working at Monash University with [Di Cook](http://dicook.github.io/) and [Rob Hyndman](https://robjhyndman.com/), as a research fellow, where I get to work on developing R packages, publishing best practices for working with missing data, and trying to make new ideas and concepts for data analysis easier and more powerful. Honestly, there's not many other places in the world I would rather be.
+## So, what IS next? 
 
 This year some of the big projects I'm thinking about include:
 
@@ -95,3 +101,5 @@ This year some of the big projects I'm thinking about include:
 - Completing the `maxcovr` R package to make it easier to place facilities in locations that maximise their coverage (building off of [my work in a (very) recent publication](http://www.resuscitationjournal.com/article/S0300-9572(18)30065-0/fulltext)).
 - Issues in open data and open science.
 - The rOpenSci ozunconf 2018
+
+And (probably!) more. It's going to be a really great year.
