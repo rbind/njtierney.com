@@ -12,17 +12,9 @@ Last week (specifically, the 1st Feb) I got "the letter" from QUT that basically
 
 > The Queensland University of Technology’s Registrar has executively approved your degree and you are now entitled to use the title of "Dr".
 
-So:
+So, I can now say:
 
 ![](https://njtierney.updog.co/gifs/njt-dr-nick.gif)
-
-I can now (finally) say:
-
-> Yes, I have finished my PhD.
-
-And I can say to myself:
-
-> It is finally over.
 
 Now, for those who are wondering "haven't you already been doing a post doc, why is this only happening now?"
 
