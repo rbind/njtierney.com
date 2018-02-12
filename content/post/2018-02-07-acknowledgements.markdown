@@ -26,7 +26,7 @@ There is a particularly long tail end of my PhD, here's a rough timeline:
 - December 2017: Submit final thesis changes
 - January 2018: Official letter re PhD ("You are now a Dr.")
 
-My thesis, "Statistical Approaches to Revealing Structure in Complex Health Data", will soon be made available through QUT's eprint system, but I thought it would be nice to share the acknowledgements section below - there are a lot of people to thank!
+My thesis, "Statistical Approaches to Revealing Structure in Complex Health Data", will soon be made available through QUT's eprint system, which means that it is open to the world wide web. But, in the interim, I thought it would be nice to share the acknowledgements section below - there are a lot of people to thank!
 
 # Acknowledgements
 
