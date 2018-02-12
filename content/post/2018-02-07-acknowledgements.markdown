@@ -8,7 +8,11 @@ categories:
 tags: []
 ---
 
-Last week I got "the letter" from the university that basically says "You, Nicholas Tierney, are a Dr.".
+Last week (specifically, the 1st Feb) I got "the letter" from QUT that basically says "You, Nicholas Tierney, are a Dr.". Well, specifically, it says:
+
+> The Queensland University of Technology’s Registrar has executively approved your degree and you are now entitled to use the title of "Dr".
+
+So:
 
 ![](https://njtierney.updog.co/gifs/njt-dr-nick.gif)
 
@@ -20,12 +24,9 @@ And I can say to myself:
 
 > It is finally over.
 
-Now, some of your might be wondering "haven't you already been doing a post doc, why is this only happening now?"
+Now, for those who are wondering "haven't you already been doing a post doc, why is this only happening now?"
 
-Yes, I've been (very much) enjoying a great post doc at Monash, working with [Di Cook](http://dicook.github.io/) and [Rob Hyndman](https://robjhyndman.com/). 
-I get to work on developing R packages, publishing best practices for working with missing data, and making data analysis easier and more powerful. Honestly, there's not many other places in the world I would rather be.
-
-But, there is a particularly long tail end of my PhD, here's a rough timeline:
+There is a particularly long tail end of my PhD, here's a rough timeline:
 
 - April 2017: Defend thesis to internal committee, receive feedback.
 - May 2017: Submit thesis changes to external committee (in Australia, the thesis is sent to two external reviewers, who may be overseas)
@@ -33,7 +34,7 @@ But, there is a particularly long tail end of my PhD, here's a rough timeline:
 - December 2017: Submit final thesis changes
 - January 2018: Official letter re PhD ("You are now a Dr.")
 
-My thesis ("Statistical Approaches to Revealing Structure in Complex Health Data") will soon be made available through QUT's eprint system, but I thought it would be nice to share the acknowledgements section below - there are a lot of people to thank!
+My thesis, "Statistical Approaches to Revealing Structure in Complex Health Data", will soon be made available through QUT's eprint system, but I thought it would be nice to share the acknowledgements section below - there are a lot of people to thank!
 
 # Acknowledgements
 
@@ -93,6 +94,9 @@ love me always, even when I am at my worst.
 > It has been an amazing four years, I look forward to seeing what happens next.
 
 ## So, what IS next? 
+
+I've been (very much) enjoying a great post doc at Monash, working with [Di Cook](http://dicook.github.io/) and [Rob Hyndman](https://robjhyndman.com/). 
+I get to work on developing R packages, publishing best practices for working with missing data, and making data analysis easier and more powerful. Honestly, there's not many other places in the world I would rather be.
 
 This year some of the big projects I'm thinking about include:
 
