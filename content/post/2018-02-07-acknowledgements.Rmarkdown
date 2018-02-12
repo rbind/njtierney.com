@@ -12,7 +12,7 @@ Last week (specifically, the 1st Feb) I got "the letter" from QUT that basically
 
 > The Queensland University of Technology’s Registrar has executively approved your degree and you are now entitled to use the title of "Dr".
 
-So, I can now say:
+Woo hoo!
 
 ![](https://njtierney.updog.co/gifs/njt-dr-nick.gif)
 
