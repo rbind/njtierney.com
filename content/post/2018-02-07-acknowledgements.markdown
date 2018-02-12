@@ -80,7 +80,7 @@ munging.
 always been there for me, with advice, tea, roast dinners on Sundays, and
 unyielding support.
 
-> Finally, thank you to my love, Sophie Francis. You spur me on to be my best, and
+> Finally, thank you to my love, Soph. You spur me on to be my best, and
 love me always, even when I am at my worst.
 
 > It has been an amazing four years, I look forward to seeing what happens next.
