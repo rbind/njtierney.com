@@ -2,6 +2,12 @@
 title: Talks
 ---
 
+# 2018
+
+- [2018/02/13: Oh no, why is that missing? Practical tools for missing data.](https://talks.updog.co/barugs2018/2018-02-13-barugs.html#1)
+
+# 2017
+
 - [2017/08/25: ≥ 5 things you (maybe) didn't know about the world of R and statistics](https://talks.updog.co/mcri2017/mcri-pres.html#1)
 
 - [2017/08/04: UseR2017 summary](https://talks.updog.co/numbatuser2017/usersummary.html#1)
