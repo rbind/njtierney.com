@@ -36,21 +36,20 @@ library(tidyverse)
 ```
 
 ```
-## Loading tidyverse: ggplot2
-## Loading tidyverse: tibble
-## Loading tidyverse: tidyr
-## Loading tidyverse: readr
-## Loading tidyverse: purrr
-## Loading tidyverse: dplyr
+## ── Attaching packages ───────────────────────────────────────────────────────────────────────────── tidyverse 1.2.1 ──
 ```
 
 ```
-## Conflicts with tidy packages ----------------------------------------------
+## ✔ ggplot2 2.2.1     ✔ purrr   0.2.4
+## ✔ tibble  1.4.1     ✔ dplyr   0.7.4
+## ✔ tidyr   0.7.2     ✔ stringr 1.2.0
+## ✔ readr   1.1.1     ✔ forcats 0.2.0
 ```
 
 ```
-## filter(): dplyr, stats
-## lag():    dplyr, stats
+## ── Conflicts ──────────────────────────────────────────────────────────────────────────────── tidyverse_conflicts() ──
+## ✖ dplyr::filter() masks stats::filter()
+## ✖ dplyr::lag()    masks stats::lag()
 ```
 
 ```r
@@ -98,18 +97,18 @@ billboard_raw
 
 ```
 ## # A tibble: 5,701 x 4
-##       no                     title              artist  year
-##    <chr>                     <chr>               <chr> <chr>
-##  1     1 Theme from A Summer Place         Percy Faith  1960
-##  2     2          He'll Have to Go          Jim Reeves  1960
-##  3     3             Cathy's Clown The Everly Brothers  1960
-##  4     4              Running Bear      Johnny Preston  1960
-##  5     5                Teen Angel        Mark Dinning  1960
-##  6     6                 I'm Sorry          Brenda Lee  1960
-##  7     7         It's Now or Never       Elvis Presley  1960
-##  8     8                 Handy Man         Jimmy Jones  1960
-##  9     9              Stuck on You       Elvis Presley  1960
-## 10    10                 The Twist      Chubby Checker  1960
+##    no    title                     artist              year 
+##    <chr> <chr>                     <chr>               <chr>
+##  1 1     Theme from A Summer Place Percy Faith         1960 
+##  2 2     He'll Have to Go          Jim Reeves          1960 
+##  3 3     Cathy's Clown             The Everly Brothers 1960 
+##  4 4     Running Bear              Johnny Preston      1960 
+##  5 5     Teen Angel                Mark Dinning        1960 
+##  6 6     I'm Sorry                 Brenda Lee          1960 
+##  7 7     It's Now or Never         Elvis Presley       1960 
+##  8 8     Handy Man                 Jimmy Jones         1960 
+##  9 9     Stuck on You              Elvis Presley       1960 
+## 10 10    The Twist                 Chubby Checker      1960 
 ## # ... with 5,691 more rows
 ```
 
@@ -130,18 +129,18 @@ billboard_raw %>%
 
 ```
 ## # A tibble: 5,701 x 5
-##       no                     title              artist  year  rank
-##    <chr>                     <chr>               <chr> <dbl> <dbl>
-##  1     1 Theme from A Summer Place         Percy Faith  1960     1
-##  2     2          He'll Have to Go          Jim Reeves  1960     2
-##  3     3             Cathy's Clown The Everly Brothers  1960     3
-##  4     4              Running Bear      Johnny Preston  1960     4
-##  5     5                Teen Angel        Mark Dinning  1960     5
-##  6     6                 I'm Sorry          Brenda Lee  1960     6
-##  7     7         It's Now or Never       Elvis Presley  1960     7
-##  8     8                 Handy Man         Jimmy Jones  1960     8
-##  9     9              Stuck on You       Elvis Presley  1960     9
-## 10    10                 The Twist      Chubby Checker  1960    10
+##    no    title                     artist               year  rank
+##    <chr> <chr>                     <chr>               <dbl> <dbl>
+##  1 1     Theme from A Summer Place Percy Faith          1960  1.00
+##  2 2     He'll Have to Go          Jim Reeves           1960  2.00
+##  3 3     Cathy's Clown             The Everly Brothers  1960  3.00
+##  4 4     Running Bear              Johnny Preston       1960  4.00
+##  5 5     Teen Angel                Mark Dinning         1960  5.00
+##  6 6     I'm Sorry                 Brenda Lee           1960  6.00
+##  7 7     It's Now or Never         Elvis Presley        1960  7.00
+##  8 8     Handy Man                 Jimmy Jones          1960  8.00
+##  9 9     Stuck on You              Elvis Presley        1960  9.00
+## 10 10    The Twist                 Chubby Checker       1960 10.0 
 ## # ... with 5,691 more rows
 ```
 
@@ -161,14 +160,13 @@ billboard_raw %>%
 
 ```
 ## # A tibble: 5 x 5
-##      no                          title                    artist  year
-##   <chr>                          <chr>                     <chr> <dbl>
-## 1   Tie                         Let Me Paul Revere & the Raiders  1969
-## 2   Tie                 Rock Your Baby             George McCrae  1974
-## 3   Tie Never, Never Gonna Give You Up               Barry White  1974
-## 4   Tie              The Lord's Prayer         Sister Janet Mead  1974
-## 5   Tie   My Mistake (Was to Love You)  Diana Ross & Marvin Gaye  1974
-## # ... with 1 more variables: rank <dbl>
+##   no    title                          artist                   year  rank
+##   <chr> <chr>                          <chr>                   <dbl> <dbl>
+## 1 Tie   Let Me                         Paul Revere & the Raid…  1969    NA
+## 2 Tie   Rock Your Baby                 George McCrae            1974    NA
+## 3 Tie   Never, Never Gonna Give You Up Barry White              1974    NA
+## 4 Tie   The Lord's Prayer              Sister Janet Mead        1974    NA
+## 5 Tie   My Mistake (Was to Love You)   Diana Ross & Marvin Ga…  1974    NA
 ```
 
 Huh, turns out that "Tie" is a category for 1974 and 1969, this was mentioned in the description of the data in the help file, but I just assumed that they would be given the same rank.
@@ -225,24 +223,23 @@ billboard_raw %>% slice(row_pad)
 
 ```
 ## # A tibble: 15 x 4
-##       no                                 title                    artist
-##    <chr>                                 <chr>                     <chr>
-##  1   100                    Sweet Cream Ladies              The Box Tops
-##  2   Tie                                Let Me Paul Revere & the Raiders
-##  3     1            Bridge over Troubled Water         Simon & Garfunkel
-##  4    37                  Nothing from Nothing             Billy Preston
-##  5   Tie                        Rock Your Baby             George McCrae
-##  6    39                      Top of the World            The Carpenters
-##  7    54                      You Won't See Me               Anne Murray
-##  8   Tie        Never, Never Gonna Give You Up               Barry White
-##  9    56                Tell Me Something Good        Rufus & Chaka Khan
-## 10    85 I'll Have to Say I Love You in a Song                 Jim Croce
-## 11   Tie                     The Lord's Prayer         Sister Janet Mead
-## 12    87         Trying To Hold On To My Woman             Lamont Dozier
-## 13    91                          Helen Wheels  Paul McCartney and Wings
-## 14   Tie          My Mistake (Was to Love You)  Diana Ross & Marvin Gaye
-## 15    93                         Wildwood Weed              Jim Stafford
-## # ... with 1 more variables: year <chr>
+##    no    title                                 artist                year 
+##    <chr> <chr>                                 <chr>                 <chr>
+##  1 100   Sweet Cream Ladies                    The Box Tops          1969 
+##  2 Tie   Let Me                                Paul Revere & the Ra… 1969 
+##  3 1     Bridge over Troubled Water            Simon & Garfunkel     1970 
+##  4 37    Nothing from Nothing                  Billy Preston         1974 
+##  5 Tie   Rock Your Baby                        George McCrae         1974 
+##  6 39    Top of the World                      The Carpenters        1974 
+##  7 54    You Won't See Me                      Anne Murray           1974 
+##  8 Tie   Never, Never Gonna Give You Up        Barry White           1974 
+##  9 56    Tell Me Something Good                Rufus & Chaka Khan    1974 
+## 10 85    I'll Have to Say I Love You in a Song Jim Croce             1974 
+## 11 Tie   The Lord's Prayer                     Sister Janet Mead     1974 
+## 12 87    Trying To Hold On To My Woman         Lamont Dozier         1974 
+## 13 91    Helen Wheels                          Paul McCartney and W… 1974 
+## 14 Tie   My Mistake (Was to Love You)          Diana Ross & Marvin … 1974 
+## 15 93    Wildwood Weed                         Jim Stafford          1974
 ```
 
 What we see here is that a "Tie" takes on the value of the previous row. so we can now replace this with the value of the previous row, using the `lag` function, which turns a sequence like this:
@@ -282,13 +279,13 @@ billboard_raw %>%
 
 ```
 ## # A tibble: 5 x 4
-##      no  rank rank_lag rank_rep
+##   no     rank rank_lag rank_rep
 ##   <chr> <dbl>    <dbl>    <dbl>
-## 1   Tie    NA      100      100
-## 2   Tie    NA       37       37
-## 3   Tie    NA       54       54
-## 4   Tie    NA       85       85
-## 5   Tie    NA       91       91
+## 1 Tie      NA    100      100  
+## 2 Tie      NA     37.0     37.0
+## 3 Tie      NA     54.0     54.0
+## 4 Tie      NA     85.0     85.0
+## 5 Tie      NA     91.0     91.0
 ```
 
 OK, now let's quickly check what these values are:
@@ -311,23 +308,23 @@ billboard_raw %>%
 
 ```
 ## # A tibble: 15 x 4
-##       no  rank rank_lag rank_rep
-##    <chr> <dbl>    <dbl>    <dbl>
-##  1   100   100       99      100
-##  2   Tie    NA      100      100
-##  3     1     1       NA        1
-##  4    37    37       36       37
-##  5   Tie    NA       37       37
-##  6    39    39       NA       39
-##  7    54    54       53       54
-##  8   Tie    NA       54       54
-##  9    56    56       NA       56
-## 10    85    85       84       85
-## 11   Tie    NA       85       85
-## 12    87    87       NA       87
-## 13    91    91       90       91
-## 14   Tie    NA       91       91
-## 15    93    93       NA       93
+##    no      rank rank_lag rank_rep
+##    <chr>  <dbl>    <dbl>    <dbl>
+##  1 100   100        99.0   100   
+##  2 Tie    NA       100     100   
+##  3 1       1.00     NA       1.00
+##  4 37     37.0      36.0    37.0 
+##  5 Tie    NA        37.0    37.0 
+##  6 39     39.0      NA      39.0 
+##  7 54     54.0      53.0    54.0 
+##  8 Tie    NA        54.0    54.0 
+##  9 56     56.0      NA      56.0 
+## 10 85     85.0      84.0    85.0 
+## 11 Tie    NA        85.0    85.0 
+## 12 87     87.0      NA      87.0 
+## 13 91     91.0      90.0    91.0 
+## 14 Tie    NA        91.0    91.0 
+## 15 93     93.0      NA      93.0
 ```
 
 OK great, so now we can combine all of these steps (also renaming the column `no` to be `rank`). This is our clean data, so we call it `billboard_clean`.
@@ -370,18 +367,18 @@ billboard_clean %>%
 
 ```
 ## # A tibble: 5,701 x 5
-##     rank                     title              artist  year     n
-##    <dbl>                     <chr>               <chr> <dbl> <int>
-##  1     1 Theme from A Summer Place         Percy Faith  1960     1
-##  2     2          He'll Have to Go          Jim Reeves  1960     1
-##  3     3             Cathy's Clown The Everly Brothers  1960     6
-##  4     4              Running Bear      Johnny Preston  1960     2
-##  5     5                Teen Angel        Mark Dinning  1960     1
-##  6     6                 I'm Sorry          Brenda Lee  1960    11
-##  7     7         It's Now or Never       Elvis Presley  1960    16
-##  8     8                 Handy Man         Jimmy Jones  1960     2
-##  9     9              Stuck on You       Elvis Presley  1960    16
-## 10    10                 The Twist      Chubby Checker  1960     5
+##     rank title                     artist               year     n
+##    <dbl> <chr>                     <chr>               <dbl> <int>
+##  1  1.00 Theme from A Summer Place Percy Faith          1960     1
+##  2  2.00 He'll Have to Go          Jim Reeves           1960     1
+##  3  3.00 Cathy's Clown             The Everly Brothers  1960     6
+##  4  4.00 Running Bear              Johnny Preston       1960     2
+##  5  5.00 Teen Angel                Mark Dinning         1960     1
+##  6  6.00 I'm Sorry                 Brenda Lee           1960    11
+##  7  7.00 It's Now or Never         Elvis Presley        1960    16
+##  8  8.00 Handy Man                 Jimmy Jones          1960     2
+##  9  9.00 Stuck on You              Elvis Presley        1960    16
+## 10 10.0  The Twist                 Chubby Checker       1960     5
 ## # ... with 5,691 more rows
 ```
 
@@ -398,24 +395,23 @@ billboard_clean %>%
 
 ```
 ## # A tibble: 15 x 5
-##     rank                        title
-##    <dbl>                        <chr>
-##  1     1    Theme from A Summer Place
-##  2     1        Stranger on the Shore
-##  3     1   Ballad of the Green Berets
-##  4     1             To Sir With Love
-##  5     1                 Sugar, Sugar
-##  6     1                   My Sharona
-##  7     1             Careless Whisper
-##  8     1  That's What Friends Are For
-##  9     1                        Yeah!
-## 10     1                      Bad Day
-## 11     1                          Low
-## 12     1 Somebody That I Used to Know
-## 13     1                  Thrift Shop
-## 14     1                        Happy
-## 15     1                  Uptown Funk
-## # ... with 3 more variables: artist <chr>, year <dbl>, n <int>
+##     rank title                        artist                    year     n
+##    <dbl> <chr>                        <chr>                    <dbl> <int>
+##  1  1.00 Theme from A Summer Place    Percy Faith               1960     1
+##  2  1.00 Stranger on the Shore        Acker Bilk                1962     1
+##  3  1.00 Ballad of the Green Berets   SSgt. Barry Sadler        1966     1
+##  4  1.00 To Sir With Love             Lulu                      1967     1
+##  5  1.00 Sugar, Sugar                 The Archies               1969     1
+##  6  1.00 My Sharona                   The Knack                 1979     1
+##  7  1.00 Careless Whisper             Wham! featuring George …  1985     1
+##  8  1.00 That's What Friends Are For  Dionne and Friends (Dio…  1986     1
+##  9  1.00 Yeah!                        Usher featuring Lil Jon…  2004     1
+## 10  1.00 Bad Day                      Daniel Powter             2006     1
+## 11  1.00 Low                          Flo Rida featuring T-Pa…  2008     1
+## 12  1.00 Somebody That I Used to Know Gotye featuring Kimbra    2012     1
+## 13  1.00 Thrift Shop                  Macklemore and Ryan Lew…  2013     1
+## 14  1.00 Happy                        Pharrell Williams         2014     1
+## 15  1.00 Uptown Funk                  Mark Ronson featuring B…  2015     1
 ```
 
 15 songs! 
@@ -447,28 +443,28 @@ billboard_clean %>%
 
 ```
 ## # A tibble: 20 x 2
-##              artist year_dist
-##               <chr>     <dbl>
-##  1             Cher        34
-##  2 The Four Seasons        32
-##  3  Aretha Franklin        31
-##  4  Michael Jackson        30
-##  5      Ben E. King        26
-##  6       Elton John        26
-##  7   The Beach Boys        26
-##  8        Aerosmith        25
-##  9    Aaron Neville        24
-## 10     Eric Clapton        23
-## 11          Madonna        22
-## 12      Rod Stewart        22
-## 13       Tim McGraw        22
-## 14      James Brown        21
-## 15          Chicago        20
-## 16  Gary U.S. Bonds        20
-## 17      Marvin Gaye        20
-## 18    Stevie Wonder        20
-## 19   Dionne Warwick        19
-## 20      Herb Alpert        19
+##    artist           year_dist
+##    <chr>                <dbl>
+##  1 Cher                  34.0
+##  2 The Four Seasons      32.0
+##  3 Aretha Franklin       31.0
+##  4 Michael Jackson       30.0
+##  5 Ben E. King           26.0
+##  6 Elton John            26.0
+##  7 The Beach Boys        26.0
+##  8 Aerosmith             25.0
+##  9 Aaron Neville         24.0
+## 10 Eric Clapton          23.0
+## 11 Madonna               22.0
+## 12 Rod Stewart           22.0
+## 13 Tim McGraw            22.0
+## 14 James Brown           21.0
+## 15 Chicago               20.0
+## 16 Gary U.S. Bonds       20.0
+## 17 Marvin Gaye           20.0
+## 18 Stevie Wonder         20.0
+## 19 Dionne Warwick        19.0
+## 20 Herb Alpert           19.0
 ```
 
 Cool! Cher has had a reign for 34 years - she's literally been in the charts for longer than I've been alive.
@@ -489,19 +485,19 @@ billboard_clean %>%
 
 ```
 ## # A tibble: 10 x 6
-## # Groups:   artist [5]
-##     rank                        title         artist  year     n year_dist
-##    <dbl>                        <chr>          <chr> <dbl> <int>     <dbl>
-##  1    76           Tell It Like It Is  Aaron Neville  1967     2        24
-##  2    86     Everybody Plays the Fool  Aaron Neville  1991     2        24
-##  3    49              The Loco-Motion  Kylie Minogue  1988     2        14
-##  4    45 Can't Get You Out of My Head  Kylie Minogue  2002     2        14
-##  5    91                   Roundabout            Yes  1972     2        12
-##  6     8      Owner of a Lonely Heart            Yes  1984     2        12
-##  7    69                    Evil Ways        Santana  1970     2        11
-##  8    84                      Winning        Santana  1981     2        11
-##  9    87          What Was I Thinkin' Dierks Bentley  2003     2        11
-## 10    79             Drunk on a Plane Dierks Bentley  2014     2        11
+## # Groups: artist [5]
+##     rank title                        artist          year     n year_dist
+##    <dbl> <chr>                        <chr>          <dbl> <int>     <dbl>
+##  1 76.0  Tell It Like It Is           Aaron Neville   1967     2      24.0
+##  2 86.0  Everybody Plays the Fool     Aaron Neville   1991     2      24.0
+##  3 49.0  The Loco-Motion              Kylie Minogue   1988     2      14.0
+##  4 45.0  Can't Get You Out of My Head Kylie Minogue   2002     2      14.0
+##  5 91.0  Roundabout                   Yes             1972     2      12.0
+##  6  8.00 Owner of a Lonely Heart      Yes             1984     2      12.0
+##  7 69.0  Evil Ways                    Santana         1970     2      11.0
+##  8 84.0  Winning                      Santana         1981     2      11.0
+##  9 87.0  What Was I Thinkin'          Dierks Bentley  2003     2      11.0
+## 10 79.0  Drunk on a Plane             Dierks Bentley  2014     2      11.0
 ```
 
 Cool! Didn't expect Kylie Minogue, or Santana to be in there!
@@ -522,10 +518,10 @@ billboard_clean %>%
 
 ```
 ## # A tibble: 2 x 5
-##    rank                    title      artist  year     n
-##   <dbl>                    <chr>       <chr> <dbl> <int>
-## 1     1 I Want to Hold Your Hand The Beatles  1964     2
-## 2     1                 Hey Jude The Beatles  1968     2
+##    rank title                    artist       year     n
+##   <dbl> <chr>                    <chr>       <dbl> <int>
+## 1  1.00 I Want to Hold Your Hand The Beatles  1964     2
+## 2  1.00 Hey Jude                 The Beatles  1968     2
 ```
 
 OK, so not surprising that this is the Beatles, but I swear that they have more than one number 1 hit, based on me growing up listening to their ["1" Album.](https://en.wikipedia.org/wiki/1_(Beatles_album)). But looking closely, this is a combination of number one hits in the USA and UK across various lists, whereas this dataset is just for "billboard".
@@ -542,18 +538,18 @@ billboard_clean %>%
 
 ```
 ## # A tibble: 26 x 4
-##     rank                        title      artist  year
-##    <dbl>                        <chr>       <chr> <dbl>
-##  1     1     I Want to Hold Your Hand The Beatles  1964
-##  2     2                She Loves You The Beatles  1964
-##  3    13           A Hard Day's Night The Beatles  1964
-##  4    14                   Love Me Do The Beatles  1964
-##  5    16             Please Please Me The Beatles  1964
-##  6    40              Twist and Shout The Beatles  1964
-##  7    52            Can't Buy Me Love The Beatles  1964
-##  8    55 Do You Want to Know a Secret The Beatles  1964
-##  9    95     I Saw Her Standing There The Beatles  1964
-## 10     7                        Help! The Beatles  1965
+##     rank title                        artist       year
+##    <dbl> <chr>                        <chr>       <dbl>
+##  1  1.00 I Want to Hold Your Hand     The Beatles  1964
+##  2  2.00 She Loves You                The Beatles  1964
+##  3 13.0  A Hard Day's Night           The Beatles  1964
+##  4 14.0  Love Me Do                   The Beatles  1964
+##  5 16.0  Please Please Me             The Beatles  1964
+##  6 40.0  Twist and Shout              The Beatles  1964
+##  7 52.0  Can't Buy Me Love            The Beatles  1964
+##  8 55.0  Do You Want to Know a Secret The Beatles  1964
+##  9 95.0  I Saw Her Standing There     The Beatles  1964
+## 10  7.00 Help!                        The Beatles  1965
 ## # ... with 16 more rows
 ```
 
@@ -573,17 +569,17 @@ billboard_clean %>%
 
 ```
 ## # A tibble: 2,768 x 2
-##             artist n_times_in_100
-##              <chr>          <int>
-##  1         Madonna             35
-##  2      Elton John             26
-##  3     The Beatles             26
-##  4   Janet Jackson             24
-##  5    Mariah Carey             24
+##    artist          n_times_in_100
+##    <chr>                    <int>
+##  1 Madonna                     35
+##  2 Elton John                  26
+##  3 The Beatles                 26
+##  4 Janet Jackson               24
+##  5 Mariah Carey                24
 ##  6 Michael Jackson             22
-##  7   Stevie Wonder             22
-##  8         Rihanna             20
-##  9    Taylor Swift             20
+##  7 Stevie Wonder               22
+##  8 Rihanna                     20
+##  9 Taylor Swift                20
 ## 10 Whitney Houston             19
 ## # ... with 2,758 more rows
 ```
@@ -641,18 +637,18 @@ billboard_clean %>%
 
 ```
 ## # A tibble: 35 x 5
-##     rank             title  artist  year rank_tally
-##    <dbl>             <chr>   <chr> <dbl>      <int>
-##  1    35        Borderline Madonna  1984          1
-##  2    66        Lucky Star Madonna  1984          2
-##  3    79           Holiday Madonna  1984          3
-##  4     2     Like a Virgin Madonna  1985          4
-##  5     9     Crazy for You Madonna  1985          5
-##  6    58     Material Girl Madonna  1985          6
-##  7    81             Angel Madonna  1985          7
-##  8    98      Dress You Up Madonna  1985          8
-##  9    29 Papa Don't Preach Madonna  1986          9
-## 10    35      Live to Tell Madonna  1986         10
+##     rank title             artist   year rank_tally
+##    <dbl> <chr>             <chr>   <dbl>      <int>
+##  1 35.0  Borderline        Madonna  1984          1
+##  2 66.0  Lucky Star        Madonna  1984          2
+##  3 79.0  Holiday           Madonna  1984          3
+##  4  2.00 Like a Virgin     Madonna  1985          4
+##  5  9.00 Crazy for You     Madonna  1985          5
+##  6 58.0  Material Girl     Madonna  1985          6
+##  7 81.0  Angel             Madonna  1985          7
+##  8 98.0  Dress You Up      Madonna  1985          8
+##  9 29.0  Papa Don't Preach Madonna  1986          9
+## 10 35.0  Live to Tell      Madonna  1986         10
 ## # ... with 25 more rows
 ```
 

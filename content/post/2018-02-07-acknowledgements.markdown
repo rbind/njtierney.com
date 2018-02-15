@@ -65,7 +65,7 @@ myself beyond my own limits.
 > Thank you to the [Braggians](https://bragqut.wordpress.com/), for the fortnightly meetings and many interesting
 discussions over the years. In particular, thank you also to [Ben Fitzpatrick](http://brfitzpatrick.github.io/),
 [Alex Simmons](https://scholar.google.com/citations?user=plaGy54AAAAJ&hl=en) and [Matt Sutton](https://bragqut.wordpress.com/people/matthew-sutton/), for helping me understand R, C++, and linear
-programming. Thank you also to Matthew Moores, for your support and mentorship
+programming. Thank you also to [Matthew Moores](), for your support and mentorship
 at critical times in my journey.
 
 > Thank you to the members of the fantastic R community. In particular, the
