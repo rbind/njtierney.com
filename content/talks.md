@@ -4,7 +4,9 @@ title: Talks
 
 # 2018
 
-- [2018/02/13: Oh no, why is that missing? Practical tools for missing data.](https://talks.updog.co/barugs2018/2018-02-13-barugs.html#1)
+- [2017/02/15: Why is that missing, and what can we do about it? Tools for missing data and beyond, Genentech, San Francisco, USA](https://talks.updog.co/genentech2018/2018-02-15-genentech.html#1)
+
+- [2018/02/13: Oh no, why is that missing? Practical tools for missing data, BARUGS, San Francisco, USA](https://talks.updog.co/barugs2018/2018-02-13-barugs.html#1)
 
 # 2017
 

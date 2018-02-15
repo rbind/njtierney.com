@@ -12,7 +12,7 @@ Step two: [download RStudio](https://www.rstudio.com/products/rstudio/download2/
 
 Step three: [Read R for Data Science](http://r4ds.had.co.nz/). This is a great guide written by Hadley Wickham and Garrett Grolemund It introduces the principles of the [`tidyverse`](http://tidyverse.org/) - a set of R packages that play really well together. They cover tools to data reading in/out, manipulate data, perform data visualisation, and tools for modelling, summarising models, and communiating results.
 
-If you are having problems with getting R or RStudio, check out [this guide](https://github.com/fawda123/swmp_installR/blob/master/R_install_guide.pdf), from [this guy](https://beckmw.wordpress.com/2014/09/28/back-to-square-one-r-and-rstudio-installation/). It covers installing R and RStudio in a little more detail.
+If you are having problems with getting R or RStudio, check out [this guide](https://github.com/fawda123/swmp_installR/blob/master/R_install_guide.pdf), from [this person (can't find their name on their website )](https://beckmw.wordpress.com/2014/09/28/back-to-square-one-r-and-rstudio-installation/). It covers installing R and RStudio in a little more detail.
 
 # Learning and Troubleshooting with R
 
