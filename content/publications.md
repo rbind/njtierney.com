@@ -7,18 +7,19 @@ title: Publications
 
 # Journal Publications
 
-[**Tierney, Nicholas J.**, Fiona A. Harden, Maurice J. Harden, and Kerrie L. Mengersen. 2015. “Using Decision Trees to Understand Structure in Missing Data.” _BMJ Open_ 5 (6). bmjopen.bmj.com: e007450.](http://bmjopen.bmj.com/content/5/6/e007450.full)
+`2015` [“Using Decision Trees to Understand Structure in Missing Data.” **Tierney, N.J.,** Mengersen, K., Harden, F., Harden M.  _BMJ Open_ 5 (6).  doi:10.1136/bmjopen-2014-007450](http://bmjopen.bmj.com/content/5/6/e007450.full).
 
-[**Tierney, Nicholas J.** "visdat: Visualising Whole Data Frames", _The Journal of Open Source Software_ 2 (16) doi: 10.21105/joss.00355](http://joss.theoj.org/papers/10.21105/joss.00355)
+`2016` ["Visualisation and statistical modelling techniques for the management of inventory stock levels" Sweatman, W.L., McGree, J., Carstens, C.J., Foster, K.J., Liu, S., **Tierney, N.J.,** Trednick, E., Zaitouny, A. _ANZIAM Journal_ 57, 130-162](https://journal.austms.org.au/ojs/index.php/ANZIAMJ/article/view/10225).
 
-[**Tierney, NJ.**,  Reinhold, J., Mira, A., Weiser, M., Burkart, R., Benvenuti, C., Aurrichio, A.  "Novel relocation methods for automatic external defibrillator improve out-of-hospital cardiac arrest coverage under limited resources" _Resuscitation , Volume 125 , 83 - 89_. doi: 10.1016/j.resuscitation.2018.01.055](ttps://doi.org/10.1016/j.resuscitation.2018.01.055)
+`2017` [**Tierney, Nicholas J.** "visdat: Visualising Whole Data Frames", _The Journal of Open Source Software_ 2 (16) doi: 10.21105/joss.00355](http://joss.theoj.org/papers/10.21105/joss.00355)
+
+`2018` [**Tierney, NJ.**,  Reinhold, J., Mira, A., Weiser, M., Burkart, R., Benvenuti, C., Aurrichio, A.  "Novel relocation methods for automatic external defibrillator improve out-of-hospital cardiac arrest coverage under limited resources" _Resuscitation , Volume 125 , 83 - 89_. doi: 10.1016/j.resuscitation.2018.01.055](https://doi.org/10.1016/j.resuscitation.2018.01.055)
 
 # Under Review or in Preparation
 
-`2017` **Tierney, NJ.** Cook, D., Fay, C._, "Tidy Missing Data" _Journal of Computational and Graphical Statistics_. __In Preparation__
+`2018` "Bayesian Approaches to Modelling Occupational Health." **Tierney, N.J.** Mengersen, K., Harden, F., Harden, M. _BMJ Open_. __Submitted__.
 
-`2018` **Tierney, NJ.** Mengersen, K., Clifford, S., Drovandi, S., "Bayesian Approaches to Modelling Occupational Health." _BM Open_. __In Preperation__
-
+`2018` **Tierney, NJ.** Cook, D., Fay, C._, "Tidy Missing Data" _Journal of Computational and Graphical Statistics_. __In Preparation__
 
 # Pre-Print
 
@@ -26,7 +27,9 @@ title: Publications
 
 # Posters
 
-`2017` "Now you see it? Now you don’t? The role of graphics in identifying MCMC convergence" **Tierney, NJ.**, Cook, D, McBain, M. _Bayes on the Beach, Gold Coast, Australia_. [PDF](https://njtierney.updog.co/img/2017-11-29-poster-ppt-botb.pdf) 
+`2018` "Tidy Principles for Missing Data Exploration using `naniar`" **Tierney, NJ.** _rstudioconf18, San Diego, USA_. [PDF](https://njtierney.updog.co/img/rstudioconf18-tidy-principles-for-missing-data.pdf) 
+
+`2017` "Now you see it? Now you don't? The role of graphics in identifying MCMC convergence" **Tierney, NJ.**, Cook, D, McBain, M. _Bayes on the Beach, Gold Coast, Australia_. [PDF](https://njtierney.updog.co/img/2017-11-29-poster-ppt-botb.pdf) 
 
 `2016` "Bayesian Approachs in Occupational Health Surveillance" **Tierney, NJ.**, Mengersen, K., Clifford, S., Drovandi, C., Harden, F., Harden, M. _World Meeting for the International Society for Bayesian Analysis_
 
