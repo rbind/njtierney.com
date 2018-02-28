@@ -19,7 +19,7 @@ While I'm at it - naniar also has a nice hex sticker, thanks to [Oz Locke of Cud
 knitr::include_graphics("https://njtierney.updog.co/img/hex-naniar.png")
 ```
 
-It is inspired by the lampost from CS Lewis' "Narnia", and highlights that it focusses on NA values, as well as this idea of "shining a light" on missing data, whilst containing a missing piece. I love it.
+It is inspired by the lampost from CS Lewis' "Narnia", and highlights that it focusses on NA values, as well as this idea of "shining a light" on missing data, whilst containing a missing piece.
 
 ```{r gif-narnia-lampost, out.width = "50%", echo = FALSE, fig.align='center'}
 knitr::include_graphics("https://njtierney.updog.co/gifs/narnia-lampost.gif")
