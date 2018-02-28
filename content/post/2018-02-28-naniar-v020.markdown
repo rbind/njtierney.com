@@ -435,7 +435,7 @@ where_na(airquality)
 ## [44,]  98   2
 ```
 
-###  `bind_shadow` gains a `only_miss` argument. 
+###  `bind_shadow` gains an `only_miss` argument. 
 
 When set to FALSE (the default) it will bind a dataframe with all of the variables duplicated with their shadow. Setting this to TRUE will bind variables only those variables that contain missing values.
 
