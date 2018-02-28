@@ -37,29 +37,31 @@ naniar is a [tidyverse](https://www.tidyverse.org/) friendly package for explori
 4. Explore why data is missing
 5. Evaluate imputed values
 
-I've given a brief overview of this process in the vignette ["getting started"](http://naniar.njtierney.com/articles/getting-started-w-naniar.html), which I recommend you take a look at to get a quick overview of the capabilities in naniar.
+I've described this process in the vignette ["getting started"](http://naniar.njtierney.com/articles/getting-started-w-naniar.html), which I recommend you take a look at to get a quick overview of the capabilities in naniar.
 
 # What is new in version 0.2.0?
 
 ## Scan for possible missing values with `miss_scan_count`. 
 
 `miss_scan_count` makes it easier for users to search for particular
-occurences of these values across their variables. This is handy when you think you might have some suspect values in your dataset and you want to see if they appear in the dataset.
+occurences of values in a dataset, across variables. This is handy when you think you might have some suspect values in your dataset and you want to see if they appear in the dataset.
 
 Let's create a small dataframe containing some offending features, such as -99, and "N/A", to show how this works:
 
 ```{r create-small-test}
 
 dat_test <- tibble::tribble(~x,  ~y,    ~z,
-                         1,   "A",   -100,
-                         3,   "N/A", -99,
-                         NA,  NA,    -98,
-                         -99, "E",   -101,
-                         -98, "F",   -1)
+                            1,   "A",   -100,
+                            3,   "N/A", -99,
+                            NA,  NA,    -98,
+                            -99, "E",   -101,
+                            -98, "F",   -1)
 
 ```
 
 You specify the things you want to scan for with the "search" argument, which takes a vector, and counts the number of times those features appear in each column.
+
+So, for example, we cna look at the number of times that -99 appears in a dataset.
 
 ```{r miss-scan-count}
 
@@ -67,25 +69,38 @@ library(naniar)
 
 miss_scan_count(data = dat_test, search = -99)
 
-miss_scan_count(data = dat_test, search = c(-99,-98))
+```
 
-miss_scan_count(data = dat_test, search = c("-99","-98","N/A"))
+This tells us that we have -99 appearing in the variables `x` and `z`.
+
+We can also look at the number of times that we have -99, -98, and "N/A".
+
+```{r miss-scan-count-2}
+
+miss_scan_count(data = dat_test, search = c(-99,-98,"N/A"))
 
 ```
 
+This tells us that at least one of these values appears in `x` twice, `y` once, and `z` twice.
+
+What to do once you find these values?
 
 ## Replace values with NA
 
-New ["scoped variants"](http://dplyr.tidyverse.org/reference/scoped.html) of `replace_with_na` make it more powerful to find and replace particular values with an NA value. Thankyou to [Colin Fay](http://colinfay.me/) for his valuable work on this!
+You can use the new ["scoped variants"](http://dplyr.tidyverse.org/reference/scoped.html) of `replace_with_na` to find and replace particular values with an NA value. Thankyou to [Colin Fay](http://colinfay.me/) for his valuable work on this!
 
-`replace_with_na_all` replaces all NAs across the dataframe that meet a specified condition, using the syntax `~.x == -99`.
+### `replace_with_na_all` 
+
+Replace all NAs across the dataframe that meet a specified condition, using the syntax `~.x == -99`.
 
 ```{r replace-with-na-all}
 dat_test %>%
   replace_with_na_all(~.x == -99)
 ```
 
-`replace_with_na_at` replaces all NAs across for specified variables
+### `replace_with_na_at` 
+
+Replace all NAs across for specified variables
 
 ```{r replace-with-na-at}
 dat_test %>%
@@ -94,7 +109,9 @@ dat_test %>%
 
 ```
 
-`replace_with_na_if` replaces all NAs for those variables that satisfy some predicate function (e.g., is.character)
+### `replace_with_na_if` 
+
+Replace all NAs for those variables that satisfy some predicate function (e.g., is.character)
 
 ```{r replace-with-na-if}
 dat_test %>%
@@ -107,63 +124,83 @@ You can read more in the vignette ["replace with NA"](http://naniar.njtierney.co
 
 ## Speed improvements:
 
-Thanks to the help, contributions, and discussion with [Romain François](https://github.com/romainfrancois) and [Jim Hester](https://github.com/jimhester), naniar now has greatly improved speed for calculating the missingness in each row. These speedups should continue to improve in future releases.
+Thanks to the help, contributions, and discussion with [Romain François](https://github.com/romainfrancois) and [Jim Hester](https://github.com/jimhester), naniar now has greatly improved speed for calculating the missingness in each row (at least an order of magnitude!). These speedups should continue to improve in future releases.
 
 ## Convenience functions
 
-`n_miss_row` calculates the number of missing values in each row, returning a vector. 
+### `n_miss_row` 
+
+Calculate the number of missing values in each row, returning a vector. 
 
 ```{r n-miss-row}
 n_miss_row(airquality)
 ```
 
-There are also 3 other functions which are similar in spirit, these return a vector of the number of complete obserations, 
+There are also 3 other functions which are similar in spirit.
 
-`n_complete_row`
+### `n_complete_row` 
+
+Return a vector of the number of complete obserations, 
+
 
 ```{r n-complete-row}
 n_complete_row(airquality)
 ```
 
-`prop_miss_row`
+### `prop_miss_row` 
 
-the proportion of missings in a row
+Return the proportion of missings in a row
 
 
 ```{r prop-miss-row}
 prop_miss_row(airquality)
 ```
 
-`prop_complete_row`
+### `prop_complete_row` 
 
- and the proportion of complete obserations in a row.
+Return the proportion of complete obserations in a row.
 
 ```{r prop-complete-row}
 prop_complete_row(airquality)
 ```
 
-
-
 ## Calculate missingness clusters
 
-`add_miss_cluster` is a new function that calculates a cluster of missingnessfor each row, using `hclust`. This can be useful in exploratory modelling of missingness, similar to [Tierney et al 2015](http://bmjopen.bmj.com/content/5/6/e007450). and [Barnett et al. 2017](http://bmjopen.bmj.com/content/7/10/e017284)
+### `add_miss_cluster` 
+
+This calculates a cluster of missingnessfor each row, using `hclust`. This can be useful in exploratory modelling of missingness, similar to [Tierney et al 2015](http://bmjopen.bmj.com/content/5/6/e007450). and [Barnett et al. 2017](http://bmjopen.bmj.com/content/7/10/e017284)
 
 ```{r add-miss-cluster}
 
 add_miss_cluster(airquality)
 
+```
+
+You can constrain the number of clusters with `n_clusters`
+
+```{r add-miss-cluster-nclust}
+
 add_miss_cluster(airquality, 
                  n_clusters = 3)
+
+```
+
+And also specify the cluster method, with `cluster_method`
+
+```{r}
 
 add_miss_cluster(airquality, 
                  cluster_method = "ward.D")
 
 ```
 
+these options are taken from the `stats::hclust` helpfile, and include: "ward.D", "ward.D2", "single", "complete", "average" (= UPGMA), "mcquitty" (= WPGMA), "median" (= WPGMC) or "centroid" (= UPGMC).
 
 # Little things
 
-`which_na`, a replacement for `which(is.na(x))`, 
+### `which_na`
+
+A replacement for `which(is.na(x))`, 
 
 ```{r which-na}
 
@@ -172,7 +209,11 @@ which_na(airquality)
 ```
 
 
-and `where_na` - a function that returns the positions of NA values. 
+### `where_na`
+
+A function that returns the positions of NA values. 
+
+For a dataframe it returns a matrix of row and col positions of NAs, and for a vector it returns a vector of positions of NAs.
 
 ```{r where-na}
 
@@ -180,9 +221,9 @@ where_na(airquality)
 
 ```
 
-For a dataframe it returns a matrix of row and col positions of NAs, and for a vector it returns a vector of positions of NAs.
+###  `bind_shadow` gains a `only_miss` argument. 
 
-`bind_shadow` gains a `only_miss` argument. When set to FALSE (the default) it will bind a dataframe with all of the variables duplicated with their shadow. Setting this to TRUE will bind variables only those variables that contain missing values.
+When set to FALSE (the default) it will bind a dataframe with all of the variables duplicated with their shadow. Setting this to TRUE will bind variables only those variables that contain missing values.
 
 ```{r bind-shadow}
 
@@ -192,7 +233,9 @@ bind_shadow(dat_test, only_miss = TRUE)
 
 ```
 
-Cleaned up the visualisation of `gg_miss_case` to be clearer and less cluttered ( [#117](https://github.com/njtierney/naniar/issues/117))
+### Cleaned up the visualisation of `gg_miss_case`
+
+It is now clearer and less cluttered ( [#117](https://github.com/njtierney/naniar/issues/117))
 
 ```{r gg-miss-case}
 
@@ -209,7 +252,9 @@ gg_miss_case(airquality, order_cases = TRUE)
 ```
 
 
-- Added a `facet` argument to `gg_miss_var`, `gg_miss_case`, and `gg_miss_span`. This makes it easier for users to visualise these plots across the values of another variable. In the future I will consider adding `facet` to the other shorthand plotting function, but at the moment these seemed to be the ones that would benefit the most from this feature.
+### Added a `facet` argument to `gg_miss_var`, `gg_miss_case`, and `gg_miss_span`. 
+
+This makes it easier for users to visualise these plots across the values of another variable. In the future I will consider adding `facet` to the other shorthand plotting function, but at the moment these seemed to be the ones that would benefit the most from this feature.
 
 ```{r gg-miss-facets}
 
@@ -223,7 +268,6 @@ gg_miss_span(pedestrian,
              facet = sensor_name)
 
 ```
-
 
 
 Updated the vignette ["Gallery of Missing Data Visualisations"](http://naniar.njtierney.com/articles/naniar-visualisation.html) to include the `facet` features and `order_cases`.
