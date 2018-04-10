@@ -27,7 +27,7 @@ title: Publications
 
 # Posters
 
-`2018` "Tidy Principles for Missing Data Exploration using `naniar`" **Tierney, NJ.** _rstudioconf18, San Diego, USA_. [PDF](https://njtierney.updog.co/img/rstudioconf18-tidy-principles-for-missing-data.pdf) 
+`2018` "Tidy Principles for Missing Data Exploration using `naniar`" **Tierney, NJ.** _rstudioconf18, San Diego, USA_.[PNG](https://njtierney.updog.co/img/rstudioconf18-tidy-principles-for-missing-data.png)[PDF](https://njtierney.updog.co/img/rstudioconf18-tidy-principles-for-missing-data.pdf) 
 
 `2017` "Now you see it? Now you don't? The role of graphics in identifying MCMC convergence" **Tierney, NJ.**, Cook, D, McBain, M. _Bayes on the Beach, Gold Coast, Australia_. [PDF](https://njtierney.updog.co/img/2017-11-29-poster-ppt-botb.pdf) 
 
