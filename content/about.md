@@ -4,9 +4,7 @@ title: About Me
 
 My name is Nick Tierney. I recently completed my PhD in Statistics at QUT, and am now a Research Fellow in Statistics at Monash University working with [Rob Hyndman](https://robjhyndman.com/) and [Di Cook](http://dicook.org/) in the NUMBAT group. 
 
-My research is currently about making better tools to explore, wrangle, and model missing data. 
-
-My research focuses on improving decision making and inference in research. To help realise this I produce software as a medium of impact. My work so far has focussed on the importance of knowing your data ( [`visdat`](https://github.com/njtierney/visdat) ), and on creating principles and tools that make it easier to work with, explore, and model missing data  ( [`naniar`](https://github.com/njtierney/naniar)). I am also interested in I have also created an optimisation model that identifies and possibly relocates facilities to maximise their coverage on a population, (`maxcovr`), and testing if commonly used diagnostics for MCMC methods are used effectively by researchers.
+My research focuses on improving decision making and inference in research. To help realise this I produce software as a medium of impact. My work so far has focussed on the importance of knowing your data ( [`visdat`](https://github.com/njtierney/visdat) ), and on creating principles and tools that make it easier to work with, explore, and model missing data  ( [`naniar`](https://github.com/njtierney/naniar)). I have also created an optimisation model that identifies and possibly relocates facilities to maximise their coverage on a population, (`maxcovr`), and am interested in testing if commonly used diagnostics for MCMC methods are used effectively by researchers.
 
 I love the [R programming language](https://www.r-project.org/) and how it has transformed my world. I am a proud member of the [rOpenSci](https://ropensci.org/) community, a collective that works to make science open using R.
 
