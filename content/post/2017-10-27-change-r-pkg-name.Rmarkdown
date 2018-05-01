@@ -38,7 +38,7 @@ When you change your package name, here is a list of things you need to do.
 4. update the .RProj name
 5. update the folder name
 6. update your package-<packagename>.R file
-7. Do a search (Cmd/Ctr + Shift + F) and look for mentions of your package nbame
+7. Do a search (Cmd/Ctr + Shift + F) and look for mentions of your package name
 
 And that's basically it!
 
@@ -55,7 +55,7 @@ Hooray, now to handle the git business.
 
 # Part 2: Changing the github name
 
-Now, with this final setp, what you want to do is go into your github repo, go to settings, then change the repo name.
+Now, with this final setup, what you want to do is go into your github repo, go to settings, then change the repo name.
 
 ![](https://njtierney.updog.co/img/njt-git-name-change.png)
 
