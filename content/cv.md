@@ -135,7 +135,7 @@ I'm a PhD candidate in my final year of a 4 year program through the [Industry D
 
 ### Science Communication
 
-`2016` ["Science Meets Parliament"](http://scienceandtechnologyaustralia.org.au/focus-on/science-meets-parliament-2016/), Canberra, Australia, __fully sponsored travel__ provided by [SSAI](http://www.statsoc.org.au/).
+`2016` ["Science Meets Parliament"](http://scienceandtechnologyaustralia.org.au/focus-on/science-meets-parliament-2016/), Canberra, Australia, __fully sponsored travel__ provided by [SSA](http://www.statsoc.org.au/).
 
 `2013` ["Statistics for Journalists", _Australian Science Media Centre_ Brisbane, Australia](http://www.njtierney.com/statistics/teaching/2013/11/01/statistics-for-journalists/).
 
@@ -145,7 +145,7 @@ I'm a PhD candidate in my final year of a 4 year program through the [Industry D
 
 `2016` Organiser of the first [rOpenSci Unconference in Australia](auunconf.ropensci.org).
 
-### SSA
+### Statistics Society of Australia
 
 `2017-` [SSA](http://www.statsoc.org.au/) General Committee Member for Victorian Branch of SSA.
 
