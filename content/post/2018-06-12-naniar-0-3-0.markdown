@@ -28,6 +28,10 @@ There were a few things that changed in this release, so let's break them down n
 
 ## Visualising patterns of missingness
 
+![](https://njtierney.updog.co/img/naniar-pattern.jpg)<!-- -->
+
+<a style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px" href="https://unsplash.com/@albertotriano?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Alberto Triano"><span style="display:inline-block;padding:2px 3px"><svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-1px;fill:white" viewBox="0 0 32 32"><title>unsplash-logo</title><path d="M20.8 18.1c0 2.7-2.2 4.8-4.8 4.8s-4.8-2.1-4.8-4.8c0-2.7 2.2-4.8 4.8-4.8 2.7.1 4.8 2.2 4.8 4.8zm11.2-7.4v14.9c0 2.3-1.9 4.3-4.3 4.3h-23.4c-2.4 0-4.3-1.9-4.3-4.3v-15c0-2.3 1.9-4.3 4.3-4.3h3.7l.8-2.3c.4-1.1 1.7-2 2.9-2h8.6c1.2 0 2.5.9 2.9 2l.8 2.4h3.7c2.4 0 4.3 1.9 4.3 4.3zm-8.6 7.5c0-4.1-3.3-7.5-7.5-7.5-4.1 0-7.5 3.4-7.5 7.5s3.3 7.5 7.5 7.5c4.2-.1 7.5-3.4 7.5-7.5z"></path></svg></span><span style="display:inline-block;padding:2px 3px">Alberto Triano</span></a>
+
 Visualising the different co-occurrences of missingness is tricky. This is where
 you want to show where there are cases or variables that have the same number of
 missings. You can now visualise these missingness patterns using `upset` 
@@ -150,19 +154,6 @@ These can be combined to look for unusual missing values in a dataset with `miss
                           -99, "E",   -101,
                           -98, "F",   -1)
 
- miss_scan_count(dat_ms,-99)
-```
-
-```
-## # A tibble: 3 x 2
-##   Variable     n
-##   <chr>    <int>
-## 1 x            1
-## 2 y            0
-## 3 z            1
-```
-
-```r
  miss_scan_count(dat_ms,c(-99,-98))
 ```
 
@@ -251,6 +242,11 @@ dat_ms %>%
 
 ## Imputation 
 
+![](https://njtierney.updog.co/img/naniar-impute.jpg)<!-- -->
+
+
+<a style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px" href="https://unsplash.com/@samuelzeller?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Samuel Zeller"><span style="display:inline-block;padding:2px 3px"><svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-1px;fill:white" viewBox="0 0 32 32"><title>unsplash-logo</title><path d="M20.8 18.1c0 2.7-2.2 4.8-4.8 4.8s-4.8-2.1-4.8-4.8c0-2.7 2.2-4.8 4.8-4.8 2.7.1 4.8 2.2 4.8 4.8zm11.2-7.4v14.9c0 2.3-1.9 4.3-4.3 4.3h-23.4c-2.4 0-4.3-1.9-4.3-4.3v-15c0-2.3 1.9-4.3 4.3-4.3h3.7l.8-2.3c.4-1.1 1.7-2 2.9-2h8.6c1.2 0 2.5.9 2.9 2l.8 2.4h3.7c2.4 0 4.3 1.9 4.3 4.3zm-8.6 7.5c0-4.1-3.3-7.5-7.5-7.5-4.1 0-7.5 3.4-7.5 7.5s3.3 7.5 7.5 7.5c4.2-.1 7.5-3.4 7.5-7.5z"></path></svg></span><span style="display:inline-block;padding:2px 3px">Samuel Zeller</span></a>
+
 Some simple imputation functions have been added into `naniar`. These are __not__ what I would recommend using to draw inferences, but instead something to explore structure in the missingness, and to actually visualise missing values.
 
 The are two main imputation functions that have been added:
@@ -280,7 +276,7 @@ airquality %>%
 
 `impute_below` Performs as for `shadow_shift`, but performs on all columns (`impute_below` doesn't have an `_all` suffix). This means that it imputes missing values 10% below the range of the  data (powered by `shadow_shift`), to facilitate graphical exploration of  the data. In addition to this, `impute_below` and `shadow_shift` gain arguments `prop_below` and `jitter`, to control  the degree of shift, and also the extent of jitter.
 
-So 10% jitter
+So 10% jitter (default)
 
 
 ```r
@@ -422,20 +418,6 @@ are_na(airquality) %>% head()
 ## [6,] FALSE    TRUE FALSE FALSE FALSE FALSE
 ```
 
-```r
-are_na(airquality) %>% tail()
-```
-
-```
-##        Ozone Solar.R  Wind  Temp Month   Day
-## [148,] FALSE   FALSE FALSE FALSE FALSE FALSE
-## [149,] FALSE   FALSE FALSE FALSE FALSE FALSE
-## [150,]  TRUE   FALSE FALSE FALSE FALSE FALSE
-## [151,] FALSE   FALSE FALSE FALSE FALSE FALSE
-## [152,] FALSE   FALSE FALSE FALSE FALSE FALSE
-## [153,] FALSE   FALSE FALSE FALSE FALSE FALSE
-```
-
 There are also `is_shadow` and `are_shadow` functions, to determine if something contains a shadow column. Similar to `rlang::is_na` and `rland::are_na`, `is_shadow` This might be revisited at a later point to reflect the "shadow values" as "shades". See `is_shade` and `any_shade` in `add_label_shadow`.
 
 
@@ -491,8 +473,13 @@ miss_var_which(airquality)
 Added some detail on alternative methods for replacing with NA in the vignette [replacing values with NA](http://naniar.njtierney.com/articles/replace-with-na.html).
 
 # Future work
+
+![](https://njtierney.updog.co/img/naniar-lego-future-work.jpg)<!-- -->
+
+
+<a style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px" href="https://unsplash.com/@danielkcheung?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Daniel Cheung"><span style="display:inline-block;padding:2px 3px"><svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-1px;fill:white" viewBox="0 0 32 32"><title>unsplash-logo</title><path d="M20.8 18.1c0 2.7-2.2 4.8-4.8 4.8s-4.8-2.1-4.8-4.8c0-2.7 2.2-4.8 4.8-4.8 2.7.1 4.8 2.2 4.8 4.8zm11.2-7.4v14.9c0 2.3-1.9 4.3-4.3 4.3h-23.4c-2.4 0-4.3-1.9-4.3-4.3v-15c0-2.3 1.9-4.3 4.3-4.3h3.7l.8-2.3c.4-1.1 1.7-2 2.9-2h8.6c1.2 0 2.5.9 2.9 2l.8 2.4h3.7c2.4 0 4.3 1.9 4.3 4.3zm-8.6 7.5c0-4.1-3.3-7.5-7.5-7.5-4.1 0-7.5 3.4-7.5 7.5s3.3 7.5 7.5 7.5c4.2-.1 7.5-3.4 7.5-7.5z"></path></svg></span><span style="display:inline-block;padding:2px 3px">Daniel Cheung</span></a>
     
-The next release of `naniar` 0.4.0 (codenamed "An Unexpected Meeting") will feature _alternative flavours of missing value_, something that I have been thinking about for a while now. You can see my current plan at the 0.4.0 milestone [here](https://github.com/njtierney/naniar/milestone/2), it should be out before [UseR! in Brisbane](), on the 9th July.
+The next release of `naniar` 0.4.0 (codenamed "An Unexpected Meeting") will feature [_alternative flavours of missing value_](https://github.com/njtierney/naniar/issues/50), something that I have been thinking about for a while now, performance improvements, and adding more vignettes. You can see my current plan at the 0.4.0 milestone [here](https://github.com/njtierney/naniar/milestone/2), it should be out before [UseR! in Brisbane](https://user2018.r-project.org/), on the 9th July.
 
 # Thanks
 
@@ -509,8 +496,6 @@ Thank you to everyone who has contributed to this package, whether it is with co
 - [Jessica Minnier](https://github.com/jminnier)
 - [Stephanie Zimmer](https://github.com/szimmer)
 - [Eric Nantz](https://github.com/thercast)
-
-You are all great!
 
 If anyone has any feedback, please feel free to [file an issue here on github](https://github.com/njtierney/naniar/issues/new), and if you want an hex stickers for naniar I'll happily mail one to you - send me an email!
 
