@@ -1,7 +1,7 @@
 ---
 title: 'naniar 0.3.1'
 author: ''
-date: '2018-06-08'
+date: '2018-06-12'
 slug: naniar-on-cran
 categories: [rstats]
 tags: []
@@ -153,7 +153,7 @@ There are two main imputation functions that have been added:
 
 `impute_below` amd `impute_mean` each have scoped variants that work for specific named columns, `_at` and `_if`, and `_all` for columns that satisfy some predicate function.
 
-This means `impute_below_at` can be used for specified columns, and `impute_below_if` will be applied on columns that satisfy some condition. For example, is.numeric. We can impute the mean for only numeric data, using `bind_shadow` and `add_label_shadow` to track the missing values for use in plotting:
+This means `impute_below_at` can be used for specified columns, and `impute_below_if` will be applied on columns that satisfy some condition. For example, is.numeric. We can impute the mean for only numeric data, using `bind_shadow` and `add_label_shadow` to track the missing values so we can plot them:
 
 ```{r impute-mean-if}
 airquality %>%
@@ -287,5 +287,7 @@ Thank you to everyone who has contributed to this package and it's development o
 - Luke Smith
 
 You are all great!
+
+If anyone has any feedback, please feel free to [file an issue here on github](https://github.com/njtierney/naniar/issues/new), and if you want an hex stickers for naniar I'll happily mail one to you - send me an email!
 
 [^1]: https://academic.oup.com/bioinformatics/article/33/18/2938/3884387

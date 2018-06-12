@@ -1,7 +1,7 @@
 ---
 title: 'naniar 0.3.1'
 author: ''
-date: '2018-06-08'
+date: '2018-06-12'
 slug: naniar-on-cran
 categories: [rstats]
 tags: []
@@ -43,7 +43,7 @@ riskfactors %>%
     UpSetR::upset()
 ```
 
-<img src="/post/2018-06-07-naniar-0-3-0_files/figure-html/show-upsetR-1.png" width="672" />
+<img src="/post/2018-06-12-naniar-0-3-0_files/figure-html/show-upsetR-1.png" width="672" />
 
 On the left is a plot of the number of missings in each individual variable (missingness is indicated here with `variable_NA`), and then on the right we have the size of the missingness in the combinations of variables. So here we see that out of the variables selected, the largest number of missings is about 72. This means that there are 72 rows where all five of these variables are missing. You can decide to look at more possible sets of missings by changing the `nsets` option in `upset` to be the same as the number of variables with missings - using the new `n_var_miss` function:
 
@@ -56,7 +56,7 @@ riskfactors %>%
     UpSetR::upset(nsets = risk_n_var_miss)
 ```
 
-<img src="/post/2018-06-07-naniar-0-3-0_files/figure-html/show-upset-all-1.png" width="672" />
+<img src="/post/2018-06-12-naniar-0-3-0_files/figure-html/show-upset-all-1.png" width="672" />
 
 There are more missingness patterns, and this is a little hard to read though, so use wisely!
 
@@ -69,7 +69,7 @@ The default colour for `gg_miss_case` and `gg_miss_var` is now  a lorikeet purpl
 gg_miss_case(airquality)
 ```
 
-<img src="/post/2018-06-07-naniar-0-3-0_files/figure-html/gg-miss-case-1.png" width="672" />
+<img src="/post/2018-06-12-naniar-0-3-0_files/figure-html/gg-miss-case-1.png" width="672" />
  
 
 ```r
@@ -84,7 +84,7 @@ gg_miss_var(airquality)
 gg_miss_which(airquality)
 ```
 
-<img src="/post/2018-06-07-naniar-0-3-0_files/figure-html/gg-miss-which-1.png" width="672" />
+<img src="/post/2018-06-12-naniar-0-3-0_files/figure-html/gg-miss-which-1.png" width="672" />
 
 
 `gg_miss_fct` now uses a minimal theme and tilts the axis labels [#118](https://github.com/njtierney/naniar/issues/118). This plot shows us the amount of missings in each column of a dataset for a given factor.
@@ -94,7 +94,7 @@ gg_miss_which(airquality)
 gg_miss_fct(x = riskfactors, fct = marital)
 ```
 
-<img src="/post/2018-06-07-naniar-0-3-0_files/figure-html/gg_miss_fct-1.png" width="672" />
+<img src="/post/2018-06-12-naniar-0-3-0_files/figure-html/gg_miss_fct-1.png" width="672" />
 
 Aesthetics now map as expected in `geom_miss_point()`. This means you can write 
 things like `geom_miss_point(aes(colour = Month))` and it works appropriately. This was fixed by [Luke Smith](https://github.com/seasmith) in [#144](https://github.com/njtierney/naniar/pull/144), fixing [#137](https://github.com/njtierney/naniar/issues/137). This removes the colouring provides by default, as it is overrided.
@@ -108,7 +108,7 @@ ggplot(airquality,
   geom_miss_point()  
 ```
 
-<img src="/post/2018-06-07-naniar-0-3-0_files/figure-html/geom-miss-point-1.png" width="672" />
+<img src="/post/2018-06-12-naniar-0-3-0_files/figure-html/geom-miss-point-1.png" width="672" />
 
 
 ## List common types of missing.
@@ -228,7 +228,7 @@ There are two main imputation functions that have been added:
 
 `impute_below` amd `impute_mean` each have scoped variants that work for specific named columns, `_at` and `_if`, and `_all` for columns that satisfy some predicate function.
 
-This means `impute_below_at` can be used for specified columns, and `impute_below_if` will be applied on columns that satisfy some condition. For example, is.numeric. We can impute the mean for only numeric data, using `bind_shadow` and `add_label_shadow` to track the missing values for use in plotting:
+This means `impute_below_at` can be used for specified columns, and `impute_below_if` will be applied on columns that satisfy some condition. For example, is.numeric. We can impute the mean for only numeric data, using `bind_shadow` and `add_label_shadow` to track the missing values so we can plot them:
 
 
 ```r
@@ -242,7 +242,7 @@ airquality %>%
     geom_point()
 ```
 
-<img src="/post/2018-06-07-naniar-0-3-0_files/figure-html/impute-mean-if-1.png" width="672" />
+<img src="/post/2018-06-12-naniar-0-3-0_files/figure-html/impute-mean-if-1.png" width="672" />
 
 `impute_below` Perfoms as for `shadow_shift`, but performs on all columns (`impute_below` doesn't have an `_all` suffix). This means that it imputes missing values 10% below the range of the  data (powered by `shadow_shift`), to facilitate graphical exloration of  the data. In addition to this, `impute_below` and `shadow_shift` gain arguments `prop_below` and `jitter`, to control  the degree of shift, and also the extent of jitter.
 
@@ -260,7 +260,7 @@ airquality %>%
     geom_point()
 ```
 
-<img src="/post/2018-06-07-naniar-0-3-0_files/figure-html/jitter-10-1.png" width="672" />
+<img src="/post/2018-06-12-naniar-0-3-0_files/figure-html/jitter-10-1.png" width="672" />
 
 So 20% jitter
 
@@ -276,7 +276,7 @@ airquality %>%
     geom_point()
 ```
 
-<img src="/post/2018-06-07-naniar-0-3-0_files/figure-html/jitter-20-1.png" width="672" />
+<img src="/post/2018-06-12-naniar-0-3-0_files/figure-html/jitter-20-1.png" width="672" />
 
 And 20% jitter plus 20% below:
 
@@ -293,7 +293,7 @@ airquality %>%
     geom_point()
 ```
 
-<img src="/post/2018-06-07-naniar-0-3-0_files/figure-html/jitter-20-below-20-1.png" width="672" />
+<img src="/post/2018-06-12-naniar-0-3-0_files/figure-html/jitter-20-below-20-1.png" width="672" />
 
 ## Handy Helpers
 
@@ -472,5 +472,7 @@ Thank you to everyone who has contributed to this package and it's development o
 - Luke Smith
 
 You are all great!
+
+If anyone has any feedback, please feel free to [file an issue here on github](https://github.com/njtierney/naniar/issues/new), and if you want an hex stickers for naniar I'll happily mail one to you - send me an email!
 
 [^1]: https://academic.oup.com/bioinformatics/article/33/18/2938/3884387
