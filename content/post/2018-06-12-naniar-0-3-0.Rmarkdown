@@ -15,22 +15,22 @@ knitr::include_graphics("https://njtierney.updog.co/img/naniar-strawberry.png")
 
 _Strawberry the cab horse turning into Fledge, the Pegasus, the first talking animal of Narnia_
 
-`naniar` is a R package that makes it easier to explore, analyse, and visualise missing data and imputed values. It is designed to be [tidyverse](https://www.tidyverse.org/)-friendly, so it works fluidly in an analysis workflow.
+`naniar` is an R package that makes it easier to explore, analyse, and visualise missing data and imputed values. It is designed to be [tidyverse](https://www.tidyverse.org/)-friendly, so it works fluidly in an analysis workflow.
 
-I encountered some pretty gnarly missing data when I first started my PhD, which was really frustrating. I wanted to do something about it, and the `naniar` package is the realisation of that frustration. Currently, `naniar` aims to make it easy to do the following:
+I encountered some pretty gnarly missing data when I first started my PhD, which was really frustrating. I wanted to do something about it, and the `naniar` package is the realisation of that frustration. `naniar` aims to make it easy to do the following:
 
 1. Find if there is missing data, and how much there is.
 1. Clean up, tidy, and recode missing values
 1. Explore why data is missing
 1. Evaluate imputed values
 
-I've written in more detail about how to get started with missing data in this ["getting started"](http://naniar.njtierney.com/articles/getting-started-w-naniar.html). I would recommend starting there for a quick tour of the features of missing data.
+I've written in more detail about how to get started with missing data in this ["getting started"](http://naniar.njtierney.com/articles/getting-started-w-naniar.html). I would recommend starting there for a quick tour of the features of `naniar`.
 
 There were a few things that changed in this release, so let's break them down now.
 
 ## Visualising patterns of missingness
 
-Visualising the different co-occurences of missingness is tricky. This is where
+Visualising the different co-occurrences of missingness is tricky. This is where
 you want to show where there are cases or variables that have the same number of
 missings. You can now visualise these missingness patterns using `upset` 
 plots from [`UpSetR` package](https://github.com/hms-dbmi/UpSetR)[^1]. To create these, you need to get the data into the right format using `as_shadow_upset`, and then call UpSetR:
@@ -55,11 +55,11 @@ riskfactors %>%
     UpSetR::upset(nsets = risk_n_var_miss)
 ```
 
-There are more missingness patterns, and this is a little hard to read though, so use wisely!
+There are more missingness patterns, and this one is a little tricky to read, so use wisely!
 
 ## New colours for gg_miss_case and gg_miss_var
 
-The default colour for `gg_miss_case` and `gg_miss_var` is now  a lorikeet purple, taken from from [ochRe package](https://github.com/ropenscilabs/ochRe). Previously, `gg_miss_var` had a different colour for each variable, but I found that this was unnecessary. Additionally, `gg_miss_case` is ordered by the most missing cases at the top, and also gains a `show_pct` option to be consistent with `gg_miss_var` [#153](https://github.com/njtierney/naniar/issues/153).
+The default colour for `gg_miss_case` and `gg_miss_var` is now  a lorikeet purple , taken from from [ochRe package](https://github.com/ropenscilabs/ochRe). Previously, `gg_miss_case` was light grey, which had poor contrast against a white background. `gg_miss_var` had a different colour for each variable, which I found  unnecessary. Additionally, `gg_miss_case` is ordered by the most missing cases at the top, and also gains a `show_pct` option for the x axis, to be consistent with `gg_miss_var` [#153](https://github.com/njtierney/naniar/issues/153).
 
 ```{r gg-miss-case}
 
@@ -72,7 +72,7 @@ gg_miss_var(airquality)
 ```
 
 
-`gg_miss_which` has been is rotated 90 degrees so it is easier to read variable names
+`gg_miss_which` shows us which variables have missings - it has been is rotated 90 degrees so it is easier to read variable names
 
 ```{r gg-miss-which}
 
@@ -113,7 +113,7 @@ knitr::include_graphics("https://njtierney.updog.co/gifs/narnia-kramer.gif")
 
 ```
 
-One that is rather frustrating is when there are hidden NA values lurking. Some famous ones that I've come into contact with are: " NA" and "NA ". `common_na_strings` is a vector of possible NA strings to watch out for, and `common_na_numbers` is a vector of possible NA numbers to be wary of:
+One that is rather frustrating is when there are hidden NA values lurking. Some notable examples are: " NA" and "NA ", and "N/A". `common_na_strings` is a vector of possible NA strings to watch out for, and `common_na_numbers` is a vector of possible NA numbers to be wary of:
 
 ```{r common-na-string}
 
@@ -139,19 +139,31 @@ These can be combined to look for unusual missing values in a dataset with `miss
  miss_scan_count(dat_ms,common_na_numbers)
 ```
 
+Or used in `replace_with_na` (but use with caution!!!)
+
+```{r  replace-with-na}
+
+dat_ms %>%
+  replace_with_na_all( ~.x %in% common_na_strings)
+
+dat_ms %>%
+  replace_with_na_all( ~.x %in% common_na_numbers)
+
+
+```
+
 ## Imputation 
 
-I've added some imputation functions into `naniar`. These are not what
-I would recommend using to draw inferenes, but instead something to explore structure in the missingness, and to actually visualise missing values.
+Some simple imputation functions have been added into `naniar`. These are __not__ what I would recommend using to draw inferences, but instead something to explore structure in the missingness, and to actually visualise missing values.
 
-There are two main imputation functions that have been added:
+The are two main imputation functions that have been added:
 
 * `impute_below`, and 
 * `impute_mean`.
 
 `impute_below` imputes values below the range of the data, so that they can be visualised. This is similar to `shadow_shift`, but framed at a whole dataframe. `impute_mean` imputes the mean, and for factors will imputes the mode, randomly choosing a tie breaker if there is a tie.
 
-`impute_below` amd `impute_mean` each have scoped variants that work for specific named columns, `_at` and `_if`, and `_all` for columns that satisfy some predicate function.
+`impute_below` and `impute_mean` each have scoped variants that work for specific named columns, `_at` and `_if`, and `_all` for columns that satisfy some predicate function.
 
 This means `impute_below_at` can be used for specified columns, and `impute_below_if` will be applied on columns that satisfy some condition. For example, is.numeric. We can impute the mean for only numeric data, using `bind_shadow` and `add_label_shadow` to track the missing values so we can plot them:
 
@@ -166,7 +178,7 @@ airquality %>%
     geom_point()
 ```
 
-`impute_below` Perfoms as for `shadow_shift`, but performs on all columns (`impute_below` doesn't have an `_all` suffix). This means that it imputes missing values 10% below the range of the  data (powered by `shadow_shift`), to facilitate graphical exloration of  the data. In addition to this, `impute_below` and `shadow_shift` gain arguments `prop_below` and `jitter`, to control  the degree of shift, and also the extent of jitter.
+`impute_below` Performs as for `shadow_shift`, but performs on all columns (`impute_below` doesn't have an `_all` suffix). This means that it imputes missing values 10% below the range of the  data (powered by `shadow_shift`), to facilitate graphical exploration of  the data. In addition to this, `impute_below` and `shadow_shift` gain arguments `prop_below` and `jitter`, to control  the degree of shift, and also the extent of jitter.
 
 So 10% jitter
 
@@ -210,7 +222,7 @@ airquality %>%
 
 ## Handy Helpers
 
-"Handy Helpers" are functions that make some small tasks with missing data more consistent and straightforward. In this release I introduced functions that extend off of `anyNA` and generalise to `any` and `all` cases, and also work for complete data. This means we have the functions:
+"Handy Helpers" are functions that make some small tasks with missing data more consistent and straightforward. This includes functions that extend from of `anyNA` and generalise to `any` and `all` cases, and also work for complete data. This means we have the functions:
 
 * `all_miss()` / `all_na()` equivalent to `all(is.na(x))`
 * `any_complete()` equivalent to `all(complete.cases(x))`
@@ -231,7 +243,7 @@ any_complete(mtcars)
 
 ```
 
-We also now have `complete` completements to functions [#150](https://github.com/njtierney/naniar/issues/150):
+We also now have `complete` complements to functions [#150](https://github.com/njtierney/naniar/issues/150):
 
 - `miss_var_pct`   -- `complete_var_pct`
 - `miss_var_prop`  -- `complete_var_prop` 
@@ -248,7 +260,7 @@ are_na(airquality) %>% head()
 are_na(airquality) %>% tail()
 ```
 
-There are also `is_shadow` and `are_shadow` functions, to determine if something contains a shadow column. Simimlar to `rlang::is_na` and `rland::are_na`, `is_shadow` This might be revisited at a later point to reflect the "shadow values" as "shades". See `is_shade` and `any_shade` in `add_label_shadow`.
+There are also `is_shadow` and `are_shadow` functions, to determine if something contains a shadow column. Similar to `rlang::is_na` and `rland::are_na`, `is_shadow` This might be revisited at a later point to reflect the "shadow values" as "shades". See `is_shade` and `any_shade` in `add_label_shadow`.
 
 ```{r is-are-shadow}
 is_shadow(airquality)
@@ -269,7 +281,7 @@ miss_var_which(airquality)
 
 `miss_var_summary` and `miss_case_summary` now return use `order = TRUE` by default, so cases and variables with the most missings are presented in  descending order. Fixing [#163](https://github.com/njtierney/naniar/issues/163)
 
-I've added some detail on alternative methods for replacing with NA in the vignette [replacing values with NA](http://naniar.njtierney.com/articles/replace-with-na.html).
+Added some detail on alternative methods for replacing with NA in the vignette [replacing values with NA](http://naniar.njtierney.com/articles/replace-with-na.html).
 
 # Future work
     
