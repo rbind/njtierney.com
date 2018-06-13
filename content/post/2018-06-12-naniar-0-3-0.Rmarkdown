@@ -96,7 +96,7 @@ gg_miss_fct(x = riskfactors, fct = marital)
 ```
 
 Aesthetics now map as expected in `geom_miss_point()`. This means you can write 
-things like `geom_miss_point(aes(colour = Month))` and it works appropriately. This was fixed by [Luke Smith](https://github.com/seasmith) in [#144](https://github.com/njtierney/naniar/pull/144), fixing [#137](https://github.com/njtierney/naniar/issues/137). This removes the colouring provides by default, as it is overrided.
+things like `geom_miss_point(aes(colour = Month))` and it works appropriately. This was fixed by [Luke Smith](https://github.com/seasmith) in [#144](https://github.com/njtierney/naniar/pull/144), fixing [#137](https://github.com/njtierney/naniar/issues/137). This removes the colouring provides by default, as it is overridden.
 
 ```{r geom-miss-point}
 
@@ -173,7 +173,7 @@ The are two main imputation functions that have been added:
 * `impute_below`, and 
 * `impute_mean`.
 
-`impute_below` imputes values below the range of the data, so that they can be visualised. This is similar to `shadow_shift`, but framed at a whole dataframe. `impute_mean` imputes the mean, and for factors will imputes the mode, randomly choosing a tie breaker if there is a tie.
+`impute_below` imputes values below the range of the data, so that they can be visualised. This is similar to `shadow_shift`, but framed at a whole dataframe - so it works for every column of a dataframe. `impute_mean` imputes the mean, and for factors will imputes the mode, randomly choosing a tie breaker if there is a tie.
 
 `impute_below` and `impute_mean` each have scoped variants that work for specific named columns, `_at` and `_if`, and `_all` for columns that satisfy some predicate function.
 
@@ -262,7 +262,7 @@ We also now have `complete` complements to functions [#150](https://github.com/n
 - `miss_case_pct`  -- `complete_case_pct` 
 - `miss_case_prop` -- `complete_case_prop` 
 
-There are now helpers to remove data or the shadow part of a dataframe, with `unbind_shadow` and `unbind_data`. This is handy in cases where you add the shadow to the data, do some analysis, and then you might want to discard the shadow or the data.
+There are now helpers to remove data or the shadow part of a dataframe, with `unbind_shadow` and `unbind_data`. This is handy in cases where you add the shadow to the data with `bind_shadow`, do some analysis, and then you might want to discard the shadow or the data.  For a recap on what shadows are and why they are useful in missing data analysis, see [this section](http://naniar.njtierney.com/articles/getting-started-w-naniar.html#tidy-missing-data-the-shadow-matrix) on the getting started vignette.
 
 Imported `is_na` and `are_na` from `rlang`. These are different to base R's `is.na`, in that `is_na` return a logical vector of length 1 (does this thing contain missings?), and `are_shadow` returns a logical  vector of length of the number of names of a data.frame, more similar to `is.na()`. from base R.
 
@@ -271,7 +271,7 @@ is_na(airquality)
 are_na(airquality) %>% head()
 ```
 
-There are also `is_shadow` and `are_shadow` functions, to determine if something contains a shadow column. Similar to `rlang::is_na` and `rland::are_na`, `is_shadow` This might be revisited at a later point to reflect the "shadow values" as "shades". See `is_shade` and `any_shade` in `add_label_shadow`.
+There are also `is_shadow` and `are_shadow` functions, to determine if something contains a shadow column. Similar to `rlang::is_na` and `rland::are_na`, `is_shadow` This might be revisited at a later point to reflect values inside the shadow columns - "shadow values" as "shades". See `is_shade` and `any_shade` in `add_label_shadow`.
 
 ```{r is-are-shadow}
 is_shadow(airquality)
@@ -303,7 +303,7 @@ knitr::include_graphics("https://njtierney.updog.co/img/naniar-lego-future-work.
 
 <a style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px" href="https://unsplash.com/@danielkcheung?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Daniel Cheung"><span style="display:inline-block;padding:2px 3px"><svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-1px;fill:white" viewBox="0 0 32 32"><title>unsplash-logo</title><path d="M20.8 18.1c0 2.7-2.2 4.8-4.8 4.8s-4.8-2.1-4.8-4.8c0-2.7 2.2-4.8 4.8-4.8 2.7.1 4.8 2.2 4.8 4.8zm11.2-7.4v14.9c0 2.3-1.9 4.3-4.3 4.3h-23.4c-2.4 0-4.3-1.9-4.3-4.3v-15c0-2.3 1.9-4.3 4.3-4.3h3.7l.8-2.3c.4-1.1 1.7-2 2.9-2h8.6c1.2 0 2.5.9 2.9 2l.8 2.4h3.7c2.4 0 4.3 1.9 4.3 4.3zm-8.6 7.5c0-4.1-3.3-7.5-7.5-7.5-4.1 0-7.5 3.4-7.5 7.5s3.3 7.5 7.5 7.5c4.2-.1 7.5-3.4 7.5-7.5z"></path></svg></span><span style="display:inline-block;padding:2px 3px">Daniel Cheung</span></a>
     
-The next release of `naniar` 0.4.0 (codenamed "An Unexpected Meeting") will feature [_alternative flavours of missing value_](https://github.com/njtierney/naniar/issues/50), something that I have been thinking about for a while now, performance improvements, and adding more vignettes. You can see my current plan at the 0.4.0 milestone [here](https://github.com/njtierney/naniar/milestone/2), it should be out before [UseR! in Brisbane](https://user2018.r-project.org/), on the 9th July.
+The next release of `naniar` 0.4.0 (codenamed "An Unexpected Meeting") will feature [_alternative flavours of missing value_](https://github.com/njtierney/naniar/issues/50), something that I have been thinking about for a while now, performance improvements, and adding more vignettes. You can see my current plan at the 0.4.0 milestone [here](https://github.com/njtierney/naniar/milestone/2), it should be out before [UseR! in Brisbane](https://user2018.r-project.org/), which starts on the 10th July.
 
 # Thanks
 
