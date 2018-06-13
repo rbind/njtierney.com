@@ -22,9 +22,9 @@ I encountered some pretty gnarly missing data when I first started my PhD, which
 1. Explore why data is missing
 1. Evaluate imputed values
 
-I've written in more detail about how to get started with missing data in this ["getting started"](http://naniar.njtierney.com/articles/getting-started-w-naniar.html). I would recommend starting there for a quick tour of the features of `naniar`.
+I've written in more detail about how to get started with missing data in this ["getting started"](http://naniar.njtierney.com/articles/getting-started-w-naniar.html). If you are not familiar with the `naniar` package, I would recommend starting there for a quick tour of its features.
 
-There were a few things that changed in this release, so let's break them down now.
+There were a few things that changed in this release, some of them big, some small, and some technical, let's break them down now.
 
 ## Visualising patterns of missingness
 
