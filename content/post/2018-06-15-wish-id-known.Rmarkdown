@@ -18,12 +18,14 @@ In April I helped organise a networking event with the [Statistics Society Victo
 
 We were very lucky to have four great speakers:
 
-- [Julie Simpson](https://findanexpert.unimelb.edu.au/display/person28836), Professor of Biostatistics at University of Melbourne
-- [Roger Peng](http://www.biostat.jhsph.edu/~rpeng/), Professor of Biostatistics at Johns Hopkins Bloomberg 
-School of Public Health]
-- [Kate McBride](https://au.linkedin.com/in/kate-mcbride-420a53b), General Manager of strategy at redbubble
-- [Emily Karahalios](https://research.monash.edu/en/persons/emily-karahalios), Research fellow in Biostatistics at Monash University 
-and University of Melbourne.
+- [Julie Simpson](https://findanexpert.unimelb.edu.au/display/person28836), 
+Professor of Biostatistics at University of Melbourne
+- [Roger Peng](http://www.biostat.jhsph.edu/~rpeng/), Professor of 
+Biostatistics at Johns Hopkins Bloomberg School of Public Health
+- [Kate McBride](https://au.linkedin.com/in/kate-mcbride-420a53b), General 
+Manager of strategy at redbubble
+- [Emily Karahalios](https://research.monash.edu/en/persons/emily-karahalios), 
+Research fellow in Biostatistics at Monash University and University of Melbourne.
 
 We had the pleasure of hearing the speakers talk plainly about what they wish 
 they had known, and how they came to these realisations. Here are a few brief 
