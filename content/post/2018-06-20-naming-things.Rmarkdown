@@ -20,7 +20,7 @@ has been sitting in draft form for 1 year on my computer.
 
 # Naming Packages
 
-This initial discussion began at the [rOpenSci Unconf in 2017](http://unconf17.ropensci.org/), where [Noam Ross](https://github.com/noamross) made the point that there are a few different ways to thing about naming packages in R, which he described fell into three styles, the oldschool, the modern, and the post modern. I thought it would be fun to discuss these.
+This initial discussion began at the [rOpenSci Unconf in 2017](http://unconf17.ropensci.org/), where [Noam Ross](https://github.com/noamross) made the point that there are a few different ways to thing about naming packages in R, which he described fell into several categories. I thought it would be fun to discuss these.
 
 ## The oldschool (mixedCaseRs)
 
