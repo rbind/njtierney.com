@@ -99,7 +99,7 @@ This is super cool, and a neat way to find useful packages. It's also worth ment
 
 There are for sure other ways to categorize the names - I don't think that you can categorize the whole naming process of R packages into just three categories - there is a rich process that happens when you name something, and I won't want to distill it down to a few labels! 
 
-> Update on 2018-06-24: The twitter thread for this blogpost had some nice discussion and additions from [Noam Ross](https://github.com/noamross) and [Jenny Bryan](https://github.com/jennybc/). I ended up using this script to search for some evidence:
+> Update on 2018-06-24: The [twitter thread](https://twitter.com/nj_tierney/status/1009435248638058496) for this blogpost had some nice discussion and additions from [Noam Ross](https://github.com/noamross) and [Jenny Bryan](https://github.com/jennybc/). I ended up using this script to search for some evidence:
 
 ```r
 library(tidyverse)
