@@ -99,6 +99,63 @@ This is super cool, and a neat way to find useful packages. It's also worth ment
 
 There are for sure other ways to categorize the names - I don't think that you can categorize the whole naming process of R packages into just three categories - there is a rich process that happens when you name something, and I won't want to distill it down to a few labels! 
 
+> Update on 2018-06-24: The twitter thread for this blogpost had some nice discussion and additions from [Noam Ross](https://github.com/noamross) and [Jenny Bryan](https://github.com/jennybc/). I ended up using this script to search for some evidence:
+
+```r
+library(tidyverse)
+
+pkg_names <- available.packages() %>% 
+  tibble::as_tibble() %>% 
+  dplyr::select(Package)
+
+# package with a "2" in the name
+pkg_names$Package[str_detect(pkg_names$Package, "2")]
+
+# package with a "." in the name
+pkg_names$Package[str_detect(pkg_names$Package, "\\.")]
+```
+
+## The Acronyms! 
+
+Name your package as an acronym! These were kind of hard to search for so I could only think of three - there are more, I'm sure!
+
+- [brms](https://cran.r-project.org/web/packages/brms/) - Bayesian Regression Models using Stan
+- [mgcv](https://cran.r-project.org/web/packages/mgcv/) - Mixed GAM Computation Vehicle
+- [eechidna](https://cran.r-project.org/web/packages/eechidna/) - Exploring Election and Census Highly Informative Data Nationally for Australia
+ 
+## The modifiers!
+
+For example, modify the package with "lite" or "Lite" to indicate that this is a stripped down version of something else:
+
+- [jsonlite](https://cran.r-project.org/web/packages/jsonlite/)
+- [svglite](https://cran.r-project.org/web/packages/svglite/)
+- [mongolite](https://cran.r-project.org/web/packages/svglite/)
+- [viridisLite](https://cran.r-project.org/web/packages/svglite/)
+
+## The subcategories! 
+
+Got a package that spans across multiple categories? See for example the [future](https://cran.r-project.org/web/packages/future) family of packages and more:
+
+- [future.batchtools](https://cran.r-project.org/web/packages/future.batchtools)
+- [future.apply](https://cran.r-project.org/web/packages/future.apply)
+- [aws.alexa](https://cran.r-project.org/web/packages/aws.alexa)
+- [aws.s3](https://cran.r-project.org/web/packages/aws.s3)
+- [rpart.plot](https://cran.r-project.org/web/packages/rpart.plot)
+ 
+# Adding a 2
+
+Some (approximate) backstory - ggplot was going great, but Hadley Wickham wanted to change the API from a nested function call to using `+` - the API change was so dramatic that he had to release a separate package, `ggplot2`. You can also use `2` to indicate "to" - from X to Y, from R to JAGS, R to virtual reality, R to D3:
+
+- [ggplot2](https://cran.r-project.org/web/packages/ggplot2)
+- [rehape2](https://cran.r-project.org/web/packages/reshape2)
+- [xml2](https://cran.r-project.org/web/packages/xml2)
+- [tcltk2](https://cran.r-project.org/web/packages/tcltk2)
+- [fpp2](https://cran.r-project.org/web/packages/fpp2)
+- [r2vr](https://cran.r-project.org/web/packages/r2vr)
+- [r2d3](https://cran.r-project.org/web/packages/r2d3)
+- [R2jags](https://cran.r-project.org/web/packages/R2jags)
+- [bib2df](https://cran.r-project.org/web/packages/bib2dfå)
+
 # How to make a name?
 
 Coming up with package name often takes a lot of time and thought. Personally, I've changed the names of the packages `visdat` and `narnia` three times. `visdat` was initially [`footprintr`](https://github.com/njtierney/visdat/commit/a350e50d210ab99939b53b22e2e2013e7e492f80), then `vizdat`, and then finally `visdat`. `narnia` was initiallly [`ggmissing`](https://github.com/njtierney/narnia/commit/a161b7c5707e0c5041467d8f7228c11afb5e2b29), then `naniar`, then `narnia`, then back to `naniar`. Why the changes from `narnia` and back and forth? Well, mainly I was worried about some awkward cease and desist letters from the estate of CS Lewis once the package got on CRAN, and I'm not really sure how to change the name back on CRAN - I'm pretty sure that once it is on CRAN, that's it.
