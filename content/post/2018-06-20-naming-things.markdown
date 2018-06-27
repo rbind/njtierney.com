@@ -93,7 +93,7 @@ With the announcement of The Tidyverse being made official by Hadley at UseR! in
 - [tidyhydat](https://github.com/ropensci/tidyhydat)
 - [tidykml](https://github.com/briatte/tidykml)
 
-This is super cool, and a neat way to find useful packages. It's also worth mentioning that the tidyverse is only officially about 2 years old - and there has been a lot of really nice, positive [growth in R packages](https://github.com/tidyverse), [community](https://community.rstudio.com/), and [a team](https://github.com/orgs/tidyverse/people) of great people working on making great sofwtware.
+This is super cool, and a neat way to find useful packages. It's also worth mentioning that the tidyverse is only officially about 2 years old - and there has been a lot of really nice, positive [growth in R packages](https://github.com/tidyverse), [community](https://community.rstudio.com/), and [a team](https://github.com/orgs/tidyverse/people) of great people working on making great software.
 
 ## And more?
 
