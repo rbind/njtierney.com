@@ -4,6 +4,8 @@ title: Talks
 
 # 2018
 
+- [2018/07/11: intro to missing data visualistion](https://talks.updog.co/user2018-intro-to-visualisation-with-naniar/user2018-intro-to-naniar.html#1)
+
 - [2018/03/19: rOpenSci ozunconf: Building communities to transform science](https://talks.updog.co/melburn2018-03/2018-03-19-melburn.html)
 
 - [2018/02/15: Why is that missing, and what can we do about it? Tools for missing data and beyond, Genentech, San Francisco, USA](https://talks.updog.co/genentech2018/2018-02-15-genentech.html#1)
