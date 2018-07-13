@@ -4,7 +4,7 @@ title: Talks
 
 # 2018
 
-- [2018/07/13: Find the best locations for facilities using maxcovr](bit.ly/maxcovr)
+- [2018/07/13: Find the best locations for facilities using maxcovr](https://talks.updog.co/user2018-maxcovr/user2018-maxcovr-talk.html#1)
 
 - [2018/07/11: Intro to missing data visualistion](https://talks.updog.co/user2018-intro-to-visualisation-with-naniar/user2018-intro-to-naniar.html#1)
 
