@@ -16,7 +16,7 @@ It is not a complete guide to S3 methods, but more a primer the on *what* *how*,
 
 Here we go.
 
-Writing functions in R is an important skill for anyone using R. S3 methods allow for functions to be generalised across different classes and are easy to implement. Whilst many R users are be adept at creating their own functions, it seems that there is room for many more to take advantage of R's S3 methods. This paper provides a simple and targeted guide to explain what S3 methods are, why people should them, and how they can do it.
+Writing functions in R is an important skill for anyone using R. S3 methods allow for functions to be generalised across different classes and are easy to implement. Whilst many R users are adept at creating their own functions, it seems that there is room for many more to take advantage of R's S3 methods. This paper provides a simple and targeted guide to explain what S3 methods are, why people should them, and how they can do it.
 
 A standard principle of programming is DRY - Don't Repeat Yourself. Under this axiom, the copying and pasting of the same or similar code (copypasta), is avoided and instead replaced with a function, macro, or similar. Having one function to replace several of the same or similar coded sections simplifies code maintenance as it means that only one section of code needs to be maintained, instead of several. This means that if the code breaks, then one simply needs to update the function, rather than finding all of the coded sections that are now broken.
 
@@ -81,7 +81,7 @@ methods(summary)
 ## [27] summary.proc_time              summary.srcfile               
 ## [29] summary.srcref                 summary.stepfun               
 ## [31] summary.stl*                   summary.table                 
-## [33] summary.tukeysmooth*          
+## [33] summary.tukeysmooth*           summary.warnings              
 ## see '?methods' for accessing help and source code
 ```
 
@@ -282,7 +282,7 @@ class(test_class)
 ```
 
 
-and then write their own S3 method for it - e.g., `summary.myclass` or `plot.myclass`, each proiding appropriate summary information, or nice plots, for that object.
+and then write their own S3 method for it - e.g., `summary.myclass` or `plot.myclass`, each providing appropriate summary information, or nice plots, for that object.
 
 # How to make your own S3 method?
 
@@ -402,7 +402,7 @@ dt_rss(fit.lm)
 ```
 
 The "poor man's S3 method" does what it needs to do.
-However, one must ask how sustainable this would be for an entire programming language? Imagine if a colleague creates a new tree method that needs it's own `rss()`. He will need to convince the maintainer to add his class into your ifelse() chain. Failing this, he could just overwrite the function `rss()`, with predictably disastrous results. In reality, it's probably better to do all of these things with one method. R's S3 methods mean that R developers can utilise a common interface without having to update it when new classes come along. It also means overloading clashes are less likely.
+However, one must ask how sustainable this would be for an entire programming language? Imagine if a colleague creates a new tree method that needs it's own `rss()`. They will need to convince the maintainer to add their class into your ifelse() chain. Failing this, they could just overwrite the function `rss()`, with predictably disastrous results. In reality, it's probably better to do all of these things with one method. R's S3 methods mean that R developers can utilise a common interface without having to update it when new classes come along. It also means overloading clashes are less likely.
 
 So let us create an S3 method to demonstrate.
 
@@ -460,4 +460,4 @@ rss(lm.fit)
 ## class function and can only be used on classes rpart, gbm, and randomForest
 ```
 
-This guide to S3 methods was written to provide R users with the minimal amount of information to start building their own S3 methods. For a more complete treatment on S3 methods, see [Advanced-R](), [R Packages](), and the [official S3 documentation]().
+This guide to S3 methods was written to provide R users with the minimal amount of information to start building their own S3 methods. For a more complete treatment on S3 methods, see [Advanced-R](https://adv-r.hadley.nz/s3.html), [R Packages](http://r-pkgs.had.co.nz/), and the [official S3 documentation](https://stat.ethz.ch/R-manual/R-devel/library/base/html/UseMethod.html).
