@@ -17,9 +17,11 @@ title: Publications
 
 # Under Review or in Preparation
 
-`2018` "Bayesian Approaches to Modelling Occupational Health." **Tierney, N.J.** Mengersen, K., Harden, F., Harden, M. _BMJ Open_. __Submitted__.
+`2018` "Bayesian modelling to assist inference on health outcomes in Occupational Health Surveillance." **Tierney, N.J.** Mengersen, K., Harden, F., Harden, M. _BMJ Open_. __Under Review__.
 
-`2018` **Tierney, NJ.** Cook, D., Fay, C._, "Tidy Missing Data" _Journal of Computational and Graphical Statistics_. __In Preparation__
+`2018` "Evaluating health facility access using Bayesian spatial models and location analysis methods" **Tierney, NJ.**, Mira, A, Reinhold, J., Arbia, G, Clifford, S, Moccetti, T., Auricchio, A., Mengersen, K. _PLoS ONE_. __Submitted__.
+
+`2018` **Tierney, NJ.** Cook, D., "Expanding tidy data principles to facilitate missing data exploration, visualization and assessment of imputations." _Journal of Computational and Graphical Statistics_. __In Preparation__
 
 # Pre-Print
 
@@ -44,6 +46,11 @@ title: Publications
 **Tierney, N. J.**, Pitchforth, J., Mengersen, K. L, (2014) Understanding Missing Data: The Use of Classification and Regression Trees (CART), and Boosted Regression Trees (BRTs), _Australian Statistical Conference in Conjunction with the institute of Mathematical Statistics Annual Meeting._, Sydney, Australia 7-10 July, 2014. [Slides](https://speakerdeck.com/njtierney/understanding-missing-data-the-use-of-classification-and-regression-trees-and-boosted-regression-trees).
 
 Integrating Occupational Hygiene, Medicine and Engineering in a Mining Context. Maurice Harden, Charles Steer, Fiona Harden, Geoff Butler, Kerrie Mengersen, **Nicholas Tierney**, Ann. Occup. Hyg., 2015, Vol. 59, No. Supplement 1, 1–47 doi:10.1093/annhyg/meu119 [PDF](http://annhyg.oxfordjournals.org/content/59/suppl_1/1.full.pdf?etoc%20)
+
+# PhD Thesis
+
+**Tierney, N. J.** (2018). Statistical approaches to revealing structure in complex health data 
+_PhD Thesis by Publication_, Queensland University of Technology, Brisbane, Australia. **Nominated for Outstanding PhD Thesis Award** [eprint](https://eprints.qut.edu.au/115536/).
 
 # Honours Thesis
 
