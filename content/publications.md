@@ -17,11 +17,11 @@ title: Publications
 
 # Under Review or in Preparation
 
-`2018` "Bayesian modelling to assist inference on health outcomes in Occupational Health Surveillance." **Tierney, N.J.** Mengersen, K., Harden, F., Harden, M. _BMJ Open_. __Under Review__.
+`2018` "Bayesian modelling to assist inference on health outcomes in Occupational Health Surveillance." **Tierney, N.J.** Clifford, S., Drovandi, CC., Mengersen, KL _BMJ Open_. __Under Review__.
 
 `2018` "Evaluating health facility access using Bayesian spatial models and location analysis methods" **Tierney, NJ.**, Mira, A, Reinhold, J., Arbia, G, Clifford, S, Moccetti, T., Auricchio, A., Mengersen, K. _PLoS ONE_. __Submitted__.
 
-`2018` **Tierney, NJ.** Cook, D., "Expanding tidy data principles to facilitate missing data exploration, visualization and assessment of imputations." _Journal of Computational and Graphical Statistics_. __In Preparation__
+`2018` **Tierney, NJ.** Cook, D. "Expanding tidy data principles to facilitate missing data exploration, visualization and assessment of imputations." _Journal of Computational and Graphical Statistics_. __In Preparation__
 
 # Pre-Print
 
