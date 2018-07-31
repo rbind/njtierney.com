@@ -4,6 +4,8 @@ title: Talks
 
 # 2018
 
+- [2018/07/31: Rethinking teaching statistical computing](https://talks.updog.co/ssa2018-rethinking-statistical-computing/ssa2018-rethinking-statistical-computing.html#1)
+
 - [2018/07/19: Now you see it?  Now you don’t?  The role of graphics in identifying MCMC convergence](https://talks.updog.co/talk-mcmclineup-keynote/assets/player/KeynoteDHTMLPlayer.html#0)
 
 - [2018/07/13: Find the best locations for facilities using maxcovr](https://talks.updog.co/user2018-maxcovr/user2018-maxcovr-talk.html#1)
