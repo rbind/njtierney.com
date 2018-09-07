@@ -4,7 +4,7 @@ title: Talks
 
 # 2018
 
-- [2018/08/27: Now you see it?  Now you don’t?  The role of graphics in identifying MCMC convergence](https://talks.updog.co/asc2018/talk-mcmclineup-keynote/index.html)
+- 2018/08/27: Now you see it?  Now you don’t?  The role of graphics in identifying MCMC convergence [HTML](https://talks.updog.co/asc2018/talk-mcmclineup-keynote/index.html) [PDF](https://talks.updog.co/asc2018/pdf/talk-mcmclineup-keynote.pdf)
 
 - [2018/08/22: Intro to Missing Data: DMAC](https://talks.updog.co/2018-dmac-intro-to-missing-data/2018-dmac-intro-to-missing-data.html)
 

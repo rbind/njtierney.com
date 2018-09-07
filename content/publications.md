@@ -21,11 +21,12 @@ title: Publications
 
 `2018` "Evaluating health facility access using Bayesian spatial models and location analysis methods" **Tierney, NJ.**, Mira, A, Reinhold, J., Arbia, G, Clifford, S, Moccetti, T., Auricchio, A., Mengersen, K. _PLoS ONE_. __Submitted__.
 
-`2018` **Tierney, NJ.** Cook, D. "Expanding tidy data principles to facilitate missing data exploration, visualization and assessment of imputations." _Journal of Computational and Graphical Statistics_. __In Preparation__
-
 # Pre-Print
 
+`2018` **Tierney, NJ.** Cook, D. "Expanding tidy data principles to facilitate missing data exploration, visualization and assessment of imputations." _Journal of Computational and Graphical Statistics_. __Submitted__ [[Pre-print - arriving September 10]]
+
 `2016` **Tierney, NJ.** “S3 Methods: A Simple Guide.” [[Pre-print](https://arxiv.org/abs/1608.07161)]
+
 
 # Posters
 
@@ -42,6 +43,8 @@ title: Publications
 `2015` "Integrating Occupational Hygiene, Medicine and Engineering in a Mining Context." Maurice Harden, Charles Steer, Fiona Harden, Geoff Butler, Kerrie Mengersen, __Nicholas Tierney__, [Ann. Occup. Hyg., Vol. 59, No. Supplement 1, 1–47 doi:10.1093/annhyg/meu119](http://annhyg.oxfordjournals.org/content/59/suppl_1/1.full.pdf+html)
 
 # Conference Publications
+
+**Tierney, N. J.**, Pitchforth, J., Mengersen, K. L, (2018) Understanding Missing Data: The Use of Classification and Regression Trees (CART), and Boosted Regression Trees (BRTs), _Australian Statistical Conference in Conjunction with the International Society of Clinical Biostatistics._, Melbourne, Australia 27-10 July, 2014. [Slides](https://speakerdeck.com/njtierney/understanding-missing-data-the-use-of-classification-and-regression-trees-and-boosted-regression-trees).
 
 **Tierney, N. J.**, Pitchforth, J., Mengersen, K. L, (2014) Understanding Missing Data: The Use of Classification and Regression Trees (CART), and Boosted Regression Trees (BRTs), _Australian Statistical Conference in Conjunction with the institute of Mathematical Statistics Annual Meeting._, Sydney, Australia 7-10 July, 2014. [Slides](https://speakerdeck.com/njtierney/understanding-missing-data-the-use-of-classification-and-regression-trees-and-boosted-regression-trees).
 
