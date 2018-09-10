@@ -23,7 +23,7 @@ title: Publications
 
 # Pre-Print
 
-`2018` **Tierney, NJ.** Cook, D. "Expanding tidy data principles to facilitate missing data exploration, visualization and assessment of imputations." _Journal of Computational and Graphical Statistics_. __Submitted__ [[Pre-print - arriving September 10]]
+`2018` **Tierney, NJ.** Cook, D. "Expanding tidy data principles to facilitate missing data exploration, visualization and assessment of imputations." _Journal of Computational and Graphical Statistics_. __Submitted__ [[Pre-print](https://arxiv.org/abs/1809.02264)]
 
 `2016` **Tierney, NJ.** “S3 Methods: A Simple Guide.” [[Pre-print](https://arxiv.org/abs/1608.07161)]
 
