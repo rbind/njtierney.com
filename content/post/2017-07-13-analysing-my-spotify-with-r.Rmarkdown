@@ -1,0 +1,86 @@
+---
+title: analysing my spotify with R
+author: ''
+draft: yes
+date: '2017-07-13'
+slug: spotify
+categories:
+  - rstats
+tags: []
+---
+
+- maybe also look into this R package: https://github.com/ewenme/geniusr
+
+Inspired by Kara Woo's awesome blog post on analysing her own spotify data, I linked my spotify account with lastfm - as I'm pretty sure that this is the only way to track my spotify listening habits (right? Let me know in the comments if there is another thing I should know about)
+
+```{r}
+library(tidyverse)
+library(lubridate)
+library(knitr)
+
+## Load data
+plays <- read_csv("~/Downloads/njtierney (1).csv",
+                  col_names = c("artist", "album", "track", "date"),
+                  col_types = cols(date = col_date(format = "%d %b %Y %H:%M")))
+
+## Set ggplot2 theme
+theme_set(theme_minimal() +
+          theme(axis.text = element_text(size = 14),
+                axis.title = element_text(size = 16),
+                legend.text = element_text(size = 14)))
+
+## Color palette
+msievse <- c("#547a9e" ,"#d5bfa8", "#aec2cb", "#93775f", "#a0a17f", "#73715c",
+             "#dfddd1", "#7598ac", "#4f3e36", "#6f7269")
+```
+
+
+```{r}
+all_months <- plays %>% expand(year(date), month(date)) %>% 
+  filter(`year(date)` >= 2009)
+
+plays %>% 
+  group_by(year(date), month(date)) %>% 
+  right_join(all_months) %>%
+  tally() %>% 
+  mutate(month = as.Date(paste(`year(date)`, `month(date)`, "01",
+                               sep = "-"))) %>% 
+  ggplot(aes(x = month, y = n)) +
+  geom_line() +
+  labs(x = "Month", y = "Scrobbles")
+```
+
+```{r}
+
+top_10_artists <- plays %>%
+  count(artist, sort = TRUE) %>%
+  top_n(n = 10, wt = n)
+
+ggplot(top_10_artists, aes(x = reorder(artist, n), y = n)) +
+  geom_bar(stat = "identity") +
+  geom_text(aes(label = n), position = position_dodge(0.9), hjust = 1.2, 
+            color = "white", size = 4) +
+  labs(y = "Scrobbles", x = "") +
+  coord_flip()
+
+```
+
+```{r}
+## Remove data with messed up year
+plays_clean <- filter(plays, year(date) >= 2009)
+
+plays_clean %>% 
+  group_by(year(date), artist) %>% 
+  tally() %>% 
+  top_n(5, wt = n) %>% 
+  rename(year = `year(date)`) %>%
+  arrange(-year,-n)
+```
+
+```{r}
+plays %>%
+  add_count(track) %>%
+  arrange(-n) %>%
+  distinct()
+```
+
