@@ -1,0 +1,452 @@
+---
+title: "Some ideas on teaching"
+author: ''
+date: '2018-09-09'
+slug: ideas-teaching
+categories:
+  - blag
+  - teaching
+  - rstats
+draft: true
+tags: []
+---
+
+
+???
+Course climate: 
+- Resist a Single Right Answer (setup the tower of babel approach)
+- Get students talking to each other within the first 5 minutes of class
+- Watch dismissive language
+- Make Uncertainty Safe
+
+Understanding Learning:
+- Explain Growth and fixed mindsets for learning
+- Reframe success and failure into opportunities for growth
+
+Practical approaches:
+- Provide Early Success Opportunities (e.g., teach vis first)
+- Intersperse each 5-10 minutes of demos/lecture with 1-10 minutes of exercises
+- Use live coding
+
+Getting Feedback:
+  - Balance Strengths and Weaknesses in Your Feedback
+  - Design Frequent Opportunities to Give Feedback
+  - Incorporate Peer Feedback
+  
+  
+Key points for teaching:
+
+- Live Coding
+- Creating a good course climate:
+    - set the tone at the start
+    - Balance Strengths and Weaknesses in Your Feedback
+    - Dismissive Language
+    - Model Inclusive Language, Behavior, and Attitudes
+      - avoid: "guys"
+      - use: "everyone", "folks", "people", "y'all", "peeps"
+      - avoid: "he or she", "him or her"
+      - use: "they" 
+    
+- Provide Early Success Opportunities (e.g., teach vis first)
+    
+- provide frequent opportunities for feedback
+- provide frequent opportunities for practice
+
+
+???
+
+Set students up to move along at their own pace:
+- Modeling Your Metacognitive Processes
+- Scaffold Students in Their Metacognitive Processes
+- Facilitate Active Listening
+- Push Past Your Own Expert Blind Spot  
+
+Three key points for R content:
+- Teach the tidyverse
+- Teach visualisation first
+- Teach rmarkdown document
+
+
+Extras
+
+- Explain practice: 
+  - Describe Effective Study Strategies
+  - Build in Multiple Opportunities for Practice
+  - Show Students What You Do Not Want
+
+# The seven principles
+
+- 1: Students' prior knowledge can help or hinder learning.
+    - Coming from another language (Python, Matlab, SPSS, STATA) (help + hinder)
+    - Important to do some kind of assessment/test
+    -  Ask Students to Make and Test Predictions
+
+- 2: How students organize knowledge inﬂuences how they learn and apply what they know.
+    - Draw concept map of course topics and go from complex - atomic + share
+    - Get students to draw their own concept map
+    - Share the related concept map
+    - make connections amongst concepts explicit - more than you think
+  
+- 3: Students' motivation determines, directs, and sustains what they do to learn.
+    - Provide Early Success Opportunities
+    - Educate Students About the Ways We Explain Success and Failure
+    - Describe Effective Study Strategies
+
+- 4: To develop mastery, students must acquire component skills, practice integrating them, and know when to apply what they have learned.
+    - Push Past Your Own Expert Blind Spot
+    - Provide Isolated Practice of Weak or Missing Skills
+
+- 5: Goal-directed practice coupled with targeted feedback enhances the quality of students' learning.
+    -   Incorporate Peer Feedback
+    -   Balance Strengths and Weaknesses in Your Feedback
+    -   Show Students What You Do Not Want
+    -   Build Scaffolding into Assignments
+    -   Build in Multiple Opportunities for Practice
+    -   Design Frequent Opportunities to Give Feedback
+
+- 6: Students' current level of development interacts with the social, emotional, and intellectual climate of the course to impact learning.
+
+-   Use the Syllabus and First Day of Class to Establish the Course Climate
+-   Make Uncertainty Safe
+-   Resist a Single Right Answer
+-   Model Inclusive Language, Behavior, and Attitudes
+      - avoid: "guys"
+      - use: "everyone", "folks", "people", "y'all", "peeps"
+      - avoid: "he or she", "him or her"
+      - use: "they" 
+-   Set Up Processes to Get Feedback on the Climate
+-   Facilitate Active Listening
+
+- 7: To become self-directed learners, students must learn to monitor and adjust their approaches to learning.
+
+-   Use Peer Review/Reader Response
+-   Provide Opportunities for Self-Assessment
+-   Broaden Students' Understanding of Learning
+-   Modeling Your Metacognitive Processes
+-   Scaffold Students in Their Metacognitive Processes
+
+<!-- -   Be More Explicit Than You May Think Necessary -->
+<!-- -   Address Students' Beliefs About Learning Directly -->
+<!-- -   Create Assignments That Focus on Strategizing Rather Than Implementation -->
+<!-- -   Prompt Students to Analyze the Effectiveness of Their Study Skills -->
+<!-- -   Provide Activities That Require Students to Reﬂect on Their Performances -->
+<!-- -   Have Students Create Their Own Plan -->
+<!-- -   Make Planning the Central Goal of the Assignment -->
+<!-- -   Tell Students What You Do Not Want -->
+<!-- -   Give Early, Performance-Based Assessments -->
+
+
+???
+
+# What do these have to do with teaching statistics?
+
+WHAT IS LEARNING?
+
+Any set of learning principles is predicated on a deﬁnition of learning.
+In this book, we deﬁne learning as a process that leads to change, which
+occurs as a result of experience and increases the potential for
+improved performance and future learning (adapted from Mayer, 2002).
+There are three critical components to this deﬁnition:
+
+1.  Learning is a process, not a product. However, because this process
+    > takes place in the mind, we can only infer that it has occurred
+    > from students' products or performances.
+
+2.  Learning involves change in knowledge, beliefs, behaviors, or
+    > attitudes. This change unfolds over time; it is not ﬂeeting but
+    > rather has a lasting impact on how students think and act.
+
+3.  Learning is not something done to students, but rather something
+    > students themselves do. It is the direct result of how students
+    > interpret and respond to their experiences---conscious and
+    > unconscious, past and present.
+
+PRINCIPLES OF LEARNING
+
+In other words, we begin with the recognition that
+
+1.  learning is a developmental process that intersects with other
+    > developmental processes in a student's life, and
+
+2.  students enter our classrooms not only with skills, knowledge, and
+    > abilities, but also with social and emotional experiences that
+    > inﬂuence what they value, how they perceive themselves and others,
+    > and how they will engage in the learning process.
+
+# PRINCIPLE 1: Students' prior knowledge can help or hinder learning.
+
+Students come into our courses with knowledge, beliefs, and attitudes
+gained in other courses and through daily life. As students bring this
+knowledge to bear in our classrooms, it inﬂuences how they ﬁlter and
+interpret what they are learning. If students' prior knowledge is robust
+and accurate and activated at the appropriate time, it provides a strong
+foundation for building new knowledge. However, when knowledge is inert,
+insufﬁcient for the task, activated inappropriately, or inaccurate, it
+can interfere with or impede new learning.
+
+Methods to Gauge the Extent and Nature of Students' Prior Knowledge
+
+-   Talk to Colleagues
+-   Administer a Diagnostic Assessment
+-   Have Students Assess Their Own Prior Knowledge
+-   Use Brainstorming to Reveal Prior Knowledge
+-   Assign a Concept Map Activity
+-   Look for Patterns of Error in Student Work
+
+Methods to Activate Accurate Prior Knowledge
+
+-   Use Exercises to Generate Students' Prior Knowledge
+-   Explicitly Link New Material to Knowledge from Previous Courses
+-   Explicitly Link New Material to Prior Knowledge from Your Own Course
+-   Use Analogies and Examples That Connect to Students' Everyday
+    Knowledge
+-   Ask Students to Reason on the Basis of Relevant Prior Knowledge
+
+Methods to Address Insuﬃcient Prior Knowledge
+
+-   Identify the Prior Knowledge You Expect Students to Have
+-   Remediate Insufﬁcient Prerequisite Knowledge
+
+Methods to Help Students Recognize Inappropriate Prior Knowledge
+
+-   Highlight Conditions of Applicability
+-   Provide Heuristics to Help Students Avoid Inappropriate Application
+    of Knowledge
+-   Explicitly Identify Discipline-Speciﬁc Conventions
+-   Show Where Analogies Break Down
+
+Methods to Correct Inaccurate Knowledge
+
+-   Ask Students to Make and Test Predictions
+-   Ask Students to Justify Their Reasoning
+-   Provide Multiple Opportunities for Students to Use Accurate
+    Knowledge
+-   Allow Sufﬁcient Time
+
+# PRINCIPLE 2: How students organize knowledge inﬂuences how they learn and apply what they know.
+
+Students naturally make connections between pieces of knowledge. When
+those connections form knowledge structures that are accurately and
+meaningfully organized, students are better able to retrieve and apply
+their knowledge effectively and efﬁciently. In contrast, when knowledge
+is connected in inaccurate or random ways, students can fail to retrieve
+or apply it appropriately.
+
+Strategies to Reveal and Enhance Knowledge Organizations
+
+-   Create a Concept Map to Analyze Your Own Knowledge Organization
+-   Analyze Tasks to Identify the Most Appropriate Knowledge
+    Organization
+-   Provide Students with the Organizational Structure of the Course
+-   Explicitly Share the Organization of Each Lecture, Lab, or
+    Discussion
+-   Use Contrasting and Boundary Cases to Highlight Organizing Features
+-   Explicitly Highlight Deep Features
+-   Make Connections Among Concepts Explicit
+-   Encourage Students to Work with Multiple Organizing Structures
+-   Ask Students to Draw a Concept Map to Expose Their Knowledge
+    Organizations
+-   Use a Sorting Task to Expose Students' Knowledge Organizations
+-   Monitor Students' Work for Problems in Their Knowledge Organization
+
+# PRINCIPLE 3: Students' motivation determines, directs, and sustains what they do to learn.
+
+As students enter college and gain greater autonomy over what, when, and
+how they study and learn, motivation plays a critical role in guiding
+the direction, intensity, persistence, and quality of the learning
+behaviors in which they engage. When students ﬁnd positive value in a
+learning goal or activity, expect to successfully achieve a desired
+learning outcome, and perceive support from their environment, they are
+likely to be strongly motivated to learn.
+
+Strategies to Establish Value
+
+-   Connect the Material to Students' Interests
+-   Provide Authentic, Real-World Tasks
+-   Show Relevance to Students' Current Academic Lives
+-   Demonstrate the Relevance of Higher-Level Skills to Students' Future
+    Professional Lives
+-   Identify and Reward What You Value
+-   Show Your Own Passion and Enthusiasm for the Discipline Strategies That Help Students Build Positive Expectancies
+-   Ensure Alignment of Objectives, Assessments, and Instructional Strategies
+-   Identify an Appropriate Level of Challenge
+-   Create Assignments That Provide the Appropriate Level of Challenge
+-   Provide Early Success Opportunities
+-   Articulate Your Expectations
+-   Provide Rubrics
+-   Provide Targeted Feedback
+-   Be Fair
+-   Educate Students About the Ways We Explain Success and Failure
+-   Describe Effective Study Strategies
+
+Strategies That Address Value and Expectancies
+
+-   Provide Flexibility and Control
+-   Give Students an Opportunity to Reﬂect
+
+# PRINCIPLE 4: To develop mastery, students must acquire component skills, practice integrating them, and know when to apply what they have learned.
+
+Students must develop not only the component skills and knowledge
+necessary to perform complex tasks, they must also practice combining
+and integrating them to develop greater ﬂuency and automaticity.
+Finally, students must learn when and how to apply the skills and
+knowledge they learn. As instructors, it is important that we develop
+conscious awareness of these elements of mastery so as to help our
+students learn more effectively.
+
+Strategies to Expose and Reinforce Component Skills
+
+-   Push Past Your Own Expert Blind Spot
+-   Enlist a Teaching Assistant or Graduate Student to Help with Task Decomposition
+-   Talk to Your Colleagues
+-   Enlist the Help of Someone Outside Your Discipline
+-   Explore Available Educational Materials
+-   Focus Students' Attention on Key Aspects of the Task
+-   Diagnose Weak or Missing Component Skills
+-   Provide Isolated Practice of Weak or Missing Skills
+
+Strategies to Build Fluency and Facilitate Integration
+
+-   Give Students Practice to Increase Fluency
+-   Temporarily Constrain the Scope of the Task
+-   Explicitly Include Integration in Your Performance Criteria
+
+Strategies to Facilitate Transfer
+
+-   Discuss Conditions of Applicability
+-   Give Students Opportunities to Apply Skills or Knowledge in Diverse Contexts
+-   Ask Students to Generalize to Larger Principles
+-   Use Comparisons to Help Students Identify Deep Features
+-   Specify Context and Ask Students to Identify Relevant Skills or Knowledge
+-   Specify Skills or Knowledge and Ask Students to Identify Contexts in Which They Apply
+-   Provide Prompts to Relevant Knowledge
+
+# PRINCIPLE 5: Goal-directed practice coupled with targeted feedback enhances the quality of students' learning.
+
+Learning and performance are best fostered when students engage in
+practice that focuses on a speciﬁc goal or criterion, targets an
+appropriate level of challenge, and is of sufﬁcient quantity and
+frequency to meet the performance criteria. Practice must be coupled
+with feedback that explicitly communicates about some aspect(s) of
+students' performance relative to speciﬁc target criteria, provides
+information to help students progress in meeting those criteria, and is
+given at a time and frequency that allows it to be useful.
+
+Strategies Addressing the Need for Goal-Directed Practice
+
+-   Conduct a Prior Knowledge Assessment to Target an Appropriate Challenge Level
+-   Be More Explicit About Your Goals in Your Course Materials
+-   Use a Rubric to Specify and Communicate Performance Criteria
+-   Build in Multiple Opportunities for Practice
+-   Build Scaffolding into Assignments
+-   Set Expectations About Practice
+-   Give Examples or Models of Target Performance
+-   Show Students What You Do Not Want
+-   Reﬁne Your Goals and Performance Criteria as the Course Progresses
+
+Strategies Addressing the Need for Targeted Feedback
+
+-   Look for Patterns of Errors in Student Work
+-   Prioritize Your Feedback
+-   Balance Strengths and Weaknesses in Your Feedback
+-   Design Frequent Opportunities to Give Feedback
+-   Provide Feedback at the Group Level
+-   Provide Real-Time Feedback at the Group Level
+-   Incorporate Peer Feedback
+-   Require Students to Specify How They Used Feedback in Subsequent Work
+
+# PRINCIPLE 6: Students' current level of development interacts with the social, emotional, and intellectual climate of the course to impact learning.
+
+Students are not only intellectual but also social and emotional beings,
+and they are still developing the full range of intellectual, social,
+and emotional skills. While we cannot control the developmental process,
+we can shape the intellectual, social, emotional, and physical aspects
+of the classroom climate in developmentally appropriate ways. In fact,
+many studies have shown that the climate we create has implications for
+our students. A negative climate may impede learning and performance,
+but a positive climate can energize students' learning.
+
+Strategies That Promote Student Development and Productive Climate
+
+-   Make Uncertainty Safe
+-   Resist a Single Right Answer
+-   Incorporate Evidence into Performance and Grading Criteria
+-   Examine Your Assumptions About Students
+-   Be Mindful of Low-Ability Cues
+-   Do Not Ask Individuals to Speak for an Entire Group
+-   Reduce Anonymity
+-   Model Inclusive Language, Behavior, and Attitudes
+-   Use Multiple and Diverse Examples
+-   Establish and Reinforce Ground Rules for Interaction
+-   Make Sure Course Content Does Not Marginalize Students
+-   Use the Syllabus and First Day of Class to Establish the Course Climate
+-   Set Up Processes to Get Feedback on the Climate
+-   Anticipate and Prepare for Potentially Sensitive Issues
+-   Address Tensions Early
+-   Turn Discord and Tension into a Learning Opportunity
+-   Facilitate Active Listening
+
+# PRINCIPLE 7: To become self-directed learners, students must learn to monitor and adjust their approaches to learning.
+
+Learners may engage in a variety of metacognitive processes to monitor
+and control their learning---assessing the task at hand, evaluating
+their own strengths and weaknesses, planning their approach, applying
+and monitoring various strategies, and reﬂecting on the degree to which
+their current approach is working. Unfortunately, students tend not to
+engage in these processes naturally. When students develop the skills to
+engage these processes, they gain intellectual habits that not only
+improve their performance but also their effectiveness as learners.
+
+Assessing the Task at Hand
+
+-   Be More Explicit Than You May Think Necessary
+-   Tell Students What You Do Not Want
+-   Check Students' Understanding of the Task
+-   Provide Performance Criteria with the Assignment
+
+Evaluating One's Own Strengths and Weaknesses
+
+-   Give Early, Performance-Based Assessments
+-   Provide Opportunities for Self-Assessment
+
+Planning an Appropriate Approach
+
+-   Have Students Implement a Plan That You Provide
+-   Have Students Create Their Own Plan
+-   Make Planning the Central Goal of the Assignment
+
+Applying Strategies and Monitoring Performance
+
+-   Provide Simple Heuristics for Self-Correction
+-   Have Students Do Guided Self-Assessments
+-   Require Students to Reﬂect on and Annotate Their Own Work
+-   Use Peer Review/Reader Response
+
+Reﬂecting on and Adjusting One's Approach
+
+-   Provide Activities That Require Students to Reﬂect on Their Performances
+-   Prompt Students to Analyze the Effectiveness of Their Study Skills
+-   Present Multiple Strategies
+-   Create Assignments That Focus on Strategizing Rather Than Implementation
+
+Beliefs About Intelligence and Learning
+
+-   Address Students' Beliefs About Learning Directly
+-   Broaden Students' Understanding of Learning
+-   Help Students Set Realistic Expectations
+
+General Strategies to Promote Metacognition
+
+-   Modeling Your Metacognitive Processes
+-   Scaffold Students in Their Metacognitive Processes
+
+
+# Programming is changing
+
+.vhugeb[
+
+- R from five years ago is different to R now
+
+- R from 10 years ago
+
+    ]
