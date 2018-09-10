@@ -36,18 +36,18 @@ library(tidyverse)
 ```
 
 ```
-## ── Attaching packages ───────────────────────────────────────────────────────────────────────────── tidyverse 1.2.1 ──
+## ── Attaching packages ────────────────────────────────────────────── tidyverse 1.2.1 ──
 ```
 
 ```
 ## ✔ ggplot2 2.2.1     ✔ purrr   0.2.4
-## ✔ tibble  1.4.1     ✔ dplyr   0.7.4
-## ✔ tidyr   0.7.2     ✔ stringr 1.2.0
+## ✔ tibble  1.4.2     ✔ dplyr   0.7.4
+## ✔ tidyr   0.8.0     ✔ stringr 1.2.0
 ## ✔ readr   1.1.1     ✔ forcats 0.2.0
 ```
 
 ```
-## ── Conflicts ──────────────────────────────────────────────────────────────────────────────── tidyverse_conflicts() ──
+## ── Conflicts ───────────────────────────────────────────────── tidyverse_conflicts() ──
 ## ✖ dplyr::filter() masks stats::filter()
 ## ✖ dplyr::lag()    masks stats::lag()
 ```
@@ -485,7 +485,7 @@ billboard_clean %>%
 
 ```
 ## # A tibble: 10 x 6
-## # Groups: artist [5]
+## # Groups:   artist [5]
 ##     rank title                        artist          year     n year_dist
 ##    <dbl> <chr>                        <chr>          <dbl> <int>     <dbl>
 ##  1 76.0  Tell It Like It Is           Aaron Neville   1967     2      24.0
