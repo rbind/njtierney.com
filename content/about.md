@@ -19,9 +19,9 @@ I am a keen rock climber and enjoy being involved in the climbing community. Ove
 
 I enjoy photography, and have taken some [not-terrible photos](https://www.flickr.com/photos/134851297@N04) of other climbers:
 
-![photo of my friend, Neil Jenman, on the submarine boudler in Castle Hill, NZ, underneath the stars](https://njtierney.updog.co/img/bio-pic-3.png)
+![photo of my friend, Neil Jenman, on the submarine boulder in Castle Hill, NZ, underneath the stars](https://njtierney.updog.co/img/bio-pic-3.png)
 
-I ocassionaly play guitar, I love karaoke, and am a coffee geek.
+I occasionally play guitar, I love karaoke, and am a coffee geek.
 
 This website has moved from [jekyll](http://jekyllrb.com/) to [blogdown](https://github.com/rstudio/blogdown), and am using a slightly tweaked version of Yihui's awesome minimal theme, [hugo-xmin](https://github.com/yihui/hugo-xmin).
 

@@ -99,7 +99,7 @@ I'm a PhD candidate in my final year of a 4 year program through the [Industry D
 
 `2017` "Now you see it? Now you don't? The role of graphics in identifying MCMC convergence" **Tierney, NJ.**, Cook, D, McBain, M. _Bayes on the Beach, Gold Coast, Australia_. [PDF](https://njtierney.updog.co/img/2017-11-29-poster-ppt-botb.pdf)
 
-`2016` "Bayesian Approachs in Occupational Health Surveillance" **Tierney, N.J.**, Mengersen, K., Clifford, S., Drovandi, C., Harden, F., Harden, M. _World Meeting for the International Society for Bayesian Analysis_.
+`2016` "Bayesian Approaches in Occupational Health Surveillance" **Tierney, N.J.**, Mengersen, K., Clifford, S., Drovandi, C., Harden, F., Harden, M. _World Meeting for the International Society for Bayesian Analysis_.
 
 `2015` "The Sharpest Tool in the Shed" **Tierney, N.J.**, Mengersen, K., Harden, F., Harden, M. _Bayes on the Beach_.
 
