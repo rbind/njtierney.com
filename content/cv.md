@@ -113,6 +113,8 @@ I'm a PhD candidate in my final year of a 4 year program through the [Industry D
 
 ### Tutorial
 
+`2018` [Missing Data Imputations, _UseR!2018_, Brisbane, Australia.](https://user2018.r-project.org/tutorials/)
+
 `2017` Reproducible Reporting Using RMarkdown and GitHub, _Angletr_, Anglet, France.
 
 `2015` Developing Bayesian Models for Ranking Academic Papers, _Bayes on the Beach_, Gold Coast, Australia.
@@ -139,11 +141,15 @@ I'm a PhD candidate in my final year of a 4 year program through the [Industry D
 
 `2013` ["Statistics for Journalists", _Australian Science Media Centre_ Brisbane, Australia](http://www.njtierney.com/statistics/teaching/2013/11/01/statistics-for-journalists/).
 
-### rOpenSci
+### Conferences
 
-`2017` Organiser of the second [rOpenSci Unconference in Australia](ozunconf.ropensci.org).
+`2018` Principal Organiser of the third [rOpenSci Unconference in Australia](ozunconf18.ropensci.org).
 
-`2016` Organiser of the first [rOpenSci Unconference in Australia](auunconf.ropensci.org).
+`2018` Member of the Organising Committee for [UseR!2018](https://user2018.r-project.org/), Brisbane, Australia.
+
+`2017` Principal Organiser of the second [rOpenSci Unconference in Australia](ozunconf17.ropensci.org).
+
+`2016` Principal Organiser of the first [rOpenSci Unconference in Australia](auunconf.ropensci.org).
 
 ### Statistics Society of Australia
 
