@@ -38,3 +38,6 @@ title: Talks
 
 - [2017/06/02: **Wombat / MeDaScin** Tidy Approaches to Missing Data, Melbourne, Australia](https://talks.updog.co/wombat2017/2017-06-02-tidy-miss.html#1)
 
+# 2016
+
+- [2016/10/25](https://talks.updog.co/burgr-reproducible-talk/burgr-reproducibility-talk.html#/)
