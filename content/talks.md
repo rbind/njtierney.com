@@ -40,4 +40,4 @@ title: Talks
 
 # 2016
 
-- [2016/10/25](https://talks.updog.co/burgr-reproducible-talk/burgr-reproducibility-talk.html#/)
+- [2016/10/25: **BURGr** Reproducibility: Now you can, too! Reproducibility: Now you can, too!](https://talks.updog.co/burgr-reproducible-talk/burgr-reproducibility-talk.html#/)
