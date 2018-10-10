@@ -14,7 +14,7 @@ title: Talks
 
 - [2018/07/19: Now you see it?  Now you don’t?  The role of graphics in identifying MCMC convergence](https://talks.updog.co/talk-mcmclineup-keynote/assets/player/KeynoteDHTMLPlayer.html#0)
 
-- [2018/07/13: Find the best locations for facilities using maxcovr](https://talks.updog.co/user2018-maxcovr/user2018-maxcovr-talk.html#1)
+- 2018/07/13: Find the best locations for facilities using `maxcovr`. [Slides](https://talks.updog.co/user2018-maxcovr/user2018-maxcovr-talk.html#1) [YouTube](https://www.youtube.com/watch?v=sA8ItKmdwjM&t=3s)
 
 - [2018/07/11: Intro to missing data visualistion](https://talks.updog.co/user2018-intro-to-visualisation-with-naniar/user2018-intro-to-naniar.html#1)
 

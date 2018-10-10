@@ -14,9 +14,6 @@ Research Fellow at Monash University
 <i class="fa fa-twitter"></i> <a href="https://twitter.com/nj_tierney">nj_tierney</a>
 </div>
 
-<!-- ### Currently
-
-I'm a PhD candidate in my final year of a 4 year program through the [Industry Doctoral Training Centre (IDTC)](https://www.atn.edu.au/industry/IDTC/) at the [Queensland University of Technology](www.qut.edu.au), due to finish in May 2017. My PhD project is broken into two parts: 1. Statistical analysis of Occupational Health Surveillance data; 2. Mathematical and Statistical modelling of Cardiac Arrests and AED locations in Switzerland. -->
 
 ## Education
 
@@ -62,7 +59,11 @@ I'm a PhD candidate in my final year of a 4 year program through the [Industry D
 
 ### Papers
 
-`2018` "Bayesian Approaches to Modelling Occupational Health." **Tierney, N.J.** Mengersen, K., Harden, F., Harden, M. _BMJ Open_. __Submitted__.
+`2018` **Tierney, NJ.** Cook, D. "Expanding tidy data principles to facilitate missing data exploration, visualization and assessment of imputations." _Journal of Computational and Graphical Statistics_. __Submitted__ [[Pre-print](https://arxiv.org/abs/1809.02264)]
+
+`2018` "Bayesian Approaches to Modelling Occupational Health." **Tierney, N.J.** Clifford, S., Drovandi, C., Mengersen, K. _BMJ Open_. __Under Review__.
+
+`2018` "Evaluating health facility access using Bayesian spatial models and location analysis methods", **Tierney, N.J.**, Mira, A., Reinhold H.J.,  Arbia, G., Clifford, S., Moccetti, T., Auricchio A., Mengersen, K.L.. _PLoS ONE_. __Under Review__.
 
 `2018` [**Tierney, NJ.**,  Reinhold, J., Mira, A., Weiser, M., Burkart, R., Benvenuti, C., Aurrichio, A.  "Novel relocation methods for automatic external defibrillator improve out-of-hospital cardiac arrest coverage under limited resources" _Resuscitation , Volume 125 , 83 - 89_. doi: 10.1016/j.resuscitation.2018.01.055](https://doi.org/10.1016/j.resuscitation.2018.01.055)
 
@@ -74,10 +75,16 @@ I'm a PhD candidate in my final year of a 4 year program through the [Industry D
 
 `2015` [“Using Decision Trees to Understand Structure in Missing Data.” **Tierney, N.J.,** Mengersen, K., Harden, F., Harden M.  _BMJ Open_ 5 (6).  doi:10.1136/bmjopen-2014-007450](http://bmjopen.bmj.com/content/5/6/e007450.full).
 
-
 ## Conference Items
 
 ### Talks
+
+`2018` **RUCK: R Users Conference Korea (Invited Keynote speaker)** "Empowering people with community, software, and peer review".
+
+`2018` **ISCBASC** "Now you see it?  Now you don’t?  The role of graphics in identifying MCMC convergence", Melbourne, Australia [HTML](https://talks.updog.co/asc2018/talk-mcmclineup-keynote/index.html) [PDF](https://talks.updog.co/asc2018/pdf/talk-mcmclineup-keynote.pdf)
+
+
+`2018` **UseR!**"Find the best locations for facilities using `maxcovr`", Brisbane, Australia [Slides](https://talks.updog.co/user2018-maxcovr/user2018-maxcovr-talk.html#1 ) [YouTube](https://www.youtube.com/watch?v=sA8ItKmdwjM&t=3s)
 
 `2017` [**UseR!**  Narnia: Data structures and functions for consistent exploration of missing data, Brussels, Belgium](https://talks.updog.co/user2017/2017-07-06-user.html#1)
 
@@ -167,6 +174,16 @@ I'm a PhD candidate in my final year of a 4 year program through the [Industry D
 
 ### Talks (Outside of conferences)
 
+`2018` [rOpenSci: Transforming science through open data and software](https://talks.updog.co/uqos-ropensci/ropensci-lightning-talk.html#1)
+
+`2018` [Intro to Missing Data: DMAC](https://talks.updog.co/2018-dmac-intro-to-missing-data/2018-dmac-intro-to-missing-data.html)
+
+`2018` [Rethinking teaching statistical computing](https://talks.updog.co/ssa2018-rethinking-statistical-computing/ssa2018-rethinking-statistical-computing.html#1)
+
+`2018` [Intro to missing data visualistion](https://talks.updog.co/user2018-intro-to-visualisation-with-naniar/user2018-intro-to-naniar.html#1)
+
+`2018` [rOpenSci ozunconf: Building communities to transform science](https://talks.updog.co/melburn2018-03/2018-03-19-melburn.html)
+
 `2018` [Why is that missing, and what can we do about it? Tools for missing data and beyond, Genentech, San Francisco, USA](https://talks.updog.co/genentech2018/2018-02-15-genentech.html#1)
 
 `2018` [Oh no, why is that missing? Practical tools for missing data, BARUGS, San Francisco, USA](https://talks.updog.co/barugs2018/2018-02-13-barugs.html#1)
@@ -180,7 +197,6 @@ I'm a PhD candidate in my final year of a 4 year program through the [Industry D
 `2013-16` Industry Doctoral Training Centre (IDTC) Student Conferences, Various.
 
 `2013-16` [Bayesian Research and Applications Group (BRAG)](https://bragqut.wordpress.com/) Research Meetings, Various.
-
 
 ## Technical skills
 
@@ -216,4 +232,4 @@ I'm a PhD candidate in my final year of a 4 year program through the [Industry D
 
 Available upon request
 
-_Last updated: February 2018_
+_Last updated: October 2018_
