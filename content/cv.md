@@ -73,13 +73,13 @@ Research Fellow at Monash University
 
 `2016` "S3 Methods: A Simple Guide." **Tierney, N.J.**  [_arxiv_](https://arxiv.org/abs/1608.07161).
 
-`2015` [“Using Decision Trees to Understand Structure in Missing Data.” **Tierney, N.J.,** Mengersen, K., Harden, F., Harden M.  _BMJ Open_ 5 (6).  doi:10.1136/bmjopen-2014-007450](http://bmjopen.bmj.com/content/5/6/e007450.full).
+`2015` ["Using Decision Trees to Understand Structure in Missing Data." **Tierney, N.J.,** Mengersen, K., Harden, F., Harden M.  _BMJ Open_ 5 (6).  doi:10.1136/bmjopen-2014-007450](http://bmjopen.bmj.com/content/5/6/e007450.full).
 
 ## Conference Items
 
 ### Talks
 
-`2018` **RUCK: R Users Conference Korea (Invited Keynote speaker)** "Empowering people with community, software, and peer review".
+`2018` [**RUCK: R Users Conference Korea (Invited Keynote speaker)** "Empowering people with community, software, and peer review".](https://talks.updog.co/korea-keynote/korea-keynote.html#1)
 
 `2018` **ISCBASC** "Now you see it?  Now you don’t?  The role of graphics in identifying MCMC convergence", Melbourne, Australia [HTML](https://talks.updog.co/asc2018/talk-mcmclineup-keynote/index.html) [PDF](https://talks.updog.co/asc2018/pdf/talk-mcmclineup-keynote.pdf)
 

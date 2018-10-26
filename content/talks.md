@@ -4,6 +4,8 @@ title: Talks
 
 # 2018
 
+- [2018/10/23 **RUCK: R Users Conference Korea (Invited Keynote speaker)** "Empowering people with community, software, and peer review".](https://talks.updog.co/korea-keynote/korea-keynote.html#1)
+
 - [2018/09/23: rOpenSci: Transforming science through open data and software](https://talks.updog.co/uqos-ropensci/ropensci-lightning-talk.html#1)
 
 - 2018/08/27: Now you see it?  Now you don’t?  The role of graphics in identifying MCMC convergence [HTML](https://talks.updog.co/asc2018/talk-mcmclineup-keynote/index.html) [PDF](https://talks.updog.co/asc2018/pdf/talk-mcmclineup-keynote.pdf)
