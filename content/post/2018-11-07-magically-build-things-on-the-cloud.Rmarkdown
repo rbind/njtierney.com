@@ -90,3 +90,10 @@ From here, you need to change up your settings on your github repo - and tell it
 And that's it!
 
 Now, I realise that this is a lot of steps, so I decided to create a little screencast of me doing this. You can find it, [here]().
+
+# Thankyous
+
+This post would not have been possible without the great help of the awesome [Maëlle Salmon](). Maëlle was a huge help to getting me up and running with `tic`, thanks!
+
+Finally, of course, thank you to Kuril for wtiting `tic`.
+
