@@ -2,6 +2,10 @@
 title: Talks
 ---
 
+# 2019
+
+- [2019/01/09 Are we tere yet? Testing the effectiveness of graphics as MCMC diagnostics. Johns Hopkins, Baltimore, USA](https://talks.updog.co/talk-are-we-there-yet-mcmc.pdf)
+
 # 2018
 
 - [2018/10/23 **RUCK: R Users Conference Korea (Invited Keynote speaker)** "Empowering people with community, software, and peer review".](https://talks.updog.co/korea-keynote/korea-keynote.html#1)
