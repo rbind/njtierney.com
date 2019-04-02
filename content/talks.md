@@ -4,6 +4,8 @@ title: Talks
 
 # 2019
 
+- [DMAC 2019: Intro to Missing Data](https://talks.updog.co/2019-dmac-intro-to-missing-data/2019-dmac-intro-to-missing-data.html#1)
+
 - [2019/01/09 Are we tere yet? Testing the effectiveness of graphics as MCMC diagnostics. Johns Hopkins, Baltimore, USA](https://talks.updog.co/talk-are-we-there-yet-mcmc.pdf)
 
 # 2018
