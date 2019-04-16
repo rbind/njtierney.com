@@ -19,7 +19,7 @@ Research Fellow at Monash University
 
 ### Postgraduate
 
-`2013-18` __PhD (Statistics)__, Queensland University of Technology. Supervisor: Kerrie Mengersen.
+`2013-18` __PhD (Statistics)__, Queensland University of Technology. Supervisor: Kerrie Mengersen. **Thesis nominated for University Doctoral Outstanding Thesis Award**.
 
 `Award` __APA ($24,500 Annually for 4 years)__ ; __IDTC Top Up ($10,000 Annually for 4 years)__ .
 
@@ -44,6 +44,28 @@ Research Fellow at Monash University
 `2015` __Overall University Winner__ "The Joy of Stats" _Sessional Teaching and Reflection Showcase (STARS)_(Presentation).
 
 `2015` __Vice-Chancellor's Performance Award__ for innovation in teaching in SEB113 ($2,500).
+
+### Software Carpentry
+
+`2018` Software carpentry instructor trainer. Involved in teaching best 
+  practices on how to teach software coding to other instructors.
+
+### DataCamp
+
+`2018` Developed online course on Handling Missing Data. Produced tutorials and
+  instructional videos.
+
+### ETC1010
+
+`2019` Tutor for ETC1010: Data Modelling and Computing
+
+### Invited Tutorials
+
+`2018` [Missing Data Imputations, _UseR!2018_, Brisbane, Australia.](https://user2018.r-project.org/tutorials/)
+
+`2017` Reproducible Reporting Using RMarkdown and GitHub, _Angletr_, Anglet, France.
+
+`2015` Developing Bayesian Models for Ranking Academic Papers, _Bayes on the Beach_, Gold Coast, Australia.
 
 ## Publications
 
@@ -102,6 +124,8 @@ Research Fellow at Monash University
 
 ### Posters
 
+`2019` "A Missing Data Carol: Ghosts of Missing Data Past, Present, and Future". **Tierney, NJ** _rstudioconf2019, Austin, Texas, USA_ [PDF](https://talks.updog.co/2019-01-16-missing-data-past-present-future.pdf)
+
 `2018` "Tidy Principles for Missing Data Exploration using `naniar`" **Tierney, NJ.** _rstudioconf18, San Diego, USA_. [PDF](https://njtierney.updog.co/img/rstudioconf18-tidy-principles-for-missing-data.pdf)
 
 `2017` "Now you see it? Now you don't? The role of graphics in identifying MCMC convergence" **Tierney, NJ.**, Cook, D, McBain, M. _Bayes on the Beach, Gold Coast, Australia_. [PDF](https://njtierney.updog.co/img/2017-11-29-poster-ppt-botb.pdf)
@@ -117,14 +141,6 @@ Research Fellow at Monash University
 ## Blog
 
 `2013-` I maintain a personal blog, [njtierney.com](https://www.njtierney.com), to share code and statistics, and to engage in dialogue with the statistics and r-programming communities.
-
-### Tutorial
-
-`2018` [Missing Data Imputations, _UseR!2018_, Brisbane, Australia.](https://user2018.r-project.org/tutorials/)
-
-`2017` Reproducible Reporting Using RMarkdown and GitHub, _Angletr_, Anglet, France.
-
-`2015` Developing Bayesian Models for Ranking Academic Papers, _Bayes on the Beach_, Gold Coast, Australia.
 
 ## Professional Experience
 
