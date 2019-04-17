@@ -150,7 +150,9 @@ Here is a list of resources on using spatial data in R:
 
 - [Steph de Silva-Stammel's blog post on resources for geospatial data and transport](https://www.stephdesilva.com/post/the-keys-to-the-kingdom/)
 
-- [The tmap package provides a great rich way to build static and interactive spatial plots in a layered approach similar to ggplot2](https://github.com/mtennekes/tmap)
+- [The `tmap` package provides a great rich way to build static and interactive spatial plots in a layered approach similar to ggplot2](https://github.com/mtennekes/tmap)
+
+- [The `mapview` package provides functions to very quickly and conveniently create interactive visualisations of spatial data.](https://r-spatial.github.io/mapview/)
 
 For more thoughts on R for spatial data analysis:
 
