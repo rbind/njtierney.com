@@ -140,6 +140,13 @@ In particular, simple features is designed to play nicely with [the tidyverse](h
 
 - [A comparison of plotting in sp compared to sf](http://rpubs.com/cyclemumner/sf-plotting)
 
+- [Geocomputation with R (a book)](https://geocompr.robinlovelace.net/)
+
+- [The R Task View on Spatial Data](https://cran.r-project.org/web/views/Spatial.html)
+
+- [Introduction to GIS with R](https://www.jessesadler.com/post/gis-with-r-intro/)
+
+- [Steph de Silva-Stammel's blog post on resources for geospatial data and transport](https://www.stephdesilva.com/post/the-keys-to-the-kingdom/)
 
 For more thoughts on R for spatial data analysis:
 
