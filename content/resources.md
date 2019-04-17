@@ -124,7 +124,9 @@ I use decision trees a lot in R, and I even [wrote a little package](https://git
 
 Spatial data analysis can be really different to anything else that you've done in R. Well, it was for me. Fortunately, [recent awesome progress](https://www.r-consortium.org/blog/2017/01/03/simple-features-now-on-cran) has been made on the simple features R package, officially supported by the RConsortium, and authored by [Edzer Pebesma](https://github.com/edzer). The format of simple features is to adopt a standard dataframe format, where every row is a spatial feature, and the spatial features are described in a geometry list column. This is really fantastic, because it means that (for the most part), working with spatial data is very similar to working with regular dataframes, which is the bread and butter of analysis and data wrangling in R. 
 
-In particular, simple features is designed to play nicely with [the tidyverse](http://tidyverse.org/), and accordingly plays well with ggplot2, dplyr, purrr, and so on. It's amazing. Anyway, here is a list of resources on using the simple features format:
+In particular, simple features is designed to play nicely with [the tidyverse](http://tidyverse.org/), and accordingly plays well with ggplot2, dplyr, purrr, and so on. It's amazing. 
+
+Here is a list of resources on using spatial data in R:
 
 - The [R Spatial Blog](http://r-spatial.org/) is a great way to stay updated with the latest changes in simple features.
 
@@ -147,6 +149,8 @@ In particular, simple features is designed to play nicely with [the tidyverse](h
 - [Introduction to GIS with R](https://www.jessesadler.com/post/gis-with-r-intro/)
 
 - [Steph de Silva-Stammel's blog post on resources for geospatial data and transport](https://www.stephdesilva.com/post/the-keys-to-the-kingdom/)
+
+- [The tmap package provides a great rich way to build static and interactive spatial plots in a layered approach similar to ggplot2](https://github.com/mtennekes/tmap)
 
 For more thoughts on R for spatial data analysis:
 
