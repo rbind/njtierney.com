@@ -60,6 +60,8 @@ Fast and tidy methods for summarising mcmc chains using `data.table`.
 
 Convert decision tree objects into tidy data frames with `broomstick`.
 
+# syn
 
-<!-- [__maxcovr:__ Tools for solving the Maximal Covering Location Problem in R](https://github.com/njtierney/maxcovr). -->
+[![Travis build status](https://travis-ci.org/ropenscilabs/syn.svg?branch=master)](https://travis-ci.org/ropenscilabs/syn)[![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/ropenscilabs/syn?branch=master&svg=true)](https://ci.appveyor.com/project/ropenscilabs/syn)[![Coverage status](https://codecov.io/gh/ropenscilabs/syn/branch/master/graph/badge.svg)](https://codecov.io/github/ropenscilabs/syn?branch=master)[![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 
+A **zero dependency** R package that lists synonyms and antonyms.
