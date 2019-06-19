@@ -2,7 +2,7 @@
 title: "r-tip: 3 rmarkdown tricks I use every day"
 author: ''
 date: '2018-02-28'
-slug: naniar-on-cran
+slug: three-r-tips
 categories: [rstats]
 tags: []
 ---
@@ -30,7 +30,6 @@ What happens now?
 
 Well, when you run your rmarkdown document, you get a new folder WITH THE FIGURES
 
-- insert amazing gif -
 
 # Tip Number 2: Reduce clutter and increase sanity: Set options in a code chunk.
 
@@ -129,9 +128,8 @@ It might seem trivial, but naming your code chunks has some nice side effects:
 
 1. It now saves that plot with the chunk name (instead of untitled-1)
 
-*magic gif*
 
-2. If all chunks are named, this means that when you cache, you won't get a slowdown, as it might need to re-reun untitled-1, when you change your code. - [evidence]()
+2. If all chunks are named, this means that when you cache, you won't get a slowdown, as it might need to re-reun untitled-1, when you change your code, as said by [Rob](https://twitter.com/robjhyndman/status/894886426885578752), and [Maëlle](https://masalmon.eu/2017/08/08/chunkpets/).
 
 3. Helps give you context when you are running your code 6 months later.
 
@@ -139,7 +137,5 @@ It might seem trivial, but naming your code chunks has some nice side effects:
 
 # Closing
 
-I've got some other little #rstats hacks (or rather, [crantrips]()  that I like to use - I'll write about them in a series in the future.
-
-Finally, if you haven't seen it yet, check out the new Rmarkdown book written by Yihui, JJ Allaire, and Garrett Grolemund "R Markdown: The Definitive Guide"
+Finally, if you haven't seen it yet, check out the new Rmarkdown book written by Yihui, JJ Allaire, and Garrett Grolemund ["R Markdown: The Definitive Guide"](https://bookdown.org/yihui/rmarkdown/)
 
