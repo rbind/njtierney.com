@@ -4,7 +4,7 @@ theme = "hugo-xmin"
 googleAnalytics = "UA-69408097-1"
 disqusShortname = "njtierney"
 enableEmoji = true
-ignoreFiles = ["\\.Rmd$", "_files$", "_cache$"]
+ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 footnotereturnlinkcontents = "↩"
 
 [permalinks]
