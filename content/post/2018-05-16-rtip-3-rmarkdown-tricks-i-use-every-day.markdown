@@ -111,7 +111,7 @@ This tells rmarkdown:
 
 I don't want to get distracted with what `cache` is, but very quickly, using `cache TRUE` means that you don't have to create 
 
-# Tip Number 2: Name your code chunks
+# Tip Number 4: Name your code chunks
 
 You can actually give each chunk of code a name:
 
