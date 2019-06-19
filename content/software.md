@@ -8,18 +8,6 @@ title: Software
 
 Preliminary exploratory visualisation of data.
 
-<!--
-```r
-library(visdat)
-
-vis_dat(airquality)
-
-```
-
-![`vis_dat(airquality)`](https://raw.githubusercontent.com/njtierney/visdat/master/README-figs/README-vis-dat-aq-1.png)
-
--->
-
 ## [naniar](http://naniar.njtierney.com)
 
 [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/njtierney/naniar?branch=master&svg=true)](https://ci.appveyor.com/project/njtierney/naniar)
@@ -65,3 +53,16 @@ Convert decision tree objects into tidy data frames with `broomstick`.
 [![Travis build status](https://travis-ci.org/ropenscilabs/syn.svg?branch=master)](https://travis-ci.org/ropenscilabs/syn)[![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/ropenscilabs/syn?branch=master&svg=true)](https://ci.appveyor.com/project/ropenscilabs/syn)[![Coverage status](https://codecov.io/gh/ropenscilabs/syn/branch/master/graph/badge.svg)](https://codecov.io/github/ropenscilabs/syn?branch=master)[![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 
 A **zero dependency** R package that lists synonyms and antonyms.
+
+# brolgar
+
+[![Travis build
+status](https://travis-ci.org/njtierney/brolgar.svg?branch=master)](https://travis-ci.org/njtierney/brolgar)
+[![AppVeyor build
+status](https://ci.appveyor.com/api/projects/status/github/njtierney/brolgar?branch=master&svg=true)](https://ci.appveyor.com/project/njtierney/brolgar)
+[![Codecov test
+coverage](https://codecov.io/gh/njtierney/brolgar/branch/master/graph/badge.svg)](https://codecov.io/gh/njtierney/brolgar?branch=master)
+[![Lifecycle:
+experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+
+BRowse over Longitudinal data Graphically and Analytically in R

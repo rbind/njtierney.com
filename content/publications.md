@@ -15,11 +15,13 @@ title: Publications
 
 `2018` [**Tierney, NJ.**,  Reinhold, J., Mira, A., Weiser, M., Burkart, R., Benvenuti, C., Aurrichio, A.  "Novel relocation methods for automatic external defibrillator improve out-of-hospital cardiac arrest coverage under limited resources" _Resuscitation , Volume 125 , 83 - 89_. doi: 10.1016/j.resuscitation.2018.01.055](https://doi.org/10.1016/j.resuscitation.2018.01.055)
 
+`2019` "Evaluating health facility access using Bayesian spatial models and location analysis methods" **Tierney, NJ.**, Mira, A, Reinhold, J., Arbia, G, Clifford, S, Moccetti, T., Peluso, S., Auricchio, A., Mengersen, K. _PLoS ONE_. __In Press__.
+
 # Under Review or in Preparation
 
-`2018` "Bayesian modelling to assist inference on health outcomes in Occupational Health Surveillance." **Tierney, N.J.** Clifford, S., Drovandi, CC., Mengersen, KL _BMJ Open_. __Under Review__.
+`2018` "Bayesian modelling to assist inference on health outcomes in Occupational Health Surveillance." **Tierney, N.J.** Clifford, S., Drovandi, CC., Mengersen, KL __Under Review__.
 
-`2018` "Evaluating health facility access using Bayesian spatial models and location analysis methods" **Tierney, NJ.**, Mira, A, Reinhold, J., Arbia, G, Clifford, S, Moccetti, T., Auricchio, A., Mengersen, K. _PLoS ONE_. __Submitted__.
+`2019` "Software tools for geospatial analysis: An Introduction to software tools, data and services for geospatial analysis of stroke services" Mark Padgham, Geoff Boeing, David Cooley, **Nicholas Tierney**, Michael Sumner, Thanh G Phan, and Richard Beare __Under Review__
 
 # Pre-Print
 
@@ -46,11 +48,11 @@ title: Publications
 
 # Conference Publications
 
-**Tierney, N. J.**, Pitchforth, J., Mengersen, K. L, (2018) Understanding Missing Data: The Use of Classification and Regression Trees (CART), and Boosted Regression Trees (BRTs), _Australian Statistical Conference in Conjunction with the International Society of Clinical Biostatistics._, Melbourne, Australia 27-10 July, 2014. [Slides](https://speakerdeck.com/njtierney/understanding-missing-data-the-use-of-classification-and-regression-trees-and-boosted-regression-trees).
-
-**Tierney, N. J.**, Pitchforth, J., Mengersen, K. L, (2014) Understanding Missing Data: The Use of Classification and Regression Trees (CART), and Boosted Regression Trees (BRTs), _Australian Statistical Conference in Conjunction with the institute of Mathematical Statistics Annual Meeting._, Sydney, Australia 7-10 July, 2014. [Slides](https://speakerdeck.com/njtierney/understanding-missing-data-the-use-of-classification-and-regression-trees-and-boosted-regression-trees).
+**Tierney, N. J.**, Cook, D., McBain, M (2018) "Now you see it? Now you don’t? The role of graphics in identifying MCMC convergence", _Australian Statistical Conference in Conjunction with the International Society of Clinical Biostatistics._, Melbourne, Australia 27th August, 2018. [Slides](https://talks.updog.co/asc2018/pdf/talk-mcmclineup-keynote.pdf) **Awarded Runner-Up for the Pitman Prize for young statisticians**.
 
 Integrating Occupational Hygiene, Medicine and Engineering in a Mining Context. Maurice Harden, Charles Steer, Fiona Harden, Geoff Butler, Kerrie Mengersen, **Nicholas Tierney**, Ann. Occup. Hyg., 2015, Vol. 59, No. Supplement 1, 1–47 doi:10.1093/annhyg/meu119 [PDF](http://annhyg.oxfordjournals.org/content/59/suppl_1/1.full.pdf?etoc%20)
+
+**Tierney, N. J.**, Pitchforth, J., Mengersen, K. L, (2014) Understanding Missing Data: The Use of Classification and Regression Trees (CART), and Boosted Regression Trees (BRTs), _Australian Statistical Conference in Conjunction with the institute of Mathematical Statistics Annual Meeting._, Sydney, Australia 7-10 July, 2014. [Slides](https://speakerdeck.com/njtierney/understanding-missing-data-the-use-of-classification-and-regression-trees-and-boosted-regression-trees).
 
 # PhD Thesis
 
