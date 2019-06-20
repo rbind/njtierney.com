@@ -38,15 +38,17 @@ Want to change the width of your figure? Want to save to PNG, JPG, or more?
 In your rmarkdown code chunk, this thing
 
 ````
-
+```{r}
+```
 ````
 
 You can specify these things!
 
 Want to save a figure as JPG? 
 
+
 ````
-```r dev = "jpg"
+```{r dev = "jpg"}
 ggplot(airquality,
        aes(x = Temp,
            y = Wind)) +
@@ -57,7 +59,7 @@ ggplot(airquality,
 What about a PNG?
 
 ````
-```r dev = "png"
+```{r dev = "png"}
 ggplot(airquality,
        aes(x = Temp,
            y = Wind)) +
@@ -68,7 +70,7 @@ ggplot(airquality,
 Why not both?
 
 ````
-```r dev = c("png", "jpg")
+```{r dev = c("png", "jpg")}
 ggplot(airquality,
        aes(x = Temp,
            y = Wind)) +
@@ -79,7 +81,7 @@ ggplot(airquality,
 This is really handy, say, when a journal wants all your figures as TIFF or PS.
 
 ````
-```r dev = c("png", "jpg", "tiff")
+```{r dev = c("png", "jpg", "tiff")}
 ggplot(airquality,
        aes(x = Temp,
            y = Wind)) +
@@ -94,7 +96,7 @@ Writing that for each chunk can be pretty annoying, luckily there is a better wa
 Here is my setup chunk that I have for one of my papers at the moment:
 
 ````
-```r setup-chunk, include=FALSE
+```{r setup-chunk, include=FALSE}
 knitr::opts_chunk$set(dev = "png",
                       dpi = 300,
                       echo = FALSE,
@@ -116,7 +118,7 @@ I don't want to get distracted with what `cache` is, but very quickly, using `ca
 You can actually give each chunk of code a name:
 
 ````
-```r my-amazing-plot, dev = c("png", "jpg", "tiff", "ps")
+```{r my-amazing-plot, dev = c("png", "jpg", "tiff", "ps")}
 ggplot(airquality,
        aes(x = Temp,
            y = Wind)) +
