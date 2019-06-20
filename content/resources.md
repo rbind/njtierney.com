@@ -27,14 +27,14 @@ A new community really worth checking out is [the RStudio community](https://com
 I would also recommend checking out RStudio's [list of resources for learning R](http://www.rstudio.com/resources/training/online-learning/#R), and [this blog post](http://www3.nd.edu/~mclark19/projects.html), which describes learning R from a social sciences background.
 
 To stay up to date with what other people around the world are doing with R, I recommend checking up on [r-bloggers](r-bloggers.com) every other day, and checking out the [#rstats](https://twitter.com/search?q=%23rstats&src=tyah) hashtag on twitter. The R and statistics community on twitter is both excellent and friendly.
-
+ 
 # Learning Advanced R
 
 Got a basic handle on R and are hankering for more? I recommend these free, online books by [Hadley Wickham](http://hadley.nz/):
 
 - [Advanced R Programming](http://adv-r.had.co.nz">Advanced R Programming)
 
-- [R Packges](http://r-pkgs.had.co.nz"), and
+- [R Packages](http://r-pkgs.had.co.nz"), and
 
 There is also a book, [Ramarro](http://www.quantide.com/R/r-training/r-web-books/ramarro-r-for-developers), by quantide which seems similar(ish) to Hadley's books.
 
@@ -56,7 +56,7 @@ I have also written a [blog post](http://www.njtierney.com/r/missing%20data/rblo
 
 If you are going to do a plot in R, it should be in ggplot. It takes about 5 minutes to get the hang of, and once you've got it down you can create plots that make sense, behave how you expect, and look fantastic.
 
-ggplot ollows a logical syntax adapted from the book "The Grammar of Graphics". It makes visualisation make sense. And there are lots of other packages that build upon it to make it more awesome, such as [GGally](https://ggobi.github.io/ggally/), [ggalt](https://github.com/hrbrmstr/ggalt), [ggExtra](https://cran.r-project.org/web/packages/ggExtra/index.html), [ggforce](https://cran.r-project.org/web/packages/ggforce/index.html), [gganimate](https://github.com/dgrtwo/gganimate), and [ggbeeswarm](https://cran.r-project.org/web/packages/ggbeeswarm/index.html), to name a few!
+ggplot follows a logical syntax adapted from the book "The Grammar of Graphics". It makes visualisation make sense. And there are lots of other packages that build upon it to make it more awesome, such as [GGally](https://ggobi.github.io/ggally/), [ggalt](https://github.com/hrbrmstr/ggalt), [ggExtra](https://cran.r-project.org/web/packages/ggExtra/index.html), [ggforce](https://cran.r-project.org/web/packages/ggforce/index.html), [gganimate](https://github.com/dgrtwo/gganimate), and [ggbeeswarm](https://cran.r-project.org/web/packages/ggbeeswarm/index.html), to name a few!
 
 Here are some ggplot resources in order of usefulness
 
@@ -68,7 +68,7 @@ Here are some ggplot resources in order of usefulness
 
 # plotly
 
-Plotly for R, written and maintained by [Carson Sievert](https://cpsievert.github.io), is a very powerful and flexible interactive plotting enging in R. It has a fully fledged API for writing interactice graphics in R, as well as a fantastic function that gives the user a lot for free: `ggplotly`. You can read more about plotly for R in Carson's [free and online book](https://cpsievert.github.io/plotly_book/).
+Plotly for R, written and maintained by [Carson Sievert](https://cpsievert.github.io), is a very powerful and flexible interactive plotting engine in R. It has a fully fledged API for writing interactive graphics in R, as well as a fantastic function that gives the user a lot for free: `ggplotly`. You can read more about plotly for R in Carson's [free and online book](https://cpsievert.github.io/plotly_book/).
 
 # ggvis
 
