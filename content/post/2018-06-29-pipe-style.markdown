@@ -2,7 +2,7 @@
 title: "A note on magrittr pipe (`%>%`) code style"
 author: ''
 date: '2018-06-28'
-slug: style-ggplot
+slug: style-pipe
 categories:
   - rstats
   - Teaching
