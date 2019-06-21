@@ -1,7 +1,7 @@
 ---
 title: "A note on magrittr pipe (`%>%`) code style"
 author: ''
-date: '2018-06-28'
+date: '2018-08-28'
 slug: style-pipe
 categories:
   - rstats
@@ -12,7 +12,7 @@ tags: []
 
 
 
-I recently wrote about ggplot2 style, and in this one I'd like to discuss the pipe operator, `%>%`. These notes are drawn from the comments on the pipe section of the [tidyverse style guide](http://style.tidyverse.org/pipes.html).
+[I recently wrote about ggplot2 style](https://www.njtierney.com/post/2018/07/06/style-ggplot/), and in this one I'd like to discuss the pipe operator, `%>%`. These notes are drawn from the comments on the pipe section of the [tidyverse style guide](http://style.tidyverse.org/pipes.html).
 
 ## Newlines and the pipe
 
