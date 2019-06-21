@@ -1,9 +1,8 @@
 ---
-title: "A note on magrittr pipe code style"
+title: "A note on magrittr pipe (`%>%`) code style"
 author: ''
 date: '2018-06-28'
 slug: style-ggplot
-draft: yes
 categories:
   - rstats
   - Teaching
@@ -11,7 +10,7 @@ categories:
 tags: []
 ---
 
-```{r setup}
+```{r setup, echo = FALSE}
 knitr::opts_chunk$set(eval = FALSE)
 ```
 
