@@ -1,5 +1,5 @@
 ---
-title: 'Just Quickly: How do I pass bare variable arguments to things?'
+title: 'Curly Curly: How to pass bare variable arguments to things?'
 author: ''
 date: '2019-07-06'
 slug: jq-bare-vars
@@ -60,7 +60,7 @@ gg_hist(mtcars, "mpg")
 ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 ```
 
-<img src="/post/2019-07-06-jq-bare-vars_files/figure-html/gg-hist-string-1.png" width="672" />
+<img src="/post/2019-07-06-curly-curly-bare-vars_files/figure-html/gg-hist-string-1.png" width="672" />
 
 Fine. Right?
 
@@ -102,7 +102,7 @@ gg_hist(mtcars, mpg)
 ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 ```
 
-<img src="/post/2019-07-06-jq-bare-vars_files/figure-html/gg-curly-1.png" width="672" />
+<img src="/post/2019-07-06-curly-curly-bare-vars_files/figure-html/gg-curly-1.png" width="672" />
 
 You put the variable that you want to refer to in the "bare" form inside two curly braces. That's it. It's magic.
 
@@ -120,6 +120,6 @@ scatter_plot <- function(data, x, y){
 scatter_plot(mtcars, mpg, disp)
 ```
 
-<img src="/post/2019-07-06-jq-bare-vars_files/figure-html/scatter-plot-1.png" width="672" />
+<img src="/post/2019-07-06-curly-curly-bare-vars_files/figure-html/scatter-plot-1.png" width="672" />
 
 How freaking cool is this?
