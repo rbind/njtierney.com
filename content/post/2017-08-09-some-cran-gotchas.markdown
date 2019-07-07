@@ -3,7 +3,6 @@ title: 'some CRAN Gotchas '
 author: ''
 date: '2017-08-09'
 slug: some-cran-gotchas
-draft: true
 categories:
   - rstats
   - Blag
