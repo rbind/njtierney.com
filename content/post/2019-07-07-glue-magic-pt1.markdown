@@ -11,7 +11,7 @@ categories:
 
 
 
-Lately I've found myself using [Jim Hester's `glue` package](https://glue.tidyverse.org/) instead of `paste0` or `sprintf`. I want to start a little ongoing series of little magic spells using the `glue` package that I wanted to share.
+Lately I've found myself using [Jim Hester's `glue` package](https://glue.tidyverse.org/) instead of `paste0` or `sprintf`. This post marks the start of an ongoing series of little magic spells using the `glue` package.
 
 # The back story
 
