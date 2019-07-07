@@ -7,7 +7,7 @@ title: Publications
 
 # Journal Publications
 
-`2015` [“Using Decision Trees to Understand Structure in Missing Data.” **Tierney, N.J.,** Mengersen, K., Harden, F., Harden M.  _BMJ Open_ 5 (6).  doi:10.1136/bmjopen-2014-007450](http://bmjopen.bmj.com/content/5/6/e007450.full).
+`2015` ["Using Decision Trees to Understand Structure in Missing Data." **Tierney, N.J.,** Mengersen, K., Harden, F., Harden M.  _BMJ Open_ 5 (6).  doi:10.1136/bmjopen-2014-007450](http://bmjopen.bmj.com/content/5/6/e007450.full).
 
 `2016` ["Visualisation and statistical modelling techniques for the management of inventory stock levels" Sweatman, W.L., McGree, J., Carstens, C.J., Foster, K.J., Liu, S., **Tierney, N.J.,** Trednick, E., Zaitouny, A. _ANZIAM Journal_ 57, 130-162](https://journal.austms.org.au/ojs/index.php/ANZIAMJ/article/view/10225).
 
@@ -17,11 +17,17 @@ title: Publications
 
 `2019` "Evaluating health facility access using Bayesian spatial models and location analysis methods" **Tierney, NJ.**, Mira, A, Reinhold, J., Arbia, G, Clifford, S, Moccetti, T., Peluso, S., Auricchio, A., Mengersen, K. _PLoS ONE_. __In Press__.
 
+`2019` "Software tools for geospatial analysis: An Introduction to software tools, data and services for geospatial analysis of stroke services" Mark Padgham, Geoff Boeing, David Cooley, **Nicholas Tierney**, Michael Sumner, Thanh G Phan, and Richard Beare __In Press__
+
 # Under Review or in Preparation
 
-`2018` "Bayesian modelling to assist inference on health outcomes in Occupational Health Surveillance." **Tierney, N.J.** Clifford, S., Drovandi, CC., Mengersen, KL __Under Review__.
+`2019` "Bayesian modelling to assist inference on health outcomes in Occupational Health Surveillance." **Tierney, N.J.** Clifford, S., Drovandi, CC., Mengersen, KL __Under Review__.
 
-`2019` "Software tools for geospatial analysis: An Introduction to software tools, data and services for geospatial analysis of stroke services" Mark Padgham, Geoff Boeing, David Cooley, **Nicholas Tierney**, Michael Sumner, Thanh G Phan, and Richard Beare __Under Review__
+`2019` "A Realistic Guide to Making Data Available Alongside Code to Improve Reproducibility" Ram, K & **Tierney, N.J.**  __In Preparation__
+
+`2019` "Now you see it? Now you don’t? The role of graphics in identifying MCMC convergence" **Tierney, N.J.**, Cook, D, McBain, M. __In Preparation__
+
+`2019` "Making better spaghetti (plots)", **Tierney, N.J.**, Cook, D. __In Preparation__
 
 # Pre-Print
 
