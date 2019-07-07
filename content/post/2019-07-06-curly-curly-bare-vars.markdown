@@ -72,11 +72,6 @@ It was frustrating, and a real road block.
 
 But now, there is a way around this, and I really like it. It's the curly-curly:
 
-
-```r
-knitr::include_graphics("https://media.giphy.com/media/5wPBTvRODO7Ly/giphy.gif")
-```
-
 <img src="https://media.giphy.com/media/5wPBTvRODO7Ly/giphy.gif" style="display: block; margin: auto;" />
 
 _Curly, from the three stooges_
