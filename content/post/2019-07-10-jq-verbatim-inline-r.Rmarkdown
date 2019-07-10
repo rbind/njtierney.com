@@ -60,7 +60,7 @@ ggplot(airquality,
 ````
 `````
 
-But you can look into [Yihui's blog post](https://yihui.name/en/2017/11/knitr-verbatim-code-chunk/) for the details, or at the markdown source for my post [here](https://github.com/rbind/njtierney.com/blob/master/content/post/2019-07-10-jq-verbatim-inline-r.Rmarkdown#L33)
+But you can look into [Yihui's blog post](https://yihui.name/en/2017/11/knitr-verbatim-code-chunk/) for the details, or at the markdown source for my post [here](https://github.com/rbind/njtierney.com/blob/master/content/post/2019-07-10-jq-verbatim-inline-r.Rmarkdown#L39)
 
 # So, how to do the same thing for inline code?
 
@@ -74,7 +74,7 @@ You can show people the inline R code bit using the function `knitr::inline_expr
 
 > The months of the year are `` `r knitr::inline_expr("month.name")` ``
 
-And if you want to see how I wrote that, I think the easiest way is to see what the markdown code [here](https://github.com/rbind/njtierney.com/blob/master/content/post/2019-07-10-jq-verbatim-inline-r.Rmarkdown#L69).
+And if you want to see how I wrote _that_, I think the easiest way is to see what the markdown code [here](https://github.com/rbind/njtierney.com/blob/master/content/post/2019-07-10-jq-verbatim-inline-r.Rmarkdown#L75).
 
 # End
 
