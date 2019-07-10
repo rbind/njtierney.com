@@ -152,9 +152,13 @@ fries_inline
 
 And now you can include this in your rmarkdown text, so now I can dynamically generate the sentence:
 
-The variables in our dataset are time, treatment, subject, rep, potato, buttery, grassy, rancid, painty.
+```
+The variables in our dataset are `r fries_inline`
+```
 
-(PS, if anyone can work out how to show the inline R code not-evaluated I'd be forever grateful - [Yihui's trick](https://yihui.name/en/2017/11/knitr-verbatim-code-chunk/) doesn't seem to work).
+> The variables in our dataset are time, treatment, subject, rep, potato, buttery, grassy, rancid, painty.
+
+(PS, You can include a verbatim inline expression with `knitr::inline_expr()`).
 
 But, what if you want to add an "and" at the end of the sentence?
 
@@ -167,7 +171,12 @@ fries_inline <- glue::glue_collapse(fries_names,
                                     last = ", and ")
 ```
 
-The variables in our dataset are time, treatment, subject, rep, potato, buttery, grassy, rancid, and painty.
+```
+The variables in our dataset are `r fries_inline`
+```
+
+
+> The variables in our dataset are time, treatment, subject, rep, potato, buttery, grassy, rancid, and painty.
 
 # End
 
