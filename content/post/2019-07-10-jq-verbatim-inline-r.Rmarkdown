@@ -12,7 +12,9 @@ tags: []
 
 I've recently asked on the [Rstudio community page how to make code chunks appear verbatim](https://community.rstudio.com/t/question-feature-request-code-chunk-option-verbatim-true/33521). 
 
-Not sure what I mean by this? Well, it comes up when you are teaching people about rmarkdown. One of the issues is that you want to show people what an rmarkdown code chunk looks like - not just echo the output. 
+Not sure what I mean by this? 
+
+Well, showing your entire code chunk is something taht comes up when you are teaching people about rmarkdown. One of the issues is that you want to show people what an rmarkdown code chunk looks like - not just echo the output. 
 
 For example, here is an rmarkdown code chunk:
 
@@ -24,11 +26,15 @@ ggplot(airquality,
   geom_point()
 ```
 
-But - you can't see that I have set two chunk options so that no warning message is given - `warning = FALSE, message = FALSE`.
+Hooray, code, and a plot!
 
-You could instead demo everything on your computer, or show a screenshot, but that just isn't practical, or scalable, and kind of goes against the grain of rmarkdown and these ideas of [literate programming].
+But...you can't see that I have set two chunk options so that no warning message is given - `warning = FALSE, message = FALSE`.
 
-There are some solutions to this in the community link above, which link [Yihui's blog post on this](https://yihui.name/en/2017/11/knitr-verbatim-code-chunk/). For code chunks, Yihui demonstrates how I can show these code chunks - what I want to show is this:
+So, how do you show your code chunk, like, the whole thing, verbatim?
+
+You could instead demo everything on your computer, or show a screenshot, but that just isn't practical, or scalable, and kind of goes against the grain of rmarkdown and these ideas of [literate programming](https://en.wikipedia.org/wiki/Literate_programming).
+
+Fortunately, there are some solutions to this problem, in the community link above, primarily linking [Yihui's blog post on this](https://yihui.name/en/2017/11/knitr-verbatim-code-chunk/). For code chunks, Yihui demonstrates how I can show these code chunks - what I want to show is this:
 
 ````
 ```{r chunk-example, warning = FALSE, message = FALSE}`r ''`
@@ -54,7 +60,7 @@ ggplot(airquality,
 ````
 `````
 
-But you can look into [Yihui's blog post](https://yihui.name/en/2017/11/knitr-verbatim-code-chunk/) for the details, or at the markdown source for my post [here]()
+But you can look into [Yihui's blog post](https://yihui.name/en/2017/11/knitr-verbatim-code-chunk/) for the details, or at the markdown source for my post [here](https://github.com/rbind/njtierney.com/blob/master/content/post/2019-07-10-jq-verbatim-inline-r.Rmarkdown#L33)
 
 # So, how to do the same thing for inline code?
 
@@ -68,7 +74,7 @@ You can show people the inline R code bit using the function `knitr::inline_expr
 
 > The months of the year are `` `r knitr::inline_expr("month.name")` ``
 
-And if you want to see how I wrote that, I think the easiest way is to see what the markdown code here.
+And if you want to see how I wrote that, I think the easiest way is to see what the markdown code [here](https://github.com/rbind/njtierney.com/blob/master/content/post/2019-07-10-jq-verbatim-inline-r.Rmarkdown#L69).
 
 # End
 
