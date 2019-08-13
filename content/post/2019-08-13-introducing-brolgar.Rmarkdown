@@ -1,8 +1,7 @@
 ---
 title: Explore longitudinal data with brolgar
 author: ''
-date: '2019-07-25'
-draft: true
+date: '2019-08-13'
 slug: introducing-brolgar
 categories:
   - ggplot2
@@ -15,7 +14,9 @@ tags:
   - rstats
 ---
 
-Let's say we've managed to find an interesting dataset on heights for given countries since 1550 (yup):
+Let's say we've managed to find an interesting dataset [^1] on heights for given countries since 1550 (yup!):
+
+[^1]: For more information, see the article: "Why are you tall while others are short? Agricultural production and other proximate determinants of global heights", Joerg Baten and Matthias Blum, European Review of Economic History 18 (2014), 144–165. Data available from http://hdl.handle.net/10622/IAEKLA, accessed via the Clio Infra website.
 
 ```{r show-heights, echo = FALSE}
 library(brolgar)
@@ -31,17 +32,16 @@ library(brolgar)
 library(ggplot2)
 ggplot(heights, 
        aes(x = year, 
-             y = height_cm, 
-             group = country)) + 
+           y = height_cm, 
+           group = country)) + 
   geom_line()
 ```
 
+Oh no. What is even happening here?
 
-Oh no.
+This might seem familiar to you. Looking at longitudinal (panel) data often yields these kinds of "spaghetti" plots. These can be frustrating to deal with, as it is not clear how to see the right features in the data. Or even how to see _some_ of your data.
 
-This might seem familiar to you. Looking at longitudinal (panel) data often yields these kinds of "spaghetti" plots. These can be frustrating to deal with, as it is not clear how to see the right features in the data.
-
-I've spent a fair bit of time this year with [Di Cook](http://dicook.org/) and also [Tania Prvan]() thinking about some ways to improve how we look at and explore longitudinal data. It is a hard problem, and I'm certainly not done yet, but we created the `brolgar` package to help make it easier to explore and visualise longitudinal data. 
+I've spent a fair bit of time this year with [Di Cook](http://dicook.org/) and also [Tania Prvan](https://researchers.mq.edu.au/en/persons/tania-prvan) thinking about some ways to improve how we look at and explore longitudinal data. It is a hard problem, and I'm certainly not done yet, but we created the `brolgar` package to make it easier to explore and visualise longitudinal data. 
 
 Why the name `brolgar`? It is an acronym, standing for:
 
@@ -57,19 +57,22 @@ It is so named after the "brolga", [a beautiful, gregarious (yes, gregarious!) n
 
 <p><a href="https://commons.wikimedia.org/wiki/File:Brolgas_Healesville.jpg#/media/File:Brolgas_Healesville.jpg"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Brolgas_Healesville.jpg/1200px-Brolgas_Healesville.jpg" alt="Brolgas Healesville.jpg"></a><br>By Felix Andrews (<a href="//commons.wikimedia.org/wiki/User:Floybix" title="User:Floybix">Floybix</a>) - <span class="int-own-work" lang="en">Own work</span>, <a href="http://creativecommons.org/licenses/by-sa/3.0/" title="Creative Commons Attribution-Share Alike 3.0">CC BY-SA 3.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=1116364">Link</a></p>
 
-Similar to our work on missing data with the [`naniar`]() package, we wanted `brolgar` to work well with existing packages in the [`tidyverse`](), with particular focus on `dplyr` and `ggplot2`.
+Similar to our work on missing data with the [`naniar`](http://naniar.njtierney.com) package, we wanted `brolgar` to work well with existing packages in the [`tidyverse`](tidyverse.org), with particular focus on `dplyr` and `ggplot2`.
 
 I'll direct you to the [official brolgar website](http://brolgar.njtierney.com/) for more details on the package, but here I will showcase three ideas that I think make workflow significantly more efficient, and help you learn from your data.
 
-* Idea 1: Longitudinal data is a time series
-* Idea 2: Explore by taking samples
-* Idea 3: Finding interesting features
+* Idea 1: Longitudinal data is a (non-typical) time series
+* Idea 2: An opportunity to explore individuals, with various tools, and maintain information about the whole. We are more than our average.
+* Idea 3: Quantify features of interest, and link to original series
 
-# Idea 1: Longitudinal data is a time series
 
-But not your typical time series - it generally has irregular amounts of time between measurements.
+# Idea 1: Longitudinal data is (non-typical) a time series
 
-To efficiently look at your longitudinal data, we assume it **is a time series**, with irregular time periods between measurements. This might seem strange, (that's OK!), but there are **two important things** to remember:
+Not your typical time series - it generally has irregular amounts of time between measurements, and contains multiple time series. There are typically many individuals or measurements relating back to one identifying feature.
+
+So, to **efficiently** look at your longitudinal data, we assume it **is a time series**, with irregular time periods between measurements. 
+
+This might seem strange, (that's OK!). There are **two important things** to remember:
 
 1. The **key** variable in your data is the **identifier** of your individuals or series.
 2. The **index** variable is the **time** component of your data.
@@ -89,16 +92,22 @@ heights <- as_tsibble(x = heights,
                       regular = FALSE)
 ```
 
+Here `as_tsibble()` takes `heights`, and a `key` (countries), and `index` (year), and we state the `regular = FALSE` (since there are not regular time periods between measurements).
+
+This creates a `tsibble` object - a powerful data abstraction for time series data, made available in the [`tsibble`](https://tsibble.tidyverts.org/) package by [Earo Wang](https://earo.me/):
+
 ```{r print-heights}
 heights
 ```
 
-
 Once we consider our longitudinal data a time series, we gain access to a set of amazing tools from the [`tidyverts` team](https://tidyverts.org/). What this means is that now that we know what your **time index** is, and what represents **each series with a key**, we can use that information to make sure we respect the structure in the data. This means you can spend more time performing analysis, and using functions fluently, and less time remembering to tell R about the structure of your data. 
 
-If you want to learn more about longitudinal data as a time series, you can [read more in the vignette, "Longitudinal Data Structures"](library/brolgar/html/longitudinal-data-structures.html)
+Currently `brolgar` only works with `tsibble` objects, but in the future we may look into extending this to work with regular `data.frame`s.
 
-# Idea 2: Explore by taking samples
+
+If you want to learn more about what longitudinal data as a time series, you can [read more in the vignette, "Longitudinal Data Structures"](http://brolgar.njtierney.com/articles/longitudinal-data-structures.html). And if you would like to learn more about `tsibble`, see the [official package documentation](https://tsibble.tidyverts.org/) or read [the paper](https://arxiv.org/abs/1901.10257).
+
+# Idea 2: An opportunity to explore individuals, with various tools, and maintain information about the whole. We are more than our average.
 
 To get a sense of what your data is, you can sometimes get something out of looking at a small sample. We've got some really neat tools for that.
 
@@ -106,6 +115,15 @@ To get a sense of what your data is, you can sometimes get something out of look
 
 In `dplyr`, you can use `sample_n()` to sample `n` observations. Similarly, with `brolgar`, you can take a random sample of `n` keys using `sample_n_keys()`, or take a fraction (just as in `dplyr::sample_frac()`), using `sample_frac_keys()`, which samples a fraction of available keys.
 
+So you could sample three keys like so:
+
+```{r sample-n-keys}
+# seed set for reproducibility
+set.seed(2019-08-07)
+sample_n_keys(heights, size = 3)
+```
+
+And you can then create a plot with a similar process:
 
 ```{r plot-sample-n-keys}
 library(brolgar)
@@ -120,7 +138,6 @@ heights %>%
   geom_line()
 ```
 
-
 OK so now we can see that for this small sample, it looks like they heights are generally increasing over time, but there is some pretty massive fluctuation as well!
 
 ## Filtering observations by number of observations
@@ -130,7 +147,6 @@ You can calculate the number of observations for each key with `add_n_obs()`:
 ```{r add-n-obs}
 add_n_obs(heights)
 ```
-
 
 This means you can combine `add_n_obs()` and `sample_n_keys()` with `filter()` to filter keys with say, greater than 5 observations:
 
@@ -155,7 +171,7 @@ Can we break these into many plots?
 
 ## Sample with `facet_sample()`
 
-`facet_sample()` allows you to specify the number of keys per facet, and the number of facets with `n_per_facet` and `n_facets`. By default, it splits the data into 12 facets with 5 per facet:
+`facet_sample()` allows you to plot many samples of your data. All you need to do is specify the number of keys per facet, and the number of facets with `n_per_facet` and `n_facets`. By default, it splits the data into 12 facets with 5 per facet:
 
 ```{r facet-sample}
 # set seed for reproducibility
@@ -170,63 +186,36 @@ ggplot(heights,
 
 ```
 
-Interesting - looks again like many inreasing, but there is some variation and some serious wiggliness!
+Interesting - looks again like many are increasing, but there is some variation and some serious wiggliness!
 
-You can specify your own number of lines per plot and number of facets. Let's say 3 per facet, and 20 facets:
+# Idea 3: Quantify features of interest, and link to original series
 
-```{r facet-sample-3-by-20}
-# set seed for reproducibility
-set.seed(2019-08-07)
+In order to find features of interest, there are few steps.
 
-ggplot(heights,
-       aes(x = year,
-           y = height_cm,
-           group = country)) +
-  geom_line() +
-  facet_sample(n_per_facet = 3,
-               n_facets = 20)
+1. Quantify what is interesting
+2. Based on this feature of interest, reduce each series (`key`) down to a one-row summary of features.
+3. _join_ this series back to the regular data. 
 
-```
+## Step 1. Quantify what is interesting
 
+What is an interesting summary of your individuals? Is it the minimum value for each series? The maximum? Or maybe you want to know which countries are always increasing or decreasing? 
 
-# Idea 3: Finding interesting features
+## Step 2. Reduce to one-row summary of features with `features()`
 
-In order to find interesting features, there are two steps:
-
-1. Reduce each series (`key`) down to a one-row summary of features.
-2. _join_ this series back to the regular data. 
-
-## 1. Find features with `features()`
-
-You can extract `features()` of longitudinal data using the `features()` function, from `fablelite`. You can, for example, calculate the minimum of a given variable for each key by providing a named list like so:
-
-```{r features-min}
-heights %>%
-  features(height_cm, 
-           list(min = min))
-```
-
-`brolgar` provides some sets of features, which start with `feat_`.
-
-For example, the five number summary is `feat_five_num`:
-
-```{r features-five-num}
-heights %>%
-  features(height_cm, feat_five_num)
-```
-
-Or finding those whose values only increase or decrease with `feat_monotonic`
+You can extract `features()` of longitudinal data using the `features()` function, from `fabletools`. We were interested in those countries that were always increasing or decreasing. This property is otherwise known as monotonicity, and can be calculated like so:
 
 ```{r features-monotonic}
 heights %>%
   features(height_cm, feat_monotonic)
 ```
 
-You can read more about creating your own features in the vignette [creating features](http://brolgar.njtierney.com/articles/creating-features.html).
+Here we have indicators for whether a country is increasing, decreasing, unvarying (flat / uniform), or monotonic (either increasing or decreasing).
 
-## 2. Joining individuals back to the data
+You can read more about creating your own features in the vignette [finding features](http://brolgar.njtierney.com/articles/finding-features.html).
 
-You can join these features back to the data with `left_join`, like so:
+## Step 3. Joining individuals back to the data
+
+You can join these features back to the data with a `left_join`, like so:
 
 ```{r features-left-join}
 library(dplyr)
@@ -261,7 +250,7 @@ height_slope <- key_slope(heights, height_cm ~ year)
 height_slope
 ```
 
-Then joing this back:
+Then join this back:
 
 ```{r slope-left-join}
 heights_slope <- heights %>%
@@ -282,14 +271,16 @@ ggplot(heights_slope,
   gghighlight(.slope_year < 0)
 ```
 
+`key_slope()` is a somewhat experimental function which may change in the future - let me know what you think!
 
 ## Facet along some feature:
 
 You can even facet _along_ some feature, using `facet_strata(along = var)`. For example, we could facet our data along the slope. `facet_strata` requires a `tsibble` object, so we need to be careful with how we do our join.
 
 ```{r facet-strata-along}
-heights %>%
+gg_facet_along <- heights %>%
   key_slope(height_cm ~ year) %>%
+  # careful how we do our join here
   left_join(x = heights, 
             y = ., 
             by = "country") %>% 
@@ -299,11 +290,13 @@ ggplot(aes(x = year,
   geom_line() + 
   facet_strata(n_strata = 12,
                along = .slope_year)
+
+gg_facet_along
 ```
 
 This shows us the spread of countries when we break slop up into 12 groups arranged in order from increasing to decreasing slope.
 
-Under the hood, `facet_strata()` and `facet_sample()` are powered by [`sample_n_keys()`](http://brolgar.njtierney.com/reference/sample-n-frac-keys.html) and [`stratify_keys()`](http://brolgar.njtierney.com/reference/stratify_keys.html), I've linked to their documentation online in the text.
+Under the hood, `facet_strata()` and `facet_sample()` are powered by [`sample_n_keys()`](http://brolgar.njtierney.com/reference/sample-n-frac-keys.html) and [`stratify_keys()`](http://brolgar.njtierney.com/reference/stratify_keys.html).
 
 ## Find keys near some summary statistic with `keys_near()`
 
@@ -324,26 +317,32 @@ heights_near <- heights %>%
 heights_near
 ```
 
-This returns those keys closest to some statistics.
-
-You could include it in a plot like so:
+This returns those countries closest to the summary statistics of `.slope_year`. In this case we see that Eritrea has the greatest decline, and Burundi and Austra had the highest growth in height. Let's include it in a plot with some nice sticky labels from the awesome [`stickylabeller` package by James Goldie](https://github.com/rensa/stickylabeller).
 
 ```{r keys-near-plot}
+heights_near_join <- heights_near %>%
+  left_join(heights, by = "country")
 
-heights_near %>%
-  left_join(heights, by = "country") %>%
-ggplot(aes(x = year,
+library(stickylabeller)
+ggplot(heights_near_join,
+
+       aes(x = year,
            y = height_cm,
-           colour = stat)) + 
-  geom_line() 
-  
+           colour = country)) + 
+  geom_line() + 
+  facet_wrap(~stat + country,
+             labeller = label_glue("Country: {country} \nNearest to the {stat} of the slope")) +
+  theme_minimal() +
+  theme(legend.position = "none") 
 ```
 
-You can read more about `keys_near()` at the [finding summary keys vignette](http://brolgar.njtierney.com/articles/find-summary-keys.html).
+Interesting! It looks like "Burundi" had the highest increase in height over time, but only had a few obsercations, with Austria falling in second for the greatest increase in height over time.
+
+You can read more about `keys_near()` at the [Identifying interesting observations](http://brolgar.njtierney.com/articles/id-interesting-obs.html) vignette. This is a somewhat experimental function which may change in the future - let me know what you think! 
 
 # Fin
 
-There is more to come for `brolgar` - the API will be likely to change as I get feedback from the community, and as I think and learn more about exploring longitudinal data. You can see my current thoughts on what to include in `brolgar` in [the brolgar issues](https://github.com/njtierney/brolgar/issues).
+There is more to come for `brolgar`, and the API will likely undergo some changes as I get feedback from the community, and as I think and learn more about exploring longitudinal data. You can see my current thoughts on what to include in `brolgar` in [the brolgar issues](https://github.com/njtierney/brolgar/issues). 
 
 If you have any thoughts, comments, problems, or concerns, post a comment below or even better [file an issue](https://github.com/njtierney/brolgar/issues/new).
 
