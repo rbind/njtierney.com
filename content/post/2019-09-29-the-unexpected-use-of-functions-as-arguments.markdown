@@ -112,7 +112,7 @@ my_fun(storms$wind, median)
 
 Let's say you want to summarise the `storms` data further, for each month.
 
-We take storms, group my month, then take the mean for month, ignoring missing values.
+We take storms, group my month, then take the mean for month.
 
 
 ```r
