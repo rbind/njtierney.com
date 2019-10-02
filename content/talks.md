@@ -4,6 +4,8 @@ title: Talks
 
 # 2019
 
+- [Making better spaghetti plots: (Mark II), YSC, Canberra](https://talks.updog.co/ysc2019/slides/ysc2019.html#1)
+
 - [Making better spaghetti (plots), CSIRO, Canberra](https://talks.updog.co/2019-csiro-brolgar/2019-csiro-brolgar.html#1)
 
 - [DMAC 2019: Intro to Missing Data](https://talks.updog.co/2019-dmac-intro-to-missing-data/2019-dmac-intro-to-missing-data.html#1)
