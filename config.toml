@@ -1,4 +1,4 @@
-baseurl = "/"
+baseurl = "https://www.njtierney.com/"
 title = "Credibly Curious"
 theme = "hugo-xmin"
 googleAnalytics = "UA-69408097-1"
