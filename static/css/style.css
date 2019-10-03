@@ -13,6 +13,7 @@ p {
 li {
   margin: 15px;
   line-height: 1.6em;
+  list-style-type: none;
 }
 
 /* header and footer areas */
