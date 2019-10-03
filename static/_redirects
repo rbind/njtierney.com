@@ -1,4 +1,5 @@
 /slides/*     https://slides.njtierney.com/:splat
 https://njt.netlify.com/*  https://njtierney.com/:splat  301!
 http://njt.netlify.com/*   https://njtierney.com/:splat  301!
+http://njtierney.com/*   https://njtierney.com/:splat  301!
 https://www.njtierney.com/r/missing%20data/rbloggers/2015/12/01/ggplot-missing-data/  https://www.njtierney.com/post/2015/11/12/ggplot-missing-data/
