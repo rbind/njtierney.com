@@ -39,6 +39,11 @@ li {
   font-weight:bold
 }
 
+.reading-time {
+  color:#ffa500; 
+  font-weight:bold
+}
+
 footer a { text-decoration: none; }
 hr {
   border-style: dashed;
