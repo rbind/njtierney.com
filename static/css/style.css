@@ -72,12 +72,6 @@ blockquote {
   padding: 3px 1em 3px;
 }
 
-img-logo {
-  vertical-align:top; 
-  float:left; 
-  max-width:15%;
-}
-
 table {
   margin: auto;
   border-top: 1px solid #666;
