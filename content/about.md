@@ -2,13 +2,15 @@
 title: About Me
 ---
 
-My name is Nick Tierney. I have an honours degree in Psychological Science from UQ, and completed my PhD in Statistics at QUT under [Kerrie Mengersen](https://en.wikipedia.org/wiki/Kerrie_Mengersen) in 2018. I am now a Lecturer at Monash University, working with [Di Cook](http://dicook.org/) and [Rob Hyndman](https://robjhyndman.com/) in the NUMBAT group. 
+My name is Nick Tierney. I have an honours degree in Psychological Science, and completed my PhD in Statistics under [Kerrie Mengersen](https://en.wikipedia.org/wiki/Kerrie_Mengersen) in 2018. I am now a Lecturer at Monash University, working with [Di Cook](http://dicook.org/) and [Rob Hyndman](https://robjhyndman.com/) in the NUMBAT group. I am currently teaching [ETC1010, introduction to Data, Modelling, and Computing](https://dmac.netlify.org/).
 
 My research aims to improve data analysis workflow. This ranges from exploratory data analysis, to statistical modelling, calculating diagnostics, and how we draw inferences, and make decisions from data. Crucial to this work is producing high quality software to accompany each research idea. 
 
 My work so far has focussed on the importance of knowing your data ( [`visdat`](https://github.com/njtierney/visdat) ), and on creating principles and tools that make it easier to work with, explore, and model missing data  ( [`naniar`](https://github.com/njtierney/naniar)). I have also created an optimisation model that identifies and possibly relocates facilities to maximise their coverage on a population, in the R package [`maxcovr`](https://github.com/njtierney/maxcovr), and am interested in testing if commonly used diagnostics for MCMC methods are used effectively by researchers.
 
-I love the [R programming language](https://www.r-project.org/) and how it has transformed my world. I am a proud member of the [rOpenSci](https://ropensci.org/) community, a collective that works to make science open using R, and co-host a podcast with [Saskia Freytag](https://twitter.com/trashystats) about everything #rstats named  ["Credibly Curious"](https://soundcloud.com/crediblycurious), (after my blog, I guess?).
+I love the [R programming language](https://www.r-project.org/) and how it has transformed my world. I am a proud member of the [rOpenSci](https://ropensci.org/) community, a collective that works to make science open using R. I was the lead organiser of the rOpenSci ozunconf for [2016](https://auunconf.ropensci.org/), [2017](https://ozunconf17.ropensci.org/), and [2018](https://ozunconf18.ropensci.org/).
+
+I also co-host a podcast with [Saskia Freytag](https://twitter.com/trashystats) about everything #rstats named  ["Credibly Curious"](https://soundcloud.com/crediblycurious).
 
 I am always up for questions about anything to do with R and stats. I was really fortunate to have some really kind people show me the ways of R and statistics, and I want to help people in the same way.
 
