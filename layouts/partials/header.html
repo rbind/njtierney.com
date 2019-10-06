@@ -13,10 +13,10 @@
     <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet">
   <h1 style = "text-align: center">
     <a href="http://njtierney.com/">
-    <img style = "vertical-align:top; float:left; max-width:15%;" src="/imgs/njt-logo-small.png" alt = "Nick logo" />
+    <img class="hvr-grow" style="vertical-align:top; float:left; max-width:15%;" src="/imgs/njt-logo-small.png" alt="Nick logo" />
     </a>
-  <span style="color:#ffa500; font-weight:bold">Credibly</span>
-  <span style="color:#268bd2; font-weight:bold">Curious</span>
+  <span class="hvr-bob" style="color:#ffa500; font-weight:bold">Credibly</span>
+  <span class="hvr-hang" style="color:#268bd2; font-weight:bold">Curious</span>
   </h1>
   <p style = "text-align: center">
     Nick Tierney's (mostly) rstats blog
@@ -24,7 +24,7 @@
     <nav>
     <ul class="menu">
       {{ range .Site.Menus.main }}
-      <li><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>
+      <li><a class="hvr-float" href="{{ .URL | relURL }}">{{ .Name }}</a></li>
       {{ end }}
     </ul>
     <hr/>
