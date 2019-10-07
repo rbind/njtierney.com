@@ -9,7 +9,7 @@ Research Fellow at Monash University
 <div id="webaddress">
 <a href="mailto:nicholas.tierney@gmail.com">nicholas.tierney@gmail.com</a>
 |
-<i class="fa fa-github"></i> <a href="http://github.com/njtierney">njtierney</a>
+<i class="fa fa-github"></i> <a href="https://github.com/njtierney">njtierney</a>
 |
 <i class="fa fa-twitter"></i> <a href="https://twitter.com/nj_tierney">nj_tierney</a>
 </div>
@@ -89,13 +89,13 @@ Research Fellow at Monash University
 
 `2018` [**Tierney, NJ.**,  Reinhold, J., Mira, A., Weiser, M., Burkart, R., Benvenuti, C., Aurrichio, A.  "Novel relocation methods for automatic external defibrillator improve out-of-hospital cardiac arrest coverage under limited resources" _Resuscitation , Volume 125 , 83 - 89_. doi: 10.1016/j.resuscitation.2018.01.055](https://doi.org/10.1016/j.resuscitation.2018.01.055)
 
-`2017` [**Tierney, Nicholas J.** "visdat: Visualising Whole Data Frames", _The Journal of Open Source Software_ 2 (16) doi: 10.21105/joss.00355](http://joss.theoj.org/papers/10.21105/joss.00355)
+`2017` [**Tierney, Nicholas J.** "visdat: Visualising Whole Data Frames", _The Journal of Open Source Software_ 2 (16) doi: 10.21105/joss.00355](https://joss.theoj.org/papers/10.21105/joss.00355)
 
 `2016` ["Visualisation and statistical modelling techniques for the management of inventory stock levels" Sweatman, W.L., McGree, J., Carstens, C.J., Foster, K.J., Liu, S., **Tierney, N.J.,** Trednick, E., Zaitouny, A. _ANZIAM Journal_ 57, 130-162](https://journal.austms.org.au/ojs/index.php/ANZIAMJ/article/view/10225).
 
 `2016` "S3 Methods: A Simple Guide." **Tierney, N.J.**  [_arxiv_](https://arxiv.org/abs/1608.07161).
 
-`2015` ["Using Decision Trees to Understand Structure in Missing Data." **Tierney, N.J.,** Mengersen, K., Harden, F., Harden M.  _BMJ Open_ 5 (6).  doi:10.1136/bmjopen-2014-007450](http://bmjopen.bmj.com/content/5/6/e007450.full).
+`2015` ["Using Decision Trees to Understand Structure in Missing Data." **Tierney, N.J.,** Mengersen, K., Harden, F., Harden M.  _BMJ Open_ 5 (6).  doi:10.1136/bmjopen-2014-007450](https://bmjopen.bmj.com/content/5/6/e007450.full).
 
 ## Conference Items
 
@@ -134,7 +134,7 @@ Research Fellow at Monash University
 
 `2015` "The Sharpest Tool in the Shed" **Tierney, N.J.**, Mengersen, K., Harden, F., Harden, M. _Bayes on the Beach_.
 
-`2015` ["Integrating Occupational Hygiene, Medicine and Engineering in a Mining Context." Harden, M., Steer, C., Harden, F., Butler, G., Mengersen, K., __Tierney, N.J.__, _Ann. Occup. Hyg., Vol. 59, No. Supplement 1, 1–47 doi:10.1093/annhyg/meu119_](http://annhyg.oxfordjournals.org/content/59/suppl_1/1.full.pdf+html). (Peer Reviewed Poster).
+`2015` ["Integrating Occupational Hygiene, Medicine and Engineering in a Mining Context." Harden, M., Steer, C., Harden, F., Butler, G., Mengersen, K., __Tierney, N.J.__, _Ann. Occup. Hyg., Vol. 59, No. Supplement 1, 1–47 doi:10.1093/annhyg/meu119_](https://annhyg.oxfordjournals.org/content/59/suppl_1/1.full.pdf+html). (Peer Reviewed Poster).
 
 `2014` "Missingness, Mixtures, and Multiple Imputation" **Tierney, N.J.**, Mengersen, K., Harden, F., Harden, M. _Bayes on the Beach_.
 
@@ -160,9 +160,9 @@ Research Fellow at Monash University
 
 ### Science Communication
 
-`2016` ["Science Meets Parliament"](http://scienceandtechnologyaustralia.org.au/focus-on/science-meets-parliament-2016/), Canberra, Australia, __fully sponsored travel__ provided by [SSA](http://www.statsoc.org.au/).
+`2016` ["Science Meets Parliament"](https://scienceandtechnologyaustralia.org.au/focus-on/science-meets-parliament-2016/), Canberra, Australia, __fully sponsored travel__ provided by [SSA](https://www.statsoc.org.au/).
 
-`2013` ["Statistics for Journalists", _Australian Science Media Centre_ Brisbane, Australia](http://www.njtierney.com/statistics/teaching/2013/11/01/statistics-for-journalists/).
+`2013` ["Statistics for Journalists", _Australian Science Media Centre_ Brisbane, Australia](https://www.njtierney.com/statistics/teaching/2013/11/01/statistics-for-journalists/).
 
 ### Conferences
 
@@ -176,15 +176,15 @@ Research Fellow at Monash University
 
 ### Statistics Society of Australia
 
-`2017-` [SSA](http://www.statsoc.org.au/) General Committee Member for Victorian Branch of SSA.
+`2017-` [SSA](https://www.statsoc.org.au/) General Committee Member for Victorian Branch of SSA.
 
-`2013-16` [SSA](http://www.statsoc.org.au/) Assistant Chair of Biostatistics.
+`2013-16` [SSA](https://www.statsoc.org.au/) Assistant Chair of Biostatistics.
 
-`2013-16` [SSA](http://www.statsoc.org.au/) Young Statisticians Representative for Queensland.
+`2013-16` [SSA](https://www.statsoc.org.au/) Young Statisticians Representative for Queensland.
 
 ### Meeting Chair
 
-`2017-` Meeting Chair for [Non-Uniform Monash Business Analytics Team (NUMBAT), Monash](http://numbat.space/).
+`2017-` Meeting Chair for [Non-Uniform Monash Business Analytics Team (NUMBAT), Monash](https://numbat.space/).
 
 `2014` Meeting Chair for [Bayesian Research and Applications Group (BRAG), QUT](https://bragqut.wordpress.com/).
 
@@ -236,13 +236,13 @@ Research Fellow at Monash University
 
 `2015` Magazine Editor of the UQMC.
 
-`2012,14` Executive Committee of the [University of Queensland Mountain Club (UQMC)](http://uqmc.org/).
+`2012,14` Executive Committee of the [University of Queensland Mountain Club (UQMC)](https://uqmc.org/).
 
 `2014` Appointed Honourary Life Member of the UQMC.
 
 ### Social Justice
 
-`2007-09` Volunteer at [Edmund Rice Camps](http://www.edmundricecampsbrisbane.org/).
+`2007-09` Volunteer at [Edmund Rice Camps](https://www.edmundricecampsbrisbane.org/).
 
 ## References
 
