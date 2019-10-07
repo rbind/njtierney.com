@@ -12,7 +12,7 @@
     {{ $pages = .Site.RegularPages }}
   {{ end }}
   {{ range (where $pages "Section" "!=" "") }}
-    <p class="hvr-rotate">
+    <p class="hvr-forward">
       <span class="date">{{ .Date.Format "2006/01/02" }}</span>
         <a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a>
     </p>

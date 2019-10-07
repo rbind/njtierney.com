@@ -30,8 +30,11 @@
     {{ end }}
   {{ end }}
 </p>
-  {{ $readTime := cond (gt .ReadingTime 1) "minute" "minute" }}
-    <p class="reading-time">{{ .ReadingTime }} {{ $readTime }} read</p>
+
+    <p class="reading-time">
+      {{ $readTime := cond (gt .ReadingTime 1) "minute" "minute" }}
+      {{ .ReadingTime }} {{ $readTime }} read
+    </p>
 </div>
 
 <main>
