@@ -15,9 +15,9 @@ title: Publications
 
 `2018` [**Tierney, NJ.**,  Reinhold, J., Mira, A., Weiser, M., Burkart, R., Benvenuti, C., Aurrichio, A.  "Novel relocation methods for automatic external defibrillator improve out-of-hospital cardiac arrest coverage under limited resources" _Resuscitation , Volume 125 , 83 - 89_. doi: 10.1016/j.resuscitation.2018.01.055](https://doi.org/10.1016/j.resuscitation.2018.01.055)
 
-`2019` "Evaluating health facility access using Bayesian spatial models and location analysis methods" **Tierney, NJ.**, Mira, A, Reinhold, J., Arbia, G, Clifford, S, Moccetti, T., Peluso, S., Auricchio, A., Mengersen, K. _PLoS ONE_. __In Press__.
+[`2019` "Evaluating health facility access using Bayesian spatial models and location analysis methods" **Tierney, NJ.**, Mira, A, Reinhold, J., Arbia, G, Clifford, S, Moccetti, T., Peluso, S., Auricchio, A., Mengersen, K. _PLoS ONE_.](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0218310)
 
-`2019` "Software tools for geospatial analysis: An Introduction to software tools, data and services for geospatial analysis of stroke services" Mark Padgham, Geoff Boeing, David Cooley, **Nicholas Tierney**, Michael Sumner, Thanh G Phan, and Richard Beare __In Press__
+[`2019` "Software tools for geospatial analysis: An Introduction to software tools, data and services for geospatial analysis of stroke services" Mark Padgham, Geoff Boeing, David Cooley, **Nicholas Tierney**, Michael Sumner, Thanh G Phan, and Richard Beare](https://www.frontiersin.org/articles/10.3389/fneur.2019.00743/full) - [code repository](https://richardbeare.github.io/GeospatialStroke/)
 
 # Under Review or in Preparation
 
