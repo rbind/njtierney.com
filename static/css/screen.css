@@ -1,0 +1,30 @@
+/* 
+.sidenote {
+    font-size: .75em;
+    padding: 0;
+    }
+*/
+
+.sidenote { 
+    float: right; 
+    clear: right; 
+    margin-right: -60%; 
+    margin-left: 0%; 
+    width: 50%; 
+    margin-top: 0; 
+    margin-bottom: 0; 
+    font-size: .80rem; 
+    line-height: 1.3; 
+    vertical-align: baseline; 
+    position: relative; 
+    
+}
+
+/*
+@media only screen and (min-width: 1600px) {
+    .sidenote {
+        position: absolute;
+        left: 115%;
+        width: 300px;
+    }
+*/
