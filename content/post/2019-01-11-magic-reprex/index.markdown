@@ -1,11 +1,12 @@
 ---
 title: "Magic reprex"
 date: "2017-01-11"
-categories:
-- rstats
-- rbloggers
+categories: [rstats, rbloggers]
 slug: magic-reprex
 ---
+
+
+
 
 Making reproducible examples can be hard.
 
@@ -26,40 +27,36 @@ In the fashion of the times right now, I'll illustrate `reprex` with a gif, whic
 3. `reprex` creates a html preview of your code.
 4. A markdown chunk is also copied to the clipboard.
 
-<p>
-<div style="height: auto">
-<img src="https://njtierney.updog.co/gifs/reprex-copy.gif" alt="Gif of reprex copying code, running reprex, and demonstrating the html preview of the code text" style="width: 100%;max-height: 100%" />
+<div class="figure">
+<img src="assets/reprex-copy.gif" alt="Gif of reprex copying code, running reprex, and demonstrating the html preview of the code text"  />
+<p class="caption">Figure 1: Gif of reprex copying code, running reprex, and demonstrating the html preview of the code text</p>
 </div>
-</p>
-
 
 This means you can copy this to say, GitHub (`reprex(venue = "gh")`) (the default) to help you file an issue:
 
-
-<p>
-<div style="height: auto">
-<img src="https://njtierney.updog.co/gifs/reprex-github.gif" alt="Gif of reprex copying code, running reprex, and demonstrating the html preview of the code text" style="width: 100%;max-height: 100%" />
+<div class="figure">
+<img src="assets/reprex-github.gif" alt="Gif of reprex copying code, running reprex, and demonstrating the html preview of the code text"  />
+<p class="caption">Figure 2: Gif of reprex copying code, running reprex, and demonstrating the html preview of the code text</p>
 </div>
-</p>
 
 There is also an option for Stack Overflow(`reprex(venue = "so")`.
 
 How does this work? `reprex` takes the section of copied code and then runs `rmarkdown::render` on it, which starts a fresh environment, and runs the code.
 This means that `reprex` will fail hard and fail early if your examples aren't reproducible. If you don't have the correct library loaded, it will show the error messages.
 
-<p>
-<div style="height: auto">
-<img src="https://njtierney.updog.co/gifs/reprex-fail-1.gif" alt="Gif of reprex copying code, running reprex, and demonstrating the html preview of the code text" style="width: 100%;max-height: 100%" />
+<div class="figure">
+<img src="assets/reprex-fail-1.gif" alt="Gif of reprex copying code, running reprex, and demonstrating the html preview of the code text"  />
+<p class="caption">Figure 3: Gif of reprex copying code, running reprex, and demonstrating the html preview of the code text</p>
 </div>
-</p>
 
 But then when you fix that, by adding library calls to [`visdat`](https://github.com/njtierney/visdat), [`ggplot2`](https://github.com/tidyverse/ggplot2) and [`naniar`](https://github.com/njtierney/naniar), and you get what you want:
 
-<p>
-<div style="height: auto">
-<img src="https://njtierney.updog.co/gifs/reprex-success-1.gif" alt="Gif of reprex copying code, running reprex, and demonstrating the html preview of the code text using visdat, naniar, and ggplot2 packages" style="width: 100%;max-height: 100%" />
+
+<div class="figure">
+<img src="assets/reprex-success-1.gif" alt="Gif of reprex copying code, running reprex, and demonstrating the html preview of the code text using visdat, naniar, and ggplot2 packages"  />
+<p class="caption">Figure 4: Gif of reprex copying code, running reprex, and demonstrating the html preview of the code text using visdat, naniar, and ggplot2 packages</p>
 </div>
-</p>
+
 
 So you know that when you run `reprex`, and it gives you a reproducible example, it will work!
 
@@ -146,11 +143,10 @@ ggplot(data = lm_augmented,
 You can even show the results of the `session_info`, for maximum reproducibility, by adding the argument: `reprex::reprex(si = TRUE)`, which adds a super nifty drop down box for the session info.
 
 
-<p>
-<div style="height: auto">
-<img src="https://njtierney.updog.co/gifs/reprex-si.gif" alt="Gif of reprex copying code, running reprex, showing option SI = TRUE" style="width: 100%;max-height: 100%" />
+<div class="figure">
+<img src="assets/reprex-si.gif" alt="Gif of reprex copying code, running reprex, showing option SI = TRUE"  />
+<p class="caption">Figure 5: Gif of reprex copying code, running reprex, showing option SI = TRUE</p>
 </div>
-</p>
 
 I really like these sorts of small tools in R. Squinting at a distance you might make the mistake of thinking:
 
@@ -160,11 +156,11 @@ But then when you're actually up close, you realise this means that you don't ha
 
 You save time and energy, and can focus more on **doing what you want to do**, and less on **fighting against interruptions**. This comic by [Jason Heeris](http://heeris.id.au/2013/this-is-why-you-shouldnt-interrupt-a-programmer/) illustrates this point nicely, I think:
 
-<p>
-<div style="height: auto">
-<img src="https://njtierney.updog.co/img/ProgrammerInterrupted.png" alt="Why you shouldn't interrupt a programmer" style="max-height: 100%"/>
+
+<div class="figure">
+<img src="assets/ProgrammerInterrupted.png" alt="Why you shouldn't interrupt a programmer"  />
+<p class="caption">Figure 6: Why you shouldn't interrupt a programmer</p>
 </div>
-</p>
 
 
 Once again thank you to Jenny Bryan for making our lives easier. Jenny will be joining the RStudio team this year and I am really looking forward to seeing what she gets up to.
