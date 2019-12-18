@@ -4,7 +4,11 @@ title: Talks
 
 # 2019
 
-- [2019/10/07 Making better spaghetti plots: (Mark III), MelBURN, Melbourne](https://melb-njt.netlify.com/slides/melburn-brolgar2019.html#1)
+- [2019/11/28: Exploring and understanding the individual experience from longitudinal data, or...How to make better spaghetti (plots), WOMBAT 2019, Melbourne](https://njt-wombat.netlify.com/#1)
+
+- [2019/11/21: Exploring and understanding the individual experience from longitudinal data, or...How to make better spaghetti (plots) (OzVis 2019, Brisbane (**Keynote speaker**)](https://njt-ozvis.netlify.com/#1)
+
+- [2019/11/15: Exploring and understanding the individual experience from longitudinal data, or...How to make better spaghetti (plots) (Invited Seminar) ANU, Canberra](https://njt-anu19.netlify.com)
 
 - [2019/10/02 Making better spaghetti plots: (Mark II), YSC, Canberra](https://confident-khorana-27cfd6.netlify.com/slides/ysc2019.html#1)
 
