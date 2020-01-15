@@ -15,26 +15,27 @@ title: Publications
 
 `2018` [**Tierney, NJ.**,  Reinhold, J., Mira, A., Weiser, M., Burkart, R., Benvenuti, C., Aurrichio, A.  "Novel relocation methods for automatic external defibrillator improve out-of-hospital cardiac arrest coverage under limited resources" _Resuscitation , Volume 125 , 83 - 89_. doi: 10.1016/j.resuscitation.2018.01.055](https://doi.org/10.1016/j.resuscitation.2018.01.055)
 
-[`2019` "Evaluating health facility access using Bayesian spatial models and location analysis methods" **Tierney, NJ.**, Mira, A, Reinhold, J., Arbia, G, Clifford, S, Moccetti, T., Peluso, S., Auricchio, A., Mengersen, K. _PLoS ONE_.](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0218310)
+`2019` ["Evaluating health facility access using Bayesian spatial models and location analysis methods" **Tierney, NJ.**, Mira, A, Reinhold, J., Arbia, G, Clifford, S, Moccetti, T., Peluso, S., Auricchio, A., Mengersen, K. _PLoS ONE_.](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0218310)
 
-[`2019` "Software tools for geospatial analysis: An Introduction to software tools, data and services for geospatial analysis of stroke services" Mark Padgham, Geoff Boeing, David Cooley, **Nicholas Tierney**, Michael Sumner, Thanh G Phan, and Richard Beare](https://www.frontiersin.org/articles/10.3389/fneur.2019.00743/full) - [code repository](https://richardbeare.github.io/GeospatialStroke/)
+`2019` ["Software tools for geospatial analysis: An Introduction to software tools, data and services for geospatial analysis of stroke services" Mark Padgham, Geoff Boeing, David Cooley, **Nicholas Tierney**, Michael Sumner, Thanh G Phan, and Richard Beare](https://www.frontiersin.org/articles/10.3389/fneur.2019.00743/full) - [code repository](https://richardbeare.github.io/GeospatialStroke/)
 
 # Under Review or in Preparation
 
-`2019` "Bayesian modelling to assist inference on health outcomes in Occupational Health Surveillance." **Tierney, N.J.** Clifford, S., Drovandi, CC., Mengersen, KL __Under Review__.
+`2020` "Bayesian modelling to assist inference on health outcomes in Occupational Health Surveillance." **Tierney, N.J.** Clifford, S., Drovandi, CC., Mengersen, KL __In Press__.
 
-`2019` "A Realistic Guide to Making Data Available Alongside Code to Improve Reproducibility" Ram, K & **Tierney, N.J.**  __In Preparation__
+`2020` "A Realistic Guide to Making Data Available Alongside Code to Improve Reproducibility" Ram, K & **Tierney, N.J.**  __In Preparation__
 
-`2019` "Now you see it? Now you don’t? The role of graphics in identifying MCMC convergence" **Tierney, N.J.**, Cook, D, McBain, M. __In Preparation__
+`2020` "Now you see it? Now you don’t? The role of graphics in identifying MCMC convergence" **Tierney, N.J.**, Cook, D, McBain, M. __In Preparation__
 
-`2019` "Making better spaghetti (plots)", **Tierney, N.J.**, Cook, D. __In Preparation__
+`2020` "Making better spaghetti (plots)", **Tierney, N.J.**, Cook, D. __In Preparation__
+
+`2018` **Tierney, NJ.** Cook, D. "Expanding tidy data principles to facilitate missing data exploration, visualization and assessment of imputations." __In Prep. Submitting to Journal of Statistical Software__ [[Pre-print](https://arxiv.org/abs/1809.02264)]
 
 # Pre-Print
 
-`2018` **Tierney, NJ.** Cook, D. "Expanding tidy data principles to facilitate missing data exploration, visualization and assessment of imputations." _Journal of Computational and Graphical Statistics_. __Submitted__ [[Pre-print](https://arxiv.org/abs/1809.02264)]
-
 `2016` **Tierney, NJ.** “S3 Methods: A Simple Guide.” [[Pre-print](https://arxiv.org/abs/1608.07161)]
 
+`2019`
 
 # Posters
 

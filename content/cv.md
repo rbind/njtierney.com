@@ -4,7 +4,7 @@ title: CV
 
 # Nicholas Tierney
 
-Research Fellow at Monash University
+Lecturer at Monash University
 
 <div id="webaddress">
 <a href="mailto:nicholas.tierney@gmail.com">nicholas.tierney@gmail.com</a>
@@ -33,33 +33,46 @@ Research Fellow at Monash University
 
 `2010` __Exchange semester__, McGill University. Studied History of Personality Theory, Abnormal Psychology, Psychology of Interpersonal Relationships, Ethics, and Intermediate French.
 
-## Teaching
-
-### SEB113
-
-`2015` "Statistical Methods for Science". Developed computer lab material with RMarkdown, produced instructional videos, and taught workshops.
-
-### Awards
+# Awards / Grants
 
 `2015` __Overall University Winner__ "The Joy of Stats" _Sessional Teaching and Reflection Showcase (STARS)_(Presentation).
 
 `2015` __Vice-Chancellor's Performance Award__ for innovation in teaching in SEB113 ($2,500).
 
+`2018` R MissTastic grant ($10,000 USD)
+
+`2019` R MissTastic grant ($10,000 USD)
+
+`2019` ACEMS International Mobility Programme ($10,000 AUD)
+
+
+## Teaching
+
+### ETC1010
+
+`2019-2020` "Introduction to Data, Modelling, and Computing". Lecturer. Revised content, developed new assignments, and written and practical exams.
+
+### SEB113
+
+`2015` "Statistical Methods for Science". Developed computer lab material with RMarkdown, produced instructional videos, and taught workshops.
+
 ### Software Carpentry
 
-`2018` Software carpentry instructor trainer. Involved in teaching best 
+`2018-2019` Software carpentry instructor trainer. Involved in teaching best 
   practices on how to teach software coding to other instructors.
 
 ### DataCamp
 
 `2018` Developed online course on Handling Missing Data. Produced tutorials and
   instructional videos.
+  
+### R markdown for scientists
 
-### ETC1010
-
-`2019` Tutor for ETC1010: Data Modelling and Computing
+`2018 - 2019` A 3-4 hour workshop aimed at getting researchers up to speed with modern approaches to reproducible research with the Rmarkdown software + Rstudio. This course has been run five times in two states of Australia. Course materials are made completely free and open source online at: https://rmd4sci.njtierney.com/
 
 ### Invited Tutorials
+
+`2018-19` ["Rmarkdown for scientists"](https://rmd4sci.njtierney.com/), (Delivered five times in Canberra and Melbourne since November 2018 - November 2019)
 
 `2018` [Missing Data Imputations, _UseR!2018_, Brisbane, Australia.](https://user2018.r-project.org/tutorials/)
 
@@ -79,7 +92,17 @@ Research Fellow at Monash University
 
 `2016-` [__treezy:__ Tools for working with decision trees in R](https://github.com/njtierney/treezy).
 
+`2019-` [__syn: Get Synonyms and Antonyms of target words__ ](https://github.com/ropenscilabs/syn).
+
+`2019-` [__brolgar: BRowse over Longitudinal data Graphically and Analytically in R__ ](https://github.com/njtierney/brolgar).
+
 ### Papers
+
+`2019` ["Evaluating health facility access using Bayesian spatial models and location analysis methods" **Tierney, NJ.**, Mira, A, Reinhold, J., Arbia, G, Clifford, S, Moccetti, T., Peluso, S., Auricchio, A., Mengersen, K. _PLoS ONE_.](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0218310)
+
+`2019` ["Software tools for geospatial analysis: An Introduction to software tools, data and services for geospatial analysis of stroke services" Mark Padgham, Geoff Boeing, David Cooley, **Nicholas Tierney**, Michael Sumner, Thanh G Phan, and Richard Beare](https://www.frontiersin.org/articles/10.3389/fneur.2019.00743/full) - [code repository](https://richardbeare.github.io/GeospatialStroke/)
+
+`2019` [""]()
 
 `2018` **Tierney, NJ.** Cook, D. "Expanding tidy data principles to facilitate missing data exploration, visualization and assessment of imputations." _Journal of Computational and Graphical Statistics_. __Submitted__ [[Pre-print](https://arxiv.org/abs/1809.02264)]
 
@@ -97,9 +120,14 @@ Research Fellow at Monash University
 
 `2015` ["Using Decision Trees to Understand Structure in Missing Data." **Tierney, N.J.,** Mengersen, K., Harden, F., Harden M.  _BMJ Open_ 5 (6).  doi:10.1136/bmjopen-2014-007450](https://bmjopen.bmj.com/content/5/6/e007450.full).
 
-## Conference Items
+## Selected Talks
 
-### Talks
+`2019` Exploring and understanding the individual experience from longitudinal data, or ... How to make better spaghetti (plots) (**Invited Speaker at WOMBAT, Melbourne**)
+
+`2019` Exploring and understanding the individual experience from longitudinal data, or ... How to make better spaghetti (plots) (OzVis 2019, Brisbane (**Keynote speaker**)
+
+`2019` Exploring and understanding the individual experience from longitudinal data, or ... How to make better spaghetti (plots) (**Invited Seminar at ANU, Canberra**)
+
 
 `2018` [**RUCK: R Users Conference Korea (Invited Keynote speaker)** "Empowering people with community, software, and peer review".](https://talks.updog.co/korea-keynote/korea-keynote.html#1)
 
@@ -142,9 +170,15 @@ Research Fellow at Monash University
 
 `2013-` I maintain a personal blog, [njtierney.com](https://www.njtierney.com), to share code and statistics, and to engage in dialogue with the statistics and r-programming communities.
 
+
+
 ## Professional Experience
 
 ### Invited Academic
+
+`2019` Berkeley Institute of Data Science (BIDS), Berkeley, California, USA, Jan 24 - Feb 13. Continued collaboration with Dr Karthik Ram on best practices for publishing data sources, and current technology issues in modern data science.
+
+`2019` Johns Hopkins Bloomberg School of Public Health, Maryland, USA, Jan 2 - Jan 13. Collaboration with Prof. Roger Peng on approaches for understanding and measuring MCMC convergence and diagnostics.
 
 `2018` Berkeley Institute of Data Science (BIDS), Berkeley, California, USA, Feb 5 - Feb 9. Collaboration with Dr Karthik Ram on best practices for publishing data sources, and current technology issues in modern data science.
 
@@ -166,6 +200,8 @@ Research Fellow at Monash University
 
 ### Conferences
 
+`2019` Assistant Organiser of the fourth [rOpenSci Unconference in Australia](ozunconf19.ropensci.org).
+
 `2018` Principal Organiser of the third [rOpenSci Unconference in Australia](ozunconf18.ropensci.org).
 
 `2018` Member of the Organising Committee for [UseR!2018](https://user2018.r-project.org/), Brisbane, Australia.
@@ -176,7 +212,7 @@ Research Fellow at Monash University
 
 ### Statistics Society of Australia
 
-`2017-` [SSA](https://www.statsoc.org.au/) General Committee Member for Victorian Branch of SSA.
+`2017-2019` [SSA](https://www.statsoc.org.au/) General Committee Member for Victorian Branch of SSA.
 
 `2013-16` [SSA](https://www.statsoc.org.au/) Assistant Chair of Biostatistics.
 
@@ -184,11 +220,13 @@ Research Fellow at Monash University
 
 ### Meeting Chair
 
-`2017-` Meeting Chair for [Non-Uniform Monash Business Analytics Team (NUMBAT), Monash](https://numbat.space/).
+`2017-2019` Meeting Chair for [Non-Uniform Monash Business Analytics Team (NUMBAT), Monash](https://numbat.space/).
 
 `2014` Meeting Chair for [Bayesian Research and Applications Group (BRAG), QUT](https://bragqut.wordpress.com/).
 
 ### Talks (Outside of conferences)
+
+
 
 `2018` [rOpenSci: Transforming science through open data and software](https://talks.updog.co/uqos-ropensci/ropensci-lightning-talk.html#1)
 
@@ -230,7 +268,7 @@ Research Fellow at Monash University
 
 ### Climbing
 
-`2014-` Master of Ceremonies at State and National Climbing Championships.
+`2014-2019` Master of Ceremonies at State and National Climbing Championships.
 
 `2014-` Archivist of the UQMC.
 
@@ -248,4 +286,4 @@ Research Fellow at Monash University
 
 Available upon request
 
-_Last updated: October 2018_
+_Last updated: January 2020_
