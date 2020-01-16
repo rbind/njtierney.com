@@ -21,21 +21,22 @@ title: Publications
 
 # Under Review or in Preparation
 
-`2020` "Bayesian modelling to assist inference on health outcomes in Occupational Health Surveillance." **Tierney, N.J.** Clifford, S., Drovandi, CC., Mengersen, KL __In Press__.
+`2020` ["Bayesian Approaches to Modelling Occupational Health." **Tierney, N.J.** Clifford, S., Drovandi, C., Mengersen, K. _Book Chapter_. __In Press__.]()
 
-`2020` "A Realistic Guide to Making Data Available Alongside Code to Improve Reproducibility" Ram, K & **Tierney, N.J.**  __In Preparation__
+`2020` ["A Bayesian spatio-temporal statistical analysis of Out-of-Hospital Cardiac Arrests, Stefano Peluso, Antonietta Mira, Håvard Rue, Nicholas John Tierney, Claudio Benvenuti, Roberto Cianellak, Maria Luce Caputo, Angelo Auricchio, DOI: 10.1002/bimj.201900166, Biometrical Journal, __In Press__"]()
+
+`2020` "A Realistic Guide to Making Data Available Alongside Code to Improve Reproducibility" **Tierney, N.J. & Ram, K**  __In Preparation__
 
 `2020` "Now you see it? Now you don’t? The role of graphics in identifying MCMC convergence" **Tierney, N.J.**, Cook, D, McBain, M. __In Preparation__
 
 `2020` "Making better spaghetti (plots)", **Tierney, N.J.**, Cook, D. __In Preparation__
 
-`2018` **Tierney, NJ.** Cook, D. "Expanding tidy data principles to facilitate missing data exploration, visualization and assessment of imputations." __In Prep. Submitting to Journal of Statistical Software__ [[Pre-print](https://arxiv.org/abs/1809.02264)]
-
 # Pre-Print
 
-`2016` **Tierney, NJ.** “S3 Methods: A Simple Guide.” [[Pre-print](https://arxiv.org/abs/1608.07161)]
+`2016` **Tierney, NJ.** "S3 Methods: A Simple Guide." [[Pre-print](https://arxiv.org/abs/1608.07161)]
 
-`2019`
+`2020` **Tierney, NJ.** Cook, D. "Expanding tidy data principles to facilitate missing data exploration, visualization and assessment of imputations." __In Prep. Submitting to Journal of Statistical Software__ [[Pre-print](https://arxiv.org/abs/1809.02264)]
+
 
 # Posters
 
@@ -49,9 +50,9 @@ title: Publications
 
 `2015` "The Sharpest Tool in the Shed" **Tierney, NJ.**, Mengersen, K., Harden, F., Harden, M. _Bayes on the Beach_
 
-`2014` "Missingness, Mixtures, and Multiple Imputation" **Tierney, NJ.**, Mengersen, K., Harden, F., Harden, M. _Bayes on the Beach_
-
 `2015` "Integrating Occupational Hygiene, Medicine and Engineering in a Mining Context." Maurice Harden, Charles Steer, Fiona Harden, Geoff Butler, Kerrie Mengersen, __Nicholas Tierney__, [Ann. Occup. Hyg., Vol. 59, No. Supplement 1, 1–47 doi:10.1093/annhyg/meu119](http://annhyg.oxfordjournals.org/content/59/suppl_1/1.full.pdf+html)
+
+`2014` "Missingness, Mixtures, and Multiple Imputation" **Tierney, NJ.**, Mengersen, K., Harden, F., Harden, M. _Bayes on the Beach_
 
 # Conference Publications
 

@@ -39,9 +39,11 @@ Lecturer at Monash University
 
 `2015` __Vice-Chancellor's Performance Award__ for innovation in teaching in SEB113 ($2,500).
 
-`2018` R MissTastic grant ($10,000 USD)
+`2018` EJC Pitman Prize (Runner Up), The Stastistical Society of Australia
 
-`2019` R MissTastic grant ($10,000 USD)
+`2018` A unified platform for missing values methods and workflows ($10,000 USD)
+
+`2019` A unified platform for missing values methods and workflows (renewed from 2018 again) ($10,000 USD)
 
 `2019` ACEMS International Mobility Programme ($10,000 AUD)
 
@@ -98,17 +100,17 @@ Lecturer at Monash University
 
 ### Papers
 
+`2020` ["Bayesian Approaches to Modelling Occupational Health." **Tierney, N.J.** Clifford, S., Drovandi, C., Mengersen, K. _Book Chapter_. __In Press__.]()
+
+`2020` ["A Bayesian spatio-temporal statistical analysis of Out-of-Hospital Cardiac Arrests, Stefano Peluso, Antonietta Mira, Håvard Rue, Nicholas John Tierney, Claudio Benvenuti, Roberto Cianellak, Maria Luce Caputo, Angelo Auricchio, DOI: 10.1002/bimj.201900166, Biometrical Journal, __In Press__"]()
+
 `2019` ["Evaluating health facility access using Bayesian spatial models and location analysis methods" **Tierney, NJ.**, Mira, A, Reinhold, J., Arbia, G, Clifford, S, Moccetti, T., Peluso, S., Auricchio, A., Mengersen, K. _PLoS ONE_.](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0218310)
 
 `2019` ["Software tools for geospatial analysis: An Introduction to software tools, data and services for geospatial analysis of stroke services" Mark Padgham, Geoff Boeing, David Cooley, **Nicholas Tierney**, Michael Sumner, Thanh G Phan, and Richard Beare](https://www.frontiersin.org/articles/10.3389/fneur.2019.00743/full) - [code repository](https://richardbeare.github.io/GeospatialStroke/)
 
-`2019` [""]()
+`2019` "R-miss-tastic: a unified platform for missing values methods and workflows", Mayer, Imke and Josse, Julie and **Tierney, Nicholas** and Vialaneix, Nathalie, submitted to the R Journal, 2019, [Pre-Print](https://arxiv.org/abs/1809.02264)
 
-`2018` **Tierney, NJ.** Cook, D. "Expanding tidy data principles to facilitate missing data exploration, visualization and assessment of imputations." _Journal of Computational and Graphical Statistics_. __Submitted__ [[Pre-print](https://arxiv.org/abs/1809.02264)]
-
-`2018` "Bayesian Approaches to Modelling Occupational Health." **Tierney, N.J.** Clifford, S., Drovandi, C., Mengersen, K. _BMJ Open_. __Under Review__.
-
-`2018` "Evaluating health facility access using Bayesian spatial models and location analysis methods", **Tierney, N.J.**, Mira, A., Reinhold H.J.,  Arbia, G., Clifford, S., Moccetti, T., Auricchio A., Mengersen, K.L.. _PLoS ONE_. __Under Review__.
+`2018` **Tierney, NJ.** Cook, D. "Expanding tidy data principles to facilitate missing data exploration, visualization and assessment of imputations." _Journal of Statistical Software_. __In Prep__ [[Pre-print](https://arxiv.org/abs/1809.02264)]
 
 `2018` [**Tierney, NJ.**,  Reinhold, J., Mira, A., Weiser, M., Burkart, R., Benvenuti, C., Aurrichio, A.  "Novel relocation methods for automatic external defibrillator improve out-of-hospital cardiac arrest coverage under limited resources" _Resuscitation , Volume 125 , 83 - 89_. doi: 10.1016/j.resuscitation.2018.01.055](https://doi.org/10.1016/j.resuscitation.2018.01.055)
 
