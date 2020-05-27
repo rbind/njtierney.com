@@ -40,7 +40,7 @@ title: Publications
 
 # Posters
 
-`2019` "A Missing Data Carol: Ghosts of Missing Data Past, Present, and Future". **Tierney, NJ** _rstudioconf2019, Austin, Texas, USA_ [PDF](https://talks.updog.co/2019-01-16-missing-data-past-present-future.pdf)
+`2019` "A Missing Data Carol: Ghosts of Missing Data Past, Present, and Future". **Tierney, NJ** _rstudioconf2019, Austin, Texas, USA_ [PDF](https://imgs.njtierney.com/2019-01-16-missing-data-past-present-future.pdf)
 
 `2018` "Tidy Principles for Missing Data Exploration using `naniar`" **Tierney, NJ.** _rstudioconf18, San Diego, USA_.[PNG](https://imgs.njtierney.com/rstudioconf18-tidy-principles-for-missing-data.png)[PDF](https://imgs.njtierney.com/rstudioconf18-tidy-principles-for-missing-data.pdf) 
 
@@ -56,7 +56,7 @@ title: Publications
 
 # Conference Publications
 
-**Tierney, N. J.**, Cook, D., McBain, M (2018) "Now you see it? Now you don’t? The role of graphics in identifying MCMC convergence", _Australian Statistical Conference in Conjunction with the International Society of Clinical Biostatistics._, Melbourne, Australia 27th August, 2018. [Slides](https://talks.updog.co/asc2018/pdf/talk-mcmclineup-keynote.pdf) **Awarded Runner-Up for the Pitman Prize for young statisticians**.
+**Tierney, N. J.**, Cook, D., McBain, M (2018) "Now you see it? Now you don’t? The role of graphics in identifying MCMC convergence", _Australian Statistical Conference in Conjunction with the International Society of Clinical Biostatistics._, Melbourne, Australia 27th August, 2018. [Slides](https://imgs.njtierney.com/talk-mcmclineup-keynote.pdf) **Awarded Runner-Up for the Pitman Prize for young statisticians**.
 
 Integrating Occupational Hygiene, Medicine and Engineering in a Mining Context. Maurice Harden, Charles Steer, Fiona Harden, Geoff Butler, Kerrie Mengersen, **Nicholas Tierney**, Ann. Occup. Hyg., 2015, Vol. 59, No. Supplement 1, 1–47 doi:10.1093/annhyg/meu119 [PDF](http://annhyg.oxfordjournals.org/content/59/suppl_1/1.full.pdf?etoc%20)
 

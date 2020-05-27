@@ -14,7 +14,7 @@ tags: []
 
 I've got some opinions about how to write ggplot code. 
 
-<img src="https://njtierney.updog.co/gifs/strong-opinion.gif" style="display: block; margin: auto;" />
+<img src="https://gifs.njtierney.com/strong-opinion.gif" style="display: block; margin: auto;" />
 
 
 They are based off of the [official style guide](http://style.tidyverse.org/), with a few of my own additions specific to ggplot2.
@@ -138,5 +138,5 @@ ggplot(economics,
 
 That's it, that's my opinion on ggplot2 code style:
 
-<img src="https://njtierney.updog.co/gifs/opinion-man.gif" style="display: block; margin: auto;" />
+<img src="https://gifs.njtierney.com/opinion-man.gif" style="display: block; margin: auto;" />
 

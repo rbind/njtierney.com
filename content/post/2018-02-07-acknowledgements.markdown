@@ -14,7 +14,7 @@ Last week (specifically, the 1st Feb) I got "the letter" from QUT that basically
 
 Woo hoo!
 
-![](https://njtierney.updog.co/gifs/njt-dr-nick.gif)
+![](https://gifs.njtierney.com/njt-dr-nick.gif)
 
 Now, for those who are wondering "haven't you already been doing a post doc, why is this only happening now?"
 
@@ -93,7 +93,7 @@ I get to work on developing R packages, publishing best practices for working wi
 This year some of the big projects I'm thinking about include:
 
 - Tidy Missing data. Principles for making it simpler and more powerful to work with and analyze missing data. (this is what [`naniar`](http://naniar.njtierney.com/) facilitates)
-- Determining whether people can actually determine convergence from MCMC traceplots (building off of [work I presented at Bayes on the Beach](https://njtierney.updog.co/img/2017-11-29-poster-ppt-botb.pdf))
+- Determining whether people can actually determine convergence from MCMC traceplots (building off of [work I presented at Bayes on the Beach](https://imgs.njtierney.com/2017-11-29-poster-ppt-botb.pdf))
 - Completing the `maxcovr` R package to make it easier to place facilities in locations that maximise their coverage (building off of [my work in a (very) recent publication](http://www.resuscitationjournal.com/article/S0300-9572(18)30065-0/fulltext)).
 - Issues in open data and open science.
 - The rOpenSci ozunconf 2018

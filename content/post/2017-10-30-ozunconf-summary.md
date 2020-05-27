@@ -9,13 +9,13 @@ categories: [blag]
 
 Note: This is cross-posted from [rOpenSci's blog post](https://ropensci.org/blog/2017/10/31/ozunconf2017/)
 
-![](https://njtierney.updog.co/img/ozunconf-hex-cookies.jpg)
+![](https://imgs.njtierney.com/ozunconf-hex-cookies.jpg)
 
 Just last week we organised the 2nd rOpenSci [ozunconference](http://ozunconf17.ropensci.org), the sibling rOpenSci unconference, held in Australia. Last year it was [held in Brisbane](http://auunconf.ropensci.org), this time around, the ozunconf was hosted in Melbourne, from October 27-27, 2017. We brought together 45 R-software users and developers, scientists, and open data enthusiasts from academia, industry, government, and non-profits.
 
 What we created was a bunch of awesome individuals from 12 different countries. Before the ozunconf we discussed and dreamt up projects to work on for a few days, then met up and brought a few of them into reality.
 
-![](https://njtierney.updog.co/img/ozunconf-womens-data-discuss.jpg)
+![](https://imgs.njtierney.com/ozunconf-womens-data-discuss.jpg)
 
 
 ### Upskilling participants
@@ -29,7 +29,7 @@ We ran a half day training session on how to develop R packages and share them o
 
 Before the ozunconf, we discussed various ideas for projects in GitHub issues. Things really started to pick up in the last week and we ended up at 41 issues - almost as many issues as participants.
 
-![](https://njtierney.updog.co/img/ozunconf-oz-data-discuss.jpg)
+![](https://imgs.njtierney.com/ozunconf-oz-data-discuss.jpg)
 
 Day one kicked off with some decorating some hex cookies, baked by Di Cook. This uncovered a fun fact that [Stefan Milton Bache](http://stefanbache.dk/) - creator of the [`magrittr`](https://github.com/tidyverse/magrittr) package, apparently created the first #rstats hex sticker. The venue even seemed to reflect our love of hex stickers, providing a nice hex sticker carpet:
 
@@ -39,14 +39,14 @@ Day one kicked off with some decorating some hex cookies, baked by Di Cook. This
 
 We then stuck the various projects that had been discussed throughout the week around the room and participants sticker voted on projects that they were interested in working on. We were really lucky to be in the beautiful Monash City Campus, a place that almost seems to have been designed for an unconf, with some classroom style space, as well as plenty of nooks and cranny's to sit in, including an outdoor astroturfed garden complete with bean bags and native flora.
 
-![](https://njtierney.updog.co/img/ozunconf-earo.jpg)
+![](https://imgs.njtierney.com/ozunconf-earo.jpg)
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">The Oz colour palette gang soakin it up outside <a href="https://twitter.com/hashtag/ozunconf?src=hash&amp;ref_src=twsrc%5Etfw">#ozunconf</a> <a href="https://t.co/XiLkhwZwTv">pic.twitter.com/XiLkhwZwTv</a></p>&mdash; Miles McBain (@MilesMcBain) <a href="https://twitter.com/MilesMcBain/status/923682409400250368?ref_src=twsrc%5Etfw">October 26, 2017</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 We had some great sponsors for this event, including of course [rOpenSci](https://ropensci.org/), [RStudio](http://rstudio.com/) [The RConsortium](http://r-consortium.org/), [The Ingham Institute](https://inghaminstitute.org.au/), and [Monash Business School](http://www.monash.edu/business).
 
-![](https://njtierney.updog.co/img/ozunconf-hex-mat.jpg)
+![](https://imgs.njtierney.com/ozunconf-hex-mat.jpg)
 
 We wrapped up at the end of day 2, giving each projects group three minutes to debrief on their projects, using the unconf style - only the README.md (mostly!). You can [check out all the ozunconf projects here](https://ropenscilabs.github.io/ozunconf-projects/), thanks to a template from [Sean Kross](http://seankross.com/), soon we'll publish a series of short posts covering all of these great fun projects.
 
@@ -72,7 +72,7 @@ One thing that I've realised in my involvement with organising and attending the
 
 The ozunconf comes to an end. Now, let's get started.
 
-![](https://njtierney.updog.co/img/ozunconf-group-photo.jpg)
+![](https://imgs.njtierney.com/ozunconf-group-photo.jpg)
 
 ### What's Your Story?
 

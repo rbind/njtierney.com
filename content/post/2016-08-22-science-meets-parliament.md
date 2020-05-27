@@ -10,7 +10,7 @@ This blog post is a repost from the [Statistical Society of Australia Newsletter
 
 <p>
 <div style="height: auto">
-<img src="https://njtierney.updog.co/img/smp2016-02.png" alt="Scientists make their way to Parliament" style="width: 100%;max-height: 100%" />
+<img src="https://imgs.njtierney.com/smp2016-02.png" alt="Scientists make their way to Parliament" style="width: 100%;max-height: 100%" />
 </div>
 </p>
 
@@ -39,7 +39,7 @@ I first got into research to help bridge the gap between policy and statistics, 
 
 <p>
 <div style="height: auto">
-<img src="https://njtierney.updog.co/img/njt-smp2016.png" alt="Myself asking yet another question" style="width: 100%;max-height: 100%" />
+<img src="https://imgs.njtierney.com/njt-smp2016.png" alt="Myself asking yet another question" style="width: 100%;max-height: 100%" />
 </div>
 </p>
 

@@ -55,6 +55,6 @@ My thanks to the awesome members of SSA Vic for their support in organising this
 event, in particular to Jessica Kasza. And of course, thank you to the speakers
 for delivering great advice, both on the stage and over drinks and pizza.
 
-![](https://njtierney.updog.co/img/what-i-wish-id-known.jpg)<!-- -->
+![](https://imgs.njtierney.com/what-i-wish-id-known.jpg)<!-- -->
 
 _Me and the speakers, L to R: Nicholas Tierney; Roger Peng; Kate McBride; Emily Karahalios, and Julie Simpson. Photo by Jessica Kasza_
