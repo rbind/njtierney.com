@@ -1,0 +1,77 @@
+---
+title: When to Function
+author: Nicholas Tierney
+date: '2020-02-18'
+slug: when-to-function
+draft: true
+categories:
+  - rstats
+  - functions
+tags:
+  - rstats
+  - functions
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE, 
+  comment = "#>", 
+  fig.width = 7, 
+  fig.align = 'center',
+  fig.asp = 0.618, # 1 / phi
+  out.width = "700px"
+)
+```
+
+Writing functions has been one of the biggest "Game Changer" moments for me in R.
+
+But, I found the journey kind of hard - it felt like I had to balance a lot of things in my head in order to do it.
+
+*gif of the hangover maths*
+
+I think I am getting pretty good at writing functions now, but even still there
+is a lot of iteration that goes on from the first function to the final(ish - I mean, is there ever a final thing in Software?) one.
+
+To put things in perspective - in 2013, about 7 years ago, I started writing some
+code to calculate a t-test from scratch.
+
+...
+
+But the idea of separating out all the bits of my code, into functions, it just
+seemed like a lot of work - mainly to just work out all the bits that were
+varying, and what I should give the user control of.
+
+Two approaches for writing functions
+
+1. DRY
+2. Describe Yourself (DY)
+
+The first rule tends to be: "If you copy and paste the same lines of code three
+times - you should write a function".
+
+And, it's not that this is wrong - it is very much correct, in my opinion - but
+rather that I think that there is kind of this "build up" to a function
+
+Functions should be:
+
+- Able to be Individually reasoned about. This actually makes it easier to do
+something. Sure, you might have a series of nice dplyr verbs strung together,
+but sometimes they serve a common purpose, altogether, that you can describe.
+
+You can also, witha  function, introduce more code to reduce complexity
+
+Ideally your complexity should scaling linearly, rather than exponentially.
+
+Some common cases:
+
+1. Functions for plots
+2. Functions for data cleaning
+
+Other terms:
+
+- Abstracting along the right axis
+- 
+
+> Functions are just a tool to manage complexity. So if you don't experience complexity then you might not need it.
+
+> 

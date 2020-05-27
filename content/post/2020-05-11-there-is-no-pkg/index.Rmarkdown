@@ -1,0 +1,105 @@
+---
+title: "Error in loadNamespace(Name) : There is No Package Called 'here'"
+author: Nicholas Tierney
+date: '2020-05-11'
+slug: there-is-no-pkg
+draft: true
+categories:
+  - rstats
+  - error
+  - loadNamespace
+tags:
+  - rstats
+  - error
+  - loadNamespace
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE, 
+  comment = "#>", 
+  fig.width = 7, 
+  fig.align = 'center',
+  fig.asp = 0.618, # 1 / phi
+  out.width = "700px"
+)
+```
+
+This error (or a variant of it) is quite common when using R:
+
+```
+Error in loadNamespace(name) : there is no package called ‘here’
+```
+
+Another variant is:
+
+```
+Error in library(here) : there is no package called ‘here’
+```
+
+Let's list out some ways that you can address this issue.
+
+# Install the package
+
+Install the package that is claimed not to be there. That is, for this error:
+
+```
+Error in loadNamespace(name) : there is no package called ‘PKGNAME’
+```
+
+You install the `PKGNAME` package (use your package name intead of `PKGNAME`):
+
+```r
+install.packages("PKGNAME")
+```
+
+## Why does that work?
+
+The error:
+
+```
+... there is no package called ‘PKGNAME’
+```
+
+is given because R is looking for a package to use, and it cannot find that package. 
+Installing your package means that R can find it, and load it so you can use it!
+
+
+## Some common other approaches
+
+If the previous step doesn't work, check the following:
+
+**Is the package perhaps misspelt?**
+
+I have, more often than I care to admit, had a spelling mistake that caused me to go on a rabbit hole.
+
+**Does the package exist on CRAN? Type "PKGNAME CRAN rstats" into a search engine**
+
+Perhaps you might find the right spelling, in which case, install the package with the right spelling using `install.packages`.
+
+Perhaps you might find that it is on github (or bitbucket or gitlab), not on CRAN.
+
+Let's take a github exame. You need to install an R package from github with a different command.
+
+Let's say we want to install the ["mmcc" package from github](https://github.com/njtierney/mmcc). You scroll down and find the instructions
+here:
+
+```{r show-gh-instructions}
+knitr::include_graphics("")
+```
+
+So you will need to do two things:
+
+1. Install `remotes` from CRAN (`install.packges("remotes"`))
+2. Run `remotes::install_github()`
+
+Similarly there are packages for R packages that you might find on other repositories such as `gitlab` (`install_gitlab`) or `bitbucket` (`install_bitbucket`).
+
+# Why write this blog post?
+
+I teach an introduction to data analysis class, and many students encounter this error, but they do not 
+
+
+Future blog post:
+
+"Error: package or namespace load failed for ‘tidyverse’ in loadNamespace(j <- i[[1L]], c(lib.loc, .libPaths()), versionCheck = vI[[j]]): namespace ‘tibble’ 2.1.3 is already loaded, but >= 3.0.0 is required"
