@@ -4,6 +4,7 @@ date: {{ .Date }}
 categories: [rstats, functions]
 tags: [rstats, functions]
 slug: make-sure-you-definitely-change-this-nick-for-realsies
+output: hugodown::hugo_document
 ---
 
 ```{r setup, include = FALSE}
