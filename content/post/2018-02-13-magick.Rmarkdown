@@ -22,11 +22,11 @@ Let's combine two images:
 ```{r intro-to-magick}
 library(magick)
 
-hex_visdat <- image_read("https://njtierney.updog.co/img/hex-visdat.png")
+hex_visdat <- image_read("https://imgs.njtierney.com/hex-visdat.png")
 
 hex_visdat
 
-hex_naniar <- image_read("https://njtierney.updog.co/img/hex-naniar.png")
+hex_naniar <- image_read("https://imgs.njtierney.com/hex-naniar.png")
 
 hex_naniar
 

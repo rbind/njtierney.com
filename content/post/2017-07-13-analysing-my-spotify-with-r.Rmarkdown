@@ -14,6 +14,11 @@ tags: []
 Inspired by Kara Woo's awesome blog post on analysing her own spotify data, I linked my spotify account with lastfm - as I'm pretty sure that this is the only way to track my spotify listening habits (right? Let me know in the comments if there is another thing I should know about)
 
 ```{r}
+knitr::opts_chunk$set(eval = FALSE)
+```
+
+
+```{r}
 library(tidyverse)
 library(lubridate)
 library(knitr)

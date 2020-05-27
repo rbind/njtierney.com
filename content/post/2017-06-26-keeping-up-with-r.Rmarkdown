@@ -35,23 +35,7 @@ I try and do this every day, sometimes multiple times a day, sometimes once ever
 
 ## Checking my github feed
 
-I follow a few people on GitHub - this means
-
 I find that this helps me stay abreast of the current cool things happening in R, and allows me to think more carefully about what I'm working on - maybe someone has come up with something better, maybe they are missing something. 
 
 One thing that I haven't recently started doing is browse `cranberries` - a really cool aggregator run by Dirk Eddelbuettel that describes recent changes to CRAN.
 
-But then what if you want to browse not just the current things? I have an idea
-that I'm working on - I call it `cranscan`, and it completely inspired by `papr`, 
-by Lucy D'Agostino-McGowan and ...
-
-The idea would be to explore CRAN packages that are most relevant to you, and also to be able to browse cranberries. These packages would then get stored in a neat pile for you to browse through at your own convenience.
-
-Up = Yes
-Down = No
-Left = Maybe
-Right = Maybe
-
-# rOpenSci
-
-I would highly recommend watching what rOpenSci gets up to. To do so, check out their blog...

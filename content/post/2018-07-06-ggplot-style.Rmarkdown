@@ -17,7 +17,7 @@ knitr::opts_chunk$set(eval = FALSE)
 I've got some opinions about how to write ggplot code. 
 
 ```{r eval = TRUE, echo = FALSE, fig.align = "center"}
-knitr::include_graphics("https://njtierney.updog.co/gifs/strong-opinion.gif")
+knitr::include_graphics("https://gifs.njtierney.com/strong-opinion.gif")
 ```
 
 
@@ -143,6 +143,6 @@ ggplot(economics,
 That's it, that's my opinion on ggplot2 code style:
 
 ```{r eval = TRUE, echo = FALSE, fig.align = "center"}
-knitr::include_graphics("https://njtierney.updog.co/gifs/opinion-man.gif")
+knitr::include_graphics("https://gifs.njtierney.com/opinion-man.gif")
 ```
 

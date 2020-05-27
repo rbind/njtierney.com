@@ -56,7 +56,7 @@ event, in particular to Jessica Kasza. And of course, thank you to the speakers
 for delivering great advice, both on the stage and over drinks and pizza.
 
 ```{r event-photo, echo = FALSE}
-knitr::include_graphics("https://njtierney.updog.co/img/what-i-wish-id-known.jpg")
+knitr::include_graphics("https://imgs.njtierney.com/what-i-wish-id-known.jpg")
 ```
 
 _Me and the speakers, L to R: Nicholas Tierney; Roger Peng; Kate McBride; Emily Karahalios, and Julie Simpson. Photo by Jessica Kasza_

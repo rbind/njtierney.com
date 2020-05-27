@@ -9,7 +9,7 @@ categories:
 tags: []
 ---
 
-![](https://njtierney.updog.co/img/billboard-1960.jpg)
+![](https://imgs.njtierney.com/billboard-1960.jpg)
 
 Data packages are something that have been [on my mind a bit lately](https://github.com/ropensci/ozunconf17/issues/17), having recently worked on the [ozroaddeaths data access package](https://github.com/ropenscilabs/ozroaddeaths) at the [rOpenSci ozunconf](http://ozunconf17.ropensci.org/). I was reading [Joe Rickert's R views blogpost about data packages in R](https://rviews.rstudio.com/2017/11/01/r-data-packages/), and saw the [billboard package](https://cran.r-project.org/package=billboard) by [Mikkel Krogsholm](https://github.com/mikkelkrogsholm), which provides:
 
@@ -19,7 +19,7 @@ This seemed like a really cool dataset to look at, so last weekend I started to 
 
 So, this blogpost walks through how you might start to unpack the data, clean it, and draw some interesting conclusions. I also wanted to avoid the "draw the rest of the fucking owl" problem. 
 
-![](https://njtierney.updog.co/img/draw-the-eff-owl.jpg)
+![](https://imgs.njtierney.com/draw-the-eff-owl.jpg)
 
 This means that we don't start with a perfectly clean dataset, and I try to take a bit of time to walk through some of the code.
 
@@ -95,7 +95,7 @@ Huh, turns out that "Tie" is a category for 1974 and 1969, this was mentioned in
 
 Now, we could look at the surrounding rows of the "Tie" columns more closely by simply filtering according to those years, 1969 and 1974, and using `View()`. 
 
-![](https://njtierney.updog.co/gifs/wait-cookie-monster.gif)
+![](https://gifs.njtierney.com/wait-cookie-monster.gif)
 
 BUT, if you had like a thousand, or say, one bajillion rows to look at then this doesn't really work. 
 

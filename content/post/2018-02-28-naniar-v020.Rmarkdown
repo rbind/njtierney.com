@@ -10,19 +10,19 @@ tags: []
 It is with great pleasure that I can say that naniar version 0.2.0 ("The First Joke and Other Matters") is now on CRAN!
 
 ```{r gif-naniar-aslan, echo = FALSE, out.width = "100%", fig.align='center'}
-knitr::include_graphics("https://njtierney.updog.co/gifs/naniar-aslan.gif")
+knitr::include_graphics("https://gifs.njtierney.com/naniar-aslan.gif")
 ```
 
 While I'm at it - naniar also has a nice hex sticker, thanks to [Oz Locke of Cuddly Cthulhu](https://twitter.com/cthulhucreates) for the design, I'm super happy with it! 
 
 ```{r img-hex-naniar, out.width = "30%", fig.align='center', echo = FALSE}
-knitr::include_graphics("https://njtierney.updog.co/img/hex-naniar.png")
+knitr::include_graphics("https://imgs.njtierney.com/hex-naniar.png")
 ```
 
 It is inspired by the lampost from CS Lewis' "Narnia", and highlights that it focusses on NA values, as well as this idea of "shining a light" on missing data, whilst containing a missing piece.
 
 ```{r gif-narnia-lampost, out.width = "50%", echo = FALSE, fig.align='center'}
-knitr::include_graphics("https://njtierney.updog.co/gifs/narnia-lampost.gif")
+knitr::include_graphics("https://gifs.njtierney.com/narnia-lampost.gif")
 ```
 
 If you'd like a hex sticker, send me an email and I'll happily mail one to you!
@@ -298,7 +298,7 @@ Thank you to everyone who has filed issues, bug reports, made pull requests, and
 # Feedback wanted!
 
 ```{r feedback-image, out.width = "100%", echo = FALSE}
-knitr::include_graphics("https://njtierney.updog.co/img/blog-feedback.jpg")
+knitr::include_graphics("https://imgs.njtierney.com/blog-feedback.jpg")
 ```
 
 

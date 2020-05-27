@@ -1,6 +1,5 @@
 ---
 title: "Some ideas on teaching"
-author: ''
 date: '2018-09-09'
 slug: ideas-teaching
 categories:
@@ -11,8 +10,26 @@ draft: true
 tags: []
 ---
 
+About a year ago, on July 31, 2018, I presented a talk at the SSA Victoria branch called: ["Rethinking teaching statistical computing: Understanding how learning works means we need to rethink how we teach."](https://simplystatistics.org/2018/07/12/use-r-keynote-2018/). I'd summarise the talk, but this abstract does a pretty solid job of explaining my thoughts:
 
-???
+> Researchers, analysts, and statisticians need to perform analyses, and this (usually) means that they need to learn how to code. They are, however, often not taught how to code. So how do they start? This talk discusses evidence based principles on teaching from the book: "How Learning Works", and how they can be applied to teach statistical computing. The talk is based off of Nick's experience going through Software Carpentries Trainer Training curriculum, and his experience learning and teaching R over the past 5 years.
+
+# Writing is hard, and putting content somewhere is better than nowhere.
+
+Ever since UseR!2018 in Brisbane, [seeing Roger Peng's keynote, "From tapply to tidyverse](https://www.youtube.com/watch?v=5033jBHFiHE) and the [accompanying blog post](https://simplystatistics.org/2018/07/12/use-r-keynote-2018/), I have always had ambitions to write a blog post that summarises my thoughts of a talk that I give. Unfortunately, I haven't ever managed to do this.
+
+So, since writing this blog post it has been nearly a year since I gave the talk at SSA, I figured it is better to get something out, rather than nothing. Also, Garrick Aden-Buie gave me a friendly push in the right direction to get this post out.
+
+# Learning to teach
+
+In 2015 I helped contribute some teaching material to SEB113, and worked closely with Sam Clifford, to create teaching material in video form, which was shared with students as an R markdown document. 
+
+In 2017-2018 I had a great opportunity to 
+
+# Here are some notes on teaching I've collected
+
+
+
 Course climate: 
 - Resist a Single Right Answer (setup the tower of babel approach)
 - Get students talking to each other within the first 5 minutes of class

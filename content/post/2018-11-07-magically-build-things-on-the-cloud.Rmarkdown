@@ -16,11 +16,11 @@ I wanted my bookdown book to not generate HTML content that I had to track with 
 Not sure why you want to do that? Well, imagine that you are 
 working on a book, or a package, and as part of that process, you always do this one thing that's the same - you click "build book", or you "render" the book, or perhaps you run `pkgdown::build_site()`. Then, you push quite possible >100 HTML files. 
 
-Now, sure, that's a nice green stamp on your github heatmap, and hey, I'm a fan of that, it's a nice way to measure productibity. But also, we don't really care that much about the HTML - this is not something we wrote, we have some code to write it for us, so that we don't have to. In short, there are three downsides to committing the HTML every time:
+Now, sure, that's a nice green stamp on your github heatmap, and hey, I'm a fan of that, it's a nice way to measure some aspect of productivity. But also, we don't really care that much about the HTML - this is not something we wrote, we have some code to write it for us, so that we don't have to. In short, there are three downsides to committing the HTML every time:
 
 1. You probably don't care about the content - so why bother version controlling it? We use version control to manage our content. I can not think of one single time where I have gone back to my repo and found some HTML code that broke everything.
 
-2. holding all that HTML code in your repo on your computer is going to make it an enourmous git repo - say you have 5Mb of content generated with each HTML document section, and you build it like, 100 times - the diff of that, the bit that git stores and version controls - could be largish, maybe 250Mb. Sure, I've got apps on my phone that are bigger, but we should try and stay lean where possible.
+2. Holding all that HTML code in your repo on your computer is going to make it an enourmous git repo - say you have 5Mb of content generated with each HTML document section, and you build it like, 100 times - the diff of that, the bit that git stores and version controls - could be largish, maybe 250Mb. Sure, I've got apps on my phone that are bigger, but we should try and stay lean where possible.
 
 3. It's repetitive, and we could forget to do something, so, let's get the machine to do it for us.
 
@@ -29,7 +29,7 @@ And a bonus reason, you get some ninja hacker points.
 So, to recap. Here is what we want.
 
 1. To not click "build" and push a bunch of HTML to git
-2. Once we push things to github, it should trigger a build, as if we ran the command "pkgdown::build_site", or "bookdown::render()".
+2. Once we push things to github, it should trigger a build, as if we ran the command `pkgdown::build_site`, or `bookdown::render()`.
 
 That, sounds like a thing, right?
 
