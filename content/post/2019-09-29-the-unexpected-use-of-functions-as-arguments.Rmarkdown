@@ -2,8 +2,8 @@
 title: "Just Quickly: The unexpected use of functions as arguments"
 date: '2019-09-29'
 slug: unexpected-function
-categories: [rstats,functions]
-tags: [rstats,functions]
+categories: [rstats, functions]
+tags: [rstats, functions]
 ---
 
 I think that I have learnt and forgotten, and then learnt about this feature of R a few times in the past 4 years. The idea (I think), is this: 

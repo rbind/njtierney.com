@@ -2,7 +2,7 @@
 title: Publications
 ---
 
-<!-- [You can check out my CV here](https://njtierney.updog.co/img/2016-08-23-1904-njtierney-cv.pdf)
+<!-- [You can check out my CV here](https://imgs.njtierney.com/2016-08-23-1904-njtierney-cv.pdf)
 -->
 
 # Journal Publications
@@ -42,9 +42,9 @@ title: Publications
 
 `2019` "A Missing Data Carol: Ghosts of Missing Data Past, Present, and Future". **Tierney, NJ** _rstudioconf2019, Austin, Texas, USA_ [PDF](https://talks.updog.co/2019-01-16-missing-data-past-present-future.pdf)
 
-`2018` "Tidy Principles for Missing Data Exploration using `naniar`" **Tierney, NJ.** _rstudioconf18, San Diego, USA_.[PNG](https://njtierney.updog.co/img/rstudioconf18-tidy-principles-for-missing-data.png)[PDF](https://njtierney.updog.co/img/rstudioconf18-tidy-principles-for-missing-data.pdf) 
+`2018` "Tidy Principles for Missing Data Exploration using `naniar`" **Tierney, NJ.** _rstudioconf18, San Diego, USA_.[PNG](https://imgs.njtierney.com/rstudioconf18-tidy-principles-for-missing-data.png)[PDF](https://imgs.njtierney.com/rstudioconf18-tidy-principles-for-missing-data.pdf) 
 
-`2017` "Now you see it? Now you don't? The role of graphics in identifying MCMC convergence" **Tierney, NJ.**, Cook, D, McBain, M. _Bayes on the Beach, Gold Coast, Australia_. [PDF](https://njtierney.updog.co/img/2017-11-29-poster-ppt-botb.pdf) 
+`2017` "Now you see it? Now you don't? The role of graphics in identifying MCMC convergence" **Tierney, NJ.**, Cook, D, McBain, M. _Bayes on the Beach, Gold Coast, Australia_. [PDF](https://imgs.njtierney.com/2017-11-29-poster-ppt-botb.pdf) 
 
 `2016` "Bayesian Approachs in Occupational Health Surveillance" **Tierney, NJ.**, Mengersen, K., Clifford, S., Drovandi, C., Harden, F., Harden, M. _World Meeting for the International Society for Bayesian Analysis_
 

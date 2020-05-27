@@ -2,6 +2,13 @@
 title: Talks
 ---
 
+# 2020
+
+- [2020/02/14: "Data Data Data, Invited Seminar at University of Washington, Seattle, USA"](https://njt-data-uw.netlify.app/#1)
+- [2020/02/12: "Data Data Data, Guest Speaker at Sage Bionetwords, Seattle, USA"](https://njt-sage.netlify.app/#1)
+- [2020/01/29: "Making Better Spaghetti, Invited Speaker at rstudio::conf2020"](https://njt-rstudio20.netlify.app/#1)
+- [2020/01/17: "Data Data Data, NUMBAT Seminar, Monash University, Melbourne"](https://njt-numbat-data.netlify.app/#1)
+
 # 2019
 
 - [2019/11/28: Exploring and understanding the individual experience from longitudinal data, or...How to make better spaghetti (plots), WOMBAT 2019, Melbourne](https://njt-wombat.netlify.com/#1)
