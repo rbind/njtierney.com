@@ -31,7 +31,7 @@ library(magick)
 ```
 
 ```r
-hex_visdat <- image_read("https://njtierney.updog.co/img/hex-visdat.png")
+hex_visdat <- image_read("https://imgs.njtierney.com/hex-visdat.png")
 
 hex_visdat
 ```
@@ -39,7 +39,7 @@ hex_visdat
 <img src="/post/2018-02-13-magick_files/figure-html/intro-to-magick-1.png" width="260" />
 
 ```r
-hex_naniar <- image_read("https://njtierney.updog.co/img/hex-naniar.png")
+hex_naniar <- image_read("https://imgs.njtierney.com/hex-naniar.png")
 
 hex_naniar
 ```
