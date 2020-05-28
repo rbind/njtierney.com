@@ -1,0 +1,201 @@
+---
+title: Make Ishihara Plates in R
+author: Nicholas Tierney
+date: '2020-05-28'
+slug: ishihara
+categories:
+  - rstats
+tags:
+  - rstats
+  - colour
+  - colourblind
+  - palettes
+draft: true
+output: hugodown::hugo_document
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE, 
+  comment = "#>", 
+  fig.width = 7, 
+  fig.align = 'center',
+  fig.asp = 0.618, # 1 / phi
+  out.width = "700px"
+)
+```
+
+I'm working on an experiment with [Adam Sparks](https://adamhsparks.com/) on how people read maps. As a part of the experiment, we wanted to assess whether people were colourblind. I thought we could use something like an [ishihara test](https://en.wikipedia.org/wiki/Ishihara_test) to assess this. You might have seen this plates before, they look like this:
+
+```{r show-ishihara, echo = FALSE}
+knitr::include_graphics("https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Ishihara_9.png/560px-Ishihara_9.png")
+```
+
+The idea being that if you are not colourblind, you can identify a number or letter in these plates, and if you have colourblindness, you cannot identify the number (which should be 74).
+
+I figured that I could probably find some tests online, and use them. Looking around, it didn't seem like there was a clearly marked, "this one is free to use, go ahead" one. 
+
+Although, there were some nice tests like [color-blindness.com](https://www.color-blindness.com/color-blindness-tests/). I wanted a bit more control over how the plates were generated, and how the data was created from the tests. And it seemed like it could be fun!
+
+In my searches I did find a nice [blog post from Ian Faust](http://ianfaust.com/2016/02/19/Ishihara/) on generating these Ishihara plates. This inspired me to think about creating something within R, and gave me an idea of implementing this.
+
+So, this blog post discusses my first proof of concept, of how to make these plates in R, which will be developed at [`ishihara`](https://github.com/njtierney/ishihara), along with some thoughts about testing.
+
+Thinking about this, I figured out a rough plan of attack:
+
+1. Create a bunch of circles with [`packcircles`](https://cran.r-project.org/web/packages/packcircles/index.html)
+2. Convert those circles to an [`sf`](https://cran.r-project.org/web/packages/sf/index.html) spatial object
+3. Pull in a vector font
+4. Convert that font into an SF object
+5. Overlay the two SF objects and see where they intersect
+6. Plot the circles that are intersected by the text
+7. Change the colour palette in ggplot2 to see the impact of colourblindness
+
+# 1. Create a bunch of circles with [`packcircles`]().
+
+Following along through the examples from the `packcircles` vignette, I wrote this function:
+
+```{r create-poly-packings}
+create_poly_packings <- function(areas,
+                                 n_points){
+
+  n_circles <- length(areas)
+
+  areas %>%
+    sample(n_circles) %>%
+    packcircles::circleProgressiveLayout() %>%
+    packcircles::circleLayoutVertices(npoints = n_points) %>%
+    tibble::as_tibble()
+
+}
+```
+
+This outputs a tibble that contains circles (well, actually, polygons). Let's explore.
+
+We can create one triangle:
+
+```{r}
+suppressPackageStartupMessages({
+library(tidyverse)
+})
+tri <- create_poly_packings(areas = 20, n_points = 3)
+tri
+
+ggplot(tri, 
+       aes(x = x,
+           y = y,
+           group = id)) +
+  geom_polygon()
+```
+
+Or many triangles:
+
+```{r}
+tris <- create_poly_packings(areas = c(20, 15, 10, 5), n_points = 3)
+tris
+
+ggplot(tris, 
+       aes(x = x,
+           y = y,
+           group = id)) +
+  geom_polygon()
+```
+
+But if we make many points, we get circles:
+
+```{r circles}
+circles_df <- create_poly_packings(areas = c(20, 15, 10, 5), 
+                                   n_points = 50)
+circles_df
+
+ggplot(circles_df, 
+       aes(x = x,
+           y = y,
+           group = id)) +
+  geom_polygon()
+```
+
+We can create many circles packed together like so:
+
+```{r create-circle-plate}
+create_circle_plate <- function(){
+  circle_vec <- sample(x = (c(seq(from = 50, to = 150, by = 50))/100),
+                       size = 1000,
+                       replace = TRUE)
+  
+  create_poly_packings(areas = circle_vec, 
+                       n_points = 50)
+}
+```
+
+```{r circle-plate}
+circle_plate <- create_circle_plate()
+
+circle_plate
+
+ggplot(circle_plate,
+       aes(x = x,
+           y = y,
+           group = id)) +
+  geom_polygon() +
+  coord_equal()
+```
+
+
+# 2. Convert those circles to an `sf` spatial object.
+
+```{r cast-packing-poly}
+cast_packing_poly <- function(poly_packing){
+  sf::st_as_sf(poly_packing,
+               coords = c("x", "y")) %>%
+    dplyr::group_by(id) %>%
+    dplyr::summarise(do_union = FALSE) %>%
+    sf::st_cast("POLYGON") %>%
+    dplyr::ungroup()
+}
+```
+
+
+```{r cast-packing-poly-sf}
+
+circle_plate_sf <- cast_packing_poly(circle_plate)
+
+circle_plate_sf
+
+```
+
+
+# 3. Pull in a vector font.
+
+
+
+# 4. Convert that font into an SF object
+
+
+
+# 5. Overlay the two SF objects and see where they intersect
+
+
+
+# 6. Plot the circles that are intersected by the text
+
+
+
+# 7. Change the colour palette in ggplot2 to see the impact of colourblindness
+
+# Other uses
+
+Miles McBain had a good suggestion that we could use these test plates to identify whether colour palettes are good for people with colourblindness. What if we can validate this as a method, and then people can assess their colour palettes using these plates? Wouldn't that be neat?
+
+Sure, there are methods to assess the properties of colour, and whether they are perceptually uniform, and all that.
+
+# Closing thoughts
+
+I started this because I wanted to have a simple question "are you colourblind?". Now, we could just ask that in the questionnaire, since generally people will know if they are colourblind or not. But, it got me thinking about testing in general. I just assumed that there would be some public domain test that I could use to assess colourblindness. But, it looks like there isn't. And I can understand why. These tests need to be administered under specific conditions, as can be seen in the [manual from wikipedia]().
+
+And it looks like there is a business in making colourblindness tests, in a similar way to vaccines. These are clinically useful tests.
+
+But, I wonder if there is room for an open source one, that, sure, might not be as good...but what if it's _good enough_?
+
+
+
