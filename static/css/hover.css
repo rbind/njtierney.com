@@ -16,7 +16,7 @@
 .hvr-grow:hover,
 .hvr-grow:focus,
 .hvr-grow:active {
-    transform: scale(1.1);
+    transform: scale(1.2);
 }
 
 /* Float */
@@ -34,8 +34,8 @@
   transition-timing-function: ease-out;
 }
 .hvr-float:hover, .hvr-float:focus, .hvr-float:active {
-  -webkit-transform: translateY(-8px);
-  transform: translateY(-8px);
+  -webkit-transform: translateY(-4px);
+  transform: translateY(-4px);
 }
 
 /* Bob */
@@ -183,6 +183,6 @@
   margin-bottom: 7px;
 }
 .hvr-forward:hover, .hvr-forward:focus, .hvr-forward:active {
-  -webkit-transform: translateX(8px);
-  transform: translateX(8px);
+  -webkit-transform: translateX(4px);
+  transform: translateX(4px);
 }
