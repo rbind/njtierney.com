@@ -4,6 +4,7 @@ theme = "hugo-xmin"
 googleAnalytics = "UA-69408097-1"
 disqusShortname = "njtierney"
 enableEmoji = true
+pygmentsUseClasses=true
 ignoreFiles = ['\.Rmd$', '_files$', '_cache$', '\.knit\.md$', '\.utf8\.md$']
 footnotereturnlinkcontents = "↩"
 
@@ -15,9 +16,6 @@ footnotereturnlinkcontents = "↩"
   defaultMarkdownHandler = "goldmark"
   [markup.goldmark.renderer]
     unsafe = true
-  [markup.highlight]
-    style = "pygments"
-
 
 [[menu.main]]
     name = "Blog"
