@@ -1,0 +1,70 @@
+---
+title: magick magic
+author: ''
+date: '2018-02-13'
+draft: yes
+slug: magick
+categories:
+  - rstats
+tags: []
+output: hugodown::hugo_document
+---
+
+The other day I tweeted out to thank Jeroen Ooms (opencpu) for making [magick](), - an R interface to [ImageMagick](), software that allows you to ...
+
+Once upon a time, I would find myself needing to combine an image with another, or reduce the size, crop it, whatever. Unfortunately my go to way to do this was something like powerpoint or word (I know, I know, I know): 
+
+Edit image > crop > save.
+
+But no more, you can now use imagemagick! Well, magick!
+
+Let's combine two images:
+
+```{r intro-to-magick}
+library(magick)
+
+hex_visdat <- image_read("https://imgs.njtierney.com/hex-visdat.png")
+
+hex_visdat
+
+hex_naniar <- image_read("https://imgs.njtierney.com/hex-naniar.png")
+
+hex_naniar
+
+hex_combine <- image_append(c(hex_visdat, hex_naniar))
+
+hex_combine
+```
+
+And then you can write it out like this:
+
+```{r}
+image_write(hex_combine,
+            path = "hex-visdat-and-naniar.png",
+            format = "png")
+```
+
+
+Or occassionally I'd need to shrink the size of a bunch of images and convert them, so I'd write something like this:
+
+```{r eval = FALSE}
+
+image_read_resize_convert_write <- function(dir){
+  image_read(dir) %>%
+    image_resize() %>%
+    image_convert() %>%
+    image_write(dir, ".png")
+}
+
+purrr::map()
+```
+
+Or for example, I made this slide:
+
+
+
+To thank the collaborators on naniar and visdat - the code to do this is:
+
+
+
+So yeah, there's some magick recipes, and some praise - thank you Jeroen for writing magick.

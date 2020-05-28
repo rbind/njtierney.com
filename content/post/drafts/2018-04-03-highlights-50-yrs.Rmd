@@ -1,0 +1,41 @@
+---
+title: 'Highlights: 50 years of data science discussion'
+author: ''
+date: '2018-04-03'
+slug: highlights-50-yrs
+draft: yes
+categories: []
+tags:
+  - rstats
+  - blag
+  - data science
+output: hugodown::hugo_document
+---
+
+The article, 50 years of data science, by David Donoho was published in JCGS in 2017. For particular articles, there is sometimes invited discussion and comment. There was some really great discussion and comments from the authors. As I was reading the articles, I highlighted sections that resonated with me. This blog post provides the highlights for each of the comments, as well as a link back to the original paper.
+
+## Roger Peng: Comment on 50 years of Data Science
+
+[article link]()
+
+> ... data exploration, data transformation, computing, modeling, visualization, and science of data science - statisticians _do_ all thjose things. But the truth is, we do not _teach_ most of them.
+
+> Many of the activities on Donoho's list are things that students are assumed to "figure out on their own" without any formal instruction. Asymptotic theory, on the other hand, _requires_ formal instruction.
+
+> ... The biggest challenge to teaching the areas of Greater Data Science is that it is difficult and can be very inefficient.
+
+> Rather than teach one course on cleaning administrtative claims data and another course on processing RNA-seq data, consicder how many birds can be hit with the three stones of an exponential family, a link function, and a linear predictor?
+
+> The lack of a formnal framework for "data cleaning" reduces the teaching of the subject to a parade of special cases.
+
+> It is much more efficient to teach the generalized linear model and the central limit theorem.
+
+> Is the lack of a formal framework for some areas of data science attributable to some fundamental aspect of those topics, or does it arise simply from a lack of trying? In my opinion, the evidence to date lays the bvlame on our fiel's traditional bias toward to use of mathemATIOCS AS THE PRINCICIPAL tool for analysis.
+
+> Wickham's paper outlining the cojncept of "tidy data", a concept which has sparked a minor revolution in the field of data analysis, was originally published in the _journal of Statistical Software_, a nominally "applied" journal. I woudl argue that such an article more properly belongs in the _Annals of Statistics_ than in a software journal.
+
+> The lack of mathematical notation in the presentation of dplyr or any of its "tidyverse" relatveis does not make it less useful not does it make it less _broadly applicable_
+
+> Finally, it is worth a comment that the people that Professor Donoho cites as driving previous pushes to widen the tent of statistics either did not initially come from academia or at least straddled the boundary. Cleveland, Chambers, and Tukey all spent significant time in industry and government settings and that experience no doubt colored their perspectives. Moving on to today, it might just be a conincidence that both Wickham and Xie are employed outside of academia by RStydio, but I doubt it. Perhaps it is always the case that the experts come from somewhere else. Hoever, I fear that academic statistics will miss out on the opportunity to recruit bright people who are making contributions in a manner not familiar to many of us.
+
+[article link]()

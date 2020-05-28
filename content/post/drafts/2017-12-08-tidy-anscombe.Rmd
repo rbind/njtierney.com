@@ -1,0 +1,237 @@
+---
+title: 'Tidyverse Case Study: Anscombe’s quartet'
+author: ''
+date: '2017-12-08'
+slug: tidy-anscombe
+draft: true
+categories:
+  - rstats
+  - rbloggers
+tags: []
+output: hugodown::hugo_document
+---
+
+```{r}
+knitr::opts_chunk$set(eval = FALSE)
+```
+
+
+Anscombe's quartet is a really cool dataset that is used to illustrate
+the importance of data visualisation. It even comes built into R (how cool is that?), and reading the helpfile, it states:
+
+> [Anscombe's quartet] Four x-y datasets which have the same traditional statistical properties (mean, variance, correlation, regression line, etc.), yet are quite different.
+
+Different, how?
+
+The helpfile provides code exploring and visualising anscombe's quartet, presented below:
+
+```{r anscombe-base}
+require(stats); require(graphics)
+summary(anscombe)
+
+##-- now some "magic" to do the 4 regressions in a loop:
+ff <- y ~ x
+mods <- setNames(as.list(1:4), paste0("lm", 1:4))
+for(i in 1:4) {
+  ff[2:3] <- lapply(paste0(c("y","x"), i), as.name)
+  mods[[i]] <- lmi <- lm(ff, data = anscombe)
+  print(anova(lmi))
+}
+
+## See how close they are (numerically!)
+sapply(mods, coef)
+lapply(mods, function(fm) coef(summary(fm)))
+
+## Now, do what you should have done in the first place: PLOTS
+op <- par(mfrow = c(2, 2), mar = 0.1+c(4,4,1,1), oma =  c(0, 0, 2, 0))
+for(i in 1:4) {
+  ff[2:3] <- lapply(paste0(c("y","x"), i), as.name)
+  plot(ff, data = anscombe, col = "red", pch = 21, bg = "orange", cex = 1.2,
+       xlim = c(3, 19), ylim = c(3, 13))
+  abline(mods[[i]], col = "blue")
+}
+mtext("Anscombe's 4 Regression data sets", outer = TRUE, cex = 1.5)
+par(op)
+
+```
+
+It's nice to see some fun style in the comments!
+
+While it is certainly succinct, but I find some of these steps a bit involved, and hard to understand. I think it would be interesting to
+compare this process to how you would explore this using the tidyverse tools.
+
+There are a few key parts to this analysis:
+
+1. Tidy up the data
+1. Explore the summary statistics of each group
+1. Fit a model to each group
+1. Make the plots in ggplot2.
+
+## Tidy up the data
+
+Before we tidy up the data, it is good to think about what format we want the data in.
+
+Currently, the data is in this format:
+
+```{r top-anscombe}
+head(anscombe)
+```
+
+So how do we know the "right" format? 
+
+One trick that I use is to imagine how I would write the ggplot code. Because this then allows me to work out what I want the columns to be.
+
+So, perhaps at a basic level, I'd want code like this:
+
+```{r gg-imagine, eval = FALSE}
+ggplot(anscombe,
+       aes(x = x,
+           y = y)) + 
+  geom_point() + 
+  facet_wrap(~group)
+```
+
+So this tells me:
+
+* The x axis maps onto the x column
+* The y axis maps onto the y column
+* I have a column, group.
+
+What we want is a format where we have:
+
+|| x   | y    | group ||
+|| 10  | 8.04 | 1     ||
+
+We can get the data into two columns "variable" and "value" using the `tidyr` package.
+
+Here, we tell it that we want a column called "variable", and a column called "value"
+
+```{r anscombe-tidy}
+library(tidyverse)
+
+anscombe %>% 
+  gather(key = "variable",
+         value = "value") %>%
+  as_tibble() %>%
+  head()
+
+```
+
+So now we need to split this out into groups based on the number.
+
+```{r}
+anscombe %>% 
+  gather(key = "variable",
+         value = "value") %>%
+  as_tibble() %>%
+  mutate(group = readr::parse_number(variable),
+         variable = stringr::str_remove(variable, "[1-9]")) %>%
+  select(variable,
+         group,
+         value)
+
+```
+
+And then we actually want to spread out the variable column:
+
+```{r}
+tidy_anscombe <- 
+anscombe %>% 
+  gather(key = "variable",
+         value = "value") %>%
+  as_tibble() %>%
+  mutate(group = readr::parse_number(variable),
+         variable = stringr::str_remove(variable, "[1-9]")) %>%
+  select(variable,
+         group,
+         value) %>%
+  rowid_to_column() %>%
+  spread(key = variable,
+         value = value)
+
+tidy_anscombe
+```
+
+Hmmm, this is actually kind of hard!
+
+But luckily, there has been a lot of work to make this kind of process easier in tidyr.
+
+## Explore the summary statistics of each group
+
+```{r anscombe-explore, eval = FALSE}
+library(dplyr)
+tidy_anscombe %>%
+  group_by(variable) %>%
+  summarise_all(funs(min,max,median,mean,sd,var))
+
+```
+
+## Fit a model to each group
+
+```{r anscombe-model}
+
+```
+
+## Make the plots in ggplot (which you should have done in the first place).
+
+```{r anscombe-plot, eval = FALSE}
+library(ggplot2)
+ggplot(tidy_anscombe,
+       aes(x = variable,
+           y = value)) +
+  geom_point() + 
+  facet_wrap(~variable)
+
+```
+
+
+.pull-left[
+```{r anscombe-plot-2, eval = FALSE}
+tidy_anscombe <- anscombe %>% 
+  pivot_longer(everything(), 
+    names_to = c(".value", "set"), 
+    names_pattern = "(.)(.)"
+  ) %>% 
+  arrange(set)
+
+ggplot(tidy_anscombe,
+       aes(x = x,
+           y = y)) + 
+  geom_point(colour = nipa$orange) + 
+  geom_smooth(method = "lm",
+              se = FALSE,
+              colour = nipa$light_purple) + 
+  facet_wrap(~set)
+```
+]
+
+.pull-right[
+```{r anscombe-table}
+tidy_anscombe %>% 
+  group_by(set) %>% 
+  nest() %>% 
+  mutate(fit = map(data, ~lm(y~x, .x)),
+         glance = map(fit, glance)) %>% 
+  select(set, glance) %>% 
+  unnest()
+
+tidy_anscombe %>% 
+  group_by(set) %>% 
+  summarise_all(list(mean = mean, sd = sd, var = var))
+  
+```
+]
+
+
+# End++
+
+So there you have it, some ways to tidy up
+
+The base code is relatively straightforward, but, especially if you are just
+starting out coding, I think that the tidyverse provides some easier footholds
+that will also do the user justice later on.
+
+# Further reading
+
+Check out [Rasmus Bååth's post on fitting a Bayesian spike-slab model to 
+accurately fit to anscombe's quartet](). Cool stuff!
