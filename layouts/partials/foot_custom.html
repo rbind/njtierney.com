@@ -19,5 +19,13 @@ hljs.configure({languages: []});
 hljs.initHighlightingOnLoad();
 </script>
 
-{{ template "_internal/disqus.html" . }}
+<script src="https://utteranc.es/client.js"
+        repo="rbind/njtierney.com"
+        label="comments :speech_balloon:"
+        issue-term="title"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
 {{ template "_internal/google_analytics.html" . }}
