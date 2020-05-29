@@ -1,5 +1,5 @@
 body {
-  max-width: 800px;
+  max-width: 700px;
   /*color: #595959;*/
   margin: auto;
   padding: 1em;
@@ -67,8 +67,15 @@ pre code {
  padding:0;
  margin:0;
  background-color:inherit;
- border-radius:0;
+ border-radius: 5px;
  border:none
+ overflow-x: auto;
+ white-space: pre-wrap;       /* css-3 */
+ white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+ white-space: -pre-wrap;      /* Opera 4-6 */
+ white-space: -o-pre-wrap;    /* Opera 7 */
+ word-wrap: break-word;       /* Internet Explorer 5.5+ */
+
 }
 code {
  font-size:1em;
@@ -80,26 +87,18 @@ code {
  border-radius:3px;
  border:1px solid #e4e4e4
 }
-/* 
-pre code {
-  border-radius: 10px;
-  padding: 0em;
-  border-radius: 5px;
-  background: #f8f8f8;
-  overflow-x: auto;
-  font-size: 1.1em;
-  white-space: pre-wrap;       /* css-3 */
-  white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
-  white-space: -pre-wrap;      /* Opera 4-6 */
-  white-space: -o-pre-wrap;    /* Opera 7 */
-  word-wrap: break-word;       /* Internet Explorer 5.5+ */
-}
 
+/*
 code {
-  background: none; /*#ddd; */
+  background: none; 
 }
-pre code { background: none; }
+pre code { 
+  background: none; 
+  
+}
 */
+
+
 /* misc elements */
 img, iframe, video { max-width: 100%; }
 main { hyphens: auto; }
