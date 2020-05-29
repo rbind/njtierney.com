@@ -12,7 +12,7 @@ tags:
 - error
 - loadNamespace
 output: hugodown::hugo_document
-rmd_hash: be98a67915858805
+rmd_hash: 9ce056cc92de0753
 
 ---
 
@@ -77,11 +77,11 @@ Let's take a github example. You need to install an R package from github with a
 
 Let's say we want to install the ["treezy" package from github](https://github.com/njtierney/treezy#installation). You scroll down and find the instructions here:
 
-<img src="https://imgs.njtierney.com/treezy-install.png" width="75%" style="display: block; margin: auto;" />
+<img src="https://imgs.njtierney.com/treezy-install.png" width="60%" style="display: block; margin: auto;" />
 
 So you will need to do two things:
 
-1. Install `remotes` from CRAN (`install.packages("remotes"`))
+1. Install `remotes` from CRAN (`install.packages("remotes"`)
 2. Run `remotes::install_github()`
 
 Similarly there are packages for R packages that you might find on other repositories such as `gitlab` (`install_gitlab`) or `bitbucket` (`install_bitbucket`).

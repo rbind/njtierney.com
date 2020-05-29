@@ -83,13 +83,13 @@ Let's take a github example. You need to install an R package from github with a
 
 Let's say we want to install the ["treezy" package from github](https://github.com/njtierney/treezy#installation). You scroll down and find the instructions here:
 
-```{r show-gh-instructions, echo = FALSE, out.width = "75%"}
+```{r show-gh-instructions, echo = FALSE, out.width = "60%"}
 knitr::include_graphics("https://imgs.njtierney.com/treezy-install.png")
 ```
 
 So you will need to do two things:
 
-1. Install `remotes` from CRAN (`install.packages("remotes"`))
+1. Install `remotes` from CRAN (`install.packages("remotes"`)
 2. Run `remotes::install_github()`
 
 Similarly there are packages for R packages that you might find on other repositories such as `gitlab` (`install_gitlab`) or `bitbucket` (`install_bitbucket`).
