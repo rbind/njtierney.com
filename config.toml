@@ -2,7 +2,7 @@ baseurl = "https://www.njtierney.com/"
 title = "Credibly Curious"
 theme = "hugo-xmin"
 googleAnalytics = "UA-69408097-1"
-disqusShortname = "njtierney"
+disqus = ""
 enableEmoji = true
 ignoreFiles = ['\.Rmd$', '_files$', '_cache$', '\.knit\.md$', '\.utf8\.md$']
 footnotereturnlinkcontents = "↩"
@@ -52,3 +52,23 @@ footnotereturnlinkcontents = "↩"
     description = "Credibly Curious"
     GithubEdit = "https://github.com/rbind/njtierney.com/edit/master/content/"
     footer = "&copy; [Nicholas Tierney](https://njtierney.com) 2013-19 | [Github](https://github.com/njtierney) | [Twitter](https://twitter.com/nj_tierney)"
+
+#  enable GDPR settings
+[privacy]
+  [privacy.disqus]
+    disable = true
+  [privacy.googleAnalytics]
+    disable = true
+  [privacy.instagram]
+    disable = false
+    simple = true
+  [privacy.twitter]
+    disable = false
+    enableDNT = true
+    simple = false
+  [privacy.vimeo]
+    disable = false
+    simple = true
+  [privacy.youtube]
+    disable = false
+    privacyEnhanced = true
