@@ -3,9 +3,12 @@
   command = "hugo"
 
 [context.production.environment]
-  HUGO_VERSION = "0.58.3"
+  HUGO_VERSION = "0.69.2"
   HUGO_ENV = "production"
   HUGO_ENABLEGITINFO = "true"
   
+[context.deploy-preview]
+  command = "hugo -b $DEPLOY_PRIME_URL --buildFuture"
+  
 [context.branch-deploy.environment]
-  HUGO_VERSION = "0.56.3" 
+  HUGO_VERSION = "0.69.2"
