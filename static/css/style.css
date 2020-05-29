@@ -47,6 +47,40 @@ hr {
 }
 
 /* code */
+pre {
+ font-family:"Source Code Pro",monospace;
+ background-color:#f8f8f8!important;
+ font-size:14px
+}
+pre {
+ padding:10px;
+ line-height:1.5em;
+ margin-bottom:1em;
+ word-wrap:normal;
+ word-break:normal;
+ border-radius:3px;
+ border:1px solid #e4e4e4;
+}
+pre code {
+ font-size:.9rem;
+ display:inline;
+ padding:0;
+ margin:0;
+ background-color:inherit;
+ border-radius:0;
+ border:none
+}
+code {
+ font-size:1em;
+ color:#606060;
+ display:inline-block;
+ margin:1px 5px;
+ padding:1px 4px;
+ background-color:#f8f8f8;
+ border-radius:3px;
+ border:1px solid #e4e4e4
+}
+/* 
 pre code {
   border-radius: 10px;
   padding: 0em;
@@ -65,7 +99,7 @@ code {
   background: none; /*#ddd; */
 }
 pre code { background: none; }
-
+*/
 /* misc elements */
 img, iframe, video { max-width: 100%; }
 main { hyphens: auto; }
