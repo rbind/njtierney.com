@@ -64,16 +64,50 @@ The error:
 is given because R is looking for a package to use, and it cannot find that package. 
 Installing your package means that R can find it, and load it so you can use it!
 
+## Another Error:  Error in install.packages : object 'here' not found
 
-## Some common other approaches
+This happens when you write:
 
-If the previous step doesn't work, check the following:
+```r
+install.packages(here)
+```
 
-**Is the package perhaps misspelt?**
+You need to write the package that you want to install in quotes: 
+
+```r
+install.packages("here")
+```
+
+Why? Well R thinks `here` is an object, but it requires the R package to be in quotes. 
+
+Now, that might not feel like the best reason - the truth is it is to do with a thing called Non Standard Evaluation (NSE), but going into more detail than that is beyond the scope of this blog post.
+
+What I would suggest is this, internalise:
+
+> When installing R packages, put the package in quotes: "package"
+
+## Another error: Warning in install.packages : package 'emo' is not available (for R version 3.6.2)
+
+This can happen if you write:
+
+```r
+install.packages("broomstick")
+```
+
+Why? Well, it could be one of the following below errors:
+
+1. Package name misspelt
+2. Package might not exist on CRAN
+
+It is quite likely that it is not to do with your version of R.
+
+## Problem solving: Is the package perhaps misspelt?
 
 I have, more often than I care to admit, had a spelling mistake that caused me to go on a rabbit hole.
 
-**Does the package exist on CRAN? Type "PKG CRAN rstats" into a search engine**
+## Problem solving: Does the package exist on CRAN? 
+
+Type "PKG CRAN rstats" into a search engine
 
 Perhaps you might find the right spelling, in which case, install the package with the right spelling using `install.packages`.
 
