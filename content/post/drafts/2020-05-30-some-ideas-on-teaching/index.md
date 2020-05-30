@@ -10,7 +10,7 @@ tags:
 - teaching
 - rstats
 output: hugodown::hugo_document
-rmd_hash: 7f200796f5304afa
+rmd_hash: a5626c9307b87f36
 
 ---
 
@@ -125,19 +125,18 @@ Three key points for R content:
 
 - 6: Students' current level of development interacts with the social, emotional, and intellectual climate of the course to impact learning.
 
-- Establish course climate at day 1.
-- Make uncertainty a safe thing (like, make mistakes in front of students)
-- Resist the need to have a single right answer
-- Model Inclusive Language, Behaviour, and Attitudes
-- Set Up Processes to Get Feedback on the Climate
-- Facilitate Active Listening
+  - Establish course climate at day 1.
+  - Make uncertainty a safe thing (like, make mistakes in front of students)
+  - Resist the need to have a single right answer
+  - Model Inclusive Language, Behaviour, and Attitudes
+  - Set Up Processes to Get Feedback on the Climate
+  - Facilitate Active Listening
 
 - 7: To become self-directed learners, students must learn to monitor and adjust their approaches to learning.
-
--   Use Peer Review/Reader Response
--   Provide Opportunities for Self-Assessment
--   Broaden Students' Understanding of Learning
--   Scaffold Students in Their Metacognitive Processes
+  -   Use Peer Review/Reader Response
+  -   Provide Opportunities for Self-Assessment
+  -   Broaden Students' Understanding of Learning
+  -   Scaffold Students in Their Metacognitive Processes
 
 # Recommended resources from here
 
