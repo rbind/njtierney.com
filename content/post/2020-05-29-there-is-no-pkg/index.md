@@ -12,7 +12,7 @@ tags:
 - error
 - loadNamespace
 output: hugodown::hugo_document
-rmd_hash: 53a14d62cc57c821
+rmd_hash: 10bbbc30b592ba45
 
 ---
 
@@ -142,3 +142,7 @@ Error: package or namespace load failed for 'tidyverse' in loadNamespace(j <-
 i[[1L]], c(lib.loc, .libPaths()), versionCheck = vI[[j]]): namespace 'tibble' 
 2.1.3 is already loaded, but >= 3.0.0 is required
 ```
+
+# Thanks 
+
+Thanks to [Emi Tanaka](https://emitanaka.org/) and [Miles McBain](https://milesmcbain.xyz/) for their suggestions on a few helpful additions to the blog post!
