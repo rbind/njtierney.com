@@ -13,9 +13,8 @@ tags:
 - colorblind
 - palettes
 - ishihara
-draft: yes
 output: hugodown::hugo_document
-rmd_hash: 6e0073d93b9e5f90
+rmd_hash: 46fdf8fd8c852cea
 
 ---
 

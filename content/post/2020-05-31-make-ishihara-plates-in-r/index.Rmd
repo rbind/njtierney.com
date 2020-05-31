@@ -13,7 +13,6 @@ tags:
   - colorblind
   - palettes
   - ishihara
-draft: true
 output: hugodown::hugo_document
 ---
 
