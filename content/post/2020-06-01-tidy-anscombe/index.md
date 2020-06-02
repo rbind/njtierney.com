@@ -10,7 +10,7 @@ tags:
   - anscombe
   - rstats
 output: hugodown::hugo_document
-rmd_hash: d05a576a8228577e
+rmd_hash: 4c815e443d50bc60
 
 ---
 
@@ -180,15 +180,6 @@ So this tells me:
 
 What we want is a format where we have:
 
-``` r
-short_df <- tibble::tribble(
-  ~set,  ~x, ~y,
-    1 ,  10, 8.04
-)
-
-knitr::kable(short_df)
-```
-
 |  set|    x|     y|
 |----:|----:|-----:|
 |    1|   10|  8.04|
@@ -269,15 +260,15 @@ We need to split up the variable, and we need a way to specify how to do that:
 names_pattern = "(.)(.)"
 ```
 
-> We describe the pattern that separates the values
+> We describe the pattern that separates the values - two characters
 
-I don't speak regex good, so I looked it up on ["regexr"](https://regexr.com/), and basically this translates to "two separate characters", you could equivalently write:
+I don't speak regex good, so I looked it up on ["regexr"](https://regexr.com/), and basically this translates to "two characters", so it will create a column for each character. You could equivalently write:
 
 ``` r
 names_pattern = "([a-z])([1-9])"
 ```
 
-Which would more explicitly say: \"the first thing is a character, the second thing is a number.
+Which would more explicitly say: \"The first thing is a character, the second thing is a number.
 
 This means that we end up with:
 
@@ -299,7 +290,7 @@ tidy_anscombe
 #> # … with 34 more rows
 ```
 
-Also just to give you a sense of the improvement of `pivot_longer` / `pivot_wider`, this is how I previously wrote this example (this blog post was started on 2017-12-08 and published on 2020-06-01) - and it didn't actually quite work and I gave up.
+Also just to give you a sense of the improvement of `pivot_longer` / `pivot_wider` over `gather` / `spread`, this is how I previously wrote this example (this blog post was started on 2017-12-08 and published on 2020-06-01) - and it didn't actually quite work and I gave up.
 
 ``` r
 old_tidy_anscombe <- anscombe %>%

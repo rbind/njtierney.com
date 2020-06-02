@@ -194,7 +194,7 @@ This means that we end up with:
 tidy_anscombe
 ```
 
-Also just to give you a sense of the improvement of `pivot_longer` / `pivot_wider`, this is how I previously wrote this example (this blog post was started on 2017-12-08 and published on 2020-06-01) - and it didn't actually quite work and I gave up.
+Also just to give you a sense of the improvement of `pivot_longer` / `pivot_wider` over `gather` / `spread`, this is how I previously wrote this example (this blog post was started on 2017-12-08 and published on 2020-06-01) - and it didn't actually quite work and I gave up.
 
 ```{r old-anscombe}
 
