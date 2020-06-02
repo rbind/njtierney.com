@@ -10,7 +10,7 @@ tags:
   - anscombe
   - rstats
 output: hugodown::hugo_document
-rmd_hash: b650eeb5deb48422
+rmd_hash: d05a576a8228577e
 
 ---
 
@@ -126,7 +126,12 @@ par(op)
 
 It's nice to see some fun style in the comments!
 
-While it is certainly succinct, but I find some of these steps a bit involved, and hard to understand. I think it would be interesting to compare this process to how you would explore this using the [tidyverse](https://tidyverse.org/) tools.
+Exploring Anscombe using the tidyverse
+======================================
+
+The helpfile does a great job of providing summaries of the data and plots!
+
+There have been some recent changes with dplyr 1.0.0 coming out just the other day. I think it would be interesting to try doing the same steps as in the helpfile, but using the [tidyverse](https://tidyverse.org/) tools.
 
 There are a few key parts to this analysis:
 
@@ -175,16 +180,25 @@ So this tells me:
 
 What we want is a format where we have:
 
-\|\| x \| y \| set \|\| \|\| 10 \| 8.04 \| 1 \|\|
+``` r
+short_df <- tibble::tribble(
+  ~set,  ~x, ~y,
+    1 ,  10, 8.04
+)
 
-We can get the data into two columns "variable" and "value" using the `tidyr` package.
+knitr::kable(short_df)
+```
 
-In fact, reading the recent documentation for `pivot_longer` (the new version of `gather`), we have new example that shows you how to clean the `anscombe` data:
+|  set|    x|     y|
+|----:|----:|-----:|
+|    1|   10|  8.04|
+
+In fact, reading the recent documentation for `tidyr`'s `pivot_longer` (the new version of `gather`), we have new example that shows you how to clean the `anscombe` data:
 
 ``` r
 library(tidyverse)
 #> ── Attaching packages ──────────────────────────────────────────── tidyverse 1.3.0 ──
-#> ✓ ggplot2 3.3.0     ✓ purrr   0.3.4
+#> ✓ ggplot2 3.3.1     ✓ purrr   0.3.4
 #> ✓ tibble  3.0.1     ✓ dplyr   1.0.0
 #> ✓ tidyr   1.1.0     ✓ stringr 1.4.0
 #> ✓ readr   1.3.1     ✓ forcats 0.5.0
@@ -234,7 +248,8 @@ Now this includes a nice bit of magic here, the ".value" command indicates a com
 |----:|----:|-----:|-----:|
 |   10|   10|  8.04|  9.14|
 |    8|    8|  6.95|  8.14|
-|   to|     |      |      |
+
+to
 
 | set |    x|     y|
 |:----|----:|-----:|
@@ -594,7 +609,7 @@ values_from = estimate
 
 > Which column contains information we want to take the values from?
 
-OK so maybe the model coefficients are bad, but surely the model fit statistics that help control for over fitting are better, right?
+OK so maybe the model coefficients are bad, but surely some of the other model fit statistics help identify differences between the sets? Right?
 
 ``` r
 tidy_anscombe_models %>% 
@@ -610,7 +625,7 @@ tidy_anscombe_models %>%
 #> # … with 2 more variables: deviance <dbl>, df.residual <int>
 ```
 
-Oh, dear.
+Oh, dear. They're all the same.
 
 Make the plots in ggplot (which you should have done in the first place).
 =========================================================================
@@ -635,21 +650,25 @@ Some thoughts
 
 In writing this I noticed that, well, this is actually pretty dang hard. It covers a large chunk of skills you need to do a data analysis:
 
--   Data reshaping
--   Fitting Many Models
--   Interpreting Many Models
--   Data Visualisation
+1.  Tidy up data
+2.  Explore summary statistics
+3.  Fit a (or many!) model(s)
+4.  Make some plots.
 
-It is a truly inspired dataset.
+It certainly packs a punch, for such a small dataset.
 
 The state of the tools
 ----------------------
 
-I think it's easy to look at the base R code in the helpfile for `?anscombe` and rail on it, and say "oh, there's better ways to write that code now!".
+I think it's easy to look at the base R code in the helpfile for `?anscombe` and say "oh, there's better ways to write that code now!".
 
-But let's reflect on this for a moment. R include the `anscombe` dataset **in it's base (well, datasets) distribution**, and not only that, **in the help file, provide code that replicates the summary statistics and graphics presented by Anscombe in 1973**.
+Well, sure, there might be. But I can't help but think there are *always* going to be better ways to write the code. I'm certain that there are better ways to write the code I created for this blog post.
 
-Sure, maybe you might not fully grasp what the code is doing, but you absolutely get the point of the summaries and the graphics.
+But that's kind of not the point, the point is to demonstrate how to explore a dataset. The authors of the helpfile provided that for us. And if I wanted to explore the data myself without that helpfile, it would have actually been harder.
+
+Let's reflect on this for a moment. R include the `anscombe` dataset **in it's base (well, datasets) distribution**, and not only that, **in the help file, provide code that replicates the summary statistics and graphics presented by Anscombe in 1973**.
+
+We absolutely get the point of the summaries and the graphics.
 
 And I think that is something to celebrate, I'm not sure who wrote that help file, but I think that was very kind of them.
 
