@@ -10,7 +10,7 @@ tags:
   - anscombe
   - rstats
 output: hugodown::hugo_document
-rmd_hash: 4c815e443d50bc60
+rmd_hash: 2542ed90844cb72b
 
 ---
 
@@ -126,6 +126,16 @@ par(op)
 
 It's nice to see some fun style in the comments!
 
+But what we learn here is that the data itself has similar statistical properties, in terms of summary statistics, but also in terms of regression fit.
+
+So, you might look at those and think what you've learned is: "Everything looks the same".
+
+But the point is that when we visualise the data, we learn:
+
+> Everything is actually very different.
+
+And that the only way to learn this is through data visualisation!
+
 Exploring Anscombe using the tidyverse
 ======================================
 
@@ -188,12 +198,12 @@ In fact, reading the recent documentation for `tidyr`'s `pivot_longer` (the new 
 
 ``` r
 library(tidyverse)
-#> ── Attaching packages ──────────────────────────────────────────── tidyverse 1.3.0 ──
+#> ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.0 ──
 #> ✓ ggplot2 3.3.1     ✓ purrr   0.3.4
 #> ✓ tibble  3.0.1     ✓ dplyr   1.0.0
 #> ✓ tidyr   1.1.0     ✓ stringr 1.4.0
 #> ✓ readr   1.3.1     ✓ forcats 0.5.0
-#> ── Conflicts ─────────────────────────────────────────────── tidyverse_conflicts() ──
+#> ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
 #> x dplyr::filter() masks stats::filter()
 #> x dplyr::lag()    masks stats::lag()
 
@@ -233,7 +243,7 @@ names_to = c(".value", "set")
 
 > We specify how we want to create the new names of the data with:
 
-Now this includes a nice bit of magic here, the ".value" command indicates a component of the name is also in the value. What does that mean? Well we go from:
+Now this includes a nice bit of **magic** here, the ".value" command indicates a component of the name is also in the value. What does that mean? Well we go from:
 
 |   x1|   x2|    y1|    y2|
 |----:|----:|-----:|-----:|
@@ -249,18 +259,24 @@ to
 | 2   |   10|  9.14|
 | 2   |    8|  8.14|
 
-Because the values `x1` and `y1`, the "names" that we want to create, are inherently tied to the names we want to get, "x" and "y". We are actually doing two steps here:
+Because the names `x1` and `y1` are tied to both the "names" that we want to create ("x" and "y"), and the values we want create (set - 1...4). We are actually doing two steps here:
 
 1.  Splitting up the variables "x1" into "x" and
 2.  A value "1" in the variable in "set".
 
-We need to split up the variable, and we need a way to specify how to do that:
+So, the:
+
+``` r
+names_to = c(".value", "set")
+```
+
+Tells us there is something special about the current names, but now we need a way to specify how to break up the names. We need to split up the variables, "x1, x2, ... y3, y4", and we need to describe how to do that using `names_pattern`:
 
 ``` r
 names_pattern = "(.)(.)"
 ```
 
-> We describe the pattern that separates the values - two characters
+> The names and values are separated by two characters
 
 I don't speak regex good, so I looked it up on ["regexr"](https://regexr.com/), and basically this translates to "two characters", so it will create a column for each character. You could equivalently write:
 
@@ -290,7 +306,7 @@ tidy_anscombe
 #> # … with 34 more rows
 ```
 
-Also just to give you a sense of the improvement of `pivot_longer` / `pivot_wider` over `gather` / `spread`, this is how I previously wrote this example (this blog post was started on 2017-12-08 and published on 2020-06-01) - and it didn't actually quite work and I gave up.
+Also just to give you a sense of the improvement of `pivot_longer` / `pivot_wider` over `gather` / `spread`, this is how I previously wrote this example (this blog post was started on 2017-12-08 and published on 2020-06-01) - and it didn't actually quite work and I gave up. (Although [David Robinsons's post on tidyverse plotting of Anscombe's quartet](https://rpubs.com/dgrtwo/tidy-anscombe) could have helped in retrospect).
 
 ``` r
 old_tidy_anscombe <- anscombe %>%
