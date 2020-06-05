@@ -1,0 +1,187 @@
+---
+title: Data Science as an Entryway to Open Publishing
+author: Julia Lowndes, Nicholas Tierney
+date: '2020-06-03'
+slug: data-science-publishing
+draft: true
+categories:
+  - rstats
+  - teaching
+tags:
+  - teaching
+  - rstats
+output: hugodown::hugo_document
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE, 
+  comment = "#>", 
+  fig.width = 7, 
+  fig.align = 'center',
+  fig.asp = 0.618, # 1 / phi
+  out.width = "700px"
+)
+```
+
+Last Week Julia Lowndes and I presented on a talk called:
+
+"Data Science as an Entryway to Open Publishing", you can see the slides [here](https://zenodo.org/record/3873698#.XtbQo8Z7nOQ).
+
+Abstract:
+
+> The open source R programming language is a powerhouse for data analysis and statistics – and it also is fueling open publishing through RMarkdown and a large, engaged, and innovative community. We will show community-created examples of tutorials, blogs, websites, manuscripts, books, etc, and discuss how this is an entryway to open science, preprints, and open scientific publishing. We welcome other contributed examples to showcase how R can streamline open publishing, as well as examples showcasing other programming languages.
+
+The same workflow you use for data analysis 
+– rooted in reproducibility – empowers you make your work available to the world 
+
+...in ways you never imagined
+
+> I came to R for the data analysis,  and was blown away by the publishing 
+-- Julia Lowndes
+
+# Using RMarkdown for scientific publishing: Fueling reproducibility in data science
+
+## Rmarkdown
+
+RMarkdown powerfully combines executable R code with simple text formatting and for efficient, automatable, reproducible research
+
+Simple text formatting 
+
++ 
+
+R Code 
+
+= 
+
+Analyses and figures are in the same place as your reporting document: 
+saves time as you iterate!
+
+Enables good practices for reproducibility & versioning
+
+## RMarkdown’s familiar outputs for science: Word documents and PDFs
+
+Rmarkdown renders to:
+
+- Word
+- PDF
+
+Imagine never copy-pasting a graph into your report again!!!!
+RMarkdown can also manage citations, cross- referencing figures and section headers. 
+
+# Using RMarkdown beyond your wildest dreams: Reimagining sharing and publishing online 
+
+## RMarkdown: RMarkdown creates HTML files that can be shared openly on the web
+
+Rendering rmarkdown to HTML:
+
+> We can store and distribute html files on GitHub, which also offers display options for publishing. Let's look at some real-world examples from science...
+
+> Suddenly you can share a URL rather than attaching a file!
+And that same URL will update rather than re-attaching a new version of the file!
+
+
+## Single-page html
+
+RMarkdown html files for open publishing; URL will display most recent version
+
+Examples from the  [Ocean Health Index](https://ohi-science.org/)
+
+Many display options; floating table of contents, show/hide code
+
+Then we can think about organization & discoverability: How to organize multiple htmls? And how do we find them?
+
+ohi-science.org/ohiprep_v2019/globalprep/prs_slr/v2019/slr_layer_prep_v2.html 
+Learn: rmarkdown.rstudio.com  
+
+## Simple Websites
+
+Combine RMarkdown files as a website with a navigation bar between pages, requires only GitHub
+
+
+Useful for organizing, e.g. linking out to additional single-page htmls
+
+You can also create templates and populate them automatically
+
+ohi-science.org/ohi-global 
+ohi-science.org/esw  
+Learn: jules32.github.io/rmarkdown-website-tutorial
+
+## Blogdown websites 
+
+Create powerful websites with more complexity and blogging capabilities; requires more setup & deployment from a server
+
+“If you want to learn to write, you read a lot, if you want to play music, you listen a lot. It’s hard to do this with data analysis.” - Hilary Parker & Roger Peng, RStudio::conf(2020) keynote
+
+So we write blogs and tutorials to share code, discuss, and learn together.
+
+Power to organize, tag, search, navigage, etc. 
+
+← Academic theme templates!
+
+alison.rbind.io
+Learn: alison.rbind.io/post 2017-06-12-up-and-running-with-blogdown 
+
+## Bookdown books
+
+Organize and navigate html files as e-books
+
+Really powerful for organizing reports and documents. 
+
+I wish I could have written my PhD thesis is Bookdown
+Eg: github.com/ benmarwick/huskydown 
+
+r4ds.had.co.nz 
+Learn: bookdown.org/yihui/bookdown 
+
+## Simple slides: create slides in a single rmarkdown file
+
+Imagine re-creating presentations with updated data.
+
+Text-based slide creation can be a powerful flow to think and outline.
+
+Share presentations – and with a human-readable url!
+
+rstudio.com/slides/rstudio-pbc 
+Learn: rmarkdown.rstudio.com/lesson-11 
+
+## Xaringan Slides: Create slides in a single RMarkdown file 
+
+Incorporate powerful styling options from within R (without requiring knowledge of JavaScript, CSS, etc)
+
+slides.yihui.org/xaringan 
+arm.rbind.io/slides/xaringan
+Learn: above, and bookdown.org/yihui/rmarkdown/xaringan
+
+## Learnr tutorials: Interactive tutorials from a friendly website interface
+
+Reimagine teaching and how to blend lectures and hands-on coding for learners of all levels
+
+allisonhorst.shinyapps.io/missingexplorer 
+
+Learn: education.rstudio.com/blog/2020/05/learnr-for-remote
+
+
+# Discussion time
+
+What examples or questions do you have?
+
+Other discussion topics
+
+How does RMarkdown relate to/streamline the academic publishing process?
+Analog: rOpenSci software review process
+Friendly entryways to open science & publishing : you’re already doing it w/ code
+Process affects the outcome: Easier to share at the end because you’re already sharing with yourself throughout
+Not just R! Examples from other languages (Jupyter [note]books)
+Open publishing in the wild
+Education: allisonhorst.github.io, datavizm20.classes.andrewheiss.com, tinystats.github.io/teacups-giraffes-and-statistics, ida.numbat.space
+Programs: openscapes.org
+Accompanying science pubs: ohi-science.org/betterscienceinlesstime 
+
+RMarkdown <> Word workflows: noamross.github.io/redoc
+Nick’s experience writing his thesis in bookdown: how does it compare to latex?
+Incorporating RMarkdown sub-documents (“knit child”): OHI suppl. methods
+How to share documents using GitHub’s gh-pages or doc/: R for Excel Users
+
+
+
