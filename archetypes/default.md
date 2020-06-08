@@ -5,7 +5,7 @@ categories: [rstats, functions]
 tags: [rstats, functions]
 slug: make-sure-you-definitely-change-this-nick-for-realsies
 draft: true
-output: hugodown::hugo_document
+output: hugodown::md_document
 ---
 
 ```{r setup, include = FALSE}
