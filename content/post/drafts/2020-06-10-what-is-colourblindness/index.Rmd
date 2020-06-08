@@ -39,17 +39,24 @@ This is part 1, which discusses colourblindness. Future parts will discuss how t
 
 tl;dr
 
-> For some people, some colours that everyone else perceives as different are perceived the same. This can be problematic for interpreting graphics. This difference is due to a biological difference in their eyes.
+> People with colourblindness might perceive some colours as the same, while those without colourblindness perceive them as different. This can be problematic for interpreting graphics. This difference is due to a biological difference in their eyes.
 
 Simplifying things somewhat, let's talk briefly about anatomy.
 
-Here's a side (sagittal) view  eyeball and a retina, with some exaggerated rays of light going through the lens of the eye.
+Here's a side (sagittal) view  eyeball and a retina, with some exaggerated rays of light going through the lens of the eye. 
 
 _shotty drawing of side view of the eye_
 
-The retina connects to light sensitive cells known as "rods and cones", called so because, well, they look like rods, and cones. 
+The retina is this layer of the eye that connects to light sensitive cells known as "rods and cones", called so because, well, they look like rods, and cones. 
 
 _shotty drawing of rods and cones_
+
+```{r rods-and-cones, fig.show='hold', out.width = "40%"}
+knitr::include_graphics("imgs/wiki-rod.png")
+knitr::include_graphics("imgs/wiki-cone.png.png")
+```
+
+_Illustrations of [Rods](https://en.wikipedia.org/wiki/File:Cone2.svg) and [Cones](https://en.wikipedia.org/wiki/File:Cone_cell_eng.png), taken from from Wikipedia, Licensed under [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/deed.en)._
 
 It's about 120 million rod cells to 6 to 7 million cone cells, about a 20:1 ratio. 
 
@@ -172,6 +179,8 @@ cone_response %>% filter(type == "cone_m") %>%  gg_cone_receptor()
 cone_response %>% filter(type == "cone_l") %>%  gg_cone_receptor()
 ```
 
+
+Image inspired by [figure of responsivity of human eye from Wikipedia](https://en.wikipedia.org/wiki/File:Cone-fundamentals-with-srgb-spectrum.svg), data extracted from [Colour & Vision Research laboratory at UCL's](http://cvrl.ucl.ac.uk) section on [cones](http://cvrl.ucl.ac.uk/cones.htm).
 
 colourblindness (generally) comes from an absence, or reduction in sensitivity of the cones in the eye. 
 
