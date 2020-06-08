@@ -6,6 +6,7 @@ disqus = ""
 enableEmoji = true
 ignoreFiles = ['\.Rmd$', '_files$', '_cache$', '\.knit\.md$', '\.utf8\.md$']
 footnotereturnlinkcontents = "↩"
+pygmentsUseClasses = true
 
 [permalinks]
     post = "/post/:year/:month/:day/:slug/"
