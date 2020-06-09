@@ -1,5 +1,5 @@
 ---
-title: 'Just Quickly: Rowwise Median in Dplyr'
+title: 'Just Quickly: Rowwise Median in `dplyr`'
 author: Nicholas Tierney
 date: '2020-06-08'
 slug: jq-rowwise-median
@@ -11,7 +11,7 @@ tags:
 output: 
   hugodown::md_document:
     tidyverse_style: false
-rmd_hash: 48762cb7c0366caa
+rmd_hash: 18df54e8ce1c26e3
 
 ---
 
@@ -23,16 +23,8 @@ Let's celebrate something from the tidyverse today: `rowwise`. This function has
 
 <div class="highlight">
 
-<pre class='chroma'><code class='language-r' data-lang='r'><span class='nf'>library</span>(<span class='k'><a href='https://tidyverse.tidyverse.org/reference'>tidyverse</a></span>)
-<span class='c'>#&gt; -- Attaching packages ------------------------------------------------- tidyverse 1.3.0 --</span>
-<span class='c'>#&gt; v ggplot2 3.3.1     v purrr   0.3.4</span>
-<span class='c'>#&gt; v tibble  3.0.1     v dplyr   1.0.0</span>
-<span class='c'>#&gt; v tidyr   1.1.0     v stringr 1.4.0</span>
-<span class='c'>#&gt; v readr   1.3.1     v forcats 0.5.0</span>
-<span class='c'>#&gt; -- Conflicts ---------------------------------------------------- tidyverse_conflicts() --</span>
-<span class='c'>#&gt; x dplyr::filter() masks stats::filter()</span>
-<span class='c'>#&gt; x dplyr::lag()    masks stats::lag()</span>
-<span class='k'>income</span> <span class='o'>&lt;-</span> <span class='nf'>tibble</span>(income_range = <span class='nf'>c</span>(<span class='s'>"0-74"</span>,
+<pre class='chroma'><code class='language-r' data-lang='r'><span class='nf'>library</span>(<span class='k'><a href='https://tibble.tidyverse.org/reference'>tibble</a></span>)
+<span class='k'>income</span> <span class='o'>&lt;-</span> <span class='nf'><a href='https://tibble.tidyverse.org/reference/tibble.html'>tibble</a></span>(income_range = <span class='nf'>c</span>(<span class='s'>"0-74"</span>,
                                   <span class='s'>"75-145"</span>,
                                   <span class='s'>"150-325"</span>,
                                   <span class='s'>"325+"</span>),
@@ -59,12 +51,13 @@ This presents an interesting problem, with a few steps:
 1.  Separate the range values into two columns.
 2.  Calculate the median of each of those pairs of numbers.
 
-We can get ourselves into a better position by separating out `income_range` into two columns, `lower`, and `upper`, and converting the contents. `separate` is kind of magic here, and while you can specify a specific thing that separates the numbers, `separate` has a nice bit og magic that just finds the most likely character to separate on.
+We can get ourselves into a better position by separating out `income_range` into two columns, `lower`, and `upper`, and converting the contents. We can use `separate` from `tidyr`. It is kind of magical. While you can specify a specific thing that separates the numbers, `separate` has a nice bit og magic that just finds the most likely character to separate on.
 
 <div class="highlight">
 
-<pre class='chroma'><code class='language-r' data-lang='r'><span class='k'>income_sep</span> <span class='o'>&lt;-</span> <span class='k'>income</span> <span class='o'>%&gt;%</span> 
-  <span class='nf'>separate</span>(col = <span class='k'>income_range</span>,
+<pre class='chroma'><code class='language-r' data-lang='r'><span class='nf'>library</span>(<span class='k'><a href='https://tidyr.tidyverse.org/reference'>tidyr</a></span>)
+<span class='k'>income_sep</span> <span class='o'>&lt;-</span> <span class='k'>income</span> <span class='o'>%&gt;%</span> 
+  <span class='nf'><a href='https://tidyr.tidyverse.org/reference/separate.html'>separate</a></span>(col = <span class='k'>income_range</span>,
            into = <span class='nf'>c</span>(<span class='s'>"lower"</span>, <span class='s'>"upper"</span>),
            convert = <span class='m'>TRUE</span>)
 <span class='k'>income_sep</span>
@@ -88,8 +81,9 @@ At first instinct, you might try something like this:
 
 <div class="highlight">
 
-<pre class='chroma'><code class='language-r' data-lang='r'><span class='k'>income_sep</span> <span class='o'>%&gt;%</span> 
-  <span class='nf'>mutate</span>(med = <span class='nf'>median</span>(<span class='nf'>c</span>(<span class='k'>lower</span>, <span class='k'>upper</span>), na.rm = <span class='m'>TRUE</span>))
+<pre class='chroma'><code class='language-r' data-lang='r'><span class='nf'>library</span>(<span class='k'><a href='https://dplyr.tidyverse.org/reference'>dplyr</a></span>, warn.conflicts = <span class='m'>FALSE</span>)
+<span class='k'>income_sep</span> <span class='o'>%&gt;%</span> 
+  <span class='nf'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span>(med = <span class='nf'>median</span>(<span class='nf'>c</span>(<span class='k'>lower</span>, <span class='k'>upper</span>), na.rm = <span class='m'>TRUE</span>))
 <span class='c'>#&gt; # A tibble: 4 x 4</span>
 <span class='c'>#&gt;   lower upper count   med</span>
 <span class='c'>#&gt;   &lt;int&gt; &lt;int&gt; &lt;dbl&gt; &lt;int&gt;</span>
@@ -104,15 +98,13 @@ But this doesn't give us what we want. It just gives us the median of the vector
 
 Anyway, how do we solve this?
 
-`rowwise()`:
-
-We can now call `rowwise()` and calculate the median based on the `lower` and `upper`, and it will consider each row and take the median of those two numbers:
+We can now call [`rowwise()`](https://dplyr.tidyverse.org/reference/rowwise.html) and calculate the median based on the `lower` and `upper`, and it will consider each row and take the median of those two numbers:
 
 <div class="highlight">
 
 <pre class='chroma'><code class='language-r' data-lang='r'><span class='k'>income_sep</span> <span class='o'>%&gt;%</span> 
-  <span class='nf'>rowwise</span>() <span class='o'>%&gt;%</span> 
-  <span class='nf'>mutate</span>(med = <span class='nf'>median</span>(<span class='nf'>c</span>(<span class='k'>lower</span>, <span class='k'>upper</span>), na.rm = <span class='m'>TRUE</span>))
+  <span class='nf'><a href='https://dplyr.tidyverse.org/reference/rowwise.html'>rowwise</a></span>() <span class='o'>%&gt;%</span> 
+  <span class='nf'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span>(med = <span class='nf'>median</span>(<span class='nf'>c</span>(<span class='k'>lower</span>, <span class='k'>upper</span>), na.rm = <span class='m'>TRUE</span>))
 <span class='c'>#&gt; # A tibble: 4 x 4</span>
 <span class='c'>#&gt; # Rowwise: </span>
 <span class='c'>#&gt;   lower upper count   med</span>
