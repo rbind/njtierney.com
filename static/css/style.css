@@ -1,5 +1,5 @@
 body {
-  max-width: 700px;
+  max-width: 680px;
   /*color: #595959;*/
   margin: auto;
   padding: 1em;
@@ -50,7 +50,7 @@ hr {
 pre {
  font-family:"Source Code Pro",monospace;
  background-color:#f8f8f8!important;
- font-size:14px
+ font-size:8px
 }
 pre {
  padding:10px;

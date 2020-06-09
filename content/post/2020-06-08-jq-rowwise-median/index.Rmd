@@ -14,15 +14,19 @@ output:
 ---
 
 ```{r setup, include = FALSE}
+options(cli.width = 70)  # For tidyverse loading messages
 knitr::opts_chunk$set(
+  tidy.opts = list(width.cutoff = 70),  # For code
+  width = 70,
   collapse = TRUE, 
   comment = "#>", 
   fig.width = 7, 
-  fig.retina = 2,
   fig.align = 'center',
   fig.asp = 0.618, # 1 / phi
+  fig.retina = 2,
   out.width = "700px"
 )
+
 ```
 
 The [tidyverse](https://tidyverse.org/) team recently completed a 1.0.0 release for `dplyr`, which was a pretty big deal, and it included a bunch of new features. One of the things that I really enjoyed was that they wrote a [series of blog posts](https://www.tidyverse.org/blog/2020/06/dplyr-1-0-0/) describing new features in the release. This was great, because we got to see what was coming up, and great because people tried them out and gave them feedback. Then, the tidyverse listened, and changed behaviour based on feedback from the community.

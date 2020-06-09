@@ -13,7 +13,10 @@ output: hugodown::hugo_document
 ---
 
 ```{r setup, include = FALSE}
+options(cli.width = 70)  # For tidyverse loading messages
 knitr::opts_chunk$set(
+  tidy.opts = list(width.cutoff = 70),  # For code
+  width = 70,
   collapse = TRUE, 
   comment = "#>", 
   fig.width = 7, 
