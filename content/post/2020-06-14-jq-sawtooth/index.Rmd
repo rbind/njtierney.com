@@ -1,0 +1,106 @@
+---
+title: 'Just Quickly: Removing Sawtooth Patterns in Line Graphs'
+author: Nicholas Tierney
+date: '2020-06-14'
+slug: jq-sawtooth
+categories:
+  - rstats
+  - data visualisation
+tags:
+  - rstats
+output: hugodown::md_document
+---
+
+```{r setup, include = FALSE}
+options(cli.width = 70)  # For tidyverse loading messages
+knitr::opts_chunk$set(
+  tidy.opts = list(width.cutoff = 70),  # For code
+  width = 70,
+  collapse = TRUE, 
+  comment = "#>", 
+  fig.width = 7, 
+  fig.align = 'center',
+  fig.asp = 0.618, # 1 / phi
+  fig.retina = 2,
+  out.width = "700px"
+)
+```
+
+```{r load-pkgs, include = FALSE}
+library(tidyverse)
+```
+
+Sometimes you come across a plot that looks like the following:
+
+```{r ozbaby-example, echo = FALSE}
+oz_kim <- ozbabynames::ozbabynames %>% filter(name == "Kim") 
+
+  ggplot(oz_kim, aes(x = year,
+             y = count)) + 
+  geom_line()
+```
+
+And you might think:
+
+> Something does not look right but I have no idea what is going on here
+
+And that's OK.
+
+So, what's the problem with the plot, and how do you solve it? 
+
+Well, the problem is we have these "sawtooth" patterns in the data, where the data goes up and down.
+
+Typically, we can solve this problem by including some grouping characteristic into the data visualisation. 
+
+It is also worth noting that this doesn't always mean a plot is bad - this could actually be the exact type of plot that you might expect to see (for example in a time series with very high periodicity, perhaps).
+
+But, in our case, we need to understand what our data is first, and what we expect. We are looking at [ozbabynames](https://github.com/ropenscilabs/ozbabynames) - the names at birth of people in Australia. So we are plotting the number of names of a person at birth for each year. In our example we can look at the occurrences of the name, "Kim", like so:
+
+```{r oz-kim}
+ggplot(oz_kim,
+       aes(x = year,
+           y = count)) + 
+  geom_line()
+```
+
+We don't expect the name "kim" to suddenly crash down each year - especially since this looks to be an exact vertical drop.
+
+So what do we do? 
+
+This vis problem often means there is some grouping characteristic missing
+from the graphic. For example, in this case, "sex" is not shown in the data. In showing it, we get:
+
+```{r add-sex}
+library(colorspace)
+  ggplot(oz_kim,
+         aes(x = year,
+             y = count,
+             colour = sex)) + 
+  geom_line() +
+  scale_colour_discrete_qualitative()
+```
+
+
+So we see that there is still some sawtooth patterns going on. Let's look at the data to see if there are other variables we are missing:
+
+```{r print-oz-kim}
+oz_kim
+```
+
+
+Aha! We can see that there is another grouping characteristic going on: State.
+
+```{r add-sex-state}
+ggplot(oz_kim,
+       aes(x = year,
+           y = count,
+           colour = sex)) + 
+  geom_line() + 
+  facet_wrap(~state) +
+  scale_colour_discrete_qualitative()
+```
+
+So, **how to remove sawtooth patterns in a plot?** 
+
+1. Understand what sort of graphic you are expecting
+2. Explore and potentially include all grouping features into the graphic
