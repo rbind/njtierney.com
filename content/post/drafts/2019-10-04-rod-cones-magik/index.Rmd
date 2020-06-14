@@ -1,5 +1,5 @@
 ---
-title: "Rods Cones Colour Magik: Colour in Data Analysis"
+title: "Rods Cones Colour Magik: Assessing Colours"
 date: '2020-06-10'
 slug: col-pal
 categories: 
@@ -9,7 +9,7 @@ tags:
   - colour
   - palettes
 draft: true
-output: hugodown::hugo_document
+output: hugodown::md_document
 ---
 
 ```{r setup, include = FALSE}
@@ -35,9 +35,17 @@ p_img <- function(obj, nam) {
 }
 ```
 
-This blog post is in a series about using and assessing good colours in R. 
-This is part 1, which discusses colourblindness. Future parts will discuss how to create your own colour palettes and assess others. It draws from work done by [Kevin Wright in pals](), [Stefan]() and [Nathaniel Smith](), and implementations in a paper by Achim Zeil ...
+This blog post is in a series "Rods Cones Colour Magik" about understanding, using, and assess colours in R. 
 
+Previously in [Part 1](), I discussed what colourblindness is, and how it impacts design. In this part, part 2, we discuss how to assess colour in R.
+
+This post covers three areas:
+
+1. How to assess current colours?
+2. How to assess existing colours?
+3. How to create better colours?
+
+# How to assess current colours?
 
 Whenever I see a data visualisation, I'm always cued in to look at the colours that people use in their plots. In particular, I keep an eye out for things that are not colourblind safe, and not perceptually uniform.
 
@@ -59,34 +67,13 @@ Why?
 Two main reasons:
 
 1. Colourblindness: Those with colourblindness might not be able to distinguish the colours used. See [my post on colourblindness for more on this]()
-2. Perceptual uniformity: For these colourscales, a one unit change in data value does not often mean a one unit change in perceived colour. See [my post on colourblindness for more on this]()
+2. Perceptual uniformity: For these colourscales, a one unit change in data value does not often mean a one unit change in perceived colour.
 
-This post covers two areas:
+## Assessubg Colourblindness
 
-1. How to I assess my current colours?
-2. How to I assess other colours?
-3. How do I create better colours?
+If we know ahead of time the colours we want to use, we can look at the colours plotted against each other out of the context of a dataset
 
-```{r pal-safe-red-green}
-library(magrittr)
-colorspace::demoplot(red_green)
-
-red_green %>% 
-  colorspace::deutan() %>% 
-  colorspace::demoplot()
-
-red_green %>% 
-  colorspace::tritan() %>% 
-  colorspace::demoplot()
-
-red_green %>% 
-  colorspace::protan() %>% 
-  colorspace::demoplot(type = "pie")
-```
-
-
-# Why does this matter when using other previously mentioned colour scales?
-
+Let's demonstrate this by showing what the rainbow scale looks like for the different types of colourblindness:
 Here's Rainbow:
 
 ```{r rainbow-pals-safe}
@@ -147,7 +134,6 @@ scico::scico(n = 10, palette = "hawaii")[c(1,5,7)] %>%
 terrain.colors(25) %>% 
   colorspace::demoplot()
 ```
-
 
 ## Perceptually uniform
 
@@ -321,3 +307,20 @@ But here's a graphic reproduced from the [excellent paper on colorspace](https:/
 * Luminance means how **bright** that colour is.
 
 * great post on [imageMagick](https://www.imagemagick.org/Usage/color_basics/)
+
+```{r pal-safe-red-green}
+library(magrittr)
+colorspace::demoplot(red_green)
+
+red_green %>% 
+  colorspace::deutan() %>% 
+  colorspace::demoplot()
+
+red_green %>% 
+  colorspace::tritan() %>% 
+  colorspace::demoplot()
+
+red_green %>% 
+  colorspace::protan() %>% 
+  colorspace::demoplot(type = "pie")
+```

@@ -1,16 +1,17 @@
 ---
-title: What is Colourblindness?
+title: "Rods Cones Colour Magik: What is Colourblindness?"
 author: Nicholas Tierney
 date: '2020-06-10'
-slug: what-is-colourblindness
+slug: colourblind
 categories:
   - data visualisation
+  - rstats
 draft: true
 tags:
   - colour
   - colourblind
   - palettes
-output: hugodown::hugo_document
+output: hugodown::md_document
 ---
 
 ```{r setup, include = FALSE}
@@ -57,7 +58,7 @@ _shotty drawing of rods and cones_
 
 ```{r rods-and-cones, fig.show='hold', out.width = "40%"}
 knitr::include_graphics("imgs/wiki-rod.png")
-knitr::include_graphics("imgs/wiki-cone.png.png")
+knitr::include_graphics("imgs/wiki-cone.png")
 ```
 
 _Illustrations of [Rods](https://en.wikipedia.org/wiki/File:Cone2.svg) and [Cones](https://en.wikipedia.org/wiki/File:Cone_cell_eng.png), taken from from Wikipedia, Licensed under [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/deed.en)._
