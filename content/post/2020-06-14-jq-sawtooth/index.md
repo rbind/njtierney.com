@@ -9,7 +9,7 @@ categories:
 tags:
   - rstats
 output: hugodown::md_document
-rmd_hash: ef66bc842f294e1f
+rmd_hash: 11560c248257480f
 
 ---
 
@@ -90,7 +90,7 @@ So we see that there is still some sawtooth patterns going on. Let's look at the
 
 </div>
 
-Aha! We can see that there is another grouping characteristic going on: State.
+Aha! We can see that there is another grouping characteristic going on - State. Let's facet the graph for each state, giving us:
 
 <div class="highlight">
 

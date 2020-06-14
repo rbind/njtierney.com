@@ -88,7 +88,7 @@ oz_kim
 ```
 
 
-Aha! We can see that there is another grouping characteristic going on: State.
+Aha! We can see that there is another grouping characteristic going on - State. Let's facet the graph for each state, giving us:
 
 ```{r add-sex-state}
 ggplot(oz_kim,
