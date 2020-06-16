@@ -1,6 +1,6 @@
 ---
 title: Data Science as an Entryway to Open Publishing
-author: Nicholas Tierney and Julia Lowndes
+author: Julia Lowndes and Nicholas Tierney
 date: '2020-06-03'
 slug: data-science-publishing
 draft: true
@@ -24,7 +24,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-*Last month Julia Lowndes and I presented a virtual fireside chat at the [Open Publishing Fest](https://openpublishingfest.org/) called "Data Science as an Entryway to Open Publishing". The abstract of our fireside chat was: The open source R programming language is a powerhouse for data analysis and statistics -- and it also is fueling open publishing through RMarkdown and a large, engaged, and innovative community. We will show community-created examples of tutorials, blogs, websites, manuscripts, books, etc, and discuss how this is an entryway to open science, preprints, and open scientific publishing. We welcome other contributed examples to showcase how R can streamline open publishing, as well as examples showcasing other programming languages. This post is some reflections from the experience and summary of our [slides](https://zenodo.org/record/3873698#.XtbQo8Z7nOQ).* 
+_Last month Julia Lowndes and I presented a virtual fireside chat at the [Open Publishing Fest](https://openpublishingfest.org/) called "Data Science as an Entryway to Open Publishing". The abstract of our fireside chat was: The open source R programming language is a powerhouse for data analysis and statistics -- and it also is fueling open publishing through RMarkdown and a large, engaged, and innovative community. We will show community-created examples of tutorials, blogs, websites, manuscripts, books, etc, and discuss how this is an entryway to open science, preprints, and open scientific publishing. We welcome other contributed examples to showcase how R can streamline open publishing, as well as examples showcasing other programming languages. This post is some reflections from the experience and summary of our [slides](https://zenodo.org/record/3873698#.XtbQo8Z7nOQ)._
 
 ---
 
@@ -44,7 +44,7 @@ RMarkdown powerfully combines executable R code with simple text formatting for 
 
 ## RMarkdown's familiar outputs for science: Word documents and PDFs
 
-RMarkdown renders to Word and PDF — imagine never copy-pasting a graph into your report again!!!! RMarkdown can also manage citations, cross-referencing figures and section headers.
+RMarkdown renders to Word and PDF — imagine never copy-pasting a graph into your report again!!! RMarkdown can also manage citations, cross-referencing figures and section headers.
 
 But wait, you can also use RMarkdown behind your wildest dreams.
 
@@ -70,7 +70,38 @@ We can also create **simple slides** from a single RMarkdown file. Imagine makin
 
 # Discussion time
 
-After going through the slides, we discussed with attendees...TODO complete
+After going through the slides, we discussed with attendees the benefits of a HTML-focussed workflow. One of the benefits of this is that by avoiding page breaks, all your figures and tables can usually be placed right where they are mentioned. Although this might seem like a small detail, avoiding page breaks actually saved you a huge amount of time and hassle. [Adam Sparks]() discussed that one of the benefits to HTML is the ease of sharing these in a team internally - they do not have to be published online, and can be opened in any browser. The fact that they often look really snappy and polished, and can include interactive elements like maps is also a huge selling point.
+
+We also discussed how [`pagedown`]() provides a fresh approach to generating PDF on the web, and were lucky to have the creator of [paged.js]() (which powers `pagedown`) [Adam Hyde]() in our call.
+
+We also discussed some alternative formats for publishing, such as JATS, a journal publishing standard for XML. We hadn't heard of it, (and apparently that was a good thing).
+
+[Alison Hill]() made an excellent point:
+
+> As a former scientist, I felt woefully ill-equipped when first working with HTML output. I know you all have thought a lot about this- how can we increase HTML comfort levels and fluency for new/early scientists?
+
+In response to this we discussed some of the downfalls of HTML, namely the fact that CSS is usually required to answer questions like:
+
+* "How do I change the font size"
+* "How do I change the font colour", or 
+* "how do I create two columns of text"
+
+While CSS is uniquitous, and everywhere on the web, so it can be easy to change appearances of text. It is an additional learning point for learners, and something that can tip the balance and turn people away and back to systems they know. 
+
+Some suggestions on addressing this were (I think?):
+
+* Showing students existing Rmarkdown HTML templates
+* Providing simple CSS templates within an rmarkdown file for people to use
+* Building better tools that guide people to create their own CSS
+
+We had another interesting question from [John Chodacki]()
+
+> What about readers/consumers?  But it seems like all the cool features of auto-updating tables, etc. can bring confusion for the reader ... unable to rely on stable info.  Do you agree?  Are there innovative ways to mitigate?
+
+This problem can arise when you generate a graphic, or a model during data analysis, and iterate on it and improve it. Later one, you might want to compare your current graphic to your first one, or your first model to the current one. However, doing that is actually pretty hard, and involves some strong version control skills. We discussed an approach that [Miles McBain]() broached a few years ago called [journalr](https://ghcdn.rawgit.org/MilesMcBain/journalr/master/Journalling_tool_proposal.html) ([repo](https://github.com/MilesMcBain/journalr)).
+
+Ultimately, this is a hard problem to solve, and mimics a real life pen and paper notebook. [Roger Peng]() discussed an approach to this in [NSSDeviations]() (around episode 74 I think?), involving a manual approach
+
 
 
 How does RMarkdown relate to/streamline the academic publishing process? Analog: rOpenSci software review process Friendly entryways to open science & publishing : you're already doing it w/ code Process affects the outcome: Easier to share at the end because you're already sharing with yourself throughout Not just R! Examples from other languages (Jupyter [note]books) Open publishing in the wild Education: allisonhorst.github.io, datavizm20.classes.andrewheiss.com, tinystats.github.io/teacups-giraffes-and-statistics, ida.numbat.space Programs: openscapes.org Accompanying science pubs: ohi-science.org/betterscienceinlesstime
