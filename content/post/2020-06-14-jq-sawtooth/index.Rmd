@@ -100,7 +100,75 @@ ggplot(oz_kim,
   scale_colour_discrete_qualitative()
 ```
 
+## Setting group correctly (Addition as of 2020/06/22)
+
+[Emma Vitz](https://twitter.com/EmmaVitz) had an interesting example of another sawtooth type problem shared on twitter: 
+
+
+`r hugodown::embed_tweet("1272395508309360641")`
+
+The solution was discussed in the thread, but let's unpack this. Let's first recreate the data used (taken by eyeballing the graphic):
+
+```{r create-twitter-data}
+
+pageviews <- tibble(
+  age = factor(rep(c("18-24",
+                     "25-34",
+                     "35-44",
+                     "45-54",
+                     "55-64",
+                     "65"), 2)),
+  gender = factor(x = c(rep("Female", 6),
+                        rep("Male", 6))),
+  pageviews = c(2750, 4200, 1750, 750, 450, 500,
+                2500, 4200, 900, 350, 180, 150)
+)
+
+pageviews
+```
+
+So here is the warning given for the first of Emma's plots:
+
+```{r emma-plot-warning}
+ggplot(pageviews,
+       aes(x = age,
+           y = pageviews,
+           colour = gender)) + 
+  geom_line()
+```
+
+What to do? One way to get the lines to appear is to set `group = 1`
+
+```{r emma-plot}
+ggplot(pageviews,
+       aes(x = age,
+           y = pageviews,
+           colour = gender,
+           group = 1)) + 
+  geom_line()
+```
+
+But then we get this! That isn't ideal. The solution proposed on twitter was to set `group = gender` as well as `colour = gender`.
+
+```{r emma-plot-fix}
+ggplot(pageviews,
+       aes(x = age,
+           y = pageviews,
+           colour = gender,
+           group = gender)) + 
+  geom_line()
+```
+
+The answer was provided by [Peter Green](https://twitter.com/pitakakariki), who said:
+
+> Looks like since x=age is a factor, ggplot is "helpfully" making age the group instead of gender? Which would explain why fixing it with the explicit group=gender works?
+
+My take on this is that since there are two factors here, it causes `ggplot` some confusion. The default behaviour of `ggplot` when setting `colour` is to use the same grouping, but in this case, as there are two factors, it doesn't know what to pick. By setting the `group` explicitly, you get the right plot.
+
+# Wrapping Up
+
 So, **how to remove sawtooth patterns in a plot?** 
 
 1. Understand what sort of graphic you are expecting
 2. Explore and potentially include all grouping features into the graphic
+3. Ensure that if you have factors in some of your aesthetics (`x`, `y`, `colour`, `size`), that you specify `group` to the right variable in your dataset.
