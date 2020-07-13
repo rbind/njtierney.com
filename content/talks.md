@@ -4,6 +4,7 @@ title: Talks
 
 # 2020
 
+- [2020/06/26: "The use of colour in graphics: A journey through the body & mind to the screen"](https://njt-monash-colour.netlify.app/#1)
 - [2020/02/14: "Data Data Data, Invited Seminar at University of Washington, Seattle, USA"](https://njt-data-uw.netlify.app/#1)
 - [2020/02/12: "Data Data Data, Guest Speaker at Sage Bionetwords, Seattle, USA"](https://njt-sage.netlify.app/#1)
 - [2020/01/29: "Making Better Spaghetti, Invited Speaker at rstudio::conf2020"](https://njt-rstudio20.netlify.app/#1)
@@ -23,7 +24,7 @@ title: Talks
 
 - [DMAC 2019: Intro to Missing Data](https://talks.updog.co/2019-dmac-intro-to-missing-data/2019-dmac-intro-to-missing-data.html#1)
 
-- [2019/01/09 Are we tere yet? Testing the effectiveness of graphics as MCMC diagnostics. Johns Hopkins, Baltimore, USA](https://talks.updog.co/talk-are-we-there-yet-mcmc.pdf)
+- [2019/01/09 Are we tere yet? Testing the effectiveness of graphics as MCMC diagnostics. Johns Hopkins, Baltimore, USA](https://imgs.njtierney.com/talk-are-we-there-yet-mcmc.pdf)
 
 # 2018
 
