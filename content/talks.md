@@ -7,7 +7,7 @@ title: Talks
 - [2020/06/26: "The use of colour in graphics: A journey through the body & mind to the screen"](https://njt-monash-colour.netlify.app/#1)
 - [2020/02/14: "Data Data Data, Invited Seminar at University of Washington, Seattle, USA"](https://njt-data-uw.netlify.app/#1)
 - [2020/02/12: "Data Data Data, Guest Speaker at Sage Bionetwords, Seattle, USA"](https://njt-sage.netlify.app/#1)
-- [2020/01/29: "Making Better Spaghetti, Invited Speaker at rstudio::conf2020"](https://njt-rstudio20.netlify.app/#1) [github](https://github.com/njtierney/rstudioconf20) [video](Video available [here](https://rstudio.com/resources/rstudioconf-2020/making-better-spaghetti-plots-exploring-the-individuals-in-longitudinal-data-with-the-brolgar-pac/))
+- [2020/01/29: "Making Better Spaghetti, Invited Speaker at rstudio::conf2020"](https://njt-rstudio20.netlify.app/#1) [github](https://github.com/njtierney/rstudioconf20) [video](https://rstudio.com/resources/rstudioconf-2020/making-better-spaghetti-plots-exploring-the-individuals-in-longitudinal-data-with-the-brolgar-pac/))
 - [2020/01/17: "Data Data Data, NUMBAT Seminar, Monash University, Melbourne"](https://njt-numbat-data.netlify.app/#1)
 
 # 2019
