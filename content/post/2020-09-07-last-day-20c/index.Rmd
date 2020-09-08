@@ -8,7 +8,6 @@ categories:
 tags:
   - rstats
   - bomrang
-draft: yes
 output: hugodown::md_document
 ---
 

@@ -16,9 +16,7 @@ If you are having problems with getting R or RStudio, check out [this guide](htt
 
 # Learning and Troubleshooting with R
 
-To learn R, you need to learn [how to get unstuck with R](https://stat545.com/help-general.html). This teaches you a really good process to iterate through when going through the process of getting unstuck.
-
-To learn a new function or package, [Quick-R](https://www.statmethods.net), provides nice quick description of functions and other R-related things.
+To learn R, you need to learn [how to get unstuck with R](https://stat545.stat.ubc.ca/tutorials/getting-unstuck/). This teaches you a really good process to iterate through when going through the process of getting unstuck.
 
 For all my other problems, I usually google the error message, or try my darndest to ask an reasonable question to google that describes my current dilemna, and then look read the appropriate blog post, or [StackOVerflow Answer](https://stackoverflow.com). [RSeek](https://rseek.org/) is also basically a google search that filters by R related content. 
 
