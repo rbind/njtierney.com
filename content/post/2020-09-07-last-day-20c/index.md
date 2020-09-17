@@ -9,13 +9,13 @@ tags:
   - rstats
   - bomrang
 output: hugodown::md_document
-rmd_hash: 49154191968b4bec
+rmd_hash: 56a77d9c309a3de9
 
 ---
 
 It's starting to get warmer here in Melbourne. Today was the first day of over 20 degrees Celsius we've had in...well how long? It feels like a while. We hit this middle part of the year and we don't get over 20C for a while. But I'd like to know the last time it got over 20 degrees Celsius. How do we do that? With the [`bomrang`](https://github.com/ropensci/bomrang) package by [Adam Sparks](https://github.com/adamhsparks)!
 
-First, you'll need the lastest version of `bomrang` - you should be on version 0.7.0.9000 or greater:
+First, you'll need the latest version of `bomrang` - you should be on version 0.7.0.9000 or greater:
 
 <div class="highlight">
 
@@ -90,7 +90,7 @@ We take the first station and get the max temperature.
 <span class='c'>#&gt; This is likely a temporary error in the Bureau of Meteorology's</span>
 <span class='c'>#&gt; database and may cause requests for rain station data to fail.</span>
 
-<span class='c'>#&gt; Data saved as /var/folders/mw/gj7418356js6s29x7wn8crfmljy4wh/T//Rtmp32TPi1/IDCJAC0010_086338_1800_Data.csv</span>
+<span class='c'>#&gt; Data saved as /var/folders/mw/gj7418356js6s29x7wn8crfmljy4wh/T//RtmpfgXQLS/IDCJAC0010_086338_1800_Data.csv</span>
 
 
 <span class='k'>melbourne_weather</span>
@@ -109,11 +109,11 @@ We take the first station and get the max temperature.
 <span class='c'>#&gt;    4:   IDCJAC0010          86338 2013     1   4              NA             NA</span>
 <span class='c'>#&gt;    5:   IDCJAC0010          86338 2013     1   5              NA             NA</span>
 <span class='c'>#&gt;   ---                                                                          </span>
-<span class='c'>#&gt; 2803:   IDCJAC0010          86338 2020     9   3            19.9              1</span>
-<span class='c'>#&gt; 2804:   IDCJAC0010          86338 2020     9   4            17.3              1</span>
-<span class='c'>#&gt; 2805:   IDCJAC0010          86338 2020     9   5            16.6              1</span>
-<span class='c'>#&gt; 2806:   IDCJAC0010          86338 2020     9   6            19.2              1</span>
-<span class='c'>#&gt; 2807:   IDCJAC0010          86338 2020     9   7            22.9              1</span>
+<span class='c'>#&gt; 2812:   IDCJAC0010          86338 2020     9  12            16.0              1</span>
+<span class='c'>#&gt; 2813:   IDCJAC0010          86338 2020     9  13            17.2              1</span>
+<span class='c'>#&gt; 2814:   IDCJAC0010          86338 2020     9  14            16.6              1</span>
+<span class='c'>#&gt; 2815:   IDCJAC0010          86338 2020     9  15            15.8              1</span>
+<span class='c'>#&gt; 2816:   IDCJAC0010          86338 2020     9  16            22.8              1</span>
 <span class='c'>#&gt;       quality</span>
 <span class='c'>#&gt;    1:        </span>
 <span class='c'>#&gt;    2:        </span>
@@ -121,16 +121,16 @@ We take the first station and get the max temperature.
 <span class='c'>#&gt;    4:        </span>
 <span class='c'>#&gt;    5:        </span>
 <span class='c'>#&gt;   ---        </span>
-<span class='c'>#&gt; 2803:       N</span>
-<span class='c'>#&gt; 2804:       N</span>
-<span class='c'>#&gt; 2805:       N</span>
-<span class='c'>#&gt; 2806:       N</span>
-<span class='c'>#&gt; 2807:       N</span>
+<span class='c'>#&gt; 2812:       N</span>
+<span class='c'>#&gt; 2813:       N</span>
+<span class='c'>#&gt; 2814:       N</span>
+<span class='c'>#&gt; 2815:       N</span>
+<span class='c'>#&gt; 2816:       N</span>
 </code></pre>
 
 </div>
 
-We can convert this into a date format with one of my favourite R functions of all time, ISOdate (also ISOdatetime is great):
+We can convert this into a date format with one of my favourite R functions of all time, [`ISOdate()`](https://rdrr.io/r/base/ISOdatetime.html) (also [`ISOdatetime()`](https://rdrr.io/r/base/ISOdatetime.html) is great):
 
 <div class="highlight">
 
@@ -153,11 +153,11 @@ We can convert this into a date format with one of my favourite R functions of a
 <span class='c'>#&gt;    4:   IDCJAC0010          86338 2013     1   4              NA             NA</span>
 <span class='c'>#&gt;    5:   IDCJAC0010          86338 2013     1   5              NA             NA</span>
 <span class='c'>#&gt;   ---                                                                          </span>
-<span class='c'>#&gt; 2803:   IDCJAC0010          86338 2020     9   3            19.9              1</span>
-<span class='c'>#&gt; 2804:   IDCJAC0010          86338 2020     9   4            17.3              1</span>
-<span class='c'>#&gt; 2805:   IDCJAC0010          86338 2020     9   5            16.6              1</span>
-<span class='c'>#&gt; 2806:   IDCJAC0010          86338 2020     9   6            19.2              1</span>
-<span class='c'>#&gt; 2807:   IDCJAC0010          86338 2020     9   7            22.9              1</span>
+<span class='c'>#&gt; 2812:   IDCJAC0010          86338 2020     9  12            16.0              1</span>
+<span class='c'>#&gt; 2813:   IDCJAC0010          86338 2020     9  13            17.2              1</span>
+<span class='c'>#&gt; 2814:   IDCJAC0010          86338 2020     9  14            16.6              1</span>
+<span class='c'>#&gt; 2815:   IDCJAC0010          86338 2020     9  15            15.8              1</span>
+<span class='c'>#&gt; 2816:   IDCJAC0010          86338 2020     9  16            22.8              1</span>
 <span class='c'>#&gt;       quality                date</span>
 <span class='c'>#&gt;    1:         2013-01-01 12:00:00</span>
 <span class='c'>#&gt;    2:         2013-01-02 12:00:00</span>
@@ -165,11 +165,11 @@ We can convert this into a date format with one of my favourite R functions of a
 <span class='c'>#&gt;    4:         2013-01-04 12:00:00</span>
 <span class='c'>#&gt;    5:         2013-01-05 12:00:00</span>
 <span class='c'>#&gt;   ---                            </span>
-<span class='c'>#&gt; 2803:       N 2020-09-03 12:00:00</span>
-<span class='c'>#&gt; 2804:       N 2020-09-04 12:00:00</span>
-<span class='c'>#&gt; 2805:       N 2020-09-05 12:00:00</span>
-<span class='c'>#&gt; 2806:       N 2020-09-06 12:00:00</span>
-<span class='c'>#&gt; 2807:       N 2020-09-07 12:00:00</span>
+<span class='c'>#&gt; 2812:       N 2020-09-12 12:00:00</span>
+<span class='c'>#&gt; 2813:       N 2020-09-13 12:00:00</span>
+<span class='c'>#&gt; 2814:       N 2020-09-14 12:00:00</span>
+<span class='c'>#&gt; 2815:       N 2020-09-15 12:00:00</span>
+<span class='c'>#&gt; 2816:       N 2020-09-16 12:00:00</span>
 </code></pre>
 
 </div>
@@ -246,7 +246,7 @@ But this doesn't realllly help me. We just see a bit gap. I still need to squint
 
 I want to be able to identify when it stopped being over 20, and then when it started again.
 
-Buckle up, we're going into the real of RLE - Run Length Encodings.
+Buckle up, we're going into the realm of RLE - Run Length Encodings.
 
 [Earo Wang](https://github.com/earowang) first showed this to me I first arrived at Monash, (where it was used for [`miss_var_run`](http://naniar.njtierney.com/reference/miss_var_run.html)).
 
@@ -310,11 +310,11 @@ So, we can use `rle` to calculate the run of the times that temperature was belo
 <span class='c'>#&gt;   4:   IDCJAC0010          86338 2020     1   4            26.8              1</span>
 <span class='c'>#&gt;   5:   IDCJAC0010          86338 2020     1   5            16.7              1</span>
 <span class='c'>#&gt;  ---                                                                          </span>
-<span class='c'>#&gt; 247:   IDCJAC0010          86338 2020     9   3            19.9              1</span>
-<span class='c'>#&gt; 248:   IDCJAC0010          86338 2020     9   4            17.3              1</span>
-<span class='c'>#&gt; 249:   IDCJAC0010          86338 2020     9   5            16.6              1</span>
-<span class='c'>#&gt; 250:   IDCJAC0010          86338 2020     9   6            19.2              1</span>
-<span class='c'>#&gt; 251:   IDCJAC0010          86338 2020     9   7            22.9              1</span>
+<span class='c'>#&gt; 256:   IDCJAC0010          86338 2020     9  12            16.0              1</span>
+<span class='c'>#&gt; 257:   IDCJAC0010          86338 2020     9  13            17.2              1</span>
+<span class='c'>#&gt; 258:   IDCJAC0010          86338 2020     9  14            16.6              1</span>
+<span class='c'>#&gt; 259:   IDCJAC0010          86338 2020     9  15            15.8              1</span>
+<span class='c'>#&gt; 260:   IDCJAC0010          86338 2020     9  16            22.8              1</span>
 <span class='c'>#&gt;      quality                date below_20</span>
 <span class='c'>#&gt;   1:       Y 2020-01-01 12:00:00    FALSE</span>
 <span class='c'>#&gt;   2:       Y 2020-01-02 12:00:00    FALSE</span>
@@ -322,11 +322,11 @@ So, we can use `rle` to calculate the run of the times that temperature was belo
 <span class='c'>#&gt;   4:       Y 2020-01-04 12:00:00    FALSE</span>
 <span class='c'>#&gt;   5:       Y 2020-01-05 12:00:00     TRUE</span>
 <span class='c'>#&gt;  ---                                     </span>
-<span class='c'>#&gt; 247:       N 2020-09-03 12:00:00     TRUE</span>
-<span class='c'>#&gt; 248:       N 2020-09-04 12:00:00     TRUE</span>
-<span class='c'>#&gt; 249:       N 2020-09-05 12:00:00     TRUE</span>
-<span class='c'>#&gt; 250:       N 2020-09-06 12:00:00     TRUE</span>
-<span class='c'>#&gt; 251:       N 2020-09-07 12:00:00    FALSE</span>
+<span class='c'>#&gt; 256:       N 2020-09-12 12:00:00     TRUE</span>
+<span class='c'>#&gt; 257:       N 2020-09-13 12:00:00     TRUE</span>
+<span class='c'>#&gt; 258:       N 2020-09-14 12:00:00     TRUE</span>
+<span class='c'>#&gt; 259:       N 2020-09-15 12:00:00     TRUE</span>
+<span class='c'>#&gt; 260:       N 2020-09-16 12:00:00    FALSE</span>
 </code></pre>
 
 </div>
@@ -359,7 +359,8 @@ then `pull` it out
 <span class='c'>#&gt; [205]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE</span>
 <span class='c'>#&gt; [217]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE</span>
 <span class='c'>#&gt; [229]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE FALSE</span>
-<span class='c'>#&gt; [241]  TRUE  TRUE  TRUE  TRUE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE FALSE</span>
+<span class='c'>#&gt; [241]  TRUE  TRUE  TRUE  TRUE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE FALSE  TRUE</span>
+<span class='c'>#&gt; [253]  TRUE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE FALSE</span>
 </code></pre>
 
 </div>
@@ -376,8 +377,8 @@ And then use `rle` on the vector of TRUE/FALSE
 <span class='k'>melb_rle</span>
 
 <span class='c'>#&gt; Run Length Encoding</span>
-<span class='c'>#&gt;   lengths: int [1:39] 4 2 4 2 3 1 17 2 10 1 ...</span>
-<span class='c'>#&gt;   values : logi [1:39] FALSE TRUE FALSE TRUE FALSE TRUE ...</span>
+<span class='c'>#&gt;   lengths: int [1:43] 4 2 4 2 3 1 17 2 10 1 ...</span>
+<span class='c'>#&gt;   values : logi [1:43] FALSE TRUE FALSE TRUE FALSE TRUE ...</span>
 </code></pre>
 
 </div>
@@ -418,7 +419,7 @@ First we calculate which position has the max with `which.max`. I like to print 
 
 <span class='c'>#&gt;  [1]   4   2   4   2   3   1  17   2  10   1   3   3   4   2   3   2   2   1   7</span>
 <span class='c'>#&gt; [20]   2   5   6   8   5   2   3   3   3   1   3   2  10   2 111   1   5   1   4</span>
-<span class='c'>#&gt; [39]   1</span>
+<span class='c'>#&gt; [39]   1   2   1   5   1</span>
 </code></pre>
 
 </div>
@@ -527,7 +528,7 @@ When was the last time in 2020 Melbourne was above 20 Celsius?
 Post Script
 ===========
 
-In retrospect there is more to add to this plot, and probably other simpler ways to calculate this, I'm keen ot hear your thoughts below.
+In retrospect there is more to add to this plot, and probably other simpler ways to calculate this, I'm keen to hear your thoughts below.
 
 I suspect this sort of function will come in handy in the future as we start to compare COVID19 days, to help us answer: "when was the last day of ... cases".
 
@@ -587,7 +588,7 @@ I suspect this sort of function will come in handy in the future as we start to 
 A side note on the history of `bomrang`
 =======================================
 
-I take great joy in seeing `bomrang` and using it. I first posted [an issue](https://github.com/ropensci/unconf16/issues/24) about it in 2016 at the [rOpenSci unconf]() which was held in the USA, but [Miles](https://milesmcbain.xyz/), [Jessie](https://acems.org.au/our-people/jessie-roberts), and I (And also [Alex Simmons](https://scholar.google.com.au/citations?user=plaGy54AAAAJ&hl=en)) participated remotely, with [Bob Rudis](https://rud.is/b/), [Brooke Anderson](https://github.com/geanders), and a few folks. My memory is a bit hazy because in order to keep pace with the USA we had to stay up all night, and I don't really remember the days before or after it. It got somewhere, but I didn't really know what we were doing, I just thought, "this should be a thing, why can't I get Australian weather data from R?", but had no idea what I was doing with web scraping, and knew nothing about the weather other than what I'd seen on the news and that lightning can indeed strike the same place twice. So I suggested the idea, but everyone else provided the know how. It was hard, because it turned out the BoM weather bureau API didn't exist and required a bit of domain expertise
+I take great joy in seeing `bomrang` and using it. I first posted [an issue](https://github.com/ropensci/unconf16/issues/24) about it in 2016 at the [rOpenSci unconf]() which was held in the USA, but [Miles](https://milesmcbain.xyz/), [Jessie](https://acems.org.au/our-people/jessie-roberts), and I (And also [Alex Simmons](https://scholar.google.com.au/citations?user=plaGy54AAAAJ&hl=en)) participated remotely, with [Bob Rudis](https://rud.is/b/), [Brooke Anderson](https://github.com/geanders), [Maëlle Salmon](https://masalmon.eu/) and a few folks. My memory is a bit hazy because in order to keep pace with the USA we had to stay up all night, and I don't really remember the days before or after it. It got somewhere, but I didn't really know what we were doing, I just thought, "this should be a thing, why can't I get Australian weather data from R?", but had no idea what I was doing with web scraping, and knew nothing about the weather other than what I'd seen on the news and that lightning can indeed strike the same place twice. So I suggested the idea, but everyone else provided the know how. It was hard, because it turned out the BoM weather bureau API didn't exist and required a bit of domain expertise
 
 Next, it was [picked up by much more experienced team](https://github.com/ropensci/auunconf/issues/6) at the first [Australian rOpenSci Ozunconf](https://github.com/ropensci/auunconf) (then, au-unconf), in 2016 in Brisbane. Happily they knew what they were doing, and has experience with Australian weather data. The project grew from there, being headed by [Adam Sparks](https://adamhsparks.com/), initially it was called `bomr`, but [Di Cook](http://dicook.org/) suggested, "bomrang", the name stuck, and Adam submitted it to rOpenSci for package review, and the package became more mature and in it's current state of glory.
 
