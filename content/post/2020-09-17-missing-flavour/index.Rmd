@@ -9,7 +9,6 @@ categories:
 tags:
   - rstats
   - missing-data
-draft: yes
 output: hugodown::md_document
 ---
 
