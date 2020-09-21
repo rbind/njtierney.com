@@ -51,7 +51,7 @@ pygmentsUseClasses = true
 [params]
     description = "Credibly Curious"
     GithubEdit = "https://github.com/rbind/njtierney.com/edit/master/content/"
-    footer = "&copy; [Nicholas Tierney](https://njtierney.com) 2013-19 | [Github](https://github.com/njtierney) | [Twitter](https://twitter.com/nj_tierney)"
+    footer = "&copy; [Nicholas Tierney](https://njtierney.com) 2013-20 | [Github](https://github.com/njtierney) | [Twitter](https://twitter.com/nj_tierney) | [RSS](https://www.njtierney.com/post/index.xml)"
 
 #  enable GDPR settings
 [privacy]
