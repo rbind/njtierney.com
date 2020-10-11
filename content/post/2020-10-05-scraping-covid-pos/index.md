@@ -16,7 +16,7 @@ tags:
   - covid19
   - data visualisation
 output: hugodown::md_document
-rmd_hash: 6a39e8adb970dce1
+rmd_hash: c4e5291807a2102c
 
 ---
 
@@ -29,7 +29,7 @@ Ah, COVID19. Yet another COVID19 blog post? Kinda? Not really? This blog post co
 
 We're in lockdown here in Melbourne and I find myself looking at all the case numbers every day. A number that I've been paying attention to helps is the positive test rate - the number of positive tests divided by the number of total tests.
 
-There's a great website, [covidlive.com.au](https://covidlive.com.au/), posted on (covidliveau)\[<a href="https://twitter.com/covidliveau" class="uri">https://twitter.com/covidliveau</a>\], maintained by [Anthony Macali](https://twitter.com/migga)
+There's a great website, [covidlive.com.au](https://covidlive.com.au/), posted on [covidliveau](https://twitter.com/covidliveau), maintained by [Anthony Macali](https://twitter.com/migga)
 
 We're going to look at the [daily positive test rates for Victoria](https://covidlive.com.au/report/daily-positive-test-rate/vic), first let's load up the three packages we'll need, the `tidyverse` for general data manipulation and plotting and friends, `rvest` for web scraping, and `polite` for ethically managing the webscraping.
 
@@ -430,7 +430,7 @@ OK, looks like in April we have some high numbers, let's bring filter out those 
 
 </div>
 
-OK, much nicer. Looks like things are on the downward-ish. But the I want to add "%" signs to the plot. We can do that with the [`scales`](https://scales.r-lib.org/) package. We can browse the [`label_percent()`](https://scales.r-lib.org/reference/label_percent.html) reference page to see how to use it:
+OK, much nicer. Looks like things are on the downward-ish. But the I want to add "%" signs to the plot. We could glue/paste those onto the data values, but I prefer to use the [`scales`](https://scales.r-lib.org/) package for this part. We can browse the [`label_percent()`](https://scales.r-lib.org/reference/label_percent.html) reference page to see how to use it:
 
 <div class="highlight">
 
