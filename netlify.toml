@@ -2,7 +2,7 @@
   publish = "public"
 
 [build.environment]
-  HUGO_VERSION = "0.74.3"
+  HUGO_VERSION = "0.76.5"
   HUGO_BUILDFUTURE = "true"
 
 [context.deploy-preview.environment]
