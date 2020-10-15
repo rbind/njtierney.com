@@ -13,7 +13,7 @@ tags:
   - colorblind
   - rstats
 output: hugodown::md_document
-rmd_hash: 2f5367aa241ec29c
+rmd_hash: 840bea100fd5cfc9
 
 ---
 
@@ -41,7 +41,7 @@ For example, we can check the "Cold" palette from the `qualitative_chl` colour p
 
 </div>
 
-This isn't too bad, but if you want to check a few palettes in quicker succession, I used a function like this to help. First, getting a handle on what qualitative colour palettes are available:
+But what if you want to check a few palettes in quicker succession? I used a function like this to help. First, getting a handle on what qualitative colour palettes are available:
 
 <div class="highlight">
 
@@ -75,11 +75,11 @@ Then we can demonstrate it like so:
 
 <div class="highlight">
 
-<pre class='chroma'><code class='language-r' data-lang='r'><span class='nf'>qual_cvd</span>(<span class='s'>"Dark 3"</span>)
+<pre class='chroma'><code class='language-r' data-lang='r'><span class='nf'>qual_cvd</span>(<span class='s'>"Dark 2"</span>)
 
 </code></pre>
 <img src="figs/demo-check-cvd-1.png" width="700px" style="display: block; margin: auto;" />
-<pre class='chroma'><code class='language-r' data-lang='r'><span class='nf'>qual_cvd</span>(<span class='s'>"Dark 2"</span>)
+<pre class='chroma'><code class='language-r' data-lang='r'><span class='nf'>qual_cvd</span>(<span class='s'>"Dark 3"</span>)
 
 </code></pre>
 <img src="figs/demo-check-cvd-2.png" width="700px" style="display: block; margin: auto;" />
@@ -109,7 +109,21 @@ One thing I really love here is the `demoplot` function, which provides an examp
 
 There are many other plot types you can choose from, ("map", "heatmap", "scatter", "spine", "bar", "pie", "perspective", "mosaic", and "lines").
 
-This can be combined with the [`protan()`](http://colorspace.R-Forge.R-project.org//reference/simulate_cvd.html), [`deutan()`](http://colorspace.R-Forge.R-project.org//reference/simulate_cvd.html), and [`tritan()`](http://colorspace.R-Forge.R-project.org//reference/simulate_cvd.html) functions to simulate a particular type of CVD. Let's wrap this up into a function to return the colour palettes as a list.
+You can combine your returned colour hex codes with the [`protan()`](http://colorspace.R-Forge.R-project.org//reference/simulate_cvd.html), [`deutan()`](http://colorspace.R-Forge.R-project.org//reference/simulate_cvd.html), and [`tritan()`](http://colorspace.R-Forge.R-project.org//reference/simulate_cvd.html) functions to simulate a particular type of CVD. For example, convert the colours into protanopia:
+
+<div class="highlight">
+
+<pre class='chroma'><code class='language-r' data-lang='r'><span class='nf'><a href='http://colorspace.R-Forge.R-project.org//reference/hcl_palettes.html'>qualitative_hcl</a></span>(n = <span class='m'>3</span>,
+                alpha = <span class='m'>0.67</span>,
+                palette = <span class='s'>"Cold"</span>) <span class='o'>%&gt;%</span> 
+  <span class='nf'><a href='http://colorspace.R-Forge.R-project.org//reference/simulate_cvd.html'>protan</a></span>()
+
+<span class='c'>#&gt; [1] "#98ABE5AB" "#A4AECDAB" "#B7AD90AB"</span>
+</code></pre>
+
+</div>
+
+Let's wrap this up into a function to return the colour palettes as a list.
 
 <div class="highlight">
 
@@ -164,12 +178,14 @@ Hmm, Ok, so not the best, let's try dark 3 again
 
 </div>
 
-That looks pretty good to me!
+We get much better separation between the colours, so I think I'd go with "Dark 3".
+
+What is really lovely about the `demoplot` function is that you can get a quick sense of what your selected palette might look like for a given type of plot, without needing to go to the hassle of putting it through your data. This quick iteration is really key, I think.
 
 End
 ===
 
-There is *always* more to talk about when it comes to colours, and this is just a short post on the topic - I've left a lot out of it, otherwise it wouldn't ever get finished! I do have an upcoming in depth blog post series I've been working on that explains the details of what colour blindness is, but it has been a work in progress for about a year.
+There is *always* more to talk about when it comes to colours, and this is just a short post on the topic - I've left a lot out of it, otherwise it wouldn't ever get finished! I do have an upcoming in depth blog post series I've been working on that explains the details of what colour blindness is, but it has been a work in progress for about a year. So, I figured I'd rather get this post out quickly and keep it brief.
 
-In the interim, if you'd like to learn more about colour blindness in the interim, I gave a talk at Monash Data Fluency about this earlier this year, entitled, "The Use of Colour in Graphics" [slides and materials are available here](https://github.com/njtierney/monash-colour-in-graphics), which also has some nice resources listed to learn more.
+If you'd like to learn more about colour blindness in graphics, I gave a talk at Monash Data Fluency about this earlier this year, entitled, "The Use of Colour in Graphics" [slides and materials are available here](https://github.com/njtierney/monash-colour-in-graphics), which also has some nice resources provided on where you can learn more.
 
