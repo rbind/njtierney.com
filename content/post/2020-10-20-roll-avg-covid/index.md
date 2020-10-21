@@ -12,9 +12,8 @@ categories:
 tags:
   - covid19
   - rstats
-draft: yes
 output: hugodown::md_document
-rmd_hash: 1b2d1ee66dea1f68
+rmd_hash: 7d82b4637397a0af
 
 ---
 
@@ -340,5 +339,5 @@ Now let's plot it!
 End
 ===
 
-The `slider` R package is really neat, and there is more to say about it, but I just thought I'd finish by saying that it is indeed possible to do the same "stretch" and "tile" manouevers as provided by `tsibble`, and I would highly recommend checking out the [slider website](https://davisvaughan.github.io/slider/) for more details.
+The `slider` R package is really neat, and there is more to say about it! But I just thought I'd finish by saying that it is indeed possible to do the same "stretch" and "tile" manouevers as provided by `tsibble`, and I would highly recommend checking out the [slider website](https://davisvaughan.github.io/slider/) for more details on examples like rolling linear models and how to use it to [perform row wise iteration](https://davisvaughan.github.io/slider/articles/rowwise.html).
 
