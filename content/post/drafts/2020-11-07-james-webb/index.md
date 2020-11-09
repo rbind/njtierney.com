@@ -1,5 +1,5 @@
 ---
-title: James Webb and the Wikipedia Scraping
+title: James Webb and the XKCD-inspired Wikipedia Scraping
 author: Nicholas Tierney
 date: '2020-11-07'
 slug: james-webb
@@ -7,9 +7,8 @@ categories:
   - rstats
 tags:
   - rstats
-draft: yes
 output: hugodown::md_document
-rmd_hash: 149f2c26bac706e6
+rmd_hash: 3acae7df9c29fa32
 
 ---
 
