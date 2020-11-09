@@ -2,8 +2,13 @@
 title: Publications
 ---
 
-<!-- [You can check out my CV here](https://imgs.njtierney.com/2016-08-23-1904-njtierney-cv.pdf)
--->
+<center>
+  <h3>
+    <a href="https://imgs.njtierney.com/2020-11-09-vitae.pdf"> 
+      Official CV
+    </a>
+  </h1>
+</center>
 
 # Journal Publications
 

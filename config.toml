@@ -40,10 +40,6 @@ pygmentsUseClasses = true
     url = "/resources/"
     weight = 5
 [[menu.main]]
-    name = "CV"
-    url = "/cv/"
-    weight = 6
-[[menu.main]]
     name = "Software"
     url = "/software/"
     weight = 6
