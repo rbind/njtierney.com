@@ -33,7 +33,7 @@ When is it due to launch? It's been delayed quite a few times. There's even a re
 knitr::include_graphics("https://imgs.xkcd.com/comics/jwst_delays.png")
 ```
 
-And, looking at this, I was wondering how accurate the plot Randall Munrow made was? Turns out this was an interesting exercise in itself! 
+And, looking at this, I was wondering how accurate the plot [Randall Munroe](https://xkcd.com/about/) made was? Turns out this was an interesting exercise in itself! 
 
 This blog post covers how to scrape some tables from Wikipedia, tidy them up, perform some basic modelling, make some forecasts, and plot them.
 
@@ -53,7 +53,7 @@ conflicted::conflict_prefer("pluck", "purrr")
 - `tidyverse` gives us many data analysis tools
 - `janitor` provides some extra data cleaning powers.
 
-We also use `conflicted` to state we prefer `pluck` from the `purrr` package (as there is a `map` in `rvest`, which has caught me out many a time)
+We also use `conflicted` to state we prefer `pluck` from the `purrr` package (as there is a `pluck` in `rvest`, which has caught me out many a time).
 
 First, let's take a look at the [Wiki article](https://en.wikipedia.org/wiki/James_Webb_Space_Telescope) to get the data and the dates.
 

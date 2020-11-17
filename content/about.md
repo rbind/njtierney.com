@@ -4,7 +4,7 @@ title: About Me
 
 My name is Nick Tierney. I have an honours degree in Psychological Science, and completed my PhD in Statistics under [Kerrie Mengersen](https://en.wikipedia.org/wiki/Kerrie_Mengersen) in 2018. I am now a Lecturer at Monash University, working with [Di Cook](http://dicook.org/) and [Rob Hyndman](https://robjhyndman.com/) in the NUMBAT group. I am currently teaching [ETC1010, introduction to Data, Modelling, and Computing](https://dmac.netlify.org/).
 
-My research aims to improve data analysis workflow. This ranges from exploratory data analysis, to statistical modelling, calculating diagnostics, and how we draw inferences, and make decisions from data. Crucial to this work is producing high quality software to accompany each research idea. 
+My research is focussed on improving and understanding data analysis. Specifically, I'm interested in exploratory data analysis, statistical modelling, diagnostics, and understanding how colour choice can impact decision making. I am a strong believe in free and open source software, and have written several R packages to improve data analysis. 
 
 My work so far has focussed on the importance of knowing your data ( [`visdat`](https://github.com/njtierney/visdat) ), and on creating principles and tools that make it easier to work with, explore, and model missing data  ( [`naniar`](https://github.com/njtierney/naniar)). I have also created an optimisation model that identifies and possibly relocates facilities to maximise their coverage on a population, in the R package [`maxcovr`](https://github.com/njtierney/maxcovr), and am interested in testing if commonly used diagnostics for MCMC methods are used effectively by researchers.
 
@@ -28,4 +28,4 @@ I occasionally play guitar, love karaoke, and am a coffee geek.
 
 This website has moved from [jekyll](http://jekyllrb.com/) to [blogdown](https://github.com/rstudio/blogdown), and am using a(n increasingly further) tweaked version of Yihui's, [hugo-xmin](https://github.com/yihui/hugo-xmin) theme.
 
-Feel free to send me an email at nicholas `<dot>` tierney `{at}` gmail `<dot>` com
+Feel free to send me an email at nicholas `<dot>` tierney `{at}` `[gmail]` `(dot)` com

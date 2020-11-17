@@ -8,7 +8,7 @@ categories:
 tags:
   - rstats
 output: hugodown::md_document
-rmd_hash: 3acae7df9c29fa32
+rmd_hash: 446e5adef12a04ba
 
 ---
 
@@ -22,7 +22,7 @@ When is it due to launch? It's been delayed quite a few times. There's even a re
 
 </div>
 
-And, looking at this, I was wondering how accurate the plot Randall Munrow made was? Turns out this was an interesting exercise in itself!
+And, looking at this, I was wondering how accurate the plot [Randall Munroe](https://xkcd.com/about/) made was? Turns out this was an interesting exercise in itself!
 
 This blog post covers how to scrape some tables from Wikipedia, tidy them up, perform some basic modelling, make some forecasts, and plot them.
 
@@ -73,7 +73,7 @@ First let's load up a few libraries:
 -   `tidyverse` gives us many data analysis tools
 -   `janitor` provides some extra data cleaning powers.
 
-We also use `conflicted` to state we prefer `pluck` from the `purrr` package (as there is a `map` in `rvest`, which has caught me out many a time)
+We also use `conflicted` to state we prefer `pluck` from the `purrr` package (as there is a `pluck` in `rvest`, which has caught me out many a time).
 
 First, let's take a look at the [Wiki article](https://en.wikipedia.org/wiki/James_Webb_Space_Telescope) to get the data and the dates.
 
@@ -456,7 +456,7 @@ Then we use `augment` to predict some new data for 1997 through to 2030:
 
 <pre class='chroma'><code class='language-r' data-lang='r'><span class='kr'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='o'>(</span><span class='nv'><a href='https://broom.tidymodels.org/'>broom</a></span><span class='o'>)</span>
 <span class='nv'>new_data</span> <span class='o'>&lt;-</span> <span class='nf'>tibble</span><span class='o'>(</span>year <span class='o'>=</span> <span class='m'>1997</span><span class='o'>:</span><span class='m'>2030</span><span class='o'>)</span>
-<span class='nv'>jwebb_predict</span> <span class='o'>&lt;-</span> <span class='nf'><a href='https://rdrr.io/pkg/generics/man/augment.html'>augment</a></span><span class='o'>(</span><span class='nv'>lm_jwebb</span>, newdata <span class='o'>=</span> <span class='nv'>new_data</span><span class='o'>)</span>
+<span class='nv'>jwebb_predict</span> <span class='o'>&lt;-</span> <span class='nf'><a href='https://generics.r-lib.org/reference/augment.html'>augment</a></span><span class='o'>(</span><span class='nv'>lm_jwebb</span>, newdata <span class='o'>=</span> <span class='nv'>new_data</span><span class='o'>)</span>
 <span class='nv'>jwebb_predict</span>
 
 <span class='c'>#&gt; <span style='color: #555555;'># A tibble: 34 x 2</span></span>
