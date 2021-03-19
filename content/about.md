@@ -2,7 +2,7 @@
 title: About Me
 ---
 
-My name is Nick Tierney. I did my undergrad and honours in Psych, and then took a turn into the unconventional and did a PhD in Statistics (under [Kerrie Mengersen](https://en.wikipedia.org/wiki/Kerrie_Mengersen)) in 2018. I now work as a research software engineer with [Nick Golding](https://www.telethonkids.org.au/contact-us/our-people/g/nick-golding/) at the [Telethon Kids Institute](https://www.telethonkids.org.au/), in Perth, Western Australia. I work on improving and maintaining the [greta](https://greta-stats.org/) R package for statistical modelling, and implementing workflows to automate analysis on diseases like COVID19 and malaria.
+My name is Nick Tierney. I did my undergrad and honours in Psych, and then took an unconventional turn, and did a PhD in Statistics (under [Kerrie Mengersen](https://en.wikipedia.org/wiki/Kerrie_Mengersen)) in 2018. I now work as a research software engineer with [Nick Golding](https://www.telethonkids.org.au/contact-us/our-people/g/nick-golding/) at the [Telethon Kids Institute](https://www.telethonkids.org.au/), in Perth, Western Australia. I work on improving and maintaining the [greta](https://greta-stats.org/) R package for statistical modelling, and implementing workflows to automate analysis on diseases like COVID19 and malaria.
 
 Previously I was at Monash University (2017-2020), working as a research fellow, then lecturer. I worked with [Di Cook](http://dicook.org/) in the [NUMBAT group](https://numbat.space/), and taught [ETC1010, introduction to Data Analysis](https://dmac.netlify.org/).
 
@@ -20,13 +20,17 @@ I am always up for questions about anything to do with R and stats. I was really
 
 This website exists so I can write about what I do and engage in dialogue with statisticians, programmers, and whoever else is interested. 
 
-I am a keen outdoors person, and love hiking and rock climbing. Over the past years I have MC'd at national and state level climbing competitions, here is a photo of me MCing at the Australian national lead climbing championships in 2015 in Brisbane.
+I am a keen outdoors person, and love hiking and rock climbing. I recently hiked 300K of the Australian Alpine Walking Track, a very rugged adventure, especially when hiking solo.
+
+Over the past years I have MC'd at national and state level climbing competitions, here is a photo of me MCing at the Australian national lead climbing championships in 2015 in Brisbane.
 
 ![photo of me MCing at the National Lead Climbing Competition](/imgs/njt-headshot-climb.png)
 
 I enjoy photography, and have taken some [not-terrible photos](https://www.flickr.com/photos/134851297@N04) of other climbers:
 
 ![photo of my friend, Neil Jenman, on the submarine boulder in Castle Hill, NZ, underneath the stars](/imgs/neil-castle-hill.png)
+
+And have also been getting into film photography, which you can follow on my [instagram](https://www.instagram.com/njtierney).
 
 I occasionally play guitar, love karaoke, and am a coffee geek.
 
