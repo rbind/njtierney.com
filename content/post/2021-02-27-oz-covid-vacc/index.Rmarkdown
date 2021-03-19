@@ -1,0 +1,166 @@
+---
+title: oz-covid-vacc
+author: Nicholas Tierney
+date: '2021-02-27'
+slug: oz-covid-vacc
+categories: []
+tags: []
+draft: yes
+output: hugodown::md_document
+---
+
+```{r setup, include = FALSE}
+options(cli.width = 70)  # For tidyverse loading messages
+knitr::opts_chunk$set(
+  tidy.opts = list(width.cutoff = 70),  # For code
+  width = 70,
+  collapse = TRUE, 
+  comment = "#>", 
+  fig.width = 7, 
+  fig.align = 'center',
+  fig.asp = 0.618, # 1 / phi
+  fig.retina = 2,
+  out.width = "700px"
+)
+```
+
+The COVID19 vaccines (plural!) are rolling out around the world, and about 4 weeks ago in late Feb, Australia got its first vaccine delivered.
+
+There are a lot of nice websites that help answer, ["when will I get vaccinated?"](), which is great. The Australian government reckons we'll be vaccinated at a good percentage (80%?) by about October. I'm not sure how to imagine how this all takes place, but one thing I thought might be an interesting proxy is using the number of COVID19 tests that we can conduct in a day in Australia might help as a proxy for the number of vaccinations we can do.
+
+Now, sure, getting a test isn't the same as getting a vaccine, but there are similar controls in place, getting swabbed takes about as long as a jab, and I figured it might tell us something.
+
+So the question I'm focusing on in this blog post is: 
+
+> "based on the proportion of maximum COVID19 tests that Australia can perform each day, how long will it take to get to 80% vaccinations?".
+
+To do this we'll recycle some of the code from my previous blog post on [exploring covid numbers in Australia] - I skim over some of the repeated parts here, but I provide a full explanation at the previously linked blog post. The data is kindly sources from [covidliveau](https://covidlive.com.au/).
+
+First, we load up the packages we need:
+
+```{r pkgs}
+library(tidyverse)
+library(polite)
+library(rvest)
+library(htmltools)
+library(tsibble)
+library(scales)
+```
+
+Then, we scrape the data for tests in Australia, and extract the table
+
+```{r extract-table}
+aus_test_url <- "https://covidlive.com.au/report/daily-tests/aus"
+
+aus_test_data_raw <- bow(aus_test_url) %>% 
+  scrape() %>% 
+  html_table() %>% 
+  purrr::pluck(2) %>% 
+  as_tibble()
+
+aus_test_data_raw
+```
+
+We then clean up the dates and numbers, defining a little function, `strp_date`, to present the dates nicely.
+
+```{r tidy-dates}
+strp_date <- function(x) as.Date(strptime(x, format = "%d %b"))
+
+aus_tests <- aus_test_data_raw %>% 
+  mutate(DATE = strp_date(DATE),
+         TESTS = parse_number(TESTS),
+         NET = parse_number(NET)) %>% 
+  janitor::clean_names() %>% 
+  rename(daily_tests = net)
+
+aus_tests
+```
+
+Now, we can plot the number of daily tests in Australia as a boxplot, to get a sense of the distribution. We can also add an extra line of code to improve how the numbers are presented `scale_x_continuous(labels = label_number(big.mark = ","))` - this turns something like 100000 into 100,000. Perhaps not a big deal, but I think it helps.
+
+```{r plot-tests}
+ggplot(aus_tests,
+       aes(x = daily_tests)) + 
+  geom_boxplot() + 
+  scale_x_continuous(labels = label_number(big.mark = ","))
+```
+
+We learn that most of the data is around 25-55K tests per day, give or take, and there were some extreme days where we tested over 150K! Not bad, not bad. 
+
+We can also plot the number of tests as a density, and even overlay a normal curve over the top, along with a rug plot to show the data frequency.
+
+```{r tests-rug}
+ggplot(aus_tests,
+       aes(x = daily_tests)) + 
+  geom_density() +
+  geom_function(fun = dnorm, args = list(mean = 33000, sd = 19000),
+                colour = "orange") +
+  geom_rug(alpha = 0.2) +
+  scale_x_continuous(labels = label_number(big.mark = ","))
+```
+
+This is pretty much a similar presentation of the previous plot, but I think it's fun to look at, plus rug plots are great, and so is adding density curves. It looks somewhat normal, but with much fatter tails. Maybe a t distribution would be a better approximation.
+
+OK so what were we doing? Back to the question:
+
+>  "based on the proportion of maximum COVID19 tests that Australia can perform each day, how long will it take to get to 80% vaccinations?".
+
+Let's calculate the maximum number of tests, and define 80% of [Australia's population](https://www.abs.gov.au/statistics/people/population).
+
+```{r max-tests}
+max_tests <- max(aus_tests$daily_tests, na.rm = TRUE)
+oz_pop_80_pct <- 0.8 * 25693059
+```
+
+With this new information we then create a new table with a column of the percentage of maximum tests. We want to create a 100 row table, where each row is a percentage of the maximum tests. We can then calculate the number of days until Australia reaches 80% vaccination by dividing the number of 80% of the population bt the propotion of max tests.
+
+```{r prop-tests}
+covid_days_until_vac <- tibble(pct_of_max_tests = (1:100)/100,
+       max_tests = max_tests,
+       prop_of_max_tests = max_tests * pct_of_max_tests,
+       days_until_80_pct_aus_pop_vac = oz_pop_80_pct / prop_of_max_tests)
+
+covid_days_until_vac
+```
+
+Then we can plot this!
+
+```{r gg-prop-tests}
+ggplot(covid_days_until_vac,
+         aes(x = days_until_80_pct_aus_pop_vac,
+             y = pct_of_max_tests)) + 
+  geom_line()
+```
+
+Ooof. Ok, so let's assume that we will do better than 25% of our maximum tests by filtering that out:
+
+```{r prop-tests-25}
+covid_days_until_vac %>% 
+filter(pct_of_max_tests >= 0.25) %>% 
+  ggplot(aes(x = days_until_80_pct_aus_pop_vac,
+             y = pct_of_max_tests)) + 
+  geom_line()
+```
+
+
+Hmmm, OK so if we want to do it within 1 year from now, looks like we'd need to do over 50% of our tests per day?
+
+```{r prop-tests-50}
+covid_days_until_vac %>% 
+filter(pct_of_max_tests >= 0.50) %>% 
+  ggplot(aes(x = days_until_80_pct_aus_pop_vac,
+             y = pct_of_max_tests)) + 
+  geom_line()
+```
+
+And how many tests is that now?
+
+```{r prop-max-tests}
+covid_days_until_vac %>% 
+filter(pct_of_max_tests >= 0.50) %>% 
+  ggplot(aes(x = days_until_80_pct_aus_pop_vac,
+             y = prop_of_max_tests)) + 
+  geom_line()
+
+```
+
