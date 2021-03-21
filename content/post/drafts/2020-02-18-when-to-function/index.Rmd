@@ -23,7 +23,11 @@ knitr::opts_chunk$set(
 )
 ```
 
-This blog post covers how and when to write functions in R, why I think they're such a critical idea, and also why I think they're one of the harder things to teach and learn well.
+# About
+
+This blog post covers the how and when to write functions in R, and what makes a good function. I also discuss why I think they're such a critical concept in data analysis, and why I reckon they are one of the harder things to teach and learn well.
+
+# Motivation
 
 Writing functions has been one of the biggest "Game Changer" moments for me in R.
 
@@ -31,8 +35,7 @@ But, I found the journey kind of hard - it felt like I had to balance a lot of t
 
 *gif of the hangover maths*
 
-I am getting pretty comfortable writing functions now, but even still there
-is a lot of iteration that goes on from the first function to the final(ish - I mean, is there ever a final thing in Software?) one.
+I am getting pretty comfortable writing functions now, but even still there can be a lot of iteration that happens as I go from first draft to final implementation.
 
 To put things in perspective - in 2013, about 7 years ago, I started writing some
 code to calculate a t-test from scratch.

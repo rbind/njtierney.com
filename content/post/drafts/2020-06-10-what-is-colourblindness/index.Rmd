@@ -37,8 +37,13 @@ p_img <- function(obj, nam) {
 }
 ```
 
-This blog post is in a series about using and assessing good colours in R. 
-This is part 1, which discusses colourblindness. Future parts will discuss how to create your own colour palettes and assess others. It draws from work done by [Kevin Wright in pals](), [Stefan]() and [Nathaniel Smith](), and implementations in a paper by Achim Zeil ...
+# About the series
+
+This blog post is in a series about using and assessing good colours in R that I call, "Rods, Cones, Colour, Magik". This is part 1, which discusses colourblindness. 
+
+This series was initially inspired in a discussion with [Lydia Lucchesi](), (who has done [some really neat work with showing uncertainty on maps]()) at the end of 2019. I was discussing how to assess colour palettes and said, "I should write a blog post about it, there are some neat functions I use, should be pretty quick". I was wrong. As I thought about it more and more, I felt that I needed to give more information about perception, and then went back and forth on that idea a lot. Finally, I ended up [presenting a talk, ""]() on some of these ideas, and this blog post series went on the back burner for a while.
+
+Future parts will discuss how to create your own colour palettes and assess others. It draws from work done by [Kevin Wright in pals](), [Stefan]() and [Nathaniel Smith]() in their work on creating the now quite popular [viridis](), and implementations in a paper by [Achim Zeileis et al](), and also the excellent blog series by [Hannah Rost]()
 
 # What is colourblindness?
 
@@ -63,7 +68,7 @@ knitr::include_graphics("imgs/wiki-cone.png")
 
 _Illustrations of [Rods](https://en.wikipedia.org/wiki/File:Cone2.svg) and [Cones](https://en.wikipedia.org/wiki/File:Cone_cell_eng.png), taken from from Wikipedia, Licensed under [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/deed.en)._
 
-It's about 120 million rod cells to 6 to 7 million cone cells, about a 20:1 ratio. 
+It's about 120 million rod cells to 6 to 7 million cone cells, about a 20:1 ratio.
 
 Light comes in, and gets focussed by the lens onto a section of the eye called the _fovea_. Think of this like the bullseye on a target. It's the center of attention and has the most points. It represents the center of our focus. 
 
