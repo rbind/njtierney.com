@@ -1,5 +1,5 @@
 ---
-title: some Interesting Things About Subsetting (Starring '[')
+title: Some Unexpected Things About Subsetting
 author: Nicholas Tierney
 date: '2021-06-30'
 slug: subsetting
@@ -30,7 +30,7 @@ knitr::opts_chunk$set(
 
 The other day a colleague of mine ran into an issue where NA values were appearing in their dataset that weren't there before - it was strange stuff! 
 
-A close look revealed some interesting things!
+A close look revealed some interesting things, that I thought might be worthwhile briefly going into. It is to do with the use of `[]` when subsetting, and how this is different to `base::subset` and `dplyr::filter`.
 
 Let's start by creating a dataset, `df`. This contains countries and an airport
 
@@ -119,7 +119,7 @@ df$country == "USA"
 
 # What about base::subset or dplyr::filter
 
-For what it's worth, this issue doesn't appear inside `base::subset` or `dplyr::filter`
+For what it's worth, this issue doesn't appear inside `base::subset` or `dplyr::filter` - I guess this means the turn `NA` into FALSE? 
 
 ```{r base-subset}
 # vs subset

@@ -1,5 +1,5 @@
 ---
-title: some Interesting Things About Subsetting (Starring '[')
+title: Some Unexpected Things About Subsetting
 author: Nicholas Tierney
 date: '2021-06-30'
 slug: subsetting
@@ -11,13 +11,13 @@ tags:
   - dplyr
   - data cleaning
 output: hugodown::md_document
-rmd_hash: 28d10a0f3a3a4790
+rmd_hash: f10a6f14878089c0
 
 ---
 
 The other day a colleague of mine ran into an issue where NA values were appearing in their dataset that weren't there before - it was strange stuff!
 
-A close look revealed some interesting things!
+A close look revealed some interesting things, that I thought might be worthwhile briefly going into. It is to do with the use of `[]` when subsetting, and how this is different to [`base::subset`](https://rdrr.io/r/base/subset.html) and [`dplyr::filter`](https://dplyr.tidyverse.org/reference/filter.html).
 
 Let's start by creating a dataset, `df`. This contains countries and an airport
 
@@ -159,7 +159,7 @@ Since we get `NA` when we do:
 
 # What about base::subset or dplyr::filter
 
-For what it's worth, this issue doesn't appear inside [`base::subset`](https://rdrr.io/r/base/subset.html) or [`dplyr::filter`](https://dplyr.tidyverse.org/reference/filter.html)
+For what it's worth, this issue doesn't appear inside [`base::subset`](https://rdrr.io/r/base/subset.html) or [`dplyr::filter`](https://dplyr.tidyverse.org/reference/filter.html) - I guess this means the turn `NA` into FALSE?
 
 <div class="highlight">
 
