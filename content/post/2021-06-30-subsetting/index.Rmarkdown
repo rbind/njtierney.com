@@ -10,7 +10,6 @@ tags:
   - data science
   - dplyr
   - data cleaning
-draft: yes
 output: hugodown::md_document
 ---
 
