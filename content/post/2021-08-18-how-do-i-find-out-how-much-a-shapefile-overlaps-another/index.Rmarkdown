@@ -1,0 +1,210 @@
+---
+title: How Much One Shapefile Overlaps Another?
+author: Nicholas Tierney
+date: '2021-08-21'
+slug: how-much-one-shapefile-overlaps-another
+categories: [rstats, spatial, gis, sf]
+tags: [rstats, spatial, gis, sf]
+draft: true
+output: hugodown::md_document
+---
+
+```{r setup, include = FALSE}
+options(cli.width = 70)  # For tidyverse loading messages
+knitr::opts_chunk$set(
+  tidy.opts = list(width.cutoff = 70),  # For code
+  width = 70,
+  collapse = TRUE, 
+  comment = "#>", 
+  fig.width = 7, 
+  fig.align = 'center',
+  fig.asp = 0.618, # 1 / phi
+  fig.retina = 2,
+  out.width = "700px"
+)
+```
+
+I'm on a path at the moment to understand how to calculate the overlap between two areas.
+
+I found a nice [thread on GIS stack exchange](https://gis.stackexchange.com/questions/362466/calculate-percentage-overlap-of-2-sets-of-polygons-in-r) that explained an answer (from user [Sandy AB](https://gis.stackexchange.com/users/161806/sandy-ab))
+
+I was after something with pictures, so here's an example of that.
+
+```{r load-libs-read-data}
+library(tidyverse)
+library(sf)
+library(rmapshaper)
+
+brisbane_sf <- read_sf(here::here("content/post/2021-08-18-how-do-i-find-out-how-much-a-shapefile-overlaps-another/data/brisbane-sla4.shp"))
+
+brisbane_simpler_sf <- brisbane_sf %>% ms_simplify(keep = 0.01)
+```
+
+## The Data
+
+I started by getting some spatial areas from [this link](https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs-edition-3/jul2021-jun2026/access-and-downloads/digital-boundary-files
+)
+
+I selected, "statistical local areas level 4 2021":
+
+```{r show-abs}
+knitr::include_graphics(here::here("content/post/2021-08-18-how-do-i-find-out-how-much-a-shapefile-overlaps-another/figs/shapefile-choose.png"))
+```
+
+I then did a bit of processing to shrink the data down to just my hometown, Brisbane.
+
+## The Data Vis
+
+Here's my hometown, Brisbane:
+
+```{r gg-full-brisbane}
+ggplot() + 
+  geom_sf(data = brisbane_sf,
+          fill = "forestgreen") 
+```
+
+Let's say we have a simpler shape file that we want to compare to this, and we want to know how much area we are losing. Here's the "simpler" brisbane in red.
+
+```{r gg-simple-brisbane}
+ggplot() + 
+  geom_sf(data = brisbane_simpler_sf, 
+          fill = "firebrick")
+```
+
+We can overlay them to see how similar they are, full Brisbane in green, and new brisbane in red:
+
+```{r gg-overlap-brisbane}
+ggplot() + 
+  geom_sf(data = brisbane_sf,
+          fill = "forestgreen", alpha = 0.5) + 
+  geom_sf(data = brisbane_simpler_sf, 
+          fill = "firebrick",
+          alpha = 0.5)
+```
+
+So how do we calculate the difference between the two? We can use `st_intersection` to find where both shapes overlap. 
+
+Visualised:
+
+```{r gg-only-overlap}
+st_intersection(brisbane_sf, brisbane_simpler_sf) %>% 
+  ggplot() +
+  geom_sf(fill = "brown", alpha = 0.5)
+```
+
+Compare this again to the previous plot - these are the brown sections.
+
+```{r gg-overlap-brisbane-2}
+ggplot() + 
+  geom_sf(data = brisbane_sf,
+          fill = "forestgreen", alpha = 0.5) + 
+  geom_sf(data = brisbane_simpler_sf, 
+          fill = "firebrick",
+          alpha = 0.5)
+```
+
+But say we want to calculate the ratio of how similar these two shape files are - how do we do that?
+
+The main pieces of what we are want are two things:
+
+1. The area of the shapefile for the original Brisbane file
+1. The area of the overlap between the two files
+1. The ratio of the area in the original shapefile, and the area of the overlapping area
+
+Then we calculate the area of the overlap compared to the original Brisbane file, and this will tell us the percentage of overlap!
+
+## The area of the shapefile for the original Brisbane file
+
+Here are the steps:
+
+1. calculate area with `st_area`
+2. Reduce the size of the data - then only keep the relevant data (just keeping the SA4 name (`SA4_NAME21`), and then area, then drop the geometry column).
+
+```{r area-of-brisbane}
+brisbane_sf_areas <- brisbane_sf %>% 
+  mutate(brisbane_original_area = st_area(.)) %>% 
+  select(SA4_NAME21, brisbane_original_area) %>% 
+  st_drop_geometry()
+  
+brisbane_sf_areas
+```
+
+## The area of the overlap between the two files
+
+1. Calculate the intersection of these two shape files (`st_intersection`)
+2. Calculate that area (`st_area`)
+3. Then only keep the relevant data again
+
+```{r area-overlap}
+intersection_area <- st_intersection(brisbane_sf, brisbane_simpler_sf) %>% 
+    mutate(intersect_area = st_area(.)) %>% 
+    select(SA4_NAME21, intersect_area) %>% 
+    st_drop_geometry()
+
+intersection_area
+```
+
+##  The ratio of the area in the original shapefile, and the area of the overlapping areas
+
+Now we have our pieces, now let us add these columns of the other data back to it:
+
+```{r add-brisbane-areas}
+intersection_area %>% 
+    left_join(brisbane_sf_areas, 
+              by = "SA4_NAME21") 
+```
+
+And then calculate the ratio - which will tell us how much the simpler shape file overlaps the original ratio.
+
+```{r add-brisbane-areas-weight}
+intersection_area %>% 
+    left_join(brisbane_sf_areas, 
+              by = "SA4_NAME21") %>% 
+    mutate(weight = intersect_area / brisbane_original_area)
+```
+
+And, because I think it's good practice, all together as a function:
+
+```{r fun-calculate-overlap}
+calculate_spatial_overlap <- function(shape_1,
+                                      shape_2) {
+  
+  
+  intersection_area <- st_intersection(shape_1, shape_2) %>% 
+    mutate(intersect_area = st_area(.)) %>% 
+    select(SA4_NAME21, intersect_area) %>% 
+    st_drop_geometry()
+  
+  # Create a fresh area variable for counties
+  shape_2_areas <- shape_2 %>% 
+    mutate(original_area = st_area(.)) %>% 
+    select(original_area, SA4_NAME21) %>% 
+    st_drop_geometry()
+  
+  intersection_area %>% 
+    left_join(shape_2_areas, 
+              by = "SA4_NAME21") %>% 
+    mutate(weight = intersect_area / original_area)
+  
+}
+```
+
+
+```{r use-spatial-overlap}
+calculate_spatial_overlap(
+    brisbane_sf, brisbane_simpler_sf
+  )
+```
+
+# Why do this?
+
+Our use case in this example was to calculate the difference between shapefiles so we could then use this overalapping difference as a weight in subsequent measurements. 
+
+But you can do more with this - the example from [the GIS stack exchange thread](https://gis.stackexchange.com/questions/362466/calculate-percentage-overlap-of-2-sets-of-polygons-in-r) was trying to calculate the amount of overlap of a lot of smaller shape files on another shapefile - a measurement often referred to as "coverage".
+
+
+And that's it - maybe that's helpful, maybe I've done something wrong, 
+
+# Thanks
+
+Thank you again to user [Sandy AB](https://gis.stackexchange.com/users/161806/sandy-ab) from Stack Exchange, who posted the answer!
