@@ -5,9 +5,8 @@ date: '2021-08-21'
 slug: how-much-one-shapefile-overlaps-another
 categories: [rstats, spatial, gis, sf]
 tags: [rstats, spatial, gis, sf]
-draft: true
 output: hugodown::md_document
-rmd_hash: 67208c10269a01f5
+rmd_hash: ba13c61b5a9eb932
 
 ---
 
