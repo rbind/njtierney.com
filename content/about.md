@@ -34,6 +34,6 @@ And have also been getting into film photography, which you can follow on my [in
 
 I occasionally play guitar, love karaoke, and am a coffee geek.
 
-This website has moved from [jekyll](http://jekyllrb.com/) to [blogdown](https://github.com/rstudio/blogdown), and am using a(n increasingly further) tweaked version of Yihui's, [hugo-xmin](https://github.com/yihui/hugo-xmin) theme.
+This website has moved from wordpress, to [jekyll](http://jekyllrb.com/) to [blogdown](https://github.com/rstudio/blogdown), and uses a(n increasingly further) tweaked version of Yihui's beautiful [hugo-xmin](https://github.com/yihui/hugo-xmin) theme.
 
 Feel free to send me an email at nicholas `<dot>` tierney `{at}` `[gmail]` `(dot)` com
