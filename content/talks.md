@@ -2,6 +2,12 @@
 title: Talks
 ---
 
+# 2021
+
+- [2021/11/02: "Making Better Spaghetti (plots)"](https://github.com/njtierney/talk-acems21)
+- [2021/10/29: "Recognising research software in academia""](https://github.com/njtierney/talk-unsw-rse)
+- [2021/08/09: "Tangling is easy but untangling is hard. Some advice on exploratory data analysis for longitudinal data"](https://github.com/njtierney/jsm21)
+
 # 2020
 
 - [2020/06/26: "The use of colour in graphics: A journey through the body & mind to the screen"](https://njt-monash-colour.netlify.app/#1)
