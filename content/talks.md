@@ -4,14 +4,15 @@ title: Talks
 
 # 2021
 
+- [2021/12/22: "greta: scalable statistical modelling", Early Career Bayes Seminar, Brisbane, Australia](https://github.com/njtierney/talk-qut-ec)
 - [2021/11/02: "Making Better Spaghetti (plots)"](https://github.com/njtierney/talk-acems21)
-- [2021/10/29: "Recognising research software in academia""](https://github.com/njtierney/talk-unsw-rse)
-- [2021/08/09: "Tangling is easy but untangling is hard. Some advice on exploratory data analysis for longitudinal data"](https://github.com/njtierney/jsm21)
+- [2021/10/29: "Recognising research software in academia", invited seminar, UNSW](https://github.com/njtierney/talk-unsw-rse)
+- [2021/08/09: "Tangling is easy but untangling is hard. Some advice on exploratory data analysis for longitudinal data", Invited talk, JSM](https://github.com/njtierney/jsm21)
 
 # 2020
 
 - [2020/06/26: "The use of colour in graphics: A journey through the body & mind to the screen"](https://njt-monash-colour.netlify.app/#1)
-- [2020/02/14: "Data Data Data, Invited Seminar at University of Washington, Seattle, USA"](https://njt-data-uw.netlify.app/#1)
+- [2020/02/14: "Data Data Data", Invited Seminar at University of Washington, Seattle, USA](https://njt-data-uw.netlify.app/#1)
 - [2020/02/12: "Data Data Data, Guest Speaker at Sage Bionetwords, Seattle, USA"](https://njt-sage.netlify.app/#1)
 - [2020/01/29: "Making Better Spaghetti, Invited Speaker at rstudio::conf2020"](https://njt-rstudio20.netlify.app/#1) [[github]](https://github.com/njtierney/rstudioconf20) [[video]](https://rstudio.com/resources/rstudioconf-2020/making-better-spaghetti-plots-exploring-the-individuals-in-longitudinal-data-with-the-brolgar-pac/)
 - [2020/01/17: "Data Data Data, NUMBAT Seminar, Monash University, Melbourne"](https://njt-numbat-data.netlify.app/#1)
