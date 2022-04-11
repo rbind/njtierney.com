@@ -1,5 +1,5 @@
 ---
-title: Some Notes on Changing a Book from Rmarkdown/Bookdown to Quarto
+title: Notes on Changing from Rmarkdown/Bookdown to Quarto
 author: Nicholas Tierney
 date: '2022-04-11'
 slug: rmd-to-qmd
@@ -16,7 +16,7 @@ tags:
   - bookdown
   - quarto
 output: hugodown::md_document
-rmd_hash: 10d25e3913864812
+rmd_hash: 6cc710a7691f7f08
 
 ---
 

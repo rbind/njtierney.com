@@ -1,5 +1,5 @@
 ---
-title: Some Notes on Changing a Book from Rmarkdown/Bookdown to Quarto
+title: Notes on Changing from Rmarkdown/Bookdown to Quarto
 author: Nicholas Tierney
 date: '2022-04-11'
 slug: rmd-to-qmd
@@ -234,4 +234,3 @@ I'll need to update the book to change references from rmarkdown to quarto, as w
 -   [Alison Hill](https://www.apreshill.com/about/)'s blog post, ["We don't talk about quarto"](https://www.apreshill.com/blog/2022-04-we-dont-talk-about-quarto/)
 
 -   [Mine Çetinkaya-Rundel's presentation, "Reproducible authoring with Quarto", at the Toronto R Workshop](https://www.youtube.com/watch?v=6p4vOKS6Xls)
-
