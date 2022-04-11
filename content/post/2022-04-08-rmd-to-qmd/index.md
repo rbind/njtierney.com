@@ -16,22 +16,9 @@ tags:
   - bookdown
   - quarto
 output: hugodown::md_document
----
+rmd_hash: 10d25e3913864812
 
-```{r setup, include = FALSE}
-options(cli.width = 70)  # For tidyverse loading messages
-knitr::opts_chunk$set(
-  tidy.opts = list(width.cutoff = 70),  # For code
-  width = 70,
-  collapse = TRUE, 
-  comment = "#>", 
-  fig.width = 7, 
-  fig.align = 'center',
-  fig.asp = 0.618, # 1 / phi
-  fig.retina = 2,
-  out.width = "700px"
-)
-```
+---
 
 I've recently started transitioning my online book, [rmarkdown for scientists](https://rmd4sci.njtierney.com/) from [rmarkdown](https://github.com/rstudio/rmarkdown)/[bookdown](https://github.com/rstudio/bookdown) to the new [quarto](https://quarto.org/). This will be a new book, called (perhaps not the most original name), ["quarto for scientists"](https://github.com/njtierney/qmd4sci). [Alison Hill](https://www.apreshill.com/about/) recently wrote a great post, ["We don't talk about quarto"](https://www.apreshill.com/blog/2022-04-we-dont-talk-about-quarto/) that led me to see the benefits, and also that this will be the new thing we will be using in the future.
 
@@ -109,23 +96,22 @@ As of 2022-04-08, it seems best to install the daily build of RStudio, which I d
 
 I used this code to identify the files that ended with ".Rmd" and then renamed them to end with ".qmd", which is the quarto extension.
 
-```{r}
-#| echo: true
-#| label: rename-things
-#| eval: false
-library(fs)
-library(stringr)
-rmd_names <- dir_ls(path = ".", glob = "*.Rmd")
-qmd_names <- str_replace(string = rmd_names,
-                         pattern = "Rmd",
-                         replacement = "qmd")
-file_move(path = rmd_names,
-          new_path = qmd_names)
+<div class="highlight">
 
-file_move(path = "_bookdown.yml",
-          new_path = "_quarto.yml")
+<pre class='chroma'><code class='language-r' data-lang='r'><span class='kr'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='o'>(</span><span class='nv'><a href='https://fs.r-lib.org'>fs</a></span><span class='o'>)</span>
+<span class='kr'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='o'>(</span><span class='nv'><a href='http://stringr.tidyverse.org'>stringr</a></span><span class='o'>)</span>
+<span class='nv'>rmd_names</span> <span class='o'>&lt;-</span> <span class='nf'><a href='https://fs.r-lib.org/reference/dir_ls.html'>dir_ls</a></span><span class='o'>(</span>path <span class='o'>=</span> <span class='s'>"."</span>, glob <span class='o'>=</span> <span class='s'>"*.Rmd"</span><span class='o'>)</span>
+<span class='nv'>qmd_names</span> <span class='o'>&lt;-</span> <span class='nf'><a href='https://stringr.tidyverse.org/reference/str_replace.html'>str_replace</a></span><span class='o'>(</span>string <span class='o'>=</span> <span class='nv'>rmd_names</span>,
+                         pattern <span class='o'>=</span> <span class='s'>"Rmd"</span>,
+                         replacement <span class='o'>=</span> <span class='s'>"qmd"</span><span class='o'>)</span>
+<span class='nf'><a href='https://fs.r-lib.org/reference/file_move.html'>file_move</a></span><span class='o'>(</span>path <span class='o'>=</span> <span class='nv'>rmd_names</span>,
+          new_path <span class='o'>=</span> <span class='nv'>qmd_names</span><span class='o'>)</span>
 
-```
+<span class='nf'><a href='https://fs.r-lib.org/reference/file_move.html'>file_move</a></span><span class='o'>(</span>path <span class='o'>=</span> <span class='s'>"_bookdown.yml"</span>,
+          new_path <span class='o'>=</span> <span class='s'>"_quarto.yml"</span><span class='o'>)</span>
+</code></pre>
+
+</div>
 
 You can see this change in [this commit of qmd4sci](https://github.com/njtierney/qmd4sci/commit/46da24051b42c092963c19c718a34596ba58e769).
 
@@ -143,23 +129,23 @@ et cetera.
 
 I used this code to do that:
 
-```{r}
-#| eval: false
-#| label: show-quarto-yaml-replace
-library(readr)
-library(stringr)
-quarto_yaml_rmd <- read_lines("_quarto.yml")
+<div class="highlight">
 
-quarto_yaml_qmd <- str_replace_all(string = quarto_yaml_rmd,
-                                   pattern = "Rmd",
-                                   replacement = "qmd")
+<pre class='chroma'><code class='language-r' data-lang='r'><span class='kr'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='o'>(</span><span class='nv'><a href='https://readr.tidyverse.org'>readr</a></span><span class='o'>)</span>
+<span class='kr'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='o'>(</span><span class='nv'><a href='http://stringr.tidyverse.org'>stringr</a></span><span class='o'>)</span>
+<span class='nv'>quarto_yaml_rmd</span> <span class='o'>&lt;-</span> <span class='nf'><a href='https://readr.tidyverse.org/reference/read_lines.html'>read_lines</a></span><span class='o'>(</span><span class='s'>"_quarto.yml"</span><span class='o'>)</span>
 
-write_lines(
-  x = quarto_yaml_qmd,
-  file = "_quarto.yml"
-)
+<span class='nv'>quarto_yaml_qmd</span> <span class='o'>&lt;-</span> <span class='nf'><a href='https://stringr.tidyverse.org/reference/str_replace.html'>str_replace_all</a></span><span class='o'>(</span>string <span class='o'>=</span> <span class='nv'>quarto_yaml_rmd</span>,
+                                   pattern <span class='o'>=</span> <span class='s'>"Rmd"</span>,
+                                   replacement <span class='o'>=</span> <span class='s'>"qmd"</span><span class='o'>)</span>
 
-```
+<span class='nf'><a href='https://readr.tidyverse.org/reference/read_lines.html'>write_lines</a></span><span class='o'>(</span>
+  x <span class='o'>=</span> <span class='nv'>quarto_yaml_qmd</span>,
+  file <span class='o'>=</span> <span class='s'>"_quarto.yml"</span>
+<span class='o'>)</span>
+</code></pre>
+
+</div>
 
 Which you can see in [this commit](https://github.com/njtierney/qmd4sci/commit/aa9f1e8df8795776d9a055c663ff332f24c5f069).
 
@@ -192,7 +178,7 @@ This tells me that I need to look at the `index.qmd` file, which had a bunch of 
     --- 
     title: "RMarkdown for Scientists"
     author: "Nicholas Tierney"
-    date: "`r Sys.Date()`"
+    date: "2022-04-11"
     knit: "bookdown::render_book"
     description: "A book created for a 3 hour workshop on rmarkdown"
     documentclass: krantz
@@ -211,9 +197,9 @@ It turns out I could remove this, and put most of it into the `_quarto.yml` file
 
 (Also, really cool thing about using the latest RStudio daily build that I noticed, is that you get tab-completion when you are inside the YAML. So you can start exploring options for things to add! Neat. But perhaps that was already a feature in regular-rstudio and I didn't notice.)
 
-Anyway, these changes are detailed in [this commit](this commit).
+Anyway, these changes are detailed in [this commit](this%20commit).
 
-### repeat: build? preview? 
+### repeat: build? preview?
 
 The `build` tab doesn't seem to work for me in RStudio, since it seems to call `rmarkdown` by default and that doesn't really work.
 
