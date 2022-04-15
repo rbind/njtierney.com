@@ -1,0 +1,180 @@
+---
+title: Notes on Rendering Quarto with Github Actions
+author: Nicholas Tierney
+date: '2022-04-13'
+slug: gh-actions-qmd
+categories:
+  - quarto
+  - rbloggers
+  - teaching
+tags:
+  - rstats
+  - functions
+draft: yes
+output: hugodown::md_document
+---
+
+```{r setup, include = FALSE}
+options(cli.width = 70)  # For tidyverse loading messages
+knitr::opts_chunk$set(
+  tidy.opts = list(width.cutoff = 70),  # For code
+  width = 70,
+  collapse = TRUE, 
+  comment = "#>", 
+  fig.width = 7, 
+  fig.align = 'center',
+  fig.asp = 0.618, # 1 / phi
+  fig.retina = 2,
+  out.width = "700px"
+)
+```
+
+I have just successfully transferred ["rmarkdown for scientists"](https://rmd4sci.njtierney.com/) book to use quarto, creating ["quarto for scientists"](https://github.com/njtierney/qmd4sci).
+
+What I want is for the book to automagically update when I push changes.
+
+The alternative is to render the book, and then push all of the HTML files that are created on each change. The reason I do not want to do this is that the files get a bit big - around about 2.4Mb currently. And then, each time I make changes to the markdown files, I also need to update the HTML files. This is a duplication of effort - all I care about is the markdown, and I want a computer, somewhere, to do the fancy rendering to HTML.
+
+Thankfully, there is a way to do this! GitHub Actions is the way. Briefly, GitHub Actions allow you to run code when you push it onto github. For example, say you want to do a spell check every time you push a text document, you can create a github action to check the spelling. This concept of having a service that runs some checks when you give it some code, is referred to as [continuous integration (CI)](https://en.wikipedia.org/wiki/Continuous_integration).
+
+So, here are some notes on getting quarto to render with github actions.
+
+# Step 1: `use_github_action(…)`
+
+You can create your own github actions from scratch, but instead, what we are going to do is use some already made github actions from the quarto team. They have very kindly made some github actions available that help set up quarto, and render a document and put it online.
+
+I ran the following:
+
+``` r
+use_github_action(url = "https://github.com/quarto-dev/quarto-actions/blob/main/examples/quarto-book-netlify.yaml")
+```
+
+Which you can see at [this commit](https://github.com/njtierney/qmd4sci/pull/1/commits/dc26646fc6a06c8f46a2b71683add9259e4518de).
+
+This creates a `.github` folder, which contains a `workflows` folder, and the `quarto-book-netlify.yaml` file.
+
+I then needed to change the directory that I had my quarto HTML files rendering to ([this commit](https://github.com/njtierney/qmd4sci/pull/1/commits/70c1d1d62a152ea50aa88b7ce0006727240b1a04)). This is where it puts the HTML files that it renders when you run `quarto preview` . I had changed mine to be "docs" in the [`_quarto.yml` file here](https://github.com/njtierney/qmd4sci/blob/master/_quarto.yml#L3). So this part of the github action changed:
+
+``` yaml
+      - name: Deploy to Netlify
+        id: netlify-deploy
+        uses: nwtgck/actions-netlify@v1
+        with:
+          # The folder the action should deploy. Adapt if you changed in Quarto config
+          publish-dir: './docs' # <<< THIS PART HERE
+          production-branch: main
+```
+
+Rather helpfully, the [quarto-dev/quarto-actions repo has examples](https://github.com/quarto-dev/quarto-actions/tree/main/examples) of setting up a quarto book:
+
+![](images/paste-308B2C37-1.png)
+
+So now I'm just going to walk you through these next steps.
+
+# using netlify token
+
+Clicking the link to ["personal access tokens"](https://app.netlify.com/user/applications#personal-access-tokens) that the README provides takes me to a page like this (after logging into netlify) and click on "new access token":
+
+![](images/paste-1D9C9F5D.png)
+
+Which takes you to this page, where you enter a personal access token description:
+
+![](images/paste-013822C4.png)
+
+Enter a description of your token - in my case, "qmd4sci", and click "generate token", you will then be given a token, which I have blurred out here:
+
+![](images/paste-0C56E447.png)
+
+Then we go back to the README, to see we need to follow the following:
+
+![](images/paste-308B2C37-2.png)
+
+[Team page](https://app.netlify.com/teams/njtierney/overview) \>\>
+
+![](images/paste-AB066CB5-1.png)
+
+Your site \>\>
+
+In this case, I hadn't added it to netlify, so I needed to click "add new site", "import an existing project"
+
+![](images/paste-CFF5AF55.png)
+
+Then, "connect to a git provider" - I selected "github"
+
+![](images/paste-E79099BE.png)
+
+It then displays a message that says, "authorized", or you need to authorize/log in to github.
+
+Then you need to pick the repo you want to use from github. Personally, I manually configure this each time, so I need to go to, "can't see your repo here? Configure the Netlify app on GitHub"
+
+![](images/paste-5BE3CF5F.png)
+
+Which takes me to a GitHub page of organisations I am a part of, I choose my repo name and confirm my GitHub password
+
+![](images/paste-25A984DA.png)
+
+I then get taken to a page like so:
+
+![](images/paste-F476262F.png)
+
+And I scroll to the bottom and search for the repo I want, and save it:
+
+![](images/paste-B8472831.png)
+
+OK, so once that is done, we are back here:
+
+![](images/paste-359F0D7A.png)
+
+I select qmd4sci, then tell is where I want the base directory to be, which is in your `_quarto.yaml` file, in my case, it is `docs`
+
+![](images/paste-33678FCA.png)
+
+(the directory you want to publish the book into is in "output-dir" in your `_quarto.yml` file, and looks like this:
+
+``` yaml
+project: 
+  type: "book"
+  output-dir: docs # THIS ONE HERE
+```
+
+Then, you should be taken to a page like this:
+
+![](images/paste-5558F32F.png)
+
+You'll see that my site deploy failed here - at the time I thought this was because I needed to rename my branch from master to main (which, by the way, is quite trivial now! Run `usethis::git_default_branch_rename()` see more details in the tidyverse blog post, ["renaming the default branch"](https://www.tidyverse.org/blog/2021/10/renaming-default-branch/)).
+
+It also turned out that there were some other errors I needed to iron out. Which is partly why I am writing this blogpost, so I can show how I ironed out the kinks, because this is kinda hard.
+
+So, to work through this, I copied some of the relevant YAML from the [rstudio/r-manuals repo](https://github.com/rstudio/r-manuals/blob/main/.github/workflows/build-website.yaml) :
+
+``` yaml
+      - name: Put pandoc in PATH
+        run: |
+          mkdir -p ~/.local/bin
+          ln -s $(dirname $(readlink -f  $(which quarto)))"/pandoc" ~/.local/bin/pandoc
+        shell: bash
+
+      - uses: r-lib/actions/setup-r@v2
+        with:
+          use-public-rspm: true
+
+      - uses: r-lib/actions/setup-renv@v2
+```
+
+(this commit)
+
+OK and it turns out that in order to do that I needed to set up a renv.lock file, which essentially tells me the dependencies are needed. We can do this with:
+
+```{r}
+renv::init()
+```
+
+Which will create a file called `renv.lock` and the output will look something like this:
+
+![](images/paste-1699D8BE.png)
+
+Somewhat annoyingly then I have a bunch of stuff in my git repo that I don't care about or want:
+
+![](images/paste-A8E93D6F.png)
+
+So I can add

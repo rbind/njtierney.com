@@ -211,9 +211,9 @@ It turns out I could remove this, and put most of it into the `_quarto.yml` file
 
 (Also, really cool thing about using the latest RStudio daily build that I noticed, is that you get tab-completion when you are inside the YAML. So you can start exploring options for things to add! Neat. But perhaps that was already a feature in regular-rstudio and I didn't notice.)
 
-Anyway, these changes are detailed in [this commit](this commit).
+Anyway, these changes are detailed in [this commit](this%20commit).
 
-### repeat: build? preview? 
+### repeat: build? preview?
 
 The `build` tab doesn't seem to work for me in RStudio, since it seems to call `rmarkdown` by default and that doesn't really work.
 
