@@ -31,7 +31,7 @@ knitr::opts_chunk$set(
 
 I have just successfully transferred ["rmarkdown for scientists"](https://rmd4sci.njtierney.com/) book to use quarto, creating ["quarto for scientists"](https://github.com/njtierney/qmd4sci).
 
-What I want is for the book to automagically update when I push changes.
+What I want is for the book to ✨ automagically ✨ update when I push changes.
 
 The alternative is to render the book, and then push all of the HTML files that are created on each change. The reason I do not want to do this is that the files get a bit big - around about 2.4Mb currently. And then, each time I make changes to the markdown files, I also need to update the HTML files. This is a duplication of effort - all I care about is the markdown, and I want a computer, somewhere, to do the fancy rendering to HTML.
 
@@ -177,4 +177,163 @@ Somewhat annoyingly then I have a bunch of stuff in my git repo that I don't car
 
 ![](images/paste-A8E93D6F.png)
 
-So I can add
+...
+
+# And then, I ran into 👻 weird 👻 github actions errors and didn't return to this blogpost for 2 months
+
+[The error](https://github.com/njtierney/qmd4sci/runs/6037540369?check_suite_focus=true) I was running into was on github actions said:
+
+    ------------------------- ANTICONF ERROR ---------------------------
+    Configuration failed because libcurl was not found. Try installing:
+     * deb: libcurl4-openssl-dev (Debian, Ubuntu, etc)
+     * rpm: libcurl-devel (Fedora, CentOS, RHEL)
+     * csw: libcurl_dev (Solaris)
+    If libcurl is already installed, check that 'pkg-config' is in your
+    PATH and PKG_CONFIG_PATH contains a libcurl.pc file. If pkg-config
+    is unavailable you can set INCLUDE_DIR and LIB_DIR manually via:
+    R CMD INSTALL --configure-vars='INCLUDE_DIR=... LIB_DIR=...'
+    --------------------------------------------------------------------
+    ERROR: configuration failed for package ‘curl’
+    * removing ‘/home/runner/work/qmd4sci/qmd4sci/renv/staging/1/curl’
+        })
+     4: renv_install_package_impl(record)
+     3: r_cmd_install(package, path)
+     2: r_exec_error(package, output, "install", status)
+     1: stop(error)
+    Execution halted
+    Error: Process completed with exit code 1.
+
+So, the first thing I did was "delete all logs"
+
+![](images/paste-4C88B276.png)
+
+Which, in the past has helped me resolve some strange github actions behaviour.
+
+I then made a tiny change to the github actions file to trigger the build again...which was to comment out the "workflow_dispatch:" part of github actions, because I am not sure what that does...
+
+    on:
+      push:
+        branches: main
+      pull_request:
+        branches: main
+      # to be able to trigger a manual build
+      # workflow_dispatch:
+
+That...didn't work.
+
+But quarto works for heaps of people...so now it's time to look at how other people use quarto books.
+
+Let's look at [R for data science](https://github.com/hadley/r4ds/blob/main/.github/workflows/quarto-book-netlify.yaml) - I'll copy this and compare it to mine, making a couple of small changes.
+
+I made that [change here](https://github.com/njtierney/qmd4sci/commit/33d0eaef79235e065394f27221d471a7e494538e).
+
+And my god, it worked.
+
+OK, so what changed?
+
+I think the main thing that did it, was replacing
+
+``` yaml
+- uses: r-lib/actions/setup-renv@v2
+```
+
+with
+
+``` yaml
+- uses: r-lib/actions/setup-r-dependencies@v2
+```
+
+Which means my whole theory about renv probably wasn't true.
+
+OK, wow so this is a long, long journey, and I'm sorry that I don't have the tidy solution I was hoping I could have. I'm going to tidy up the YAML now and hopefully be back with an example that actually works, then I can step through that, and we can forget all the mistakes I made.
+
+Hopefully these errors are instructive. Yes, someone who has worked with R for 9 years, has written a short book about rmarkdown, many R packages, etc etc., is still trying to figure out how it all works. We're all learning. Well, I'm always learning new things at least.
+
+# I figured it out
+
+OK, so I figured it out!
+
+Hooray!
+
+Sort of. I now need to probably write another blog post that goes through the same details but much much cleaner. Here's the general gist:
+
+-   All of the authentication with github and netlify etc, with the secret tokens still needs to happen
+
+-   Copy the YAML from here: <https://github.com/quarto-dev/quarto-actions/blob/main/examples/quarto-book-netlify.yaml> - or run:
+
+``` r
+usethis::use_github_action(
+  url = "https://github.com/quarto-dev/quarto-actions/blob/main/examples/quarto-book-netlify.yaml"
+)
+```
+
+-   Add this code into tha YAML file where the comment says, "Install any computing dependency you may need, usually either python and Jupyter or R".
+
+``` yaml
+      # Install any computing dependency you may need, usually either python and Jupyter or R
+      - uses: r-lib/actions/setup-r@v2
+        with:
+          use-public-rspm: true
+
+      - uses: r-lib/actions/setup-r-dependencies@v2
+```
+
+-   push these changes
+
+![](images/paste-89425B62.png)
+
+Hooray!
+
+You don't need renv at all. I'm not sure why I thought that. But hopefully I haven't done something spooky where the details of the renv are somehow cached somewhere on github actions. I'll test this out with another book I'm working on and report back when/if I get to writing the cleaner version of this blog post.
+
+# But how do we see the website?
+
+Let's check netlify.
+
+Turns out I must have deleted the original website I made above for qmd4sci. I recreated it, following the same steps, and...
+
+...
+
+it failed.
+
+Because I forgot the steps above about setting the NETLIFY_AUTH_TOKEN and the NETLIFY_SITE_ID
+
+I must have had a brain malfunction.
+
+Let's do the SITE_ID one first:
+
+![](images/show-site-id.png)
+
+So go to the site details, site information, and click site ID and copy the code here
+
+![](images/paste-23CA04C4.png)
+
+Then, on github, go to:
+
+Settings \>\> secrets \>\> actions \>\> new repository secret
+
+![](images/paste-265D855B.png)
+
+Then, remember back to the YAML file, where we've got these two secrets:
+
+``` yaml
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+```
+
+So now we name the `NETLIFY_SITE_ID`, and paste in the SITE ID from netlify
+
+![](images/paste-1E0C8511.png)
+
+Then, get your personal access token from [here](https://app.netlify.com/user/applications#personal-access-tokens), and click "new access token" - this is shown above.
+
+Then go back and create a new secret, but call it `NETLIFY_AUTH_TOKEN`
+
+Then I went back and changed something tiny and pushed the change to trigger a new build.
+
+*hold on to your butts*
+
+It worked! Eventually. I had to wait a little bit.
+
+(I also realised that I tried to turn on github pages, which you don't need to do, since it pushes straight to netlify)
