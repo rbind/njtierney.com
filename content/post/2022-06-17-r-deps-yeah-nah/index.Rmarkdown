@@ -1,0 +1,89 @@
+---
+title: "Rant: Should I Care About R Dependencies? Probably Not."
+author: Nicholas Tierney
+date: '2022-06-17'
+slug: r-deps-yeah-nah
+categories:
+  - rstats
+tags:
+  - rstats
+draft: yes
+output: hugodown::md_document
+---
+
+```{r setup, include = FALSE}
+options(cli.width = 70)  # For tidyverse loading messages
+knitr::opts_chunk$set(
+  tidy.opts = list(width.cutoff = 70),  # For code
+  width = 70,
+  collapse = TRUE, 
+  comment = "#>", 
+  fig.width = 7, 
+  fig.align = 'center',
+  fig.asp = 0.618, # 1 / phi
+  fig.retina = 2,
+  out.width = "700px"
+)
+```
+
+Every now and again I see on twitter a lot of people posting about reducing
+dependencies when they are programming with R. And there are cases where that
+matters. Like:
+
+- You run some code in the cloud or on a high performance computer, and installing all the R packages each time takes valuable time. So if you can get the installation time down, then you can save yourself a large amount of pain.
+- R packages sometimes have limits on the number of dependencies
+- You like the idea of having something with 0 dependencies (which I'm guilty of - see the [`syn` package]())
+
+And there are probably more reasons. But I can't think of them right now. And hey, maybe I'm wrong.
+
+But I reckon that the majority of R users don't need to worry about adding dependencies to their code.
+
+This is because I think that most R users are doing data analysis, and not developing code that needs to be run in production, or code for other users.
+
+# R was made to have dependencies
+
+OK, brief history story time. R was based off of a language called S. One of the important design principles of S was that it would be a "glue language". John Chambers talks about this in his book, "Extending R". The idea was that the software would connect to other languages, like FORTRAN, or C, which could do all the computation. So then the user could write code to fit a linear model, but wouldn't need to worry about writing all of the mathematical code to do this. They interacted with the outside layer that they cared about.
+
+So they might write:
+
+```r
+lm(y ~ x, data = my_data)
+```
+
+Instead of writing:
+
+```r
+...
+```
+
+This is one of the greatest things about R - it is designed to be extended. You can stand on top of the shoulders of giants
+
+# But my code might break if I use dependencies?
+
+I mean, maybe. But I think you should probably be far more worried about your own time and hidden bugs in your own code.
+
+One argument that I hear sometimes is "Then I won't have to worry about some developer changing some code and then my code breaks". Sure - that can be really annoying. However, that is I think the price that you pay for getting the abstraction of the code that developer wrote.
+
+For example, if I'm using `tidyr::pivot_wider()` or `tidyr::pivot_longer()`, you can bet that I'm not going to write that myself. That code is abstracting away __one of the hardest problems in data science__.
+
+# Finally, it is not Base OR tidyverse. It is always both
+
+I've seen various tweets where people go on to spout some wisdom like, "You really hit the next level of programming when you change from using tidyverse to using base".
+
+There is no "use base OR tidyverse" it is both. Unless you want to try and give yourself some kind of strange 
+
+# Should I be mindful of dependencies?
+
+You can, and that's fine! I just think that in the first instance you should take advantage of the incredibly rich sea of R packages to do what you want to do, and then you can examine your dependencies later. You can think of this as a greedy approach. Use ALL the packages that you want to do your task. Then, later on, you can examine the code and prune it back.
+
+The reason I think this is useful is because it means you can let your mind do the hard work of thinking through your programming task and problems. That can be using whatever R packages you are familiar with. The idea is to try and solve the programming task you want to at the time. 
+
+What I think is a sub-optimal use of your time, is to try and solve a programming problem, and then each time you want to do something that involves another package, you have to re-implement the solution yourself. This is distracting, and it involves you going down many rabbit holes. You are then solving another sub-problem after sub-problem, and then when you've solved those problems, you need to go back, resurface to the original problem you were trying to solve, and then go "what was I even trying to do again?"
+
+We aren't writing in assembly code, we aren't writing in C with no header files. We are writing in R, and R is _designed_ to have dependencies.
+
+## An example way to cut down dependencies
+
+# Some times where 0 or low dependency packages make sense
+
+If you are writing an R package that you expect to be a core library that solves a particular general problem, it might be worthwhile to think about 

@@ -1,0 +1,53 @@
+---
+title: Running My First Ultra Marathon
+author: Nicholas Tierney
+date: '2022-05-17'
+slug: first-ultra
+categories:
+  - blag
+tags:
+  - blag
+draft: yes
+output: hugodown::md_document
+---
+
+```{r setup, include = FALSE}
+options(cli.width = 70)  # For tidyverse loading messages
+knitr::opts_chunk$set(
+  tidy.opts = list(width.cutoff = 70),  # For code
+  width = 70,
+  collapse = TRUE, 
+  comment = "#>", 
+  fig.width = 7, 
+  fig.align = 'center',
+  fig.asp = 0.618, # 1 / phi
+  fig.retina = 2,
+  out.width = "700px"
+)
+```
+
+A couple of weeks ago (May 7th, 2022), I ran the Margaret River Ultra Marathon, which is 80 kilometers (~50 miles) long. I...still can't believe I really did it. I ran it all. It's a long way. It took me a while. It was awesome. I wanted to post a reflection on running the ultra, because it was a pretty significant event in my life, and maybe some of the things I learnt might be useful to other people.
+
+# Background: Getting into and out of running
+
+Well, here's some story time.
+
+I wasn't really a serious runner growing up. I did rowing in school, and was pretty good at that. We trained a lot, 4 mornings a week, 2 afternoons, plus races or more training on Saturdays...for 6 months. We used to run as part of training: running hill sprints, running laps of the oval... running for as long as coaches said to. I feel that as much as much as we trained ourselves physically, there was a huge emphasis on pushing yourself mentally, going beyond the limits you thought you had. I couldn't maintain my training into university working part time, studying full time, and doing the social things an 18 year old wanted to do, rowing wasn't going to be part of my life.
+
+I'd still go running a few times a week, to try and stay fit. But at some point I discovered rock climbing, and that took over my life, and replaced running. Then I got injured, and my PhD studies got in the way, and I replaced climbing with being stressed out over ever finishing my PhD.
+
+I managed to finish my PhD, but I was burnt out, and was for about 6 weeks working at my new (amazing and supportive) job during the day and finishing my thesis at night. I was operating on my passion for my job, and my excitement for the people I was working with. But I was actually burnt out. I needed some time away, and needed to work out how to do that. I didn't want to just "go backpacking through Europe". I wanted to have something to do, and as much as I think Europe or somewhere else would be amazing, I've travelled across the USA, seeing a lot of museums, cities, and amazing people. I could volunteer, maybe? Something? 
+
+A friend mentioned this hike to me, called, "The Pacific Crest Trail", often referred to as "the PCT". It went from the US/Mexico border to the US/Canada border. Over four thousand kilometres. About 5 months of hiking. Going through the desert, the mountains, forests.
+
+That sounded excellent.
+
+But I wasn't as fit as I once was. 
+
+
+
+# How did I train?
+
+# Shoes
+
+# What did I eat?
