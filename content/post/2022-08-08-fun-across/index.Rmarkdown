@@ -27,6 +27,15 @@ knitr::opts_chunk$set(
 )
 ```
 
+```{r}
+#| label: birds-across
+#| echo: false
+knitr::include_graphics(here::here("content/post/2022-08-08-fun-across/imgs/across-birds-small.jpg"))
+```
+
+_pigeons across the drain, Nick Tierney, film, olympus XA_
+
+
 A colleague of mine the other day had a question along the lines of:
 
 > How do I add multiple columns that give the ranks of values in corresponding columns
@@ -190,6 +199,28 @@ dat_more_rank %>%
   )
 ```
 
+Huh, apparently we need to use `all_of`, since using an external vector is ambiguous! Right you are, tidyverse team.
+
+```{r}
+dat_more_rank %>% 
+  relocate(
+    id,
+    code,
+    all_of(new_col_order)
+  )
+```
+
+Or alternatively:
+
+```{r}
+dat_more_rank %>% 
+  relocate(
+    id,
+    code,
+    sort(names(.))
+  )
+```
+
 `relocate` is a relatively new operation, it just exists to relocate existing columns, and won't remove other columns. In the past I would have done something like:
 
 ```{r}
@@ -197,16 +228,17 @@ dat_more_rank %>%
   select(
     id,
     code,
-    new_col_order,
+    all_of(new_col_order),
     everything()
   )
 ```
 
 With that `everything` part there being to capture any columns I forgot about, because `select` will only keep the specified columns.
 
+There are many ways we can do these kinds of things, but to me this felt like a nice fun example.
+
 # End
 
 Anywho, that's a bit of tidyverse magic, maybe it'll be useful for you!
 
-There are many ways we can do these kinds of things, but to me this felt like a nice
 
