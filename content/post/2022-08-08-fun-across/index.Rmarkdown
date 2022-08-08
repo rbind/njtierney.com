@@ -47,8 +47,7 @@ The data they had referred to concentrations of a quantity, that they wanted to 
 dat <- tibble(
   x_1 = runif(10),
   x_2 = runif(10),
-  x_3 = runif(10),
-  x_4 = runif(10)
+  x_3 = runif(10)
 )
 
 dat
@@ -58,7 +57,7 @@ dat
 Or for fun, I did this:
 
 ```{r}
-vals <- runif(40)
+vals <- runif(30)
 
 dat <- as_tibble(
   x = matrix(vals, nrow = 10),
@@ -80,8 +79,7 @@ dat %>%
   mutate(
     x_1_rank = rank(x_1),
     x_2_rank = rank(x_2),
-    x_3_rank = rank(x_3),
-    x_4_rank = rank(x_4)
+    x_3_rank = rank(x_3)
   )
 ```
 
@@ -94,8 +92,7 @@ dat %>%
   mutate(
     x_1_rank = rank(x_1),
     x_2_rank = rank(x_2),
-    x_3_rank = rank(x_2),
-    x_4_rank = rank(x_4)
+    x_3_rank = rank(x_2)
   )
 ```
 

@@ -10,7 +10,7 @@ tags:
   - rstats
   - functions
 output: hugodown::md_document
-rmd_hash: cb8003e21cbe4910
+rmd_hash: afaad4003363959e
 
 ---
 
@@ -42,23 +42,22 @@ The data they had referred to concentrations of a quantity, that they wanted to 
 <pre class='chroma'><code class='language-r' data-lang='r'><span><span class='nv'>dat</span> <span class='o'>&lt;-</span> <span class='nf'><a href='https://tibble.tidyverse.org/reference/tibble.html'>tibble</a></span><span class='o'>(</span></span>
 <span>  x_1 <span class='o'>=</span> <span class='nf'><a href='https://rdrr.io/r/stats/Uniform.html'>runif</a></span><span class='o'>(</span><span class='m'>10</span><span class='o'>)</span>,</span>
 <span>  x_2 <span class='o'>=</span> <span class='nf'><a href='https://rdrr.io/r/stats/Uniform.html'>runif</a></span><span class='o'>(</span><span class='m'>10</span><span class='o'>)</span>,</span>
-<span>  x_3 <span class='o'>=</span> <span class='nf'><a href='https://rdrr.io/r/stats/Uniform.html'>runif</a></span><span class='o'>(</span><span class='m'>10</span><span class='o'>)</span>,</span>
-<span>  x_4 <span class='o'>=</span> <span class='nf'><a href='https://rdrr.io/r/stats/Uniform.html'>runif</a></span><span class='o'>(</span><span class='m'>10</span><span class='o'>)</span></span>
+<span>  x_3 <span class='o'>=</span> <span class='nf'><a href='https://rdrr.io/r/stats/Uniform.html'>runif</a></span><span class='o'>(</span><span class='m'>10</span><span class='o'>)</span></span>
 <span><span class='o'>)</span></span>
 <span></span>
-<span><span class='nv'>dat</span></span><span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 10 × 4</span></span></span>
-<span><span class='c'>#&gt;       x_1    x_2   x_3     x_4</span></span>
-<span><span class='c'>#&gt;     <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>  <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>   <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span></span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 1</span> 0.348  0.704  0.626 0.861  </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 2</span> 0.479  0.017<span style='text-decoration: underline;'>8</span> 0.707 0.255  </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 3</span> 0.675  0.335  0.460 0.978  </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 4</span> 0.344  0.387  0.708 0.164  </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 5</span> 0.586  0.464  0.940 0.850  </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 6</span> 0.952  0.337  0.485 0.748  </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 7</span> 0.040<span style='text-decoration: underline;'>6</span> 0.576  0.377 0.289  </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 8</span> 0.570  0.315  0.973 0.003<span style='text-decoration: underline;'>62</span></span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 9</span> 0.826  0.175  0.625 0.764  </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>10</span> 0.412  0.150  0.118 0.437</span></span></code></pre>
+<span><span class='nv'>dat</span></span><span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 10 × 3</span></span></span>
+<span><span class='c'>#&gt;      x_1    x_2    x_3</span></span>
+<span><span class='c'>#&gt;    <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>  <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>  <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span></span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 1</span> 0.242 0.758  0.226 </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 2</span> 0.533 0.882  0.596 </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 3</span> 0.952 0.995  0.438 </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 4</span> 0.292 0.714  0.207 </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 5</span> 0.994 0.976  0.363 </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 6</span> 0.396 0.557  0.508 </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 7</span> 0.103 0.071<span style='text-decoration: underline;'>7</span> 0.902 </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 8</span> 0.740 0.314  0.899 </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 9</span> 0.360 0.533  0.132 </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>10</span> 0.248 0.137  0.027<span style='text-decoration: underline;'>9</span></span></span></code></pre>
 
 </div>
 
@@ -66,7 +65,7 @@ Or for fun, I did this:
 
 <div class="highlight">
 
-<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='nv'>vals</span> <span class='o'>&lt;-</span> <span class='nf'><a href='https://rdrr.io/r/stats/Uniform.html'>runif</a></span><span class='o'>(</span><span class='m'>40</span><span class='o'>)</span></span>
+<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='nv'>vals</span> <span class='o'>&lt;-</span> <span class='nf'><a href='https://rdrr.io/r/stats/Uniform.html'>runif</a></span><span class='o'>(</span><span class='m'>30</span><span class='o'>)</span></span>
 <span></span>
 <span><span class='nv'>dat</span> <span class='o'>&lt;-</span> <span class='nf'><a href='https://tibble.tidyverse.org/reference/as_tibble.html'>as_tibble</a></span><span class='o'>(</span></span>
 <span>  x <span class='o'>=</span> <span class='nf'><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></span><span class='o'>(</span><span class='nv'>vals</span>, nrow <span class='o'>=</span> <span class='m'>10</span><span class='o'>)</span>,</span>
@@ -76,19 +75,19 @@ Or for fun, I did this:
 <span>    x_1 <span class='o'>=</span> <span class='nv'>x</span></span>
 <span>  <span class='o'>)</span></span>
 <span></span>
-<span><span class='nv'>dat</span></span><span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 10 × 4</span></span></span>
-<span><span class='c'>#&gt;      x_1    x_2    x_3   x_4</span></span>
-<span><span class='c'>#&gt;    <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>  <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>  <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span></span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 1</span> 0.220 0.318  0.433  0.330</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 2</span> 0.997 0.061<span style='text-decoration: underline;'>0</span> 0.430  0.685</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 3</span> 0.682 0.278  0.936  0.455</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 4</span> 0.695 0.367  0.067<span style='text-decoration: underline;'>4</span> 0.947</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 5</span> 0.559 0.537  0.928  0.782</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 6</span> 0.557 0.072<span style='text-decoration: underline;'>6</span> 0.552  0.134</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 7</span> 0.592 0.030<span style='text-decoration: underline;'>0</span> 0.737  0.721</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 8</span> 0.182 0.062<span style='text-decoration: underline;'>4</span> 0.598  0.382</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 9</span> 0.387 0.493  0.640  0.713</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>10</span> 0.956 0.662  0.855  0.927</span></span></code></pre>
+<span><span class='nv'>dat</span></span><span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 10 × 3</span></span></span>
+<span><span class='c'>#&gt;      x_1    x_2   x_3</span></span>
+<span><span class='c'>#&gt;    <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>  <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span></span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 1</span> 0.253 0.346  0.984</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 2</span> 0.850 0.039<span style='text-decoration: underline;'>3</span> 0.363</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 3</span> 0.480 0.523  0.319</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 4</span> 0.706 0.920  0.981</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 5</span> 0.263 0.517  0.416</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 6</span> 0.961 0.665  0.133</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 7</span> 0.878 0.264  0.867</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 8</span> 0.378 0.603  0.123</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 9</span> 0.365 0.387  0.609</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>10</span> 0.956 0.250  0.686</span></span></code></pre>
 
 </div>
 
@@ -102,21 +101,20 @@ OK, so what my friend wanted was something like this:
 <span>  <span class='nf'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='o'>(</span></span>
 <span>    x_1_rank <span class='o'>=</span> <span class='nf'><a href='https://rdrr.io/r/base/rank.html'>rank</a></span><span class='o'>(</span><span class='nv'>x_1</span><span class='o'>)</span>,</span>
 <span>    x_2_rank <span class='o'>=</span> <span class='nf'><a href='https://rdrr.io/r/base/rank.html'>rank</a></span><span class='o'>(</span><span class='nv'>x_2</span><span class='o'>)</span>,</span>
-<span>    x_3_rank <span class='o'>=</span> <span class='nf'><a href='https://rdrr.io/r/base/rank.html'>rank</a></span><span class='o'>(</span><span class='nv'>x_3</span><span class='o'>)</span>,</span>
-<span>    x_4_rank <span class='o'>=</span> <span class='nf'><a href='https://rdrr.io/r/base/rank.html'>rank</a></span><span class='o'>(</span><span class='nv'>x_4</span><span class='o'>)</span></span>
-<span>  <span class='o'>)</span></span><span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 10 × 8</span></span></span>
-<span><span class='c'>#&gt;      x_1    x_2    x_3   x_4 x_1_rank x_2_rank x_3_rank x_4_rank</span></span>
-<span><span class='c'>#&gt;    <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>  <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>  <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>    <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>    <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>    <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>    <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span></span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 1</span> 0.220 0.318  0.433  0.330        2        6        3        2</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 2</span> 0.997 0.061<span style='text-decoration: underline;'>0</span> 0.430  0.685       10        2        2        5</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 3</span> 0.682 0.278  0.936  0.455        7        5       10        4</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 4</span> 0.695 0.367  0.067<span style='text-decoration: underline;'>4</span> 0.947        8        7        1       10</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 5</span> 0.559 0.537  0.928  0.782        5        9        9        8</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 6</span> 0.557 0.072<span style='text-decoration: underline;'>6</span> 0.552  0.134        4        4        4        1</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 7</span> 0.592 0.030<span style='text-decoration: underline;'>0</span> 0.737  0.721        6        1        7        7</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 8</span> 0.182 0.062<span style='text-decoration: underline;'>4</span> 0.598  0.382        1        3        5        3</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 9</span> 0.387 0.493  0.640  0.713        3        8        6        6</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>10</span> 0.956 0.662  0.855  0.927        9       10        8        9</span></span></code></pre>
+<span>    x_3_rank <span class='o'>=</span> <span class='nf'><a href='https://rdrr.io/r/base/rank.html'>rank</a></span><span class='o'>(</span><span class='nv'>x_3</span><span class='o'>)</span></span>
+<span>  <span class='o'>)</span></span><span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 10 × 6</span></span></span>
+<span><span class='c'>#&gt;      x_1    x_2   x_3 x_1_rank x_2_rank x_3_rank</span></span>
+<span><span class='c'>#&gt;    <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>  <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>    <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>    <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>    <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span></span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 1</span> 0.253 0.346  0.984        1        4       10</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 2</span> 0.850 0.039<span style='text-decoration: underline;'>3</span> 0.363        7        1        4</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 3</span> 0.480 0.523  0.319        5        7        3</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 4</span> 0.706 0.920  0.981        6       10        9</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 5</span> 0.263 0.517  0.416        2        6        5</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 6</span> 0.961 0.665  0.133       10        9        2</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 7</span> 0.878 0.264  0.867        8        3        8</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 8</span> 0.378 0.603  0.123        4        8        1</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 9</span> 0.365 0.387  0.609        3        5        6</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>10</span> 0.956 0.250  0.686        9        2        7</span></span></code></pre>
 
 </div>
 
@@ -130,21 +128,20 @@ The reason you might want to avoid writing this out each time is because it will
 <span>  <span class='nf'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='o'>(</span></span>
 <span>    x_1_rank <span class='o'>=</span> <span class='nf'><a href='https://rdrr.io/r/base/rank.html'>rank</a></span><span class='o'>(</span><span class='nv'>x_1</span><span class='o'>)</span>,</span>
 <span>    x_2_rank <span class='o'>=</span> <span class='nf'><a href='https://rdrr.io/r/base/rank.html'>rank</a></span><span class='o'>(</span><span class='nv'>x_2</span><span class='o'>)</span>,</span>
-<span>    x_3_rank <span class='o'>=</span> <span class='nf'><a href='https://rdrr.io/r/base/rank.html'>rank</a></span><span class='o'>(</span><span class='nv'>x_2</span><span class='o'>)</span>,</span>
-<span>    x_4_rank <span class='o'>=</span> <span class='nf'><a href='https://rdrr.io/r/base/rank.html'>rank</a></span><span class='o'>(</span><span class='nv'>x_4</span><span class='o'>)</span></span>
-<span>  <span class='o'>)</span></span><span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 10 × 8</span></span></span>
-<span><span class='c'>#&gt;      x_1    x_2    x_3   x_4 x_1_rank x_2_rank x_3_rank x_4_rank</span></span>
-<span><span class='c'>#&gt;    <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>  <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>  <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>    <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>    <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>    <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>    <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span></span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 1</span> 0.220 0.318  0.433  0.330        2        6        6        2</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 2</span> 0.997 0.061<span style='text-decoration: underline;'>0</span> 0.430  0.685       10        2        2        5</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 3</span> 0.682 0.278  0.936  0.455        7        5        5        4</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 4</span> 0.695 0.367  0.067<span style='text-decoration: underline;'>4</span> 0.947        8        7        7       10</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 5</span> 0.559 0.537  0.928  0.782        5        9        9        8</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 6</span> 0.557 0.072<span style='text-decoration: underline;'>6</span> 0.552  0.134        4        4        4        1</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 7</span> 0.592 0.030<span style='text-decoration: underline;'>0</span> 0.737  0.721        6        1        1        7</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 8</span> 0.182 0.062<span style='text-decoration: underline;'>4</span> 0.598  0.382        1        3        3        3</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 9</span> 0.387 0.493  0.640  0.713        3        8        8        6</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>10</span> 0.956 0.662  0.855  0.927        9       10       10        9</span></span></code></pre>
+<span>    x_3_rank <span class='o'>=</span> <span class='nf'><a href='https://rdrr.io/r/base/rank.html'>rank</a></span><span class='o'>(</span><span class='nv'>x_2</span><span class='o'>)</span></span>
+<span>  <span class='o'>)</span></span><span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 10 × 6</span></span></span>
+<span><span class='c'>#&gt;      x_1    x_2   x_3 x_1_rank x_2_rank x_3_rank</span></span>
+<span><span class='c'>#&gt;    <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>  <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>    <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>    <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>    <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span></span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 1</span> 0.253 0.346  0.984        1        4        4</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 2</span> 0.850 0.039<span style='text-decoration: underline;'>3</span> 0.363        7        1        1</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 3</span> 0.480 0.523  0.319        5        7        7</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 4</span> 0.706 0.920  0.981        6       10       10</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 5</span> 0.263 0.517  0.416        2        6        6</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 6</span> 0.961 0.665  0.133       10        9        9</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 7</span> 0.878 0.264  0.867        8        3        3</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 8</span> 0.378 0.603  0.123        4        8        8</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 9</span> 0.365 0.387  0.609        3        5        5</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>10</span> 0.956 0.250  0.686        9        2        2</span></span></code></pre>
 
 </div>
 
@@ -162,19 +159,19 @@ Yes! Yes we can. With `across`. It looks like this.
 <span>      .cols <span class='o'>=</span> <span class='nf'><a href='https://tidyselect.r-lib.org/reference/everything.html'>everything</a></span><span class='o'>(</span><span class='o'>)</span>,</span>
 <span>      .fns <span class='o'>=</span> <span class='nv'>rank</span></span>
 <span>    <span class='o'>)</span></span>
-<span>  <span class='o'>)</span></span><span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 10 × 4</span></span></span>
-<span><span class='c'>#&gt;      x_1   x_2   x_3   x_4</span></span>
-<span><span class='c'>#&gt;    <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span></span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 1</span>     2     6     3     2</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 2</span>    10     2     2     5</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 3</span>     7     5    10     4</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 4</span>     8     7     1    10</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 5</span>     5     9     9     8</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 6</span>     4     4     4     1</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 7</span>     6     1     7     7</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 8</span>     1     3     5     3</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 9</span>     3     8     6     6</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>10</span>     9    10     8     9</span></span></code></pre>
+<span>  <span class='o'>)</span></span><span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 10 × 3</span></span></span>
+<span><span class='c'>#&gt;      x_1   x_2   x_3</span></span>
+<span><span class='c'>#&gt;    <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span></span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 1</span>     1     4    10</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 2</span>     7     1     4</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 3</span>     5     7     3</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 4</span>     6    10     9</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 5</span>     2     6     5</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 6</span>    10     9     2</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 7</span>     8     3     8</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 8</span>     4     8     1</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 9</span>     3     5     6</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>10</span>     9     2     7</span></span></code></pre>
 
 </div>
 
@@ -195,19 +192,19 @@ With `.names` - we specify a special pattern on how we want to name the columns 
 <span>      .fns <span class='o'>=</span> <span class='nv'>rank</span>,</span>
 <span>      .names <span class='o'>=</span> <span class='s'>"&#123;.col&#125;_rank"</span></span>
 <span>    <span class='o'>)</span></span>
-<span>  <span class='o'>)</span></span><span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 10 × 8</span></span></span>
-<span><span class='c'>#&gt;      x_1    x_2    x_3   x_4 x_1_rank x_2_rank x_3_rank x_4_rank</span></span>
-<span><span class='c'>#&gt;    <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>  <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>  <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>    <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>    <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>    <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>    <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span></span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 1</span> 0.220 0.318  0.433  0.330        2        6        3        2</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 2</span> 0.997 0.061<span style='text-decoration: underline;'>0</span> 0.430  0.685       10        2        2        5</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 3</span> 0.682 0.278  0.936  0.455        7        5       10        4</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 4</span> 0.695 0.367  0.067<span style='text-decoration: underline;'>4</span> 0.947        8        7        1       10</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 5</span> 0.559 0.537  0.928  0.782        5        9        9        8</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 6</span> 0.557 0.072<span style='text-decoration: underline;'>6</span> 0.552  0.134        4        4        4        1</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 7</span> 0.592 0.030<span style='text-decoration: underline;'>0</span> 0.737  0.721        6        1        7        7</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 8</span> 0.182 0.062<span style='text-decoration: underline;'>4</span> 0.598  0.382        1        3        5        3</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 9</span> 0.387 0.493  0.640  0.713        3        8        6        6</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>10</span> 0.956 0.662  0.855  0.927        9       10        8        9</span></span></code></pre>
+<span>  <span class='o'>)</span></span><span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 10 × 6</span></span></span>
+<span><span class='c'>#&gt;      x_1    x_2   x_3 x_1_rank x_2_rank x_3_rank</span></span>
+<span><span class='c'>#&gt;    <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>  <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>    <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>    <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>    <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span></span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 1</span> 0.253 0.346  0.984        1        4       10</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 2</span> 0.850 0.039<span style='text-decoration: underline;'>3</span> 0.363        7        1        4</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 3</span> 0.480 0.523  0.319        5        7        3</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 4</span> 0.706 0.920  0.981        6       10        9</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 5</span> 0.263 0.517  0.416        2        6        5</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 6</span> 0.961 0.665  0.133       10        9        2</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 7</span> 0.878 0.264  0.867        8        3        8</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 8</span> 0.378 0.603  0.123        4        8        1</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 9</span> 0.365 0.387  0.609        3        5        6</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>10</span> 0.956 0.250  0.686        9        2        7</span></span></code></pre>
 
 </div>
 
@@ -220,19 +217,19 @@ OK, but what if we've got data that contains other columns we don't want to appl
 <span>  <span class='nf'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='o'>(</span>code <span class='o'>=</span> <span class='nf'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span><span class='o'>(</span><span class='nv'>LETTERS</span>, <span class='nf'><a href='https://dplyr.tidyverse.org/reference/context.html'>n</a></span><span class='o'>(</span><span class='o'>)</span><span class='o'>)</span>,</span>
 <span>         .after <span class='o'>=</span> <span class='nv'>id</span><span class='o'>)</span></span>
 <span></span>
-<span><span class='nv'>dat_more</span></span><span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 10 × 6</span></span></span>
-<span><span class='c'>#&gt;       id code    x_1    x_2    x_3   x_4</span></span>
-<span><span class='c'>#&gt;    <span style='color: #555555; font-style: italic;'>&lt;int&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;chr&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>  <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>  <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span></span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 1</span>     1 C     0.220 0.318  0.433  0.330</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 2</span>     2 M     0.997 0.061<span style='text-decoration: underline;'>0</span> 0.430  0.685</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 3</span>     3 N     0.682 0.278  0.936  0.455</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 4</span>     4 Y     0.695 0.367  0.067<span style='text-decoration: underline;'>4</span> 0.947</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 5</span>     5 I     0.559 0.537  0.928  0.782</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 6</span>     6 U     0.557 0.072<span style='text-decoration: underline;'>6</span> 0.552  0.134</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 7</span>     7 X     0.592 0.030<span style='text-decoration: underline;'>0</span> 0.737  0.721</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 8</span>     8 K     0.182 0.062<span style='text-decoration: underline;'>4</span> 0.598  0.382</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 9</span>     9 O     0.387 0.493  0.640  0.713</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>10</span>    10 S     0.956 0.662  0.855  0.927</span></span></code></pre>
+<span><span class='nv'>dat_more</span></span><span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 10 × 5</span></span></span>
+<span><span class='c'>#&gt;       id code    x_1    x_2   x_3</span></span>
+<span><span class='c'>#&gt;    <span style='color: #555555; font-style: italic;'>&lt;int&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;chr&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>  <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span></span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 1</span>     1 F     0.253 0.346  0.984</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 2</span>     2 I     0.850 0.039<span style='text-decoration: underline;'>3</span> 0.363</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 3</span>     3 D     0.480 0.523  0.319</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 4</span>     4 C     0.706 0.920  0.981</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 5</span>     5 L     0.263 0.517  0.416</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 6</span>     6 S     0.961 0.665  0.133</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 7</span>     7 Y     0.878 0.264  0.867</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 8</span>     8 U     0.378 0.603  0.123</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 9</span>     9 W     0.365 0.387  0.609</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>10</span>    10 P     0.956 0.250  0.686</span></span></code></pre>
 
 </div>
 
@@ -250,19 +247,19 @@ We can tell it which columns to pay attention to, or even avoid, like so:
 <span>    <span class='o'>)</span></span>
 <span>  <span class='o'>)</span></span>
 <span></span>
-<span><span class='nv'>dat_more_rank</span></span><span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 10 × 10</span></span></span>
-<span><span class='c'>#&gt;       id code    x_1    x_2    x_3   x_4 x_1_rank x_2_rank x_3_rank x_4_rank</span></span>
-<span><span class='c'>#&gt;    <span style='color: #555555; font-style: italic;'>&lt;int&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;chr&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>  <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>  <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>    <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>    <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>    <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>    <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span></span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 1</span>     1 C     0.220 0.318  0.433  0.330        2        6        3        2</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 2</span>     2 M     0.997 0.061<span style='text-decoration: underline;'>0</span> 0.430  0.685       10        2        2        5</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 3</span>     3 N     0.682 0.278  0.936  0.455        7        5       10        4</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 4</span>     4 Y     0.695 0.367  0.067<span style='text-decoration: underline;'>4</span> 0.947        8        7        1       10</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 5</span>     5 I     0.559 0.537  0.928  0.782        5        9        9        8</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 6</span>     6 U     0.557 0.072<span style='text-decoration: underline;'>6</span> 0.552  0.134        4        4        4        1</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 7</span>     7 X     0.592 0.030<span style='text-decoration: underline;'>0</span> 0.737  0.721        6        1        7        7</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 8</span>     8 K     0.182 0.062<span style='text-decoration: underline;'>4</span> 0.598  0.382        1        3        5        3</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 9</span>     9 O     0.387 0.493  0.640  0.713        3        8        6        6</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>10</span>    10 S     0.956 0.662  0.855  0.927        9       10        8        9</span></span><span></span>
+<span><span class='nv'>dat_more_rank</span></span><span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 10 × 8</span></span></span>
+<span><span class='c'>#&gt;       id code    x_1    x_2   x_3 x_1_rank x_2_rank x_3_rank</span></span>
+<span><span class='c'>#&gt;    <span style='color: #555555; font-style: italic;'>&lt;int&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;chr&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>  <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>    <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>    <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>    <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span></span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 1</span>     1 F     0.253 0.346  0.984        1        4       10</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 2</span>     2 I     0.850 0.039<span style='text-decoration: underline;'>3</span> 0.363        7        1        4</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 3</span>     3 D     0.480 0.523  0.319        5        7        3</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 4</span>     4 C     0.706 0.920  0.981        6       10        9</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 5</span>     5 L     0.263 0.517  0.416        2        6        5</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 6</span>     6 S     0.961 0.665  0.133       10        9        2</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 7</span>     7 Y     0.878 0.264  0.867        8        3        8</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 8</span>     8 U     0.378 0.603  0.123        4        8        1</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 9</span>     9 W     0.365 0.387  0.609        3        5        6</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>10</span>    10 P     0.956 0.250  0.686        9        2        7</span></span><span></span>
 <span><span class='c'># do it to everything EXCEPT</span></span>
 <span><span class='nv'>dat_more</span> <span class='o'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> </span>
 <span>  <span class='nf'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='o'>(</span></span>
@@ -271,19 +268,19 @@ We can tell it which columns to pay attention to, or even avoid, like so:
 <span>      .fns <span class='o'>=</span> <span class='nv'>rank</span>,</span>
 <span>      .names <span class='o'>=</span> <span class='s'>"&#123;.col&#125;_rank"</span></span>
 <span>    <span class='o'>)</span></span>
-<span>  <span class='o'>)</span></span><span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 10 × 10</span></span></span>
-<span><span class='c'>#&gt;       id code    x_1    x_2    x_3   x_4 x_1_rank x_2_rank x_3_rank x_4_rank</span></span>
-<span><span class='c'>#&gt;    <span style='color: #555555; font-style: italic;'>&lt;int&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;chr&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>  <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>  <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>    <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>    <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>    <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>    <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span></span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 1</span>     1 C     0.220 0.318  0.433  0.330        2        6        3        2</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 2</span>     2 M     0.997 0.061<span style='text-decoration: underline;'>0</span> 0.430  0.685       10        2        2        5</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 3</span>     3 N     0.682 0.278  0.936  0.455        7        5       10        4</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 4</span>     4 Y     0.695 0.367  0.067<span style='text-decoration: underline;'>4</span> 0.947        8        7        1       10</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 5</span>     5 I     0.559 0.537  0.928  0.782        5        9        9        8</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 6</span>     6 U     0.557 0.072<span style='text-decoration: underline;'>6</span> 0.552  0.134        4        4        4        1</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 7</span>     7 X     0.592 0.030<span style='text-decoration: underline;'>0</span> 0.737  0.721        6        1        7        7</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 8</span>     8 K     0.182 0.062<span style='text-decoration: underline;'>4</span> 0.598  0.382        1        3        5        3</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 9</span>     9 O     0.387 0.493  0.640  0.713        3        8        6        6</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>10</span>    10 S     0.956 0.662  0.855  0.927        9       10        8        9</span></span></code></pre>
+<span>  <span class='o'>)</span></span><span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 10 × 8</span></span></span>
+<span><span class='c'>#&gt;       id code    x_1    x_2   x_3 x_1_rank x_2_rank x_3_rank</span></span>
+<span><span class='c'>#&gt;    <span style='color: #555555; font-style: italic;'>&lt;int&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;chr&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>  <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>    <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>    <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>    <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span></span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 1</span>     1 F     0.253 0.346  0.984        1        4       10</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 2</span>     2 I     0.850 0.039<span style='text-decoration: underline;'>3</span> 0.363        7        1        4</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 3</span>     3 D     0.480 0.523  0.319        5        7        3</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 4</span>     4 C     0.706 0.920  0.981        6       10        9</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 5</span>     5 L     0.263 0.517  0.416        2        6        5</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 6</span>     6 S     0.961 0.665  0.133       10        9        2</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 7</span>     7 Y     0.878 0.264  0.867        8        3        8</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 8</span>     8 U     0.378 0.603  0.123        4        8        1</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 9</span>     9 W     0.365 0.387  0.609        3        5        6</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>10</span>    10 P     0.956 0.250  0.686        9        2        7</span></span></code></pre>
 
 </div>
 
@@ -295,8 +292,8 @@ Sure! We can take advantage of the fact that we've got a pretty systematic namin
 
 <pre class='chroma'><code class='language-r' data-lang='r'><span><span class='nv'>new_col_order</span> <span class='o'>&lt;-</span> <span class='nf'><a href='https://rdrr.io/r/base/sort.html'>sort</a></span><span class='o'>(</span><span class='nf'><a href='https://rdrr.io/r/base/names.html'>names</a></span><span class='o'>(</span><span class='nv'>dat_more_rank</span><span class='o'>)</span><span class='o'>)</span></span>
 <span></span>
-<span><span class='nv'>new_col_order</span></span><span><span class='c'>#&gt;  [1] "code"     "id"       "x_1"      "x_1_rank" "x_2"      "x_2_rank"</span></span>
-<span><span class='c'>#&gt;  [7] "x_3"      "x_3_rank" "x_4"      "x_4_rank"</span></span></code></pre>
+<span><span class='nv'>new_col_order</span></span><span><span class='c'>#&gt; [1] "code"     "id"       "x_1"      "x_1_rank" "x_2"      "x_2_rank" "x_3"     </span></span>
+<span><span class='c'>#&gt; [8] "x_3_rank"</span></span></code></pre>
 
 </div>
 
@@ -312,19 +309,19 @@ We can use `relocate` to specify a new column order:
 <span>  <span class='o'>)</span></span><span><span class='c'>#&gt; Note: Using an external vector in selections is ambiguous.</span></span>
 <span><span class='c'>#&gt; <span style='color: #0000BB;'>ℹ</span> Use `all_of(new_col_order)` instead of `new_col_order` to silence this message.</span></span>
 <span><span class='c'>#&gt; <span style='color: #0000BB;'>ℹ</span> See &lt;https://tidyselect.r-lib.org/reference/faq-external-vector.html&gt;.</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>This message is displayed once per session.</span></span></span><span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 10 × 10</span></span></span>
-<span><span class='c'>#&gt;       id code    x_1 x_1_rank    x_2 x_2_rank    x_3 x_3_rank   x_4 x_4_rank</span></span>
-<span><span class='c'>#&gt;    <span style='color: #555555; font-style: italic;'>&lt;int&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;chr&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>    <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>  <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>    <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>  <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>    <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>    <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span></span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 1</span>     1 C     0.220        2 0.318         6 0.433         3 0.330        2</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 2</span>     2 M     0.997       10 0.061<span style='text-decoration: underline;'>0</span>        2 0.430         2 0.685        5</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 3</span>     3 N     0.682        7 0.278         5 0.936        10 0.455        4</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 4</span>     4 Y     0.695        8 0.367         7 0.067<span style='text-decoration: underline;'>4</span>        1 0.947       10</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 5</span>     5 I     0.559        5 0.537         9 0.928         9 0.782        8</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 6</span>     6 U     0.557        4 0.072<span style='text-decoration: underline;'>6</span>        4 0.552         4 0.134        1</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 7</span>     7 X     0.592        6 0.030<span style='text-decoration: underline;'>0</span>        1 0.737         7 0.721        7</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 8</span>     8 K     0.182        1 0.062<span style='text-decoration: underline;'>4</span>        3 0.598         5 0.382        3</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 9</span>     9 O     0.387        3 0.493         8 0.640         6 0.713        6</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>10</span>    10 S     0.956        9 0.662        10 0.855         8 0.927        9</span></span></code></pre>
+<span><span class='c'>#&gt; <span style='color: #555555;'>This message is displayed once per session.</span></span></span><span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 10 × 8</span></span></span>
+<span><span class='c'>#&gt;       id code    x_1 x_1_rank    x_2 x_2_rank   x_3 x_3_rank</span></span>
+<span><span class='c'>#&gt;    <span style='color: #555555; font-style: italic;'>&lt;int&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;chr&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>    <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>  <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>    <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>    <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span></span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 1</span>     1 F     0.253        1 0.346         4 0.984       10</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 2</span>     2 I     0.850        7 0.039<span style='text-decoration: underline;'>3</span>        1 0.363        4</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 3</span>     3 D     0.480        5 0.523         7 0.319        3</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 4</span>     4 C     0.706        6 0.920        10 0.981        9</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 5</span>     5 L     0.263        2 0.517         6 0.416        5</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 6</span>     6 S     0.961       10 0.665         9 0.133        2</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 7</span>     7 Y     0.878        8 0.264         3 0.867        8</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 8</span>     8 U     0.378        4 0.603         8 0.123        1</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 9</span>     9 W     0.365        3 0.387         5 0.609        6</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>10</span>    10 P     0.956        9 0.250         2 0.686        7</span></span></code></pre>
 
 </div>
 
@@ -338,19 +335,19 @@ We can use `relocate` to specify a new column order:
 <span>    <span class='nv'>code</span>,</span>
 <span>    <span class='nv'>new_col_order</span>,</span>
 <span>    <span class='nf'><a href='https://tidyselect.r-lib.org/reference/everything.html'>everything</a></span><span class='o'>(</span><span class='o'>)</span></span>
-<span>  <span class='o'>)</span></span><span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 10 × 10</span></span></span>
-<span><span class='c'>#&gt;       id code    x_1 x_1_rank    x_2 x_2_rank    x_3 x_3_rank   x_4 x_4_rank</span></span>
-<span><span class='c'>#&gt;    <span style='color: #555555; font-style: italic;'>&lt;int&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;chr&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>    <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>  <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>    <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>  <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>    <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>    <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span></span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 1</span>     1 C     0.220        2 0.318         6 0.433         3 0.330        2</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 2</span>     2 M     0.997       10 0.061<span style='text-decoration: underline;'>0</span>        2 0.430         2 0.685        5</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 3</span>     3 N     0.682        7 0.278         5 0.936        10 0.455        4</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 4</span>     4 Y     0.695        8 0.367         7 0.067<span style='text-decoration: underline;'>4</span>        1 0.947       10</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 5</span>     5 I     0.559        5 0.537         9 0.928         9 0.782        8</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 6</span>     6 U     0.557        4 0.072<span style='text-decoration: underline;'>6</span>        4 0.552         4 0.134        1</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 7</span>     7 X     0.592        6 0.030<span style='text-decoration: underline;'>0</span>        1 0.737         7 0.721        7</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 8</span>     8 K     0.182        1 0.062<span style='text-decoration: underline;'>4</span>        3 0.598         5 0.382        3</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 9</span>     9 O     0.387        3 0.493         8 0.640         6 0.713        6</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>10</span>    10 S     0.956        9 0.662        10 0.855         8 0.927        9</span></span></code></pre>
+<span>  <span class='o'>)</span></span><span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 10 × 8</span></span></span>
+<span><span class='c'>#&gt;       id code    x_1 x_1_rank    x_2 x_2_rank   x_3 x_3_rank</span></span>
+<span><span class='c'>#&gt;    <span style='color: #555555; font-style: italic;'>&lt;int&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;chr&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>    <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>  <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>    <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>    <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span></span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 1</span>     1 F     0.253        1 0.346         4 0.984       10</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 2</span>     2 I     0.850        7 0.039<span style='text-decoration: underline;'>3</span>        1 0.363        4</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 3</span>     3 D     0.480        5 0.523         7 0.319        3</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 4</span>     4 C     0.706        6 0.920        10 0.981        9</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 5</span>     5 L     0.263        2 0.517         6 0.416        5</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 6</span>     6 S     0.961       10 0.665         9 0.133        2</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 7</span>     7 Y     0.878        8 0.264         3 0.867        8</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 8</span>     8 U     0.378        4 0.603         8 0.123        1</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 9</span>     9 W     0.365        3 0.387         5 0.609        6</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>10</span>    10 P     0.956        9 0.250         2 0.686        7</span></span></code></pre>
 
 </div>
 
