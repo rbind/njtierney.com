@@ -37,7 +37,7 @@ knitr::opts_chunk$set(
 
 I recently had to make some pyramid plots in R. They are a useful way to compare age structures of populations. They look like this:
 
-![Age population structure of Sydney vs Melbourne](figs/gg_abs_age_dists_syd_melb.png)
+![Age population structure of Sydney vs Melbourne](figs/show-pop-pyramid-1.png)
 
 It's been a while since I had to make them, and in the past I've cooked them up in a relatively bespoke way. This time I needed to be able to have some level of programming to them - I wanted to be able to provide any two LGAs in Australia and then make a pyramid plot of them that looked nice.
 
@@ -385,6 +385,8 @@ plot_pop_pyramid(melb_syd)
 ```
 
 # End
+
+And that was the end of this blog post. But something about the plots kind of bothered me...
 
 # Bonus
 
