@@ -1,5 +1,5 @@
 ---
-title: A Fun Little Use of `dplyr::across()`
+title: Using `across()` to create multiple columns
 author: Nicholas Tierney
 date: '2022-08-08'
 slug: fun-across
@@ -9,6 +9,9 @@ categories:
 tags:
   - rstats
   - functions
+  - across
+  - tidyverse
+  - mutate
 output: hugodown::md_document
 ---
 
