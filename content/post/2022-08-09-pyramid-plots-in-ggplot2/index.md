@@ -18,7 +18,7 @@ tags:
   - ggplot2
   - functions
 output: hugodown::md_document
-rmd_hash: 96fa8107f73529d4
+rmd_hash: 65309507ba0ac293
 
 ---
 
@@ -41,7 +41,7 @@ The data is comes from the Australian Bureau of Statistics, which is then cleane
 <span><span class='c'>#&gt; <span style='color: #00BB00;'>✔</span> <span style='color: #0000BB;'>tidyr  </span> 1.2.0     <span style='color: #00BB00;'>✔</span> <span style='color: #0000BB;'>stringr</span> 1.4.0</span></span>
 <span><span class='c'>#&gt; <span style='color: #00BB00;'>✔</span> <span style='color: #0000BB;'>readr  </span> 2.1.2     <span style='color: #00BB00;'>✔</span> <span style='color: #0000BB;'>forcats</span> 0.5.1</span></span><span><span class='c'>#&gt; ── <span style='font-weight: bold;'>Conflicts</span> ──────────────────────────────── tidyverse_conflicts() ──</span></span>
 <span><span class='c'>#&gt; <span style='color: #BB0000;'>✖</span> <span style='color: #0000BB;'>dplyr</span>::<span style='color: #00BB00;'>filter()</span> masks <span style='color: #0000BB;'>stats</span>::filter()</span></span>
-<span><span class='c'>#&gt; <span style='color: #BB0000;'>✖</span> <span style='color: #0000BB;'>dplyr</span>::<span style='color: #00BB00;'>lag()</span>    masks <span style='color: #0000BB;'>stats</span>::lag()</span></span><span><span class='kr'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='o'>(</span><span class='nv'>conmat</span><span class='o'>)</span></span></code></pre>
+<span><span class='c'>#&gt; <span style='color: #BB0000;'>✖</span> <span style='color: #0000BB;'>dplyr</span>::<span style='color: #00BB00;'>lag()</span>    masks <span style='color: #0000BB;'>stats</span>::lag()</span></span><span><span class='kr'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='o'>(</span><span class='nv'>conmat</span><span class='o'>)</span></span><span><span class='c'>#&gt; Warning: package 'conmat' was built under R version 4.2.1</span></span></code></pre>
 
 </div>
 
@@ -529,7 +529,7 @@ And now let's wrap the plotting code into a function:
 
 And that was the end of this blog post. But something about the plots kind of bothered me...
 
-# Bonus
+# Bonus - centering
 
 Well, there's actually one final step here that you might be interested in - which is centering the "0" of the population. Perhaps there is another way around this, but the approach that I ended up doing was the following:
 
@@ -594,20 +594,16 @@ This has a nice benefit of facilitating stacking the plots with something like `
 <pre class='chroma'><code class='language-r' data-lang='r'><span><span class='nv'>melb_syd</span> <span class='o'>&lt;-</span> <span class='nf'>two_abs_age_lga</span><span class='o'>(</span></span>
 <span>  <span class='s'>"Melbourne (C)"</span>,</span>
 <span>  <span class='s'>"Sydney (C)"</span></span>
-<span><span class='o'>)</span> <span class='o'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> </span>
-<span>  <span class='nf'>prep_pop_pyramid</span><span class='o'>(</span><span class='o'>)</span></span>
+<span><span class='o'>)</span> </span>
 <span></span>
 <span><span class='nv'>bris_hobart</span> <span class='o'>&lt;-</span> <span class='nf'>two_abs_age_lga</span><span class='o'>(</span></span>
 <span>  <span class='s'>"Brisbane (C)"</span>,</span>
 <span>  <span class='s'>"Hobart (C)"</span></span>
-<span><span class='o'>)</span> <span class='o'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> </span>
-<span>  <span class='nf'>prep_pop_pyramid</span><span class='o'>(</span><span class='o'>)</span></span>
-<span></span>
+<span><span class='o'>)</span></span>
 <span><span class='nv'>alice_perth</span> <span class='o'>&lt;-</span> <span class='nf'>two_abs_age_lga</span><span class='o'>(</span></span>
 <span>  <span class='s'>"Alice Springs (T)"</span>,</span>
 <span>  <span class='s'>"Perth (C)"</span></span>
-<span><span class='o'>)</span> <span class='o'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> </span>
-<span>  <span class='nf'>prep_pop_pyramid</span><span class='o'>(</span><span class='o'>)</span></span></code></pre>
+<span><span class='o'>)</span> </span></code></pre>
 
 </div>
 
@@ -616,10 +612,168 @@ Then we can stack them together with patchwork
 <div class="highlight">
 
 <pre class='chroma'><code class='language-r' data-lang='r'><span><span class='kr'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='o'>(</span><span class='nv'><a href='https://patchwork.data-imaginist.com'>patchwork</a></span><span class='o'>)</span></span>
-<span><span class='nf'>plot_pop_pyramid</span><span class='o'>(</span><span class='nv'>melb_syd</span><span class='o'>)</span> <span class='o'>/</span></span>
-<span><span class='nf'>plot_pop_pyramid</span><span class='o'>(</span><span class='nv'>bris_hobart</span><span class='o'>)</span> <span class='o'>/</span></span>
-<span><span class='nf'>plot_pop_pyramid</span><span class='o'>(</span><span class='nv'>alice_perth</span><span class='o'>)</span></span></code></pre>
+<span><span class='nv'>melb_syd</span> <span class='o'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> <span class='nf'>prep_pop_pyramid</span><span class='o'>(</span><span class='o'>)</span> <span class='o'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> <span class='nf'>plot_pop_pyramid</span><span class='o'>(</span><span class='o'>)</span> <span class='o'>/</span></span>
+<span><span class='nv'>bris_hobart</span> <span class='o'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> <span class='nf'>prep_pop_pyramid</span><span class='o'>(</span><span class='o'>)</span> <span class='o'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> <span class='nf'>plot_pop_pyramid</span><span class='o'>(</span><span class='o'>)</span> <span class='o'>/</span></span>
+<span><span class='nv'>alice_perth</span> <span class='o'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> <span class='nf'>prep_pop_pyramid</span><span class='o'>(</span><span class='o'>)</span> <span class='o'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> <span class='nf'>plot_pop_pyramid</span><span class='o'>(</span><span class='o'>)</span></span></code></pre>
 <img src="figs/patchwork-plot-1.png" width="700px" style="display: block; margin: auto;" />
 
 </div>
+
+# Bonus Bonus - per capita
+
+Ugh. OK. These plots are nice, but really, these should be normalised by the total population.
+
+What does that mean? Why would we want to do that? Well, if you have two cities, one with HEAPS of people, and other with 1000 times less people - the numbers are going to be harder to compare. And if the point you are trying to convey is:
+
+> Hey, these two cities have very different population *sizes*
+
+Then we've done that above.
+
+But what we actually kind of care about the most is:
+
+> Hey, do these two cities have similar age distributions?
+
+So like, do they have the same proportion of 20-somethings in both cities? Regardless of the fact that one city has like 100 or 1000 times more people?
+
+So, we should fix it.
+
+Where do we fix it? We need to change the data creation function. Adding a new column, `population_per_capita`, with something like this:
+
+``` r
+mutate(population_per_capita = population / sum(population))
+```
+
+Which divides the population by the total population. This is sometimes called "normalising". Effectively, we are comparing each age population to the total population.
+
+Also importantly, we need to do this still in the `group_by(lga)` below
+
+<div class="highlight">
+
+<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='nv'>prep_pop_pyramid</span> <span class='o'>&lt;-</span> <span class='kr'>function</span><span class='o'>(</span><span class='nv'>data</span><span class='o'>)</span> <span class='o'>&#123;</span></span>
+<span>  <span class='nv'>data</span> <span class='o'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span></span>
+<span>    <span class='nf'><a href='https://dplyr.tidyverse.org/reference/group_by.html'>group_by</a></span><span class='o'>(</span><span class='nv'>lga</span><span class='o'>)</span> <span class='o'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span></span>
+<span>    <span class='nf'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='o'>(</span></span>
+<span>      age_multiplier <span class='o'>=</span> <span class='nf'><a href='https://dplyr.tidyverse.org/reference/context.html'>cur_group_id</a></span><span class='o'>(</span><span class='o'>)</span>,</span>
+<span>      age_multiplier <span class='o'>=</span> <span class='nf'><a href='https://dplyr.tidyverse.org/reference/case_when.html'>case_when</a></span><span class='o'>(</span></span>
+<span>        <span class='nv'>age_multiplier</span> <span class='o'>==</span> <span class='m'>2</span> <span class='o'>~</span> <span class='m'>1</span>,</span>
+<span>        <span class='kc'>TRUE</span> <span class='o'>~</span> <span class='o'>-</span><span class='m'>1</span></span>
+<span>      <span class='o'>)</span>,</span>
+<span>      .after <span class='o'>=</span> <span class='nv'>lga</span></span>
+<span>    <span class='o'>)</span> <span class='o'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span></span>
+<span>    <span class='nf'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='o'>(</span>population_per_capita <span class='o'>=</span> <span class='nv'>population</span> <span class='o'>/</span> <span class='nf'><a href='https://rdrr.io/r/base/sum.html'>sum</a></span><span class='o'>(</span><span class='nv'>population</span><span class='o'>)</span><span class='o'>)</span> <span class='o'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span></span>
+<span>    <span class='nf'><a href='https://dplyr.tidyverse.org/reference/group_by.html'>ungroup</a></span><span class='o'>(</span><span class='o'>)</span> <span class='o'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span></span>
+<span>    <span class='nf'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='o'>(</span></span>
+<span>      age <span class='o'>=</span> <span class='nf'><a href='https://forcats.tidyverse.org/reference/as_factor.html'>as_factor</a></span><span class='o'>(</span><span class='nv'>lower.age.limit</span><span class='o'>)</span>,</span>
+<span>      population <span class='o'>=</span> <span class='nv'>population</span> <span class='o'>*</span> <span class='nv'>age_multiplier</span>,</span>
+<span>      population_per_capita <span class='o'>=</span> <span class='nv'>population_per_capita</span> <span class='o'>*</span> <span class='nv'>age_multiplier</span></span>
+<span>    <span class='o'>)</span></span>
+<span><span class='o'>&#125;</span></span></code></pre>
+
+</div>
+
+And since we've changed the data that we are using now - we aren't using `population` anymore, and I hard coded the plotting code, we need to re-write the function. Perhaps with the benefit of hindsight it would have been better to not hard code variables in the plotting function, but here we are.
+
+<div class="highlight">
+
+<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='nv'>plot_pop_pyramid_per_capita</span> <span class='o'>&lt;-</span> <span class='kr'>function</span><span class='o'>(</span><span class='nv'>data</span><span class='o'>)</span> <span class='o'>&#123;</span></span>
+<span>  <span class='nv'>pop_range</span> <span class='o'>&lt;-</span> <span class='nf'><a href='https://rdrr.io/r/base/range.html'>range</a></span><span class='o'>(</span><span class='nv'>data</span><span class='o'>$</span><span class='nv'>population_per_capita</span><span class='o'>)</span></span>
+<span></span>
+<span>  <span class='nv'>age_range_seq</span> <span class='o'>&lt;-</span> <span class='nf'>pretty_symmetric</span><span class='o'>(</span><span class='nv'>pop_range</span>, n <span class='o'>=</span> <span class='m'>5</span><span class='o'>)</span></span>
+<span></span>
+<span>  <span class='nf'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='o'>(</span></span>
+<span>    <span class='nv'>data</span>,</span>
+<span>    <span class='nf'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='o'>(</span></span>
+<span>      x <span class='o'>=</span> <span class='nv'>population_per_capita</span>,</span>
+<span>      y <span class='o'>=</span> <span class='nv'>age</span>,</span>
+<span>      fill <span class='o'>=</span> <span class='nv'>lga</span></span>
+<span>    <span class='o'>)</span></span>
+<span>  <span class='o'>)</span> <span class='o'>+</span></span>
+<span>    <span class='nf'><a href='https://ggplot2.tidyverse.org/reference/geom_bar.html'>geom_col</a></span><span class='o'>(</span><span class='o'>)</span> <span class='o'>+</span></span>
+<span>    <span class='nf'><a href='https://ggplot2.tidyverse.org/reference/scale_continuous.html'>scale_x_continuous</a></span><span class='o'>(</span></span>
+<span>      breaks <span class='o'>=</span> <span class='nv'>age_range_seq</span>,</span>
+<span>      labels <span class='o'>=</span> <span class='nf'><a href='https://rdrr.io/r/base/MathFun.html'>abs</a></span><span class='o'>(</span><span class='nv'>age_range_seq</span><span class='o'>)</span></span>
+<span>    <span class='o'>)</span> <span class='o'>+</span></span>
+<span>    <span class='nf'><a href='https://ggplot2.tidyverse.org/reference/expand_limits.html'>expand_limits</a></span><span class='o'>(</span>x <span class='o'>=</span> <span class='nf'><a href='https://rdrr.io/r/base/range.html'>range</a></span><span class='o'>(</span><span class='nv'>age_range_seq</span><span class='o'>)</span><span class='o'>)</span> <span class='o'>+</span></span>
+<span>    <span class='nf'><a href='https://ggplot2.tidyverse.org/reference/scale_brewer.html'>scale_fill_brewer</a></span><span class='o'>(</span></span>
+<span>      palette <span class='o'>=</span> <span class='s'>"Dark2"</span>,</span>
+<span>      guide <span class='o'>=</span> <span class='nf'><a href='https://ggplot2.tidyverse.org/reference/guide_legend.html'>guide_legend</a></span><span class='o'>(</span></span>
+<span>        title <span class='o'>=</span> <span class='s'>""</span></span>
+<span>      <span class='o'>)</span></span>
+<span>    <span class='o'>)</span> <span class='o'>+</span></span>
+<span>    <span class='nf'><a href='https://ggplot2.tidyverse.org/reference/ggtheme.html'>theme_minimal</a></span><span class='o'>(</span><span class='o'>)</span> <span class='o'>+</span></span>
+<span>    <span class='nf'><a href='https://ggplot2.tidyverse.org/reference/theme.html'>theme</a></span><span class='o'>(</span>legend.position <span class='o'>=</span> <span class='s'>"top"</span><span class='o'>)</span></span>
+<span><span class='o'>&#125;</span></span></code></pre>
+
+</div>
+
+All together now
+
+<div class="highlight">
+
+<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='nv'>melb_syd</span> <span class='o'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> <span class='nf'>prep_pop_pyramid</span><span class='o'>(</span><span class='o'>)</span> <span class='o'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> <span class='nf'>plot_pop_pyramid_per_capita</span><span class='o'>(</span><span class='o'>)</span> <span class='o'>/</span></span>
+<span><span class='nv'>bris_hobart</span> <span class='o'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> <span class='nf'>prep_pop_pyramid</span><span class='o'>(</span><span class='o'>)</span> <span class='o'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> <span class='nf'>plot_pop_pyramid_per_capita</span><span class='o'>(</span><span class='o'>)</span> <span class='o'>/</span></span>
+<span><span class='nv'>alice_perth</span> <span class='o'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> <span class='nf'>prep_pop_pyramid</span><span class='o'>(</span><span class='o'>)</span> <span class='o'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> <span class='nf'>plot_pop_pyramid_per_capita</span><span class='o'>(</span><span class='o'>)</span></span></code></pre>
+<img src="figs/patchwork-plot-per-capita-1.png" width="700px" style="display: block; margin: auto;" />
+
+</div>
+
+And now for comparison to drive home the difference between the per capita pyramid and the raw population pyramid - most notably, there is a huge difference between brisbane and hobart - previously the population numbers in Brisbane drowned out the differnces in Hobart
+
+<div class="highlight">
+
+<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='nv'>bris_hobart_pyramid</span> <span class='o'>&lt;-</span> <span class='nv'>bris_hobart</span> <span class='o'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> <span class='nf'>prep_pop_pyramid</span><span class='o'>(</span><span class='o'>)</span></span>
+<span><span class='nf'>plot_pop_pyramid</span><span class='o'>(</span><span class='nv'>bris_hobart_pyramid</span><span class='o'>)</span> <span class='o'>/</span></span>
+<span>  <span class='nf'>plot_pop_pyramid_per_capita</span><span class='o'>(</span><span class='nv'>bris_hobart_pyramid</span><span class='o'>)</span></span></code></pre>
+<img src="figs/patchwork-plot-per-capita-brisbane-hobart-1.png" width="700px" style="display: block; margin: auto;" />
+
+</div>
+
+Another way to present this is as a regular bar graph, which more strongly places our focus on comparison between age groups.
+
+<div class="highlight">
+
+<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='nv'>bris_hobart_pyramid</span> <span class='o'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> </span>
+<span>  <span class='nf'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='o'>(</span></span>
+<span>    <span class='c'># reverse age_multiplier</span></span>
+<span>    population <span class='o'>=</span> <span class='nf'><a href='https://dplyr.tidyverse.org/reference/case_when.html'>case_when</a></span><span class='o'>(</span></span>
+<span>      <span class='nv'>age_multiplier</span> <span class='o'>==</span> <span class='o'>-</span><span class='m'>1</span> <span class='o'>~</span> <span class='nv'>population</span> <span class='o'>*</span> <span class='o'>-</span><span class='m'>1</span>,</span>
+<span>      <span class='kc'>TRUE</span> <span class='o'>~</span> <span class='nv'>population</span></span>
+<span>    <span class='o'>)</span>,</span>
+<span>    population_per_capita <span class='o'>=</span> <span class='nf'><a href='https://dplyr.tidyverse.org/reference/case_when.html'>case_when</a></span><span class='o'>(</span></span>
+<span>      <span class='nv'>age_multiplier</span> <span class='o'>==</span> <span class='o'>-</span><span class='m'>1</span> <span class='o'>~</span> <span class='nv'>population_per_capita</span> <span class='o'>*</span> <span class='o'>-</span><span class='m'>1</span>,</span>
+<span>      <span class='kc'>TRUE</span> <span class='o'>~</span> <span class='nv'>population_per_capita</span></span>
+<span>    <span class='o'>)</span></span>
+<span>  <span class='o'>)</span> <span class='o'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> </span>
+<span>  <span class='nf'><a href='https://rdrr.io/pkg/tidyr/man/pivot_longer.html'>pivot_longer</a></span><span class='o'>(</span></span>
+<span>    cols <span class='o'>=</span> <span class='nf'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='o'>(</span><span class='nv'>population</span>,</span>
+<span>             <span class='nv'>population_per_capita</span><span class='o'>)</span>,</span>
+<span>    names_to <span class='o'>=</span> <span class='s'>"pop_type"</span>,</span>
+<span>    values_to <span class='o'>=</span> <span class='s'>"pop_value"</span></span>
+<span>  <span class='o'>)</span> <span class='o'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> </span>
+<span>  <span class='nf'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='o'>(</span><span class='nf'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='o'>(</span>x <span class='o'>=</span> <span class='nv'>age</span>,</span>
+<span>             y <span class='o'>=</span> <span class='nv'>pop_value</span>,</span>
+<span>             fill <span class='o'>=</span> <span class='nv'>lga</span><span class='o'>)</span><span class='o'>)</span> <span class='o'>+</span> </span>
+<span>  <span class='nf'><a href='https://ggplot2.tidyverse.org/reference/geom_bar.html'>geom_col</a></span><span class='o'>(</span>position <span class='o'>=</span> <span class='s'>"dodge"</span><span class='o'>)</span> <span class='o'>+</span></span>
+<span>  <span class='nf'><a href='https://ggplot2.tidyverse.org/reference/facet_wrap.html'>facet_wrap</a></span><span class='o'>(</span><span class='o'>~</span><span class='nv'>pop_type</span>,</span>
+<span>             scales <span class='o'>=</span> <span class='s'>"free_y"</span>,</span>
+<span>             ncol <span class='o'>=</span> <span class='m'>1</span><span class='o'>)</span> <span class='o'>+</span> </span>
+<span>  <span class='nf'><a href='https://ggplot2.tidyverse.org/reference/scale_brewer.html'>scale_fill_brewer</a></span><span class='o'>(</span></span>
+<span>      palette <span class='o'>=</span> <span class='s'>"Dark2"</span>,</span>
+<span>      guide <span class='o'>=</span> <span class='nf'><a href='https://ggplot2.tidyverse.org/reference/guide_legend.html'>guide_legend</a></span><span class='o'>(</span></span>
+<span>        title <span class='o'>=</span> <span class='s'>""</span></span>
+<span>      <span class='o'>)</span></span>
+<span>    <span class='o'>)</span> <span class='o'>+</span></span>
+<span>    <span class='nf'><a href='https://ggplot2.tidyverse.org/reference/ggtheme.html'>theme_minimal</a></span><span class='o'>(</span><span class='o'>)</span> <span class='o'>+</span></span>
+<span>    <span class='nf'><a href='https://ggplot2.tidyverse.org/reference/theme.html'>theme</a></span><span class='o'>(</span>legend.position <span class='o'>=</span> <span class='s'>"top"</span><span class='o'>)</span></span></code></pre>
+<img src="figs/plot-per-capita-brisbane-hobart-bar-1.png" width="700px" style="display: block; margin: auto;" />
+
+</div>
+
+In some ways, I think I prefer this graph - there are many ways to present information, and in this case it helps us more clearly compare the differences between two places. It also strongly highlights the difference between using per capita and raw population values.
+
+# PS
+
+I actually wrote this up initially to make a figure for a grant. Then, unhappy with the fact that I had to alter the code 2 times to make the figure, I converted it into a targets pipeline, which you can see here on github: <https://github.com/njtierney/target-pop-pyramid>
+
+Also fun fact, the figure didn't make it into the grant. But now you've got this blog post, so that's pretty neat, I guess?
 

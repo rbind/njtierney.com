@@ -35,6 +35,8 @@ knitr::opts_chunk$set(
 )
 ```
 
+
+
 I recently had to make some pyramid plots in R. They are a useful way to compare age structures of populations. They look like this:
 
 ![Age population structure of Sydney vs Melbourne](figs/show-pop-pyramid-1.png)
@@ -388,7 +390,7 @@ plot_pop_pyramid(melb_syd)
 
 And that was the end of this blog post. But something about the plots kind of bothered me...
 
-# Bonus
+# Bonus - centering
 
 Well, there's actually one final step here that you might be interested in - which is centering the "0" of the population. Perhaps there is another way around this, but the approach that I ended up doing was the following:
 
@@ -449,20 +451,16 @@ This has a nice benefit of facilitating stacking the plots with something like `
 melb_syd <- two_abs_age_lga(
   "Melbourne (C)",
   "Sydney (C)"
-) %>% 
-  prep_pop_pyramid()
+) 
 
 bris_hobart <- two_abs_age_lga(
   "Brisbane (C)",
   "Hobart (C)"
-) %>% 
-  prep_pop_pyramid()
-
+)
 alice_perth <- two_abs_age_lga(
   "Alice Springs (T)",
   "Perth (C)"
-) %>% 
-  prep_pop_pyramid()
+) 
 
 ```
 
@@ -474,7 +472,169 @@ Then we can stack them together with patchwork
 #| fig-asp: NULL
 #| label: patchwork-plot
 library(patchwork)
-plot_pop_pyramid(melb_syd) /
-plot_pop_pyramid(bris_hobart) /
-plot_pop_pyramid(alice_perth)
+melb_syd %>% prep_pop_pyramid() %>% plot_pop_pyramid() /
+bris_hobart %>% prep_pop_pyramid() %>% plot_pop_pyramid() /
+alice_perth %>% prep_pop_pyramid() %>% plot_pop_pyramid()
 ```
+
+# Bonus Bonus - per capita
+
+Ugh. OK. These plots are nice, but really, these should be normalised by the total population. 
+
+What does that mean? Why would we want to do that? Well, if you have two cities, one with HEAPS of people, and other with 1000 times less people - the numbers are going to be harder to compare. And if the point you are trying to convey is: 
+
+> Hey, these two cities have very different population _sizes_
+
+Then we've done that above.
+
+But what we actually kind of care about the most is:
+
+> Hey, do these two cities have similar age distributions?
+
+So like, do they have the same proportion of 20-somethings in both cities? Regardless of the fact that one city has like 100 or 1000 times more people?
+
+So, we should fix it.
+
+Where do we fix it? We need to change the data creation function. Adding a new column, `population_per_capita`, with something like this:
+
+```r
+mutate(population_per_capita = population / sum(population))
+```
+
+Which divides the population by the total population. This is sometimes called "normalising". Effectively, we are comparing each age population to the total population.
+
+Also importantly, we need to do this still in the `group_by(lga)` below
+
+```{r}
+#| label: prep-pop-pyramid-per-capita
+prep_pop_pyramid <- function(data) {
+  data %>%
+    group_by(lga) %>%
+    mutate(
+      age_multiplier = cur_group_id(),
+      age_multiplier = case_when(
+        age_multiplier == 2 ~ 1,
+        TRUE ~ -1
+      ),
+      .after = lga
+    ) %>%
+    mutate(population_per_capita = population / sum(population)) %>%
+    ungroup() %>%
+    mutate(
+      age = as_factor(lower.age.limit),
+      population = population * age_multiplier,
+      population_per_capita = population_per_capita * age_multiplier
+    )
+}
+
+```
+
+And since we've changed the data that we are using now - we aren't using `population` anymore, and I hard coded the plotting code, we need to re-write the function. Perhaps with the benefit of hindsight it would have been better to not hard code variables in the plotting function, but here we are.
+
+```{r}
+#| label: pyramid-new-fun-per-capita
+plot_pop_pyramid_per_capita <- function(data) {
+  pop_range <- range(data$population_per_capita)
+
+  age_range_seq <- pretty_symmetric(pop_range, n = 5)
+
+  ggplot(
+    data,
+    aes(
+      x = population_per_capita,
+      y = age,
+      fill = lga
+    )
+  ) +
+    geom_col() +
+    scale_x_continuous(
+      breaks = age_range_seq,
+      labels = abs(age_range_seq)
+    ) +
+    expand_limits(x = range(age_range_seq)) +
+    scale_fill_brewer(
+      palette = "Dark2",
+      guide = guide_legend(
+        title = ""
+      )
+    ) +
+    theme_minimal() +
+    theme(legend.position = "top")
+}
+
+```
+
+All together now
+
+```{r}
+#| fig-height: 12
+#| fig-width: 7
+#| fig-asp: NULL
+#| label: patchwork-plot-per-capita
+melb_syd %>% prep_pop_pyramid() %>% plot_pop_pyramid_per_capita() /
+bris_hobart %>% prep_pop_pyramid() %>% plot_pop_pyramid_per_capita() /
+alice_perth %>% prep_pop_pyramid() %>% plot_pop_pyramid_per_capita()
+```
+
+And now for comparison to drive home the difference between the per capita pyramid and the raw population pyramid - most notably, there is a huge difference between brisbane and hobart - previously the population numbers in Brisbane drowned out the differnces in Hobart
+
+
+```{r}
+#| fig-height: 12
+#| fig-width: 7
+#| fig-asp: NULL
+#| label: patchwork-plot-per-capita-brisbane-hobart
+bris_hobart_pyramid <- bris_hobart %>% prep_pop_pyramid()
+plot_pop_pyramid(bris_hobart_pyramid) /
+  plot_pop_pyramid_per_capita(bris_hobart_pyramid)
+```
+
+Another way to present this is as a regular bar graph, which more strongly places our focus on comparison between age groups.
+
+```{r}
+#| fig-height: 12
+#| fig-width: 7
+#| fig-asp: NULL
+#| label: plot-per-capita-brisbane-hobart-bar
+bris_hobart_pyramid %>% 
+  mutate(
+    # reverse age_multiplier
+    population = case_when(
+      age_multiplier == -1 ~ population * -1,
+      TRUE ~ population
+    ),
+    population_per_capita = case_when(
+      age_multiplier == -1 ~ population_per_capita * -1,
+      TRUE ~ population_per_capita
+    )
+  ) %>% 
+  pivot_longer(
+    cols = c(population,
+             population_per_capita),
+    names_to = "pop_type",
+    values_to = "pop_value"
+  ) %>% 
+  ggplot(aes(x = age,
+             y = pop_value,
+             fill = lga)) + 
+  geom_col(position = "dodge") +
+  facet_wrap(~pop_type,
+             scales = "free_y",
+             ncol = 1) + 
+  scale_fill_brewer(
+      palette = "Dark2",
+      guide = guide_legend(
+        title = ""
+      )
+    ) +
+    theme_minimal() +
+    theme(legend.position = "top")
+```
+
+In some ways, I think I prefer this graph - there are many ways to present information, and in this case it helps us more clearly compare the differences between two places. It also strongly highlights the difference between using per capita and raw population values.
+
+# PS
+
+I actually wrote this up initially to make a figure for a grant. Then, unhappy with the fact that I had to alter the code 2 times to make the figure, I converted it into a targets pipeline, which you can see here on github: https://github.com/njtierney/target-pop-pyramid
+
+Also fun fact, the figure didn't make it into the grant. But now you've got this blog post, so that's pretty neat, I guess?
