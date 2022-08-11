@@ -35,6 +35,17 @@ knitr::opts_chunk$set(
 )
 ```
 
+```{r}
+#| label: two-carts
+#| echo: false
+knitr::include_graphics(
+  here::here(
+    "content/post/2022-08-09-pyramid-plots-in-ggplot2/imgs/two-shopping-carts.jpg"
+    )
+  )
+```
+
+_Two Abandoned Trolleys, Nick Tierney, Film, Olympus XA_
 
 
 I recently had to make some pyramid plots in R. They are a useful way to compare age structures of populations. They look like this:

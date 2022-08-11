@@ -18,9 +18,17 @@ tags:
   - ggplot2
   - functions
 output: hugodown::md_document
-rmd_hash: 65309507ba0ac293
+rmd_hash: b7b1d31044f0e988
 
 ---
+
+<div class="highlight">
+
+<img src="imgs/two-shopping-carts.jpg" width="700px" style="display: block; margin: auto;" />
+
+</div>
+
+*Two Abandoned Trolleys, Nick Tierney, Film, Olympus XA*
 
 I recently had to make some pyramid plots in R. They are a useful way to compare age structures of populations. They look like this:
 
@@ -744,7 +752,7 @@ Another way to present this is as a regular bar graph, which more strongly place
 <span>      <span class='kc'>TRUE</span> <span class='o'>~</span> <span class='nv'>population_per_capita</span></span>
 <span>    <span class='o'>)</span></span>
 <span>  <span class='o'>)</span> <span class='o'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> </span>
-<span>  <span class='nf'><a href='https://rdrr.io/pkg/tidyr/man/pivot_longer.html'>pivot_longer</a></span><span class='o'>(</span></span>
+<span>  <span class='nf'><a href='https://tidyr.tidyverse.org/reference/pivot_longer.html'>pivot_longer</a></span><span class='o'>(</span></span>
 <span>    cols <span class='o'>=</span> <span class='nf'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='o'>(</span><span class='nv'>population</span>,</span>
 <span>             <span class='nv'>population_per_capita</span><span class='o'>)</span>,</span>
 <span>    names_to <span class='o'>=</span> <span class='s'>"pop_type"</span>,</span>
