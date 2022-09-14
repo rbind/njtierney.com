@@ -2,6 +2,13 @@
 title: Talks
 ---
 
+# 2022
+
+- [2022-09-14: "Extendable projection of social contact matrices", **invited seminar** University of Auckland](https://njtierney.github.io/talk-auckland-2022/#/title-slide)
+- [2022-09-13: "Extendable projection of social contact matrices", New Zealand Research Software Engineering Conference](https://njtierney.github.io/talk-nzrse-2022/#/title-slide)
+- [2022-07-28: "The Future of NA data", rstudioconf](https://njtierney.github.io/rstudioconf22/#/title-slide)
+- [2022-06-23: "Reflections one year into working as a research software engineer", UseR! 2022](https://njt-user-2022.netlify.app/#1)
+
 # 2021
 
 - [2021/12/22: "greta: scalable statistical modelling", Early Career Bayes Seminar, Brisbane, Australia](https://github.com/njtierney/talk-qut-ec)
