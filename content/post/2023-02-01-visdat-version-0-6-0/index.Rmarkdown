@@ -13,7 +13,6 @@ tags:
   - data visualisation
   - missing-data
   - rbloggers
-draft: yes
 output: hugodown::md_document
 ---
 
