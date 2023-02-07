@@ -1,5 +1,5 @@
 ---
-title: Visdat Version 0.6.0
+title: visdat Version 0.6.0
 author: Nicholas Tierney
 date: '2023-02-02'
 slug: visdat-060
@@ -14,7 +14,7 @@ tags:
   - missing-data
   - rbloggers
 output: hugodown::md_document
-rmd_hash: 9ff86f15e6aa30e9
+rmd_hash: 8b649c55859f15c2
 
 ---
 
