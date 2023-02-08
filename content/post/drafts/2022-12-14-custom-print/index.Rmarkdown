@@ -1,0 +1,35 @@
+---
+title: Writing a Custom Print Method in R
+author: Nicholas Tierney
+date: '2022-12-14'
+slug: custom-print
+categories:
+  - rstats
+tags:
+  - rstats
+draft: yes
+output: hugodown::md_document
+---
+
+```{r setup, include = FALSE}
+options(cli.width = 70)  # For tidyverse loading messages
+knitr::opts_chunk$set(
+  tidy.opts = list(width.cutoff = 70),  # For code
+  width = 70,
+  collapse = TRUE, 
+  comment = "#>", 
+  fig.width = 7, 
+  fig.align = 'center',
+  fig.asp = 0.618, # 1 / phi
+  fig.retina = 2,
+  out.width = "700px"
+)
+```
+
+Recently I wrote a [new print method for an object in an R package](), and I ran into a small stumbling blocks. I thought I'd share how I created a print method, and how you can do this in an R package.
+
+# Why do I need a custom print method?
+
+You might not! But they are fun.
+
+My use case was that I had an object that was a list of matrices. These matrices were kind of big and cumbersome. Each matrix needed it's own class so that I could do some custom plots
