@@ -1,5 +1,5 @@
 ---
-title: Pyramid Plots in ggplot2
+title: Population Pyramid Plots in `ggplot2`
 author: Nicholas Tierney
 date: '2022-08-09'
 slug: ggplot-pyramid
@@ -18,7 +18,7 @@ tags:
   - ggplot2
   - functions
 output: hugodown::md_document
-rmd_hash: b7b1d31044f0e988
+rmd_hash: bb691ab2a9d8840e
 
 ---
 
