@@ -29,22 +29,51 @@ This blog post covers the how and when to write functions in R, and what makes a
 
 # Motivation
 
-Writing functions has been one of the biggest "Game Changer" moments for me in R.
+Writing functions has been one of the biggest "Game Changer" moments for me in R. "Thinking" in terms of functions has helped me clarify and communicate my intent when doing data analysis. This is useful for me at the time as it helps me clearly articulate what I want to do, and it's helpful for me, and others later, as my code can read a bit more clearly.
 
-But, I found the journey kind of hard - it felt like I had to balance a lot of things in my head in order to do it.
+If that all sounds a bit wishy washy, that's OK, I'm hoping this blog post can help explain what I mean.
+
+I found the journey of writing functions hard. Often, especially at first, writing functions felt like I had to balance a lot of things in my head, trying to manage mentally what the things are that might change.
 
 *gif of the hangover maths*
 
-I am getting pretty comfortable writing functions now, but even still there can be a lot of iteration that happens as I go from first draft to final implementation.
+I am pretty comfortable writing functions now, but even still there is often a lot of iteration that happens as I go from first draft to final implementation.
 
-To put things in perspective - in 2013, about 7 years ago, I started writing some
-code to calculate a t-test from scratch.
+# A story of t tests
 
-...
+To put things in perspective - in 2013, about 9 years ago, I started writing some code to calculate a t-test from scratch. There were reasons why we decided to do that, which I won't go into, but it was mostly because I didn't really know much about R or how to use `t.test` so writing my own code seemed to make sense.
+
+At the top of my script was something like:
+
+```r
+var_1 <- data$x1
+var_2 <- data$x2
+```
+
+And then we computed the results of `var_1` and `var_2`. But every time I wanted to look at another two variables, I had to change the top of the script, and run the script again. 
+
+Something about this felt wrong, and at the time, I didn't really have a mental model of writing code to describe what I wanted to do to people. It probably like something less coherent than:
+
+> I want to run this script, but then get the top couple of lines of code to change depending on what variables I want to specify.
+
+What I actually needed was a function, I just didn't know it.
+
+I remember learning about functions later, but the examples I was given were things like:
+
+> Convert celcius into farenheit
+
+and
+
+> identify odd numbers
+
+and I just couldn't really see that being applicable to my life.
 
 But the idea of separating out all the bits of my code, into functions, it just
-seemed like a lot of work - mainly to just work out all the bits that were
-varying, and what I should give the user control of. The cognitive load of looking at a bunch of code and trying to identify the bits that change _felt_ like it would be too hard, and I could _do it later_.
+seemed like a lot of work. 
+
+I'd have to work out all the bits that were changing, and what I should give the user control of. The cognitive load of 
+looking at a bunch of code and trying to identify the bits that change _felt_ 
+like it would be too hard, and I could _do it later_.
 
 Two approaches for writing functions
 

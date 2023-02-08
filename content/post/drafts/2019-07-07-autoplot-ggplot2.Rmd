@@ -1,5 +1,5 @@
 ---
-title: "Autoplot's, assemble! How to use ggplot2::autoplot to plot your new class"
+title: "Autoplot's, assemble! How to use `ggplot2::autoplot` to plot your new class"
 author: ''
 date: '2019-07-07'
 slug: autoplot-ggplot2
@@ -11,139 +11,368 @@ tags: []
 output: hugodown::hugo_document
 ---
 
-You might be familiar with the fact that you can use `plot` on a new object and get a nice plot out. For example:
+This blog post shows you how and why you might want to make your own `autoplot`. I wrote it because I was showing someone about `autoplot` a little while back and I couldn't find many full examples of defining your own autotplot, so I thought this blog post might be useful.
+
+# What is autoplot? What is plot? What is life?
+
+You might be familiar with the fact that you can use `plot` on an R object, like a data frame, and get a nice plot out:
+
+```{r plot-mtcars}
+plot(mtcars)
+```
+
+`plot` works with all kinds of things - for example you can plot a linear model and get a (or several!) nice plot(s) out:
 
 ```{r lm-fit-plot, out.width = "50%"}
 lm_fit <- lm(mpg ~ ., mtcars)
 plot(lm_fit)
 ```
 
-
-And then also:
-
-```{r plot-mtcars}
-plot(mtcars)
-```
-
 These plots are quite different, yet they use the same function `plot`.
 
-This is because behind the scenes, R uses S3 methods to handle different plotting methods. This is known as S3 method dispatch, because they came with version three of S. I wrote in more detail about S3 methods in [this arxiv article, "Simple S3 methods"]().
+This is because behind the scenes, R uses S3 methods to handle different plotting methods. This is known as S3 method dispatch - so named because they came with version three of S (which was the precursor language to R). There's a great chapter on this in [Hadley Wickham's Advanced R](). I also once wrote a bit about S3 methods in [this arxiv article, "Simple S3 methods"]() - although in retrospect I'm not sure if my writing is as simple or useful as I thought.
 
-ggplot2 has a similar plotting method, `autoplot`. One example of this is ...
+## `autoplot` - `plot`, but for `ggplot`
+
+[`ggplot2`]() has a similar plotting method, `autoplot`. A full featured example of `autoplot` is in the `fable` R package, from the tidyverts team, this example is [adapted from their website](https://fable.tidyverts.org/#example).
+
+```{r}
+library(tidyverse)
+library(fable)
+library(tsibble)
+library(tsibbledata)
+library(lubridate)
+
+aus_retail_data <- aus_retail %>%
+  filter(
+    State %in% c("New South Wales", "Victoria"),
+    Industry == "Department stores"
+  )
+
+aus_retail_model <- aus_retail_data %>% 
+  model(
+    ets = ETS(box_cox(Turnover, 0.3)),
+    arima = ARIMA(log(Turnover)),
+    snaive = SNAIVE(Turnover)
+  )
+
+aus_retail_model
+
+aus_retail_forecast <- aus_retail_model %>% 
+  forecast(h = "2 years")
+
+aus_retail_forecast
+
+aus_retail_forecast_plot <- aus_retail_forecast %>% 
+  autoplot(filter(aus_retail, year(Month) > 2010), level = NULL)
+
+aus_retail_forecast_plot
+```
+
+Now a lot is going on here, but the most important thing is this line of code here:
+
+```{r}
+#| eval: false
+aus_retail_forecast_plot <- aus_retail_forecast %>% 
+  autoplot(filter(aus_retail, year(Month) > 2010), level = NULL)
+
+aus_retail_forecast_plot
+```
+
+Here they are using the `autoplot` function, along with some extra options, to create a ggplot object. You can modify this just like other ggplots as well - we could make it a minimal theme and move the legend position, see:
+
+```{r}
+aus_retail_forecast_plot +
+  theme_minimal() +
+  theme(legend.position = "bottom")
+```
+
+# Our turn - hi five data
+
+So now let's make our own autoplot! First, let's create some motivating data. Let's say we have a dataset of hi fives, and the number of hi fives people of different age groups give. We have them binned into two year groups, from age 5 to 25
+
+```{r}
+five_to_25 <- seq(from = 5, to = 25, by = 5)
+five_to_25
+dat <- expand_grid(
+  age_from = five_to_25,
+  age_to = five_to_25
+) %>% 
+  mutate(
+    n_hi_fives = rpois(25, 5)
+  )
+
+dat
+```
+
+## A digression: Hi fives are symmetric though...
+
+I know that we are just imagining this dataset, BUT since hi-fives are symmetric - like, if I give 4 hi fives, 4 other people have received them, well, I think we should enforce that. A bit annoying, perhaps, but a quick google search [reveals a nice little bit of R code](https://stackoverflow.com/questions/18165320/creating-a-symmetric-matrix-in-r). So let's start by making a little matrix, then we'll make it symmetric.
+
+```{r}
+hi_five_mat <- matrix(data = rpois(25, 5),
+                      nrow = 5,
+                      ncol = 5,
+                      dimnames = list(five_to_25, five_to_25))
+hi_five_mat
+
+hi_five_mat[lower.tri(hi_five_mat)] <- t(hi_five_mat)[lower.tri(hi_five_mat)]
+
+hi_five_mat
+```
+
+And then, because we're really cool, we're going to turn these into functions, because that's fun.
+
+```{r}
+make_hi_fives <- function(rate = 10){
+  five_to_25 <- seq(from = 5, to = 25, by = 5)
+  mat <- matrix(data = rpois(25, lambda = rate),
+                nrow = 5,
+                ncol = 5,
+                dimnames = list(five_to_25, five_to_25))
+  # make a stronger diagonal pattern
+  diag(mat) <- rpois(5, 20)
+  mat
+}
+
+make_symmetric <- function(x){
+  x[lower.tri(x)] <- t(x)[lower.tri(x)]
+  x
+}
+
+hi_fives <- make_hi_fives()
+# not symmetric!
+hi_fives
+
+# symmetric!
+make_symmetric(hi_fives)
+```
+
+OK and then let's make this into a dataframe, because that's where we live.
+
+```{r}
+# data frame?
+make_symmetric(hi_fives) %>% 
+  as_tibble(rownames = "age_to") %>% 
+  pivot_longer(
+    cols = -age_to,
+    names_to = "age_from",
+    values_to = "n_hi_five"
+  )
+
+make_symmetric_hi_fives <- function(rate = 5){
+  hi_fives <- make_hi_fives(rate = rate)
+  make_symmetric(hi_fives) 
+}
+
+hi_fives_to_df <- function(df){
+  df %>% 
+  as_tibble(rownames = "age_to") %>% 
+  pivot_longer(
+    cols = -age_to,
+    names_to = "age_from",
+    values_to = "n_hi_five"
+  )
+}
+
+hi_five_df <- make_symmetric_hi_fives() %>% 
+  hi_fives_to_df()
+
+hi_five_df
+```
+
+OK so...where were we? Back to making plots!
+
+# Making plots of hi fives
+
+In this case we'll just make a plot of some hi five data like so
+
+```{r}
+library(colorspace)
+ggplot(hi_five_df,
+       aes(x = age_to,
+           y = age_from,
+           fill = n_hi_five)) + 
+  geom_raster() +
+  scale_fill_continuous_sequential("Purples")
+```
+
+So what we're seeing here is the number of contacts
+Neat, right?
+
+What if we want to have a more convenient way to plot this data? Well first we need to give our hi five data a special class for autoplot to work on.
+
+## A brief digression into S3 methods
+
+The reason `plot` works on both a `data.frame` and a `lm` object, is because it is actually _detecting_ what class objects are, and then using a different function - in this case, `graphics:::plot.data.frame`, or `plot.lm`. 
+
+```{r}
+fit <- lm(n_hi_five ~ ., data = hi_five_df)
+plot(fit)
+plot(hi_five_df)
+```
+
+Another good example is `summary`:
+
+```{r}
+summary(fit)
+summary(hi_five_df)
+```
+
+Under the hood it uses `summary.lm` and `summary.data.frame`
+
+It's a special shortcut, so that all you need to think about is `summary`, and not:
+
+> what special summary function do I need to call to work on a linear model?
+
+or
+
+> what special plot function do I need to call on my new model?
+
+Another great thing is that you can define _your own_ S3 method, which means that these can be expanded by users - we don't need to try to contribute a new method to base R, we can make our own! So let's do that with autoplot.
+
+# Making an autoplot: first, make your own class
+
+Let's keep it classy.
+
+There are more recommended steps to creating your own class in R, and I'd recommend taking a read of the [S3 chapter in Advanced R]() to get a bit more detail, but we need to create our own class, so that we can create our own autoplot method. This should hopefully make a bit more sense soon.
+
+First, start by creating a function that adds a new class. let's call our class "hi_five"
+
+```{r}
+new_hi_five <- function(x){
+  class(x) <- c("hi_five", class(x))
+  x
+}
+```
+
+Now before we do this, let's first inspect the class of our hi five data frame:
+
+```{r}
+class(hi_five_df)
+```
+
+We see it has three classes - `tbl_df`, `tbl`, and `data.frame`. The first two are to do with `tibble` (I'm not sure why there are two - if you know, leave a comment below!), and the last one is it being a `data.frame`
+
+Now we need to use our `new_hi_five` on our data
+
+```{r}
+new_hi_five(hi_five_df)
+```
+
+... but we need to save it to a new object
+
+```{r}
+class_hi_five_df <- new_hi_five(hi_five_df)
+
+class(class_hi_five_df)
+```
+
+tada!
+
+Now to help automate that, let's add that line of code to our hi five creation function. (This is why it's fun and cool to write functions - we can modify and update them!)
+
+```{r}
+hi_fives_to_df <- function(df){
+  df %>% 
+  as_tibble(rownames = "age_to") %>% 
+  pivot_longer(
+    cols = -age_to,
+    names_to = "age_from",
+    values_to = "n_hi_five"
+  ) %>% 
+    new_hi_five()
+}
+```
+
+Put it together
+
+```{r}
+hi_five_df <- make_symmetric_hi_fives() %>% 
+  hi_fives_to_df()
+
+class(hi_five_df)
+```
+
+Woo! Now to define a new S3 method for autoplot, you need to do the following:
+
+```{r}
+autoplot.hi_five <- function(object, ...){
+  ggplot(object,
+       aes(x = age_to,
+           y = age_from,
+           fill = n_hi_five)) + 
+  geom_raster() +
+  scale_fill_continuous_sequential("Purples")
+}
+```
+
+Importantly - you need to follow the same arguments as the original autoplot - which you can check with `?ggplot2::autoplot` - which you'll see is:
+
+```
+autoplot(object, ...)
+```
+
+Now, we can just use `autoplot` like so!
+
+```{r}
+autoplot(hi_five_df)
+```
+
+Tada!
+
+Now, you could also make a `matrix` method for this if you wanted as well - say if you just wanted input like this
+
+```{r}
+hi_five_mat <- make_symmetric_hi_fives()
+hi_five_mat
+class(hi_five_mat)
+```
+
+Let's say we want to call this class a `hi_five_matrix`, then we can add a new class like this:
+
+```{r}
+new_hi_five_matrix <- function(x){
+  class(x) <- c("hi_five_matrix", class(x))
+  x
+}
+```
 
 
+```{r}
+hi_five_mat <- make_symmetric_hi_fives() %>% new_hi_five_matrix()
+hi_five_mat
+```
+
+(Notice those pesky `attr(,"class")` things hanging out down the bottom there, we'll discuss how to fix that in a future blog post, but that is to do with writing custom print methods, just so you know.)
+
+```{r}
+autoplot.hi_five_matrix <- function(object, ...){
+  data <- hi_fives_to_df(object) %>% 
+    mutate(n_hi_five = as.numeric(n_hi_five))
+  ggplot(data,
+       aes(x = age_to,
+           y = age_from,
+           fill = n_hi_five)) + 
+  geom_raster() +
+  scale_fill_continuous_sequential("Purples")
+}
+```
+
+Now, this is basically the same thing as before - the only different is that you can provide a matrix as the input now.
+
+```{r}
+autoplot(hi_five_mat)
+```
+
+# How do I do this in an R package?
+
+If you want to use an `autoplot` method in your package, you will need to export the `autoplot` method from `ggplot2`. So you'll need to have some code like this:
 
 ```r
 #' @importFrom ggplot2 autoplot
 #' @export
 ggplot2::autoplot
-
-new_mc_sum <- function(x, ...){
-  tibble::new_tibble(x, subclass = "mc_sum")
-}
-
-autoplot.mc_sum <- function(object, ...){
-  
-  # defensive code to make sure people have ggplot2 installed
-  if (!requireNamespace("ggplot2", quietly = TRUE)) {
-    stop("ggplot2 is needed for this function to work. Install it via install.packages(\"ggplot2\")", call. = FALSE)
-  }
-  
-  # check that the object is what you expect
-  else if (!inherits(object, "mc_sum")) {
-    stop("autoplot.mc_sum requires an mc_sum object, use object=object")
-  }
-  
-  # plotting code
-  ggplot2::ggplot(object,
-                  ggplot2::aes(x = case,
-                               y = n_miss)) +
-    ggplot2::geom_col(width = 1,
-                      colour = "#484878", # lorikeet purple
-                      fill = "#484878") + # lorikeet purple
-    ggplot2::coord_flip() +
-    ggplot2::labs(y = "# Missing",
-                  x = "Cases") +
-    ggplot2::theme_minimal() +
-    ggplot2::scale_x_reverse()
-  
-}
-
-fit <- lm(Ozone ~ ., airquality)
-fit
-summary(fit)
-summary(airquality)
-
-class(fit)
-class(airquality)
-
-
-miss_case_summary(airquality)
-
-autoplot(p1, type = "pairs")
-autoplot(p1, type = "points")
-
-miss_case_summary(airquality)
-
-gg_miss_case(airquality)
-
-miss_case_summary(airquality) %>%
-  autoplot() +
-  ggplot2::labs(title = "my title",
-                x = "new_x",
-                y = "new_y",
-                subtitle = "my new subtitle")
-
-## 
-
-detect_outliers(data) # returns data of class "stream_outlier"
-
-detect_outliers(data) %>% autoplot(type = "ts")
-
-detect_outliers(data) %>% extract_data_ts()
-
-detect_outliers(data) %>% autoplot(type = "hd")
-
-detect_outliers(data) %>% extract_data_hd()
-
-# 
-
-new_odd_data <- function(x){
-  structure(x, 
-            class = c("odd_water_data", class(x)))
-}
-
-detect_water_outlier <- function(x){
-  
-  # magical oddstream detection happens here
-  
-  # odd_data <- odd_water_stream(x)
-  return(new_odd_data(odd_data))
-}
-
-
-autoplot.whatever_class
-
-autoplot.odd_water_data <- function(object, 
-                                    type = "ts", 
-                                    title,
-                                    ...){
-  
-  if (type == "ts") {
-    # extract_data_ts is a function to get the data out of the plot.
-    extract_data_ts(object) %>%
-      ggplot2::ggplot(aes(x)) +
-      ggplot2::labs(title = title)
-      # the rest of your ggplot2 code
-    
-  }
-  
-  if (type == "hd") {
-    
-  }
-  
-}
-
-
-detect_outliers(data)
 ```
+
+Which I usually put in a `pkgname-package.R` file.

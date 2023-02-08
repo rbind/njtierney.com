@@ -29,23 +29,47 @@ Randall now writes the comics full time, along with his other really awesome boo
 After going through the Billboard data, I am wondering if I can explore the rise of XKCD - perhaps we can track when the comics become regular?
 
 ```{r}
-
 library(XKCDdata)
-xkcd_numbers <- 1:400
-# xkcd_numbers <- 500:1000
-# xkcd_data <- purrr::map_df(xkcd_numbers, get_comic)
+library(tidyverse)
+library(future)
+library(furrr)
+library(tictoc)
 
-# View(xkcd_data)
-# 
-# xkcd_data %>%
-#   select(year,month,day,num) %>%
-#   mutate(date = ISOdate(year,month,day)) %>%
-#   padr::pad() %>% 
-#   mutate(tidyr::fill(num))
-#   ggplot(aes(x = date,
-#              y = num)) + 
-#   geom_point()
-  
+null_comic <- get_comic(1) %>% 
+  mutate(across(everything(), function(x) x <- NA))
+
+possibly_get_comic <- possibly(get_comic, otherwise = null_comic)
+
+plan(multisession, workers = 6)
+xkcd_data <- furrr::future_map_dfr(1:2374, possibly_get_comic)
+```
+
+
+```{r}
+xkcd_data %>%
+  slice_head(n = 1) %>% 
+  pivot_longer(cols = everything(),
+               names_to = "vars",
+               values_to = "vals",
+               values_transform = as.character)
+
+library(lubridate)
+
+xkcd_data_cut <- xkcd_data %>% 
+  select(num, year, month, day, title, alt, transcript) %>% 
+  mutate(date = as_date(ISOdate(year,month,day)),
+         .after = num)  %>% 
+  select(-c(year, month, day)) %>% 
+  mutate(wday = wday(date, label = TRUE),
+         .after = date) %>% 
+  padr::pad()
+
+View(xkcd_data_cut)
+
+xkcd_data_cut %>% 
+  ggplot(aes(x = date,
+             y = num)) + 
+  geom_point()
 
 ```
 
