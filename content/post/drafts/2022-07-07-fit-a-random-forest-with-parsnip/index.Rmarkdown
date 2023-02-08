@@ -1,0 +1,120 @@
+---
+title: Fit a random forest with parsnip
+author: Package Build
+date: '2022-07-07'
+slug: fit-a-random-forest-with-parsnip
+categories:
+  - rstats
+  - functions
+tags:
+  - rstats
+  - functions
+draft: yes
+output: hugodown::md_document
+---
+
+```{r setup, include = FALSE}
+options(cli.width = 70)  # For tidyverse loading messages
+knitr::opts_chunk$set(
+  tidy.opts = list(width.cutoff = 70),  # For code
+  width = 70,
+  collapse = TRUE, 
+  comment = "#>", 
+  fig.width = 7, 
+  fig.align = 'center',
+  fig.asp = 0.618, # 1 / phi
+  fig.retina = 2,
+  out.width = "700px"
+)
+```
+
+This blog post walks through fitting a random forest with the parsnip package
+
+```{r}
+library(parsnip)
+```
+
+
+```{r}
+library(palmerpenguins)
+library(parsnip)
+rf_model <- rand_forest(
+  trees = 1000,
+  min_n = 5
+  ) %>% 
+  set_engine("randomForest") %>% 
+  set_mode("classification")
+  
+rf_fit <- rf_model %>% 
+  fit(species ~ ., data = penguins)
+
+library(vip)
+vi(rf_fit)
+
+# now let's normalise and pre-process the penguins data
+
+
+```
+
+```{r}
+
+rf_fit <- rf_model %>% 
+  fit(species ~ ., data = penguins)
+
+rf_fit
+
+# get the variable importance
+library(vip)
+vi(rf_fit)
+
+# now normalise the data
+library(tidymodels)
+
+# normalise the data, and add test and training data
+set.seed(2022-07-07)
+penguin_split <- initial_split(penguins, prop = 0.80)
+penguin_train <- training(penguin_split)
+penguin_test  <-  testing(penguin_split)
+
+penguin_recipe <- recipe(species ~ .,
+                         data = penguin_train) %>%
+  # randomForest needs to have all data imputed
+  step_impute_knn(all_predictors()) %>% 
+  step_normalize(all_numeric_predictors()) %>%
+  step_dummy(all_nominal_predictors())
+
+# Honestly I was a little confused about what a workflow is exactly, 
+# but it was mentioned in the book?
+rf_workflow <- workflow() %>% 
+  add_model(rf_model) %>% 
+  add_recipe(penguin_recipe)
+
+# fit the model to the training data
+rf_new_fit <- fit(rf_workflow, penguin_train)
+
+# model fit
+rf_new_fit
+
+# now evaluate the fit on the test set - you'll need to compare this to 
+predict(rf_new_fit, penguin_test)
+
+test_data_w_predictions <- bind_cols(
+  penguin_test,
+  predict(rf_new_fit, penguin_test)
+) %>% 
+  relocate(.pred_class, .after = species)
+
+test_data_w_predictions
+
+# model is pretty good - 98% accuracy. So I'd be inclined to trust the model
+# and the inferences it makes
+accuracy(data = test_data_w_predictions,
+         truth = species,
+         estimate = .pred_class)
+
+# get the variable importance out
+rf_new_fit %>% extract_fit_parsnip() %>% vi()
+# I've run out of time, but I've been working through these examples
+# in https://www.tmwr.org/ames.html and working through that.
+```
+
