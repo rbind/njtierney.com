@@ -1,0 +1,53 @@
+---
+title: 'Continuing to Improve R’s Ability to Visualise and Explore Missing Values: Milestone 1'
+author: Nicholas Tierney
+date: '2022-11-30'
+slug: improving-missing-data-m1
+categories:
+  - Missing Data
+  - data visualisation
+  - ggplot2
+  - rstats
+tags:
+  - data science
+  - missing-data
+  - tidyverse
+  - rstats
+draft: yes
+output: hugodown::md_document
+---
+
+```{r setup, include = FALSE}
+options(cli.width = 70)  # For tidyverse loading messages
+knitr::opts_chunk$set(
+  tidy.opts = list(width.cutoff = 70),  # For code
+  width = 70,
+  collapse = TRUE, 
+  comment = "#>", 
+  fig.width = 7, 
+  fig.align = 'center',
+  fig.asp = 0.618, # 1 / phi
+  fig.retina = 2,
+  out.width = "700px"
+)
+```
+
+I have received funding from the R consortium for improving R's capacity to explore and handle missing values.
+
+Part one: Evaluating additional missing data visualisations
+We will explore additional visualisations that have been implemented for exploring missing data, which are not yet implemented in the R packages {visdat} or {naniar}. This will include, for example, looking at other software languages, such as {missingno} in Python: https://github.com/ResidentMario/missingno. In addition to this, we will review the existing requests and ideas that are currently listed in the {naniar} and {visdat} repositories - there are many ideas here, and part of this initial work will be identifying the low hanging fruit for easy implementations. Throughout all of these parts, we will be engaging with the community, and other key contributors to these projects. For example, we plan on engaging with some of the co-authors, Dianne Cook and Miles McBain, and other contributors who have helped create learning materials, such as Allison Horst.
+
+
+Milestone one: Outline feature set to implement in the first round $1K (M1)
+
+- Find a suitable developer for this project
+
+> me
+
+- Explore existing features proposed and other features available in other software
+
+> VIM
+> 
+
+- Identify key areas of maintenance required for software
+- Identify feature set for round one
