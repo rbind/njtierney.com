@@ -1,0 +1,77 @@
+---
+title: How Read in and Combine many Excel Spreadsheets
+author: Nicholas Tierney
+date: '2021-08-26'
+slug: how-read-in-and-combine-many-excel-spreadsheets
+categories:
+  - rstats
+  - excel
+tags:
+  - data cleaning
+  - data science
+  - functions
+  - purrr
+  - map
+draft: yes
+output: hugodown::md_document
+---
+
+```{r setup, include = FALSE}
+options(cli.width = 70)  # For tidyverse loading messages
+knitr::opts_chunk$set(
+  tidy.opts = list(width.cutoff = 70),  # For code
+  width = 70,
+  collapse = TRUE, 
+  comment = "#>", 
+  fig.width = 7, 
+  fig.align = 'center',
+  fig.asp = 0.618, # 1 / phi
+  fig.retina = 2,
+  out.width = "700px"
+)
+```
+
+> How Do I read In All those $**#@ing sheets from excel?
+
+Someone asked.
+
+Here's some example excel data:
+
+*screenshot*
+
+But there's actually three sheets, and they are all the same.
+
+The task is that you have the same kind of data in each sheet, but you want to read them all in and combined them into one, single dataset.
+
+Here is how to do that.
+
+```{r}
+library(readxl)
+
+excel_path <- "~/Downloads/my-god.xlsx"
+
+my_sheets <- excel_sheets(excel_path)
+
+read_my_excel <- function(path, sheets){
+  read_excel(
+    path = path,
+    sheet = sheets
+  )
+}
+
+read_my_excel(
+  excel_path,
+  my_sheets
+)
+
+library(purrr)
+
+map_dfr(
+  .x = my_sheets,
+  .f = read_my_excel,
+  path =  "~/Downloads/my-god.xlsx",
+  .id = "sheet"
+)
+
+```
+
