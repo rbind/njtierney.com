@@ -2,6 +2,10 @@
 title: Talks
 ---
 
+# 2023
+
+- [2023-02-15: "Extending and comparing methods for projecting social contact matrices, Spark Spectrum Annual Meeting, Lightning Talk, Cape Schanck, Australia"](https://njtierney.github.io/talk-spark-2023/)
+
 # 2022
 
 - [2022-09-14: "Extendable projection of social contact matrices", Invited seminar, University of Auckland](https://njtierney.github.io/talk-auckland-2022/#/title-slide)
