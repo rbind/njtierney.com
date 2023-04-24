@@ -15,13 +15,11 @@ tags:
   - rstats
 draft: no
 output: hugodown::md_document
-rmd_hash: 3d2a1deb816b3253
+rmd_hash: 016e21a680aad4d6
 
 ---
 
-I am very pleased to say that I have received funding from the R consortium for improving R's capacity to explore and handle missing values!
-
-In this blog post I will discuss the first milestone for this project, and outline the plan for the next one.
+I am very pleased to say that I have received funding from the R consortium for improving R's capacity to explore and handle missing values! More accurately, this funding was initially awarded in 2022, but this has been bubbling along now and is now picking up steam, so I wanted to give an update. In this blog post I will discuss the first milestone for this project, and outline the plan for the next one.
 
 Here is an excerpt from the first milestone:
 
