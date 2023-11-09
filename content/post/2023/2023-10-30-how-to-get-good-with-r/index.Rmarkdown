@@ -26,6 +26,18 @@ knitr::opts_chunk$set(
 )
 ```
 
+```{r}
+#| label: never-stop-
+#| echo: false
+knitr::include_graphics(
+  here::here(
+    "content/post/2023/2023-10-30-how-to-get-good-with-r/imgs/never-stop-sign.jpg"
+    )
+  )
+```
+
+_A Stop Sign in Melbourne, Film, Pentax K1000, Nick Tierney_
+
 Someone recently asked me, "How do you get good with R?". It's a good question. I'm not sure I have a good answer. But I've been thinking about it, and I've got some ideas. Hopefully they are helpful for people, or can promote discussion on making better ideas. I think you can view "getting good" through two lenses: coding, and non coding. I'll write about the coding aspects in this blog post, and the non coding aspects in a future one.
 
 This post assumes that you're somewhat familiar with R, you can open it, you do some analysis, etc. I should probably write a blog post first on "How to get started with R". But writing introductory materials takes a bit more time, and I'd rather put out some kind of blog post than continue to add to the pile of blog post drafts that have been sitting there since 2017.
