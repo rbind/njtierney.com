@@ -1,14 +1,13 @@
 ---
 title: How to Get Good with R?
 author: Nicholas Tierney
-date: '2023-10-30'
+date: '2023-11-10'
 slug: how-to-get-good-with-r
 categories:
   - rstats
 tags:
   - rstats
   - functions
-draft: yes
 output: hugodown::md_document
 ---
 
@@ -27,11 +26,11 @@ knitr::opts_chunk$set(
 )
 ```
 
-Someone recently asked me, "How do you get good with R?". It's a good question. I'm not sure I have a good answer. But I've got some ideas. Hopefully they is helpful for people, or can promote discussion on making better ideas. I think you can view "getting good" through two lenses: coding, and non coding. 
+Someone recently asked me, "How do you get good with R?". It's a good question. I'm not sure I have a good answer. But I've been thinking about it, and I've got some ideas. Hopefully they are helpful for people, or can promote discussion on making better ideas. I think you can view "getting good" through two lenses: coding, and non coding. I'll write about the coding aspects in this blog post, and the non coding aspects in a future one.
 
 This post assumes that you're somewhat familiar with R, you can open it, you do some analysis, etc. I should probably write a blog post first on "How to get started with R". But writing introductory materials takes a bit more time, and I'd rather put out some kind of blog post than continue to add to the pile of blog post drafts that have been sitting there since 2017.
 
-From the coding side:
+How to get good, from the coding side:
 
 - Try to give things OK names
 - Consistent naming 
@@ -41,8 +40,9 @@ From the coding side:
 - Write functions
 - Use the debugger
 
-From the non coding side:
+How to get good, from the non coding side:
 
+- Find a community of people who use R
 - Get better with the keyboard: Typing speed and keyboard shortcuts
 - Have a strong desire to improve
 - Learn how to, and practice getting unstuck
@@ -55,7 +55,7 @@ From the non coding side:
 
 # Let's delve a bit deeper
 
-Let's give examples of all of these things. I've realised now as I've been writing this that I won't have time to write the non-coding aspects, so that will be its own blog post.
+Let's give examples of all of these things. I've realised now as I've been writing this that I won't have time to write the non-coding aspects, so that will be its own blog post. But I thought it might be useful to outline the points above.
 
 # From the coding side
 
@@ -121,7 +121,7 @@ So, pick something like `snake_case` or `camelCase` or `CamelCase`, and stick to
 
 I find it confusing to go through code that mixes it up or combines different approaches. It means you need to spend time remembering which way something was named. Here's a "good" vs "bad" 
 
-```{r}
+```r
 # good
 sdWeight
 sdTime
@@ -129,18 +129,20 @@ weightSd
 timeSd
 ```
 
-```{r}
+```r
 # bad
 sd_Weight
 SD_weight
 Long_variable_Name
 ```
 
+If you want to have a quick way to help style your code, check out [Lorenz Walthert's](https://github.com/lorenzwalthert) [`styler`](https://github.com/r-lib/styler) package.
+
 ## Clean up your code as you go (refactor)
 
-Get into the habit of quickly going back over your code to tidy it up. A kitchen analogy is useful here I think. Professional kitchens clean up as they go. Keeping a tidy workspace helps keep your mind clear, and helps you
+Get into the habit of quickly going back over your code to tidy it up. A kitchen analogy is useful here I think. Professional kitchens clean up as they go. Keeping a tidy workspace helps keep your mind clear. And I rarely write my best code on the first pass. It gets better with iteration. So, iterate on your code briefly as you go. Clean up those random comments that don't mean anything. Remove those bits of wilted lettuce, these are those commented out bits of code that you _might just come back to_ - you probably won't, and if they are really important, write a comment explaining why they might be relevant. Clean up the style. Check the names. Consider tidying up the implementation, refactoring it. You might not have time to do all of these things, or do them thoroughly, but doing some of them will help you write better code, and you'll get better at doing these things the more you practice.
 
-The word, "refactor" refers to changing the code but keeping it's behaviour the same. Kind of like giving a car a service, or replacing key parts in a vehicle that get worn out. For a great talk on a related topic, see [Jenny Bryan's "Code Smells and Feels"](https://www.youtube.com/watch?v=7oyiPBjLAWY)
+A word worth explaining - "refactor". It refers to changing the code but keeping it's behaviour the same. Kind of like giving a car a service, or replacing key parts in a vehicle that get worn out. For a great talk on a related topic, see [Jenny Bryan's "Code Smells and Feels"](https://www.youtube.com/watch?v=7oyiPBjLAWY)
 
 ## Learn how to create a reproducible example (a reprex), and use it a lot
 
@@ -204,7 +206,7 @@ At worst, you'll see no one has thought about this - this is an opportunity for 
 
 ## Write functions
 
-Learning how to write functions is something that changed how I think about code and how I think about solving problems. I think it is a skill that takes some time to develop, but the payoff is enormous. A function is an abstraction of a problem. Kind of like a shortcut. Save yourself writing many many lines of code and replace them with a function. But that's an oversimplification. 
+I don't think I can overstate this, but learning how to write functions changed how I think about code and how I think about solving problems. I think it is a skill that takes some time to develop, but the payoff is enormous. A function is an abstraction of a problem. Kind of like a shortcut. Save yourself writing many many lines of code and replace them with a function. But that's an oversimplification. 
 
 Here's a short primer on why functions are good, adapted from the [functions chapter of R4DS](https://r4ds.had.co.nz/functions.html#functions), which I recommend you read.
 
@@ -258,7 +260,7 @@ center_scale <- function(variable){
 }
 ```
 
-What is nice about this is that each of the functions _describes what it does_ in its name. So when we look at the code for `center_scale`, we can see that it does a thing called `mean_center` first, then `scale_sd` next.
+What is nice about this is that each of the functions _describes what it does_ in its name. So when we look at the code for `center_scale`, we can see that it does a thing called `mean_center` first, then `scale_sd` next. Another useful principle to follow with writing functions is to generally try to aim to get them to do one thing, and to return one thing. There are many exceptions to this rule, but it's a useful practice to stick to. 
 
 So compare:
 
@@ -293,18 +295,51 @@ dat
 
 Which is why it is worthwhile looking to see if a solution to a problem exists :)
 
+To summarise writing functions:
+
+1. Functions help us reason with our code by abstracting away details we don't need to care about
+1. Give Functions good names, they should describe what they do
+1. Functions should do one task
+1. Functions should return one thing
+
 ## Learn how to use debugging tools
 
-R is interactive, you can run some code and see the output immediately. It's a really nice way to code for data analysis. It means that when you encounter a bug or an error, you can poke around and see what the error is. But if you write a function
+R is interactive, you can run some code and see the output immediately. It's a really nice way to code for data analysis. It means that when you encounter a bug or an error, you can poke around and see what the error is. But if you write a function and want to see how it behaves or what goes on inside, you'll need to use a special tool called a debugger.
 
+If you've found yourself copying the internals of a function over to another script and hard coding the arguments at the top of the script and running the code line by line, then this is especially for you. I say this as someone who did that for years. Ahem. 
 
+Three debugging tools to know about:
 
-In other languages, like C++, you don't get this opportunity. You write your code as a script and then run that from top to bottom. If you get an error you need to hope  the error message gives you some more detail to find it in your script. And to delve deeper into 
+1. `browser()`
+2. `debug()` and `undebug()`
+2. `debugonce()`
 
+`browser()` gets placed inside a function, and then when you run the function, you land at that point in the code. For example:
+
+```{r}
+mean_center <- function(variable){
+  browser()
+  variable - mean(variable, na.rm = TRUE)
+}
+```
+
+If you run this function, and then try and use it later, you will be landed at where the `browser()` line is. Try running the code above and then doing `mean_center(1:10)` afterwards. An important thing to remember with `browser()` is that you need to remove `browser()` after the fact.
+
+`debug()` and `undebug()` are like `browser()`, but you run them on a function and that turns on debugging mode. Just like putting `browser()` at the top line of a function.
+
+```r
+debug(mean_center)
+mean_center(1:10)
+## enter debug mode here, tinker around with the outputs
+## then turn off the debugger
+undebug(mean_center)
+```
+
+`debugonce()` does the `debug()` step, but just one time. It's handy because it means you don't need to run `undebug()` - sometimes I've forgotten I needed to do `undebug()` and i've felt like a madness has descended upon me.
+
+So what to remember about this? If you want to see where a function is erroring, then you probably want to use `debugonce()` on it.
 
 # (Not) The End
 
-This blog post has gone on for a little bit longer than I thought - I'll write another one on the "non coding" aspects of improving your R code next.
-
-There's more to this. I don't have all the answers. I'm a decent R programmer. But I'm still learning all the time, and I make mistakes a lot. I'm not perfect, far from it! But maybe these things can help you on your journey.
+There's more to this. I don't have all the answers. I'm a decent R programmer. But I'm still learning all the time, and I make mistakes a lot. I'm not perfect, far from it! But maybe these things can help you on your journey in improving in R programming.
 
