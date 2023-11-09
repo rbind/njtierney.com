@@ -9,7 +9,7 @@ tags:
   - rstats
   - functions
 output: hugodown::md_document
-rmd_hash: 9da5035b9cfb49b7
+rmd_hash: addc371367f14d7f
 
 ---
 
@@ -294,16 +294,16 @@ What does the following code do?
 <span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 10 × 2</span></span></span>
 <span><span class='c'>#&gt;    weight height</span></span>
 <span><span class='c'>#&gt;     <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>  <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span></span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 1</span>   74.5   166.</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 2</span>   85.9   168.</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 3</span>   82.1   158.</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 4</span>   72.7   151.</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 5</span>   75.0   154.</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 6</span>   81.0   169.</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 7</span>   84.6   171.</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 8</span>   81.3   155.</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 9</span>   80.2   172.</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>10</span>   75.5   158.</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 1</span>   74.6   173.</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 2</span>   89.3   152.</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 3</span>   80.4   153.</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 4</span>   81.8   156.</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 5</span>   77.7   182.</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 6</span>   84.3   170.</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 7</span>   78.6   156.</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 8</span>   71.3   171.</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 9</span>   83.4   149.</span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>10</span>   89.9   162.</span></span>
 <span></span><span></span>
 <span><span class='nv'>dat</span><span class='o'>$</span><span class='nv'>weight_0</span> <span class='o'>&lt;-</span> <span class='o'>(</span><span class='nv'>dat</span><span class='o'>$</span><span class='nv'>weight</span> <span class='o'>-</span> <span class='nf'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='o'>(</span><span class='nv'>dat</span><span class='o'>$</span><span class='nv'>weight</span>, na.rm <span class='o'>=</span> <span class='kc'>TRUE</span><span class='o'>)</span><span class='o'>)</span> <span class='o'>/</span> <span class='nf'><a href='https://rdrr.io/r/stats/sd.html'>sd</a></span><span class='o'>(</span><span class='nv'>dat</span><span class='o'>$</span><span class='nv'>weight</span>, na.rm <span class='o'>=</span> <span class='kc'>TRUE</span><span class='o'>)</span></span>
 <span></span>
@@ -336,8 +336,8 @@ Now we can express this as follows:
 <pre class='chroma'><code class='language-r' data-lang='r'><span><span class='nv'>dat</span><span class='o'>$</span><span class='nv'>height</span> <span class='o'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> </span>
 <span>  <span class='nf'>mean_center</span><span class='o'>(</span><span class='o'>)</span> <span class='o'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> </span>
 <span>  <span class='nf'>scale_sd</span><span class='o'>(</span><span class='o'>)</span></span>
-<span><span class='c'>#&gt;  [1]  0.4633005  0.7920121 -0.5357592 -1.4308106 -1.0576703  0.8436912</span></span>
-<span><span class='c'>#&gt;  [7]  1.1094315 -0.9588249  1.2657004 -0.4910705</span></span>
+<span><span class='c'>#&gt;  [1]  0.96538903 -0.94137553 -0.83074119 -0.55581623  1.78446650  0.67202168</span></span>
+<span><span class='c'>#&gt;  [7] -0.58967320  0.81564738 -1.23561199 -0.08430646</span></span>
 <span></span></code></pre>
 
 </div>
@@ -369,16 +369,16 @@ So compare:
 <span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 10 × 4</span></span></span>
 <span><span class='c'>#&gt;    weight height weight_0 height_0</span></span>
 <span><span class='c'>#&gt;     <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>  <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>    <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>    <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span></span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 1</span>   74.5   166.   -<span style='color: #BB0000;'>1.05</span>     0.790</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 2</span>   85.9   168.    1.46     1.35 </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 3</span>   82.1   158.    0.622   -<span style='color: #BB0000;'>0.914</span></span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 4</span>   72.7   151.   -<span style='color: #BB0000;'>1.45</span>    -<span style='color: #BB0000;'>2.44</span> </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 5</span>   75.0   154.   -<span style='color: #BB0000;'>0.930</span>   -<span style='color: #BB0000;'>1.80</span> </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 6</span>   81.0   169.    0.375    1.44 </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 7</span>   84.6   171.    1.16     1.89 </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 8</span>   81.3   155.    0.451   -<span style='color: #BB0000;'>1.64</span> </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 9</span>   80.2   172.    0.203    2.16 </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>10</span>   75.5   158.   -<span style='color: #BB0000;'>0.835</span>   -<span style='color: #BB0000;'>0.837</span></span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 1</span>   74.6   173.   -<span style='color: #BB0000;'>1.10</span>     1.77 </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 2</span>   89.3   152.    1.37    -<span style='color: #BB0000;'>1.73</span> </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 3</span>   80.4   153.   -<span style='color: #BB0000;'>0.124</span>   -<span style='color: #BB0000;'>1.53</span> </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 4</span>   81.8   156.    0.115   -<span style='color: #BB0000;'>1.02</span> </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 5</span>   77.7   182.   -<span style='color: #BB0000;'>0.578</span>    3.28 </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 6</span>   84.3   170.    0.533    1.24 </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 7</span>   78.6   156.   -<span style='color: #BB0000;'>0.423</span>   -<span style='color: #BB0000;'>1.08</span> </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 8</span>   71.3   171.   -<span style='color: #BB0000;'>1.66</span>     1.50 </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 9</span>   83.4   149.    0.384   -<span style='color: #BB0000;'>2.27</span> </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>10</span>   89.9   162.    1.48    -<span style='color: #BB0000;'>0.155</span></span></span>
 <span></span></code></pre>
 
 </div>
@@ -396,16 +396,16 @@ to
 <span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 10 × 4</span></span></span>
 <span><span class='c'>#&gt;    weight height weight_0 height_0</span></span>
 <span><span class='c'>#&gt;     <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>  <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>    <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>    <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span></span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 1</span>   74.5   166.   -<span style='color: #BB0000;'>1.05</span>     0.463</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 2</span>   85.9   168.    1.46     0.792</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 3</span>   82.1   158.    0.622   -<span style='color: #BB0000;'>0.536</span></span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 4</span>   72.7   151.   -<span style='color: #BB0000;'>1.45</span>    -<span style='color: #BB0000;'>1.43</span> </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 5</span>   75.0   154.   -<span style='color: #BB0000;'>0.930</span>   -<span style='color: #BB0000;'>1.06</span> </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 6</span>   81.0   169.    0.375    0.844</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 7</span>   84.6   171.    1.16     1.11 </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 8</span>   81.3   155.    0.451   -<span style='color: #BB0000;'>0.959</span></span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 9</span>   80.2   172.    0.203    1.27 </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>10</span>   75.5   158.   -<span style='color: #BB0000;'>0.835</span>   -<span style='color: #BB0000;'>0.491</span></span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 1</span>   74.6   173.   -<span style='color: #BB0000;'>1.10</span>    0.965 </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 2</span>   89.3   152.    1.37   -<span style='color: #BB0000;'>0.941</span> </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 3</span>   80.4   153.   -<span style='color: #BB0000;'>0.124</span>  -<span style='color: #BB0000;'>0.831</span> </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 4</span>   81.8   156.    0.115  -<span style='color: #BB0000;'>0.556</span> </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 5</span>   77.7   182.   -<span style='color: #BB0000;'>0.578</span>   1.78  </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 6</span>   84.3   170.    0.533   0.672 </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 7</span>   78.6   156.   -<span style='color: #BB0000;'>0.423</span>  -<span style='color: #BB0000;'>0.590</span> </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 8</span>   71.3   171.   -<span style='color: #BB0000;'>1.66</span>    0.816 </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 9</span>   83.4   149.    0.384  -<span style='color: #BB0000;'>1.24</span>  </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>10</span>   89.9   162.    1.48   -<span style='color: #BB0000;'>0.084</span><span style='color: #BB0000; text-decoration: underline;'>3</span></span></span>
 <span></span></code></pre>
 
 </div>
@@ -420,16 +420,16 @@ It is worth noting that there is a function called `scale` in base R that does t
 <span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 10 × 4</span></span></span>
 <span><span class='c'>#&gt;    weight height weight_0 height_0</span></span>
 <span><span class='c'>#&gt;     <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>  <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>    <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span>    <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span></span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 1</span>   74.5   166.   -<span style='color: #BB0000;'>1.05</span>     0.463</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 2</span>   85.9   168.    1.46     0.792</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 3</span>   82.1   158.    0.622   -<span style='color: #BB0000;'>0.536</span></span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 4</span>   72.7   151.   -<span style='color: #BB0000;'>1.45</span>    -<span style='color: #BB0000;'>1.43</span> </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 5</span>   75.0   154.   -<span style='color: #BB0000;'>0.930</span>   -<span style='color: #BB0000;'>1.06</span> </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 6</span>   81.0   169.    0.375    0.844</span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 7</span>   84.6   171.    1.16     1.11 </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 8</span>   81.3   155.    0.451   -<span style='color: #BB0000;'>0.959</span></span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 9</span>   80.2   172.    0.203    1.27 </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>10</span>   75.5   158.   -<span style='color: #BB0000;'>0.835</span>   -<span style='color: #BB0000;'>0.491</span></span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 1</span>   74.6   173.   -<span style='color: #BB0000;'>1.10</span>    0.965 </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 2</span>   89.3   152.    1.37   -<span style='color: #BB0000;'>0.941</span> </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 3</span>   80.4   153.   -<span style='color: #BB0000;'>0.124</span>  -<span style='color: #BB0000;'>0.831</span> </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 4</span>   81.8   156.    0.115  -<span style='color: #BB0000;'>0.556</span> </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 5</span>   77.7   182.   -<span style='color: #BB0000;'>0.578</span>   1.78  </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 6</span>   84.3   170.    0.533   0.672 </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 7</span>   78.6   156.   -<span style='color: #BB0000;'>0.423</span>  -<span style='color: #BB0000;'>0.590</span> </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 8</span>   71.3   171.   -<span style='color: #BB0000;'>1.66</span>    0.816 </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 9</span>   83.4   149.    0.384  -<span style='color: #BB0000;'>1.24</span>  </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>10</span>   89.9   162.    1.48   -<span style='color: #BB0000;'>0.084</span><span style='color: #BB0000; text-decoration: underline;'>3</span></span></span>
 <span></span></code></pre>
 
 </div>
@@ -485,4 +485,6 @@ So what to remember about this? If you want to see where a function is erroring,
 # (Not) The End
 
 There's more to this. I don't have all the answers. I'm a decent R programmer. But I'm still learning all the time, and I make mistakes a lot. I'm not perfect, far from it! But maybe these things can help you on your journey in improving in R programming.
+
+I didn't go into as much detail as I would have liked - there are a lot of topics here, what did I miss? What do you think are the ways to get good with R? Write a comment below :)
 
