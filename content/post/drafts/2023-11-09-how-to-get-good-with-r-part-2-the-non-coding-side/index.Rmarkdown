@@ -1,0 +1,206 @@
+---
+title: 'How to get good with R: non coding skills'
+author: Nicholas Tierney
+date: '2023-11-09'
+slug: get-good-type-fast
+categories:
+  - rstats
+  - functions
+tags:
+  - rstats
+  - functions
+draft: yes
+output: hugodown::md_document
+---
+
+```{r setup, include = FALSE}
+options(cli.width = 70)  # For tidyverse loading messages
+knitr::opts_chunk$set(
+  tidy.opts = list(width.cutoff = 70),  # For code
+  width = 70,
+  collapse = TRUE, 
+  comment = "#>", 
+  fig.width = 7, 
+  fig.align = 'center',
+  fig.asp = 0.618, # 1 / phi
+  fig.retina = 2,
+  out.width = "700px"
+)
+```
+
+Previously, I wrote a blog post, ["How to get good with R"](), where I touched on a bunch of ideas on how to improve your R skills, focussing on the coding aspect. It is by no means definitive, and I kind of wish I had named it "How to improve your R skills" or something less grandiose. But it was a catchy title. Anyway, I digress. I said I would write another post about the non coding side, but it started to get really big, so I'm breaking them into smaller blog posts, as I think this gives me a bit more mental space to write well on a smaller topic. I might link together in another collation blog post.
+
+# From the non coding side
+
+- Find a community to share code/problems with
+- Get better with the keyboard: Typing speed and keyboard shortcuts
+- Have a strong desire to improve
+- Ask yourself how much what you are doing now is relevant to the problem you were trying to solve. 
+- Offload ideas and tasks onto github issues (or another system)
+- Write about your work publicly
+- Get used to reading documentation 
+- Read other peoples code
+
+# From the non coding side
+
+## Find a community to share code/problems with
+
+**image of this**
+
+When I started out coding with R, I was in a statistics group that had about 20 PhD students and postdocs, and they all used R. They had all been through the process of learning R, and had had generous time given to them from previous post docs. It meant that I could ask someone something fundamental like, "how do I read in data?", "how do I create a line graph of people over time?", or "my code is frozen and I really don't know what to do", and I could have help from someone in the group relatively quickly, and they were kind. It was amazing. 
+
+I've realised over the years that this was not the most common situation people find themselves in - a lot of people using R might be one of a few in their group or department, or might be the only person. Being siloed like that can make it hard to be connected. So, how do you stay connected to people if they aren't in your office, or you're working remotely (like I am now). I've found joining slack teams useful, as well as talking to people online on twitter (although twitter is less useful now for me), and mastodon.
+
+Here are some slack groups that you could consider joining:
+
+- [Data Visualization Society](https://www.datavisualizationsociety.org/slack-community)
+- If you identify as a woman or gender minority, I have heard great things about the [R Ladies Slack](https://guide.rladies.org/comm/slack/) - although please note their conditions for joining at the link above. (If you are a cis-male (you were born male, and you also identify as male), do not sign up).
+- If you are an Australian who works in public policy or the public sector and use (or aspire to use) R, consider joining [runapp](https://runapp-aus.github.io/runapp_website/about.html)
+
+There are also online forums I would recommend as places to ask for help that are friendly:
+
+- [ropensci forum](https://discuss.ropensci.org/)
+- [posit community forum](https://community.rstudio.com/)
+
+I would also recommend joining an R user group, if there is one in your area. Google "R user group <placename>" to see if there is one near you. There are also R ladies meetups globally - you can find them listed [here](https://rladies.org/).
+
+I'd also highly recommend joining in an [rOpenSci social co working and office hours](https://ropensci.org/community/). 
+
+If there isn't a group near you, you could also consider starting a group of your own. It can be a bit of work, but it is also amazing to see R programmers wander out of the woodwork, and find your people. This could be an R user group for your city, or even a small R group for your workplace or research group or whatever. These can take various forms, as "hacky hour" one hour meetings, to "coding club" discussions on coding and show and tell.
+
+The point is that a helpful thing is to find people you can ask questions - and that can look like a lot of different things: from people in an office that you can physically see, to the unknown usernames of people on an online forum. I think having a support network, a place where you can look for help or give help to others, is a useful thing, that has helped me get better at programming.
+
+
+## Read other peoples code
+
+Read other peoples code! What does this look like? How this has arisen for me is to be curious about how someone solved a problem or gets a function to work. Browsing the source of their code on github, or sometimes if it is a bit hard to find you can use [Jim Hester's](https://www.jimhester.com/) [`lookup` package](https://github.com/jimhester/lookup).
+
+It is useful, say, to have a good golden standard of an R package layout - I find myself looking at how things are organised in [`dplyr`](https://github.com/tidyverse/dplyr) - things like how is their DESCRIPTION file laid out. Or how they [only got 4 rows of their tibbles to print in a vignette](https://github.com/tidyverse/dplyr/blob/main/vignettes/base.Rmd#L16).
+
+I'm coming up short with other examples at the moment of browsing through R code on github. But the message I want to convey is: 
+
+> Don't be afraid of jumping into the source code. You'll probably learn a few things.
+
+You might learn about a new package, or a new way of solving a coding problem. Sometimes you look at code and it looks familiar, they might use the same functions you use. We call this a pattern. And sometimes - sometimes often - you have no idea what the code is doing, and you can just browse on by. 
+
+Reading blog posts is also a great way to learn new things. I'm a fan of [Nicola Rennie's](https://nrennie.rbind.io/) work, and her recent blog post, [Creating typewriter-styled maps in {ggplot2}](https://nrennie.rbind.io/blog/creating-typewriter-maps-r/) was super cool. Reading this I learnt about the [elevatr](https://github.com/jhollist/elevatr) R package for getting elevation data, the [showtext](https://github.com/yixuan/showtext) R package for getting fonts, and then from that, [how to add social media icons to charts with ggplot](https://nrennie.rbind.io/blog/adding-social-media-icons-ggplot2/). 
+
+## Write about your work publicly
+
+On the note of blog posts above, I really do think writing about your work publicly can be really beneficial. Why write a blog? I shall quote an internet acquaintance, Brendan Rocks (his real name, which is awesome), who wrote ["Blogging with rmarkdown, knitr, and jekyll"](http://brendanrocks.com/blogging-with-rmarkdown-knitr-jekyll/), which contains some great advice on why you should write a blog in the first place:
+
+> **They’re some of the best resources available**. How many times has a blog post walked you through a complex subject with accessible writing, and code you can easily try out? More than you times than you deserve, and less times than you’d like!
+
+> **You know less than you thought, and your memory is horrible**. The process of writing, especially publicly for your peers, is the best way to challenge and hone your understanding. At the same time, a blog-post fills the effort/usefulness chasm between a research paper, and crappy notes in your code
+
+> **Exploit the kindness/boredom of experts**. Twitter, rbloggers, hacker news, and the rest are teeming with people much cleverer than you, often willing to offer advice and encouragement
+
+> **Bonus Reason: Because Hadley Wickham told you to**. "If you want to give back, I think writing a blog is a great way. Many of the things that you struggle with will be common problems. Think about how to solve them well and describe your solution to others." -- From Hadley’s Reddit AMA
+
+This advice is solid, I especially resonate with the ideas that the **process** of writing in a public setting helps clarify your understanding of topics, and Hadley's point that many of the things you struggle with are common problems. We know more than we think! While Brendan hasn't blogged in a while, his blog post from 2015 helped me get my blog working with R, back in the dark days before `blogdown` and co. 
+
+[Dave Robinson also has a great talk on this, "The unreasonable effectiveness of public work"](https://posit.co/resources/videos/the-unreasonable-effectiveness-of-public-work/), following on from his blog post ["Advice to aspiring data scientists: start a blog"](http://varianceexplained.org/r/start-blog/), he says:
+
+> When you’ve written the same code 3 times, write a function
+> When you’ve given the same in-person advice 3 times, write a blog post
+
+Following his advice here, it is worthwhile to document how you solved a problem. I often do this because I forget how to do something, and writing it down somewhere means I can come back to it. And in doing the writing it down, I have understood the problem a bit deeper. And I also clean up my code a little bit more. Kind of like when you have guests over at your house - you want to clean up a bit and make it look presentable. 
+
+So this is an argument for starting and writing a blog. But it's also an argument for putting your work out there, online. Sharing your code on github or another platform (gitlab, bitbucket) is a good habit to get into. I used to worry that when I put up code online some troll, or worse, someone I admire, might read over my code and balk at the errors I'd made. It's never happened to me, but putting my code up online does make me clean up things a little, just like I said above about blogging.
+
+## Get used to reading documentation 
+
+**photo of reading**
+
+When you get stuck with a bug or something, there's always a chance you could be using the software incorrectly. Get used to reading the documentation to understand how the developers want you to use the code. I have found many times that I have "read" the documentation, and then when I point out an issue I am having, someone points me _back to the documentation_, or manual or whatever, and lo and behold, there's the answer. You might come across the acronym, RTFM - "Read The Flipping Manual". This is sort of the same message, although I think RTFM comes across as a bit mean.
+
+Here's how I often read the documentation:
+
+- Read the title and description
+- Scroll down to the examples and read over them
+- Optionally run the examples if I want to see how the code works
+- If that doesn't give me what I wanted, take a bit more time and slowly read over the rest of the helpfile, scanning for gotcha's or warnings, expectations from the authors, or other functions that are useful. Things like, they might be expecting the first argument to be a data frame, or there might be another function listed that sounds more like the thing I want to do.
+
+This doesn't always work - sometimes the helpfiles don't tell you quite what you want. That's a good time to start searching the internet for some answers. And if you don't find the answer you want, you can ask a question to some forums. And if you solve the question yourself, and it was useful, and you can't see where this was written about in a way that was clear to you, consider writing a blog post, for future you, and other people. There's a decent chance others have run into the same issues you have
+
+## Practice asking questions, know how to ask the internet for help, grow your mental model
+
+**photo of asking questions**
+
+There's a saying in statistics that goes something like this:
+
+> The hard work is in working out how to ask the right question. It's usually pretty straightforward after that.
+
+For me, this also describes part of my experience learning R. I really struggled to know how to ask the right question to solve the thing I wanted to do. Related to this is the concept of a mental model. Like a lot of people who first learn R, I didn't have much training in coding. I did some in high school but what I mostly took away from that was: 
+
+> Computers are really fussy, remember to check spelling and write comments.
+
+So what this means is that we don't have a very rich mental model of how R works.
+It is kind of like learning a new language. If you only know a couple of phrases, you might be able to order a coffee, or ask for directions, but then if someone says something off the script you normally know, you just don't know what to say. There are heaps of ways to order a coffee! What I'm trying to convey is that when you don't have a deep knowledge of the language, it means you have a less rich mental model. What this means is that when you want to solve a problem, you often don't have the right language to describe it. It can be too vague, or using words we don't normally use. Some examples:
+
+- I want to split up a plot into one plot per category: 
+- 
+
+## Have a strong desire to improve
+
+**photo of hard work/strong desire**
+
+If you want to get good at something, you've got to really **want** to do it. 
+Get a good project or something to motivate you. I've had small hobby interests
+in a programming language, like rust, for example. But I've never really 
+progressed because I didn't have a strong reason to use it, and therefore no 
+strong motivation, no strong desire. __Have a reason to use R__. For me, I had to fit decision trees, and they weren't really available in `stata`, the language I was learning at the time. I needed to use R. I had a deadline, and I needed results, this was my motivation.
+
+When something doesn't work, try and take the time to understand why it doesn't 
+work. This is better than adding this failure case to a list of places where a thing doesn't work. Like a kind of superstitious programming. 
+
+We can't expect to understand why something works all the way down to the metal hardware.
+
+But we can try and understand some of the underlying fundamental logic.
+
+```{r}
+# example here...
+# mtcars[["mpg"]]
+# mtcars$"mpg"
+# mtcars[["m"]]
+```
+
+## Ask yourself how much what you are doing now is relevant to the problem you were trying to solve. 
+
+**photo of being out in the weeds**
+
+Often in order to solve a problem, you need to solve several smaller problems. Sometimes (often) I find myself out in the weeds solving some small fun problem, and I get stuck there for a while, whittling away at the larger issue. It can be a fun thing to do, but sometimes it isn't the best way to solve the problem.
+
+Some examples of this:
+
+- Working out the most elegant solution first. I've found myself spending a lot of time and energy thinking about the _best_ way to solve a problem. When instead, what would have been more useful to me and the team, is to get something _that works_ first. Once it works, it can be used, and improved. You can get to the elegant solution eventually! The example for me was working out a way to get {greta} to work with targets, for all targets. It's a bit complicated, but my colleague Saras made a great point that we should just get something that works first.
+
+- Spending a long time tinkering with getting a custom ggplot theme for your work. This is a useful thing, but is part of the final polish. There might be other work that is more critical, such as finishing the data analysis, checking the model output, writing the figure caption, etc.
+
+- Developing an object oriented class structure. I've spent a bit of time trying to decompose a problem into a series of classes to encapsulate the work. However, I've found myself in the weeds of defining classes and inheritance, before I've even solved the actual problem that I want some of these classes to help me with. This isn't to say that classes and OO style programming isn't a good way to solve problems; they are great. This is to say that sometimes you _don't really need that complexity to solve your problem effectively_.
+
+
+## Offload ideas and tasks onto github issues (or another system)
+
+**photo of offloading**
+
+Carrying around ideas in your head can be surprisingly tiring. You might not 
+even realise that you're spending brain cycles holding onto this information
+until you dump it somewhere. I have a to do list app, where I dump things I need
+to do onto. It's not perfect, and it means I have a lot of things to do, but at 
+least they have a home.
+
+Similarly, for projects that live on github, I try and dump ideas and bugs as
+soon as I can onto them. I had the luck to be a TA for Hadley Wickham's advanced
+R course in Melbourne in 2016. I remember watching as Hadley came across a bug
+in some of his code. He briefly paused the class, and then made a little example
+of the bug, and opened up a github issue for a package, posted the example, and
+got back to teaching. It was very cool to watch!
+
+# End
+
+This blog post went on for a lot longer than I anticipated. I guess it falls under the category of "general advice for life", which, it turns out, is a big topic.
+
+Maybe these ideas will help you; maybe they won't. Maybe these ideas are obvious; maybe they aren't. My main goal is to share useful ideas. I hope they are useful.
+
+What did I miss? What's been helpful for you? Write down below!

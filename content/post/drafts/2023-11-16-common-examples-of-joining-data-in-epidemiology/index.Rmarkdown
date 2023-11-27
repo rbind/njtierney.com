@@ -1,0 +1,160 @@
+---
+title: Common Examples of Joining Data in Epidemiology
+author: Nicholas Tierney
+date: '2023-11-16'
+slug: common-examples-of-joining-data-in-epidemiology
+categories:
+  - rstats
+  - functions
+tags:
+  - rstats
+  - functions
+draft: yes
+output: hugodown::md_document
+---
+
+```{r setup, include = FALSE}
+options(cli.width = 70)  # For tidyverse loading messages
+knitr::opts_chunk$set(
+  tidy.opts = list(width.cutoff = 70),  # For code
+  width = 70,
+  collapse = TRUE, 
+  comment = "#>", 
+  fig.width = 7, 
+  fig.align = 'center',
+  fig.asp = 0.618, # 1 / phi
+  fig.retina = 2,
+  out.width = "700px"
+)
+```
+
+```{r}
+library(tidyverse)
+
+# 4 data sets
+# survey
+n <- 100
+create_survey <- function(n, year, id = 1:n){
+  tibble(
+  id = id,
+  year = year,
+  province = sample(1:9, size = n, replace = TRUE),
+  age = sample(18:65, size = n, replace = TRUE),
+  sex = sample(c("m", "f"), size = n, replace = TRUE)
+  )
+}
+
+create_survey(n = 10, year = 2004)
+
+survey <- bind_rows(
+  create_survey(n = 10, year = 2005),
+  create_survey(n = 10, year = 2007),
+  create_survey(n = 10, year = 2008),
+  create_survey(n = 10, year = 2009)
+)
+  
+survey
+ca_postcode <- function(size){
+  
+}
+
+child_age <- function(size){
+  sample(c(NA, 0:18), 
+         size = size, 
+         replace = TRUE)
+}
+
+# tax
+create_tax <- function(n, year){
+  tibble(
+  id = 1:n,
+  year = year,
+  postal_code = sample(LETTERS, size = n, replace = TRUE),
+  child1_ages = child_age(size = n),
+  child2_ages = child_age(size = n),
+  income = abs(rnorm(n = n, mean = 70000, sd = 50000)),
+  child_benefit_amount = sample(c(NA, 6400), size = n, replace = TRUE)
+) 
+}
+
+tax <- map_dfr(.x = 2004:2019,
+        .f = function(year) create_tax(10, year = year))
+
+tax
+
+sample_date <- function(start, end, size){
+  sample(
+  seq(as.Date(start), 
+      as.Date(end),
+      by = "days"),
+  replace = TRUE,
+  size = size
+  )
+}
+
+icd_codes <- glue::glue("F{30:39}")
+
+# hospital discharges
+create_hospital <- function(n, id = 1:n){
+  tibble(
+  id = id,
+  date = sample_date("2004-01-01", "2009-12-31", size = n),
+  icd = sample(icd_codes, size = n, replace = TRUE)
+)
+}
+
+survey <- bind_rows(
+  create_survey(n = 10, year = 2005),
+  create_survey(n = 10, year = 2007),
+  create_survey(n = 10, year = 2008),
+  create_survey(n = 10, year = 2009)
+)
+
+tax <- map_dfr(.x = 2004:2009,
+               .f = function(year) create_tax(10, year = year))
+
+hospital <- bind_rows(
+  create_hospital(n = 3, id = 4),
+  create_hospital(n = 3, id = 12),
+  create_hospital(n = 1, id = 2),
+  create_hospital(n = 9, id = 9)
+)
+
+survey
+tax
+hospital
+
+tax_survey <- tax %>% 
+  mutate(year_p1 = year + 1,
+         .after = year) %>% 
+  left_join(y = survey,
+            by = c("id",
+                   "year_p1" = "year"))
+
+tax_survey_hospital <- tax_survey %>% 
+  left_join(hospital, 
+            by = "id",
+            relationship = "many-to-many")  %>% 
+  filter(!is.na(icd)) %>% 
+  filter(!is.na(age))
+
+income_age_summary <- tax_survey_hospital %>% 
+  group_by(year) %>% 
+  summarise(
+    across(.cols = c(income, age),
+           .fns = list(mean = mean,
+                       med = median,
+                       sd = sd,
+                       iqr = IQR))
+  )
+
+income_age_summary %>% 
+  pivot_longer(
+    cols = -year,
+    names_to = "variable",
+    values_to = "stat"
+  )
+
+# ambulatory care
+```
+

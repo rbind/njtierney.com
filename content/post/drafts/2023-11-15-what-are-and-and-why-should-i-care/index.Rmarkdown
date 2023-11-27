@@ -1,15 +1,14 @@
 ---
-title: Using `purrr::safely` to Fit Models...safely
+title: What are && and || and Why Should I Care?
 author: Nicholas Tierney
-date: '2021-08-26'
-slug: using-purrr-safely-to-fit-models-safely
+date: '2023-11-15'
+slug: what-are-and-and-why-should-i-care
 categories:
   - rstats
   - functions
 tags:
   - rstats
   - functions
-  - data science
 draft: yes
 output: hugodown::md_document
 ---
@@ -29,4 +28,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-Sometimes when fitting a model it doesn't go as planned and things go wrong.
+In the [tidyverse style guide](https://style.tidyverse.org/syntax.html#if-statements) they say:
+
+> & and | should never be used inside of an if clause because they can return vectors. Always use && and || instead.
+

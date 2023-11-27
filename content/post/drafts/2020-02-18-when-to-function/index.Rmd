@@ -25,23 +25,36 @@ knitr::opts_chunk$set(
 
 # About
 
-This blog post covers the how and when to write functions in R, and what makes a good function. I also discuss why I think they're such a critical concept in data analysis, and why I reckon they are one of the harder things to teach and learn well.
+I think functions are one of the coolest and bestest things in programming.
 
-# Motivation
+I started writing a blog post in 2020 (3 years ago, as of writing), and I wanted it to be this elegant post about writing good functions, but it became hard to write. So I've decided to write a more rambly blog post on writing functions.
 
-Writing functions has been one of the biggest "Game Changer" moments for me in R. "Thinking" in terms of functions has helped me clarify and communicate my intent when doing data analysis. This is useful for me at the time as it helps me clearly articulate what I want to do, and it's helpful for me, and others later, as my code can read a bit more clearly.
+WATCH JOE CHENG's video: https://www.youtube.com/watch?v=J8qbRYa4430
 
-If that all sounds a bit wishy washy, that's OK, I'm hoping this blog post can help explain what I mean.
+# Why should I care about functions?
 
-I found the journey of writing functions hard. Often, especially at first, writing functions felt like I had to balance a lot of things in my head, trying to manage mentally what the things are that might change.
+Writing functions has been one of the biggest "Game Changer" moments for me in programming. "Thinking" in terms of functions has helped me clarify and communicate my intent when doing data analysis for me, and for others.
 
-*gif of the hangover maths*
+Compare the left to the right
+
+.left[
+```r
+```
+]
+
+.right[
+```r
+
+```
+]
+
+I found the journey of writing functions hard. Writing functions felt like I had to balance a lot of things in my head, trying to manage mentally what the things are that might change, and what the outcomes of this would be.
 
 I am pretty comfortable writing functions now, but even still there is often a lot of iteration that happens as I go from first draft to final implementation.
 
 # A story of t tests
 
-To put things in perspective - in 2013, about 9 years ago, I started writing some code to calculate a t-test from scratch. There were reasons why we decided to do that, which I won't go into, but it was mostly because I didn't really know much about R or how to use `t.test` so writing my own code seemed to make sense.
+To tell a story of "why functions". In 2013, I started writing some code to calculate a t-test from scratch. There were reasons why we decided to do that, which I won't go into, but it was mostly because I didn't really know much about R or how to use `t.test` so writing my own code seemed to make sense.
 
 At the top of my script was something like:
 
@@ -50,13 +63,22 @@ var_1 <- data$x1
 var_2 <- data$x2
 ```
 
-And then we computed the results of `var_1` and `var_2`. But every time I wanted to look at another two variables, I had to change the top of the script, and run the script again. 
+And then we computed the results of `var_1` and `var_2`. But every time I wanted to look at another two variables, I changed the two values top of the script:
 
-Something about this felt wrong, and at the time, I didn't really have a mental model of writing code to describe what I wanted to do to people. It probably like something less coherent than:
+```r
+var_1 <- data$y1
+var_2 <- data$y2
+```
+
+and then run the script again. 
+
+Something about this felt wrong, and at the time, I didn't really have a mental model of writing code to describe what I wanted to do to people. I knew that I wanted to have a better way to do this, and to avoid changing these two lines at the top.
+
+It probably sounded like something less coherent than:
 
 > I want to run this script, but then get the top couple of lines of code to change depending on what variables I want to specify.
 
-What I actually needed was a function, I just didn't know it.
+What I actually needed was a function. I just didn't know it.
 
 I remember learning about functions later, but the examples I was given were things like:
 
@@ -66,25 +88,31 @@ and
 
 > identify odd numbers
 
-and I just couldn't really see that being applicable to my life.
+and I just couldn't really see that being applicable to my life. Or the thing that I wanted to do. They seemed like useful kitchen trinkets, like an apple corer and slicer, rather than a fundamental skill, like how to use a knife.
 
-But the idea of separating out all the bits of my code, into functions, it just
-seemed like a lot of work. 
+But I think that understanding how to use the function is like using a knife. You can use it to slice things how you want them. I'll come back to this.
 
-I'd have to work out all the bits that were changing, and what I should give the user control of. The cognitive load of 
+I guess, the idea of separating out all the bits of my code, into functions, it seemed like a lot of work. Like spinning too many plates.
+
+It seemed like too much work to determine all the bits that were changing, and which changing bits were relevant. The cognitive load of 
 looking at a bunch of code and trying to identify the bits that change _felt_ 
 like it would be too hard, and I could _do it later_.
 
 Two approaches for writing functions
 
-1. DRY
-2. Describe Yourself (DY)
+1. DRY: Don't Repeat Yourself
+2. Explain Yourself (EY)
 
 The first rule tends to be: "If you copy and paste the same lines of code three
 times - you should write a function".
 
-And, it's not that this is wrong - it is very much correct, in my opinion - but
-rather that I think that there is kind of this "build up" to writing a function. It might look something like this:
+**example from other blog post**
+
+And, it's not that DRY is wrong - I think it is very much correct. You get loads
+of benefits to thinking of things as avoiding repition. You only need to make
+changes in one place.
+
+I think that there is kind of this "build up" to writing a function. It might look something like this:
 
 1. I'm going to need to do this thing 100 times, let's make sure it works as a script first
 1. OK now that I know it works, let's work out which parts can be functions
@@ -97,7 +125,7 @@ rather that I think that there is kind of this "build up" to writing a function.
 1. Ah, I haven't removed the hard-coded variables in the function
 1. Now the function works.
 
-And it's not that this process is _bad_, it's that I can't help but think it is inefficient. 
+And it's not that this process is _bad_. It is **good**. But it can be inefficient. It could be faster.
 
 There are ways to think about these problems that allow you to work at a higher level, and solve problems faster. 
 
@@ -107,8 +135,9 @@ Functions are __tools to help manage complexity__. If you don't experience compl
 
 # How to write a good function
 
-Your function must remove some sense of complexity from your workflow. This removal is often referred to as "abstracting away", or "abstracting along the right axis". For your function to be good, it has to remove the right amount of complexity, so that you can reason with the function, and not have additional complexity to deal with. This also means that you need to give your function a good name that describes what it does in its context. If your function is called something that is hard to understand outside of a context, you have introduced complexity and that is overall a bad thing.
+Your function must remove some sense of complexity from your workflow. This removal is often referred to as "abstracting away", or "abstracting along the right axis". 
 
+For your function to be good, it has to remove the _right amount of complexity_,_ so that you can reason with the function, and not have additional complexity to deal with. This also means you need to give your function a good name that describes what it does in its context. If your function is called something that is hard to understand outside of a context, you have introduced complexity, and that is overall a bad thing.
 
 Let's talk about these two ideas with two case studies
 
@@ -118,13 +147,11 @@ Let's talk about these two ideas with two case studies
 # Functions for plots
 
 
-
-
 # Functions for data cleaning
 
-# Some opinions about functions.
+# Some opinions about functions
 
-Functions should be able to be individually reasoned about. 
+Functions should be able to be individually reasoned about. Joe Cheng said something like that recently in the above video.
 
 - This actually makes it easier to do something. 
 - Sure, you might have a series of nice dplyr verbs strung together, but sometimes they serve a common purpose, altogether, that you can describe.
@@ -134,3 +161,13 @@ When writing a function, you can introduce more code to reduce complexity
 - example
 
 Your complexity should scaling linearly, rather than exponentially.
+
+
+## More reading
+
+["Fun with Functions by Kaylea Haynes"](https://zealous-wiles-e22e83.netlify.app/talk/funwithfunctions/)
+
+
+## Morgue
+
+This blog post covers the how and when to write functions in R, and what makes a good function. I also discuss why I think they're such a critical concept in data analysis, and why I reckon they are one of the harder things to teach and learn well.

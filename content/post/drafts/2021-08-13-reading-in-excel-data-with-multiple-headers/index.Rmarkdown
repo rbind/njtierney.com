@@ -30,8 +30,16 @@ knitr::opts_chunk$set(
 )
 ```
 
+```{r}
+#| echo: false
+library(knitr)
+library(here)
+library(tidyverse)
+```
+
+
 ```{r image-banner, echo = FALSE, out.width = "100%"}
-knitr::include_graphics("figs/fences.jpg")
+include_graphics("figs/fences.jpg")
 ```
 
 <p align="right" font-size="12px"> Photo By <a href="https://www.instagram.com/">Nick Tierney</a> </p>    
@@ -41,7 +49,7 @@ I've recently had to clean up some excel data - it was really challenging as the
 In excel, it looks like so:
 
 ```{r show-excel, echo = FALSE}
-knitr::include_graphics("figs/ss-screenshot.png")
+include_graphics("figs/ss-screenshot.png")
 ```
 
 There's a lot going on here - let's unpack it:
@@ -55,10 +63,10 @@ There's a lot going on here - let's unpack it:
 Here's that information marked up:
 
 ```{r show-excel-marked-up, echo = FALSE}
-knitr::include_graphics("figs/ss-screenshot-marked-up.png")
+include_graphics("figs/ss-screenshot-marked-up.png")
 ```
 
-I was stuck! But I soon found some great help from [Alison Hill](https://alison.rbind.io/blog/2018-07-multiple-headers/), and [Lisa DeBruine](https://debruine.github.io/posts/multi-row-headers/). I also came across this [answer on a stack overflow thread](https://stackoverflow.com/a/62614924/3764040), by user [a5c1d2h2i1m1n2o1r2t1](https://stackoverflow.com/users/1270695/a5c1d2h2i1m1n2o1r2t1). 
+I was stuck! But I soon found some great help from [Alison Hill](https://alison.rbind.io/blog/2018-07-multiple-headers/), and [Lisa DeBruine](https://debruine.github.io/posts/multi-row-headers/). I also came across this [answer on a stack overflow thread](https://stackoverflow.com/a/62614924/3764040), by user [a5c1d2h2i1m1n2o1r2t1](https://stackoverflow.com/users/1270695/a5c1d2h2i1m1n2o1r2t1) (I mean, what a name). 
 
 They all led me to solve the problem, hooray! I thought I'd add to that body of knowledge.
 
@@ -75,13 +83,13 @@ The first step I took in solving this, and what I try and do when I get a messy 
 
 When I'm faced with something tricky and tough like this, I try and write down the columns of data that I think I'll end up with. Often times I turn to a pen and paper to help get started. Then I might turn to some code to help formalise it. 
 
-A big part of this process is identifying the three parts of what is known in the business as ["tidy data"]():
+A big part of this process is identifying the three parts of what is known in the business as ["tidy data"](https://r4ds.had.co.nz/tidy-data.html) ([original paper](https://vita.had.co.nz/papers/tidy-data.pdf)):
 
 1. What form the variables?
 2. What form the rows?
 3. What is in each cell?
 
-Once you can identify these components, you've got some bounds for your data, you know what it will look like when it's done.
+Once you can identify these components, you've got some kind of bounds for your data, you know what it will look like when it's done.
 
 That being said, sometimes this is the hardest part of data cleaning! It can take some practice to identify these things. I still regularly get stuck.
 
@@ -102,7 +110,7 @@ expand_grid(num = 1:2,
             letters = c("A", "B", "C"))
 ```
 
-So nowe we can take what we know about each of the variables we have, and what values they will take, and will then create them with:
+So now we can take what we know about each of the variables we have, and what values they will take, and will then create them with:
 
 ```{r}
 mock_pest_data <- expand_grid(
@@ -133,7 +141,7 @@ Alright, alright, alright.
 
 We'll get there soon, but in order to try and tidy this effectively we need to take a short journey into understanding a few other similar types of data cleaning problems. Once we've done that, in ways that make sense, we can start to combine them together in cool ways.
 
-A general problem with "data rectangling" is that values are stored in variable names. Say, sites are in the columns:
+A general problem with ["data rectangling"](https://posit.co/resources/videos/data-rectangling/) (a term coined by [Jenny Bryan](https://jennybryan.org/)) is that values are stored in variable names. Say, sites are in the columns:
 
 ```{r}
 set.seed(2021-08-22)
@@ -252,10 +260,6 @@ df_separate <- tibble(
 df_separate
 ```
 
-```{r}
-df_separate
-```
-
 We can separate out the columns using `separate`, like so:
 
 ```{r}
@@ -281,9 +285,16 @@ df_separate %>%
 library(vctrs)
 library(glue)
 df_site_plus_wide
-vec_sites <- names(df_site_plus_wide) %>% vec_slice(-1) %>% str_sub(end = 6)
+
+vec_sites <- names(df_site_plus_wide) %>% 
+  vec_slice(-1) %>% 
+  str_sub(end = 6)
 vec_sites
-vec_times <- df_site_plus_wide %>% slice(1) %>% flatten_chr() %>% vec_slice(-1)
+
+vec_times <- df_site_plus_wide %>% 
+  slice(1) %>% 
+  flatten_chr() %>% 
+  vec_slice(-1)
 vec_times
 
 df_site_plus_wide %>% 
@@ -314,12 +325,14 @@ Let's read in the excel data and see what we've got:
 ```{r}
 library(readxl)
 pest_data_excel <- read_excel(
-  path = "content/post/2021-08-13-reading-in-excel-data-with-multiple-headers/data/messy-pest-data.xlsx",
+  path = here("content/post/drafts/2021-08-13-reading-in-excel-data-with-multiple-headers/data/messy-pest-data.xlsx"),
   sheet = 1,
   skip = 1,
   .name_repair = janitor::make_clean_names,
   col_types = "text"
   )
+
+pest_data_excel
 ```
 
 Oh god.
@@ -328,7 +341,7 @@ Why are those numbers, when they should be values like "1-3" and "4-7".
 
 This is the dreaded "excel conversion into dates" situation.
 
-It's turned the numbers "1-3" and "4-7" into (USA type) dates. So "1-3" becomes "2021-01-03", and "4-7" becomes "2021-04-07".
+It has turned the numbers "1-3" and "4-7" into (USA type) dates. So "1-3" becomes "2021-01-03", and "4-7" becomes "2021-04-07".
 
 Then it's turned those dates into numbers.
 
@@ -336,7 +349,9 @@ Confusingly, this has also left the other text values in tact.
 
 Far out. 
 
-Ok, unexpected side quest journey time.
+Ok.
+
+## Unexpected side quest journey time
 
 Let's drop the first two rows:
 
@@ -361,7 +376,9 @@ pest_data_excel %>%
   slice(-c(1,2)) %>% 
   mutate(
     week_num = parse_number(week),
-    week_new = janitor::excel_numeric_to_date(week_num))
+    week_new = janitor::excel_numeric_to_date(week_num),
+    .after = week
+    )
 ```
 
 Then let's get the upper and lower values from the date of the month (`mday`) and month number `month`:
@@ -373,8 +390,11 @@ pest_data_excel %>%
   mutate(
     week_num = parse_number(week),
     week_new = janitor::excel_numeric_to_date(week_num),
-         lower = mday(week_new),
-         upper = month(week_new))
+    lower = mday(week_new),
+    upper = month(week_new),
+    .after = week
+    )
+
 ```
 
 Then let's create the size column:

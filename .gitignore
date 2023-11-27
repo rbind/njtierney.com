@@ -6,3 +6,4 @@ public
 blogdown
 .DS_Store
 .httr-oauth
+.Rdata
