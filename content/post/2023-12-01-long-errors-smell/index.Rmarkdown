@@ -1,0 +1,158 @@
+---
+title: Long Error Messages are a Code Smell
+author: Nicholas Tierney
+date: '2023-12-05'
+slug: long-errors-smell
+categories:
+  - error
+  - functions
+  - rbloggers
+  - research software engineer
+  - rstats
+tags:
+  - data science
+  - error
+  - functions
+  - rbloggers
+  - research software engineer
+  - rstats
+draft: yes
+output: hugodown::md_document
+---
+
+```{r setup, include = FALSE}
+options(cli.width = 70)  # For tidyverse loading messages
+knitr::opts_chunk$set(
+  tidy.opts = list(width.cutoff = 70),  # For code
+  width = 70,
+  collapse = TRUE, 
+  comment = "#>", 
+  fig.width = 7, 
+  fig.align = 'center',
+  fig.asp = 0.618, # 1 / phi
+  fig.retina = 2,
+  out.width = "700px"
+)
+```
+
+Error messages are really important, and really hard to write well. When software authors take the time to check your inputs and share reasons why it fails, they are doing you a favour. However, I think that there is an opportunity when writing this code, for you to wrap these error messages up into a function.
+
+My reasoning is that the code that does the checking can sometimes take up a decent amount of the function body code. And this distracts from the intention of the function.
+
+Functions should be able to be individually reasoned with, and so including large sections of code that contain error checking distracts from the parts of the function that you might want to reason with.
+
+## What's the solution?
+
+I think that the better option is to write `check_*` functions. These could be something like, `check_array_is_square(x)`.
+
+## Show me the difference
+
+To demonstrate this, let's take some example code that converts a vector into a square matrix
+
+```{r}
+vector_to_square <- function(x){
+  dims <- sqrt(length(x))
+  
+  if (floor(dims) != dims){
+    cli::cli_abort(
+      c(
+        "Provided vector is not of a squarable length",
+        "{.var x} is of length {.num {length(x)}}",
+        "This cannot be represented as a square",
+        "Square root of {.var dim(x)} is: {.num {round(sqrt(length(x)), 3)}}."
+        )
+    )
+  }
+  
+  if (!is.numeric(x)) {
+    cli::cli_abort(
+      c(
+        "Provided vector must be {.cls numeric}, not {.cls {class(x)}}",
+        "We see that {.run is.numeric(x)} returns {.cls {class(x)}}"
+      )
+    )
+  }
+  
+  matrix(data = x,
+         nrow = dims,
+         ncol = dims,
+         byrow = TRUE)
+}
+```
+
+```{r}
+#| error: true
+vector_to_square(1:9)
+vector_to_square(1:10)
+vector_to_square(LETTERS[1:4])
+```
+
+Here we have some defensive code that does two things:
+
+- checks if the inputs can be a square matrix
+- checks if inputs are not numeric
+
+While it is good to have these defensive error messages, I think it's better to
+write these up as separate functions. Like so:
+
+```{r}
+
+check_if_squarable <- function(x){
+  
+  dims <- sqrt(length(x))
+  
+  if (floor(dims) != dims){
+    cli::cli_abort(
+      c(
+        "Provided vector is not of a squarable length",
+        "{.var x} is of length {.num {length(x)}}",
+        "This cannot be represented as a square",
+        "Square root of {.var dim(x)} is: {.num {round(sqrt(length(x)), 3)}}."
+        )
+    )
+  }
+}
+
+check_if_not_numeric <- function(x){
+  
+  if (!is.numeric(x)) {
+    cli::cli_abort(
+      c(
+        "Provided vector must be {.cls numeric}, not {.cls {class(x)}}",
+        "We see that {.run is.numeric(x)} returns {.cls {class(x)}}"
+      )
+    )
+  }
+  
+}
+```
+
+These error messages can then be put into the function like so:
+
+```{r}
+vector_to_square <- function(x){
+  
+  check_if_squarable(x)
+  check_if_not_numeric(x)
+  
+  dims <- sqrt(length(x))
+  
+  matrix(data = x,
+         nrow = dims,
+         ncol = dims,
+         byrow = TRUE)
+}
+```
+
+The benefit here is readability. I can much more quickly understand the intent
+of the function, `vector_to_square()`, in this second iteration.
+
+There are about three other side benefits to this that I see:
+
+- All my checking functions can get re-used in the other work I do
+- I can find common cases of checking and improve them.
+- I see two checking functions, and it invites me to think about other checks that I might want to perform. 
+
+# End
+
+I think that's pretty much all I wanted to say on this.
