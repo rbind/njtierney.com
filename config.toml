@@ -28,8 +28,8 @@ pygmentsUseClasses = true
     url = "/about/"
     weight = 2
 [[menu.main]]
-    name = "Publications"
-    url = "/publications/"
+    name = "CV"
+    url = "/cv/"
     weight = 3
 [[menu.main]]
     name = "Talks"
