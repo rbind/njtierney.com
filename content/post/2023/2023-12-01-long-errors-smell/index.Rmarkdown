@@ -1,0 +1,227 @@
+---
+title: Long Error Messages are a Code Smell
+author: Nicholas Tierney
+date: '2023-12-06'
+slug: long-errors-smell
+categories:
+  - error
+  - functions
+  - rbloggers
+  - research software engineer
+  - rstats
+tags:
+  - data science
+  - error
+  - functions
+  - rbloggers
+  - research software engineer
+  - rstats
+output: hugodown::md_document
+---
+
+```{r setup, include = FALSE}
+options(cli.width = 70)  # For tidyverse loading messages
+knitr::opts_chunk$set(
+  tidy.opts = list(width.cutoff = 70),  # For code
+  width = 70,
+  collapse = TRUE, 
+  comment = "#>", 
+  fig.width = 7, 
+  fig.align = 'center',
+  fig.asp = 0.618, # 1 / phi
+  fig.retina = 2,
+  out.width = "700px"
+)
+```
+
+
+![An amusing "no parking" sign that threatens to transport your car to another universe](img/no-parking.jpg)
+
+Error messages are really important, and really hard to write well. When software authors take the time to check your inputs, and share reasons why it fails, they are doing you a favour. So, writing error messages is good. However, I think that long error messages, (or warnings, or messages, etc), are a code smell. A code smells is:
+
+> ...any characteristic in the source code of a program that possibly indicates a deeper problem. -- [Wiki article on code smells](https://en.wikipedia.org/wiki/Code_smell)
+
+And the code smell looks like this:
+
+```{r}
+vector_to_square <- function(x){
+  dims <- sqrt(length(x))
+  
+  squarable_length <- floor(dims) == dims
+  
+  if (!squarable_length){
+    cli::cli_abort(
+      c(
+        "Provided vector is not of a squarable length",
+        "{.var x} is of length {.num {length(x)}}",
+        "This cannot be represented as a square",
+        "Square root of {.var dim(x)} is: {.num {round(dims, 3)}}."
+        )
+    )
+  }
+  
+  if (!is.numeric(x)) {
+    cli::cli_abort(
+      c(
+        "Provided vector must be {.cls numeric}, not {.cls {class(x)}}",
+        "We see that {.run is.numeric(x)} returns {.cls {class(x)}}"
+      )
+    )
+  }
+  
+  matrix(data = x,
+         nrow = dims,
+         ncol = dims,
+         byrow = TRUE)
+}
+```
+
+I think there is a problem when writing long error messages straight into the body of a function. I believe wrapping error functions into a function reduces repetition, and makes the code clearer to understand, since you don't need to wade through error checking code.
+
+## What's the solution?
+
+I think that the better option is to write `check_*` functions. These could be something like, `check_array_is_square(x)`.
+
+## Show me the difference
+
+To demonstrate this, let's take a look again at the example code from above, a function that converts a vector into a square matrix:
+
+```{r}
+vector_to_square <- function(x){
+  dims <- sqrt(length(x))
+  
+  squarable_length <- floor(dims) == dims
+  
+  if (!squarable_length){
+    cli::cli_abort(
+      c(
+        "Provided vector is not of a squarable length",
+        "{.var x} is of length {.num {length(x)}}",
+        "This cannot be represented as a square",
+        "Square root of {.var dim(x)} is: {.num {round(dims, 3)}}."
+        )
+    )
+  }
+  
+  if (!is.numeric(x)) {
+    cli::cli_abort(
+      c(
+        "Provided vector must be {.cls numeric}, not {.cls {class(x)}}",
+        "We see that {.run is.numeric(x)} returns {.cls {class(x)}}"
+      )
+    )
+  }
+  
+  matrix(data = x,
+         nrow = dims,
+         ncol = dims,
+         byrow = TRUE)
+}
+```
+
+Now let's demonstrate its use, and what the errors look like:
+
+```{r}
+#| error: true
+vector_to_square(1:9)
+vector_to_square(1:10)
+vector_to_square(LETTERS[1:4])
+```
+
+So we have some defensive code (code that checks inputs), which does two things:
+
+-   checks if the inputs can be a square matrix
+-   checks if inputs are not numeric
+
+While we like these error messages, wrapping up the error messags as functions clarifies the intent of them, and avoids repitition:
+
+```{r}
+check_if_squarable <- function(x){
+  dims <- sqrt(length(x))
+  
+  squarable_length <- floor(dims) == dims
+  
+  if (!squarable_length){
+    cli::cli_abort(
+      c(
+        "Provided vector is not of a squarable length",
+        "{.var x} is of length {.num {length(x)}}",
+        "This cannot be represented as a square",
+        "Square root of {.var dim(x)} is: {.num {round(dims, 3)}}."
+        )
+    )
+  }
+}
+
+check_if_not_numeric <- function(x){
+  
+  if (!is.numeric(x)) {
+    cli::cli_abort(
+      c(
+        "Provided vector must be {.cls numeric}, not {.cls {class(x)}}",
+        "We see that {.run is.numeric(x)} returns {.cls {class(x)}}"
+      )
+    )
+  }
+  
+}
+```
+
+These error messages can then be put into the function like so:
+
+```{r}
+vector_to_square <- function(x){
+  
+  check_if_squarable(x)
+  check_if_not_numeric(x)
+  
+  dims <- sqrt(length(x))
+  
+  matrix(data = x,
+         nrow = dims,
+         ncol = dims,
+         byrow = TRUE)
+}
+```
+
+I think that the main benefit here is *readability* - I don't have to read some error checking code, I can read the function name `check_if_squarable(x)` - this tells me it checks if it is squareable, and `check_if_not_numeric(x)` does what it says on the tin. This means I don't have to spend time reading error checking code, which can sometimes be quite complex. I can focus on those functions intention. This means I can summarise this function like so:
+
+-   Do some checking of the inputs
+
+-   Get the dimensions for a square matrix
+
+-   Make the matrix, filling in by row
+
+There are a couple of other benefits to this:
+
+-   All my checking functions can get re-used in the other work I do
+-   I can find common cases of checking and improve them.
+-   I see two checking functions, and it invites me to think about other checks that I might want to perform.
+
+# On writing error messages
+
+I do think that writing good error messages is hard. Something that helped me think about this differently was something from the \[tidyverse style guide on error messages\](<https://style.tidyverse.org/error-messages.html>):
+
+> An error message should start with a general statement of the problem then give a concise description of what went wrong. Consistent use of punctuation and formatting makes errors easier to parse
+
+They also recommend using `cli::cli_abort()`, which we used above. I've really enjoyed using this over `stop`, because, well, again, the tidyverse team summarises the reasons well - using `cli::cli_abort()` is good because it:
+
+> -   Makes it easy to generate bulleted lists.
+>
+> -   Uses glue style interpolation to insert data into the error.
+>
+> -   Supports a wide range of [inline markup](https://cli.r-lib.org/reference/inline-markup.html).
+>
+> -   Provides convenient tools to [chain errors together](https://rlang.r-lib.org/reference/topic-error-chaining.html).
+>
+> -   Can control the [name of the function](https://rlang.r-lib.org/reference/topic-error-call.html) shown in the error.
+
+You should read the \[whole section on error messages\](<https://style.tidyverse.org/error-messages.html>), they've got great advice on how to write good error messages.
+
+# Functions are good
+
+I will wrap up by emphasising a point about using functions. Good **functions can be individually reasoned with**, and used repeatedly across your work. This means you can write them once, use them many times, and only need to make changes to one place, rather than in many. Writing functions helps abstract away details, and helps clarify your code. They are an important building block for writing good code that has content that can be easily reasoned with, and extended.
+
+# End
+
+That's pretty much all I wanted to say on this.
