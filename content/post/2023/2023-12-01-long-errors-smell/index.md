@@ -17,7 +17,7 @@ tags:
   - research software engineer
   - rstats
 output: hugodown::md_document
-rmd_hash: 097bc9c9f97f08c2
+rmd_hash: f986f814db59696b
 
 ---
 
@@ -211,11 +211,11 @@ There are a couple of other benefits to this:
 
 # On writing error messages
 
-I do think that writing good error messages is hard. Something that helped me think about this differently was something from the $$tidyverse style guide on error messages$$(<https://style.tidyverse.org/error-messages.html>):
+I do think that writing good error messages is hard. Something that helped me think about this differently was something from the [tidyverse style guide on error messages](https://style.tidyverse.org/error-messages.html):
 
 > An error message should start with a general statement of the problem then give a concise description of what went wrong. Consistent use of punctuation and formatting makes errors easier to parse
 
-They also recommend using [`cli::cli_abort()`](https://cli.r-lib.org/reference/cli_abort.html), which we used above. I've really enjoyed using this over `stop`, because, well, again, the tidyverse team summarises the reasons well - using [`cli::cli_abort()`](https://cli.r-lib.org/reference/cli_abort.html) is good because it:
+They also recommend using [`cli::cli_abort()`](https://cli.r-lib.org/reference/cli_abort.html), which we used above. I've really enjoyed using this over `stop`, because, well, again, the tidyverse team summarises the reasons well, [`cli::cli_abort()`](https://cli.r-lib.org/reference/cli_abort.html) is good because it:
 
 > -   Makes it easy to generate bulleted lists.
 >
@@ -227,11 +227,11 @@ They also recommend using [`cli::cli_abort()`](https://cli.r-lib.org/reference/c
 >
 > -   Can control the [name of the function](https://rlang.r-lib.org/reference/topic-error-call.html) shown in the error.
 
-You should read the $$whole section on error messages$$(<https://style.tidyverse.org/error-messages.html>), they've got great advice on how to write good error messages.
+You should read the [whole section on error messages](https://style.tidyverse.org/error-messages.html), they've got great advice on how to write good error messages.
 
 # Functions are good
 
-I will wrap up by emphasising a point about using functions. Good **functions can be individually reasoned with**, and used repeatedly across your work. This means you can write them once, use them many times, and only need to make changes to one place, rather than in many. Writing functions helps abstract away details, and helps clarify your code. They are an important building block for writing good code that has content that can be easily reasoned with, and extended.
+I will wrap up by emphasising a point about using functions. **Good functions can be individually reasoned with**, and used repeatedly across your work. This means you can write them once, use them many times, and only need to make changes to one place, rather than in many. Writing functions helps abstract away details, and helps clarify your code. They are an important building block for writing good code that has content that can be easily reasoned with, and extended.
 
 # End
 
