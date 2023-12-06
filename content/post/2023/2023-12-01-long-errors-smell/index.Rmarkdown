@@ -198,6 +198,7 @@ There are a couple of other benefits to this:
 -   I can find common cases of checking and improve them.
 -   I see two checking functions, and it invites me to think about other checks that I might want to perform.
 
+
 # On writing error messages
 
 I do think that writing good error messages is hard. Something that helped me think about this differently was something from the [tidyverse style guide on error messages](https://style.tidyverse.org/error-messages.html):
@@ -222,6 +223,176 @@ You should read the [whole section on error messages](https://style.tidyverse.or
 
 I will wrap up by emphasising a point about using functions. **Good functions can be individually reasoned with**, and used repeatedly across your work. This means you can write them once, use them many times, and only need to make changes to one place, rather than in many. Writing functions helps abstract away details, and helps clarify your code. They are an important building block for writing good code that has content that can be easily reasoned with, and extended.
 
+# Thanks
+
+Thank you very much to the maintainers of [`cli`](https://cli.r-lib.org/index.html) ([Gábor Csárdi](https://github.com/gaborcsardi)), and [`rlang`](https://rlang.r-lib.org/) ([Lionel Henry](https://github.com/lionel-)), and the team behind these packages. These 
+
 # End
 
 That's pretty much all I wanted to say on this.
+
+# PS: Let's actually check the error messages
+
+My friend [Adam Gruer](https://adamgruer.rbind.io/) read this blog post and asked: 
+
+> might a user get confused when then the error is reported as coming from the check_function rather than the function they called? What are your thoughts?
+
+And that made me realise that I hadn't looked at the error messages again, and it also made me realise I've seen this problem before and been unsure how to solve it. This prompted more than a shallow dive into error code, which I think is worthwhile unpacking.
+
+OK, err, so, how do these error messages look?
+
+```{r}
+#| error: true
+vector_to_square(1:4)
+vector_to_square(1:5)
+vector_to_square(LETTERS[1:4])
+```
+
+In the error messages, the error is about the checking function, `check_if_squarable()` or `check_if_not_numeric()`. This could be confusing to the user as the error doesn't appear to be coming from the `vector_to_square()` function. Thankfully, the rlang team has thought about this, and they have a helpful vignette, ["Including function calls in error messages"](https://rlang.r-lib.org/reference/topic-error-call.html).
+
+They bring up two really great points. Both of which I hadn't really thought about solving. I just thought this was the compromise. 
+
+The first is how to make sure the input checking function references the function it was called in. This is why we see the error being about `check_if_squarable()`, and not `vector_to_square()`, which is what we want. 
+
+This is solved by passing the `check_` functions a `call` environment. So we add `call = rlang::caller_env()` as an argument:
+
+```{r}
+check_if_squarable <- function(x, 
+                               # Add this
+                               call = rlang::caller_env()){
+  dims <- sqrt(length(x))
+  
+  squarable_length <- floor(dims) == dims
+  
+  if (!squarable_length){
+    cli::cli_abort(
+      message = c(
+        "Provided vector is not of a squarable length",
+        "{.var x} is of length {.num {length(x)}}",
+        "This cannot be represented as a square",
+        "Square root of {.var dim(x)} is: {.num {round(dims, 3)}}."
+        ),
+      # And this
+      call = call
+    )
+  }
+}
+
+check_if_not_numeric <- function(x, 
+                                 # Add this
+                                 call = rlang::caller_env()){
+  
+  if (!is.numeric(x)) {
+    cli::cli_abort(
+      message = c(
+        "Provided vector must be {.cls numeric}, not {.cls {class(x)}}",
+        "We see that {.run is.numeric(x)} returns {.cls {class(x)}}"
+      ),
+      # And this
+      call = call
+    )
+  }
+  
+}
+```
+
+Let's see what that looks like now:
+
+```{r}
+#| error: true
+vector_to_square(1:4)
+vector_to_square(1:5)
+vector_to_square(LETTERS[1:4])
+```
+
+OK much better, the error now starts with: "Error in `vector_to_square()`". 
+
+Thanks [Adam Gruer](https://adamgruer.rbind.io/) again for pointing this out!
+
+The second problem, which I hadn't really considered when writing this, but was familiar, is to do with supplying argument names. We don't notice this in our case, since `vector_to_square()` and our `check_*` functions use `x` as the argument. 
+
+To demonstrate the problem, let's change the arguments of `vector_to_square` from `x` to `data`, and leave `check_if_squarable()` and co as is.
+
+```{r}
+vector_to_square <- function(data){
+  
+  check_if_squarable(data)
+  check_if_not_numeric(data)
+  
+  dims <- sqrt(length(data))
+  
+  matrix(data = data,
+         nrow = dims,
+         ncol = dims,
+         byrow = TRUE)
+}
+```
+
+```{r}
+#| error: true
+vector_to_square(data = 1:4)
+vector_to_square(data = 1:5)
+vector_to_square(data = LETTERS[1:4])
+```
+
+Now we only see `x` mentioned in the errors, not `data`, which is what was supplied in `vector_to_square`.
+
+A small detail, perhaps? But I think it's actually kind of a big problem! I don't want my users to have to try and reckon/think about what `x` is, or have to imagine that I've written some fancy code checking functions. I just want them to know where the error came from.
+
+In more complex functions this could be even more confusing. Thankfully, yet again, the rlang team has thought about this, in [Input checkers and `caller_arg()`](https://rlang.r-lib.org/reference/topic-error-call.html#input-checkers-and-caller-arg-), they suggest adding `arg = rlang::caller_arg(x)` to our checking function, which helps capture the name of the argument that is passed to the check functions. Super neat.
+
+Let's demonstrate this - we change uses of `x` to using `arg` in the error message. 
+
+```{r}
+check_if_squarable <- function(x, 
+                               arg = rlang::caller_arg(x),
+                               call = rlang::caller_env()){
+  
+  x_len <- length(x)
+  dims <- sqrt(x_len)
+  
+  squarable_length <- floor(dims) == dims
+  
+  if (!squarable_length){
+    cli::cli_abort(
+      message = c(
+        "Provided vector is not of a squarable length",
+        "{.arg {arg}} is of length {.num {x_len}}",
+        "This cannot be represented as a square"
+        ),
+      call = call
+    )
+  }
+}
+
+check_if_not_numeric <- function(x, 
+                                 arg = rlang::caller_arg(x),
+                                 call = rlang::caller_env()){
+  
+  if (!is.numeric(x)) {
+    cli::cli_abort(
+      message = c(
+        "Provided vector, {.arg {arg}}, must be {.cls numeric}, not {.cls {class(x)}}",
+        "We see that {.run is.numeric({.arg {arg}})} returns {.cls {class(x)}}"
+      ),
+      call = call
+    )
+  }
+  
+}
+```
+
+ (in demo-ing this, I realised I don't need to include the square root of the length to explain to the user, so I deleted that part of the message)
+
+```{r}
+#| error: true
+vector_to_square(data = 1:4)
+vector_to_square(data = 1:5)
+vector_to_square(data = LETTERS[1:4])
+```
+
+This now uses `data` instead of `x`, which is what we want!  
+
+In writing this blog post I've now realised that my pattern of creating `check_` functions for input checking now also results in a potentially undesirable error for the user where they won't know where the error has come from. I'll need to make a note to change this in a lot of my packages.
+
+In the future I'd really like to dive a bit deeper into adding classes or subclasses of errors and understand the benefits. There's a [tidyverse design page on error constructors](https://design.tidyverse.org/err-constructor.html) that I should read more deeply. I'm pretty sure this would be helpful in things like [`greta`](https://greta-stats.org/).
