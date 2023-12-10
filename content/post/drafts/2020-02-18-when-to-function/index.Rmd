@@ -23,6 +23,20 @@ knitr::opts_chunk$set(
 )
 ```
 
+read this: https://stat545.com/functions-part1.html
+the skateboard/mvp example is really key
+remember that when I started out programming I just shoved code into functions
+it doesn't have to be perfect
+You can skip to the more advanced steps once you are more practiced with this
+
+As Jenny Bryan said in her keynote: [https://www.youtube.com/watch?v=7oyiPBjLAWY&t=3s](), 
+
+There's a term based on refactoring called "pre-factoring", which is:
+
+> if you do enough of this refactoring, it also starts to influence the way you write this code the first time.
+
+
+
 # About
 
 I think functions are one of the coolest and bestest things in programming.
