@@ -17,7 +17,7 @@ tags:
   - research software engineer
   - rstats
 output: hugodown::md_document
-rmd_hash: 2e17482a2dcad136
+rmd_hash: 705e5fcb61664d1c
 
 ---
 
@@ -48,19 +48,19 @@ The code smell looks like this:
 
 <div class="highlight">
 
-<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='nv'>vector_to_square</span> <span class='o'>&lt;-</span> <span class='kr'>function</span><span class='o'>(</span><span class='nv'>data</span><span class='o'>)</span><span class='o'>&#123;</span></span>
+<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='nv'>vector_to_square</span> <span class='o'>&lt;-</span> <span class='kr'>function</span><span class='o'>(</span><span class='nv'>data</span><span class='o'>)</span> <span class='o'>&#123;</span></span>
 <span>  <span class='nv'>dims</span> <span class='o'>&lt;-</span> <span class='nf'><a href='https://rdrr.io/r/base/MathFun.html'>sqrt</a></span><span class='o'>(</span><span class='nf'><a href='https://rdrr.io/r/base/length.html'>length</a></span><span class='o'>(</span><span class='nv'>data</span><span class='o'>)</span><span class='o'>)</span></span>
 <span>  </span>
 <span>  <span class='nv'>squarable_length</span> <span class='o'>&lt;-</span> <span class='nf'><a href='https://rdrr.io/r/base/Round.html'>floor</a></span><span class='o'>(</span><span class='nv'>dims</span><span class='o'>)</span> <span class='o'>==</span> <span class='nv'>dims</span></span>
 <span>  </span>
-<span>  <span class='kr'>if</span> <span class='o'>(</span><span class='o'>!</span><span class='nv'>squarable_length</span><span class='o'>)</span><span class='o'>&#123;</span></span>
+<span>  <span class='kr'>if</span> <span class='o'>(</span><span class='o'>!</span><span class='nv'>squarable_length</span><span class='o'>)</span> <span class='o'>&#123;</span></span>
 <span>    <span class='nf'>cli</span><span class='nf'>::</span><span class='nf'><a href='https://cli.r-lib.org/reference/cli_abort.html'>cli_abort</a></span><span class='o'>(</span></span>
 <span>      <span class='nf'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='o'>(</span></span>
 <span>        <span class='s'>"Provided vector is not of a squarable length"</span>,</span>
 <span>        <span class='s'>"&#123;.var data&#125; is of length &#123;.num &#123;length(data)&#125;&#125;"</span>,</span>
 <span>        <span class='s'>"This cannot be represented as a square"</span>,</span>
 <span>        <span class='s'>"Square root of &#123;.var dim(data)&#125; is: &#123;.num &#123;round(dims, 3)&#125;&#125;."</span></span>
-<span>        <span class='o'>)</span></span>
+<span>      <span class='o'>)</span></span>
 <span>    <span class='o'>)</span></span>
 <span>  <span class='o'>&#125;</span></span>
 <span>  </span>
@@ -73,10 +73,12 @@ The code smell looks like this:
 <span>    <span class='o'>)</span></span>
 <span>  <span class='o'>&#125;</span></span>
 <span>  </span>
-<span>  <span class='nf'><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></span><span class='o'>(</span>data <span class='o'>=</span> <span class='nv'>data</span>,</span>
-<span>         nrow <span class='o'>=</span> <span class='nv'>dims</span>,</span>
-<span>         ncol <span class='o'>=</span> <span class='nv'>dims</span>,</span>
-<span>         byrow <span class='o'>=</span> <span class='kc'>TRUE</span><span class='o'>)</span></span>
+<span>  <span class='nf'><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></span><span class='o'>(</span></span>
+<span>    data <span class='o'>=</span> <span class='nv'>data</span>,</span>
+<span>    nrow <span class='o'>=</span> <span class='nv'>dims</span>,</span>
+<span>    ncol <span class='o'>=</span> <span class='nv'>dims</span>,</span>
+<span>    byrow <span class='o'>=</span> <span class='kc'>TRUE</span></span>
+<span>  <span class='o'>)</span></span>
 <span><span class='o'>&#125;</span></span></code></pre>
 
 </div>
@@ -93,19 +95,19 @@ To demonstrate this, let's take a look again at the example code from above, a f
 
 <div class="highlight">
 
-<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='nv'>vector_to_square</span> <span class='o'>&lt;-</span> <span class='kr'>function</span><span class='o'>(</span><span class='nv'>data</span><span class='o'>)</span><span class='o'>&#123;</span></span>
+<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='nv'>vector_to_square</span> <span class='o'>&lt;-</span> <span class='kr'>function</span><span class='o'>(</span><span class='nv'>data</span><span class='o'>)</span> <span class='o'>&#123;</span></span>
 <span>  <span class='nv'>dims</span> <span class='o'>&lt;-</span> <span class='nf'><a href='https://rdrr.io/r/base/MathFun.html'>sqrt</a></span><span class='o'>(</span><span class='nf'><a href='https://rdrr.io/r/base/length.html'>length</a></span><span class='o'>(</span><span class='nv'>data</span><span class='o'>)</span><span class='o'>)</span></span>
 <span>  </span>
 <span>  <span class='nv'>squarable_length</span> <span class='o'>&lt;-</span> <span class='nf'><a href='https://rdrr.io/r/base/Round.html'>floor</a></span><span class='o'>(</span><span class='nv'>dims</span><span class='o'>)</span> <span class='o'>==</span> <span class='nv'>dims</span></span>
 <span>  </span>
-<span>  <span class='kr'>if</span> <span class='o'>(</span><span class='o'>!</span><span class='nv'>squarable_length</span><span class='o'>)</span><span class='o'>&#123;</span></span>
+<span>  <span class='kr'>if</span> <span class='o'>(</span><span class='o'>!</span><span class='nv'>squarable_length</span><span class='o'>)</span> <span class='o'>&#123;</span></span>
 <span>    <span class='nf'>cli</span><span class='nf'>::</span><span class='nf'><a href='https://cli.r-lib.org/reference/cli_abort.html'>cli_abort</a></span><span class='o'>(</span></span>
 <span>      <span class='nf'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='o'>(</span></span>
 <span>        <span class='s'>"Provided vector is not of a squarable length"</span>,</span>
 <span>        <span class='s'>"&#123;.var x&#125; is of length &#123;.num &#123;length(data)&#125;&#125;"</span>,</span>
 <span>        <span class='s'>"This cannot be represented as a square"</span>,</span>
 <span>        <span class='s'>"Square root of &#123;.var dim(data)&#125; is: &#123;.num &#123;round(dims, 3)&#125;&#125;."</span></span>
-<span>        <span class='o'>)</span></span>
+<span>      <span class='o'>)</span></span>
 <span>    <span class='o'>)</span></span>
 <span>  <span class='o'>&#125;</span></span>
 <span>  </span>
@@ -118,10 +120,12 @@ To demonstrate this, let's take a look again at the example code from above, a f
 <span>    <span class='o'>)</span></span>
 <span>  <span class='o'>&#125;</span></span>
 <span>  </span>
-<span>  <span class='nf'><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></span><span class='o'>(</span>data <span class='o'>=</span> <span class='nv'>data</span>,</span>
-<span>         nrow <span class='o'>=</span> <span class='nv'>dims</span>,</span>
-<span>         ncol <span class='o'>=</span> <span class='nv'>dims</span>,</span>
-<span>         byrow <span class='o'>=</span> <span class='kc'>TRUE</span><span class='o'>)</span></span>
+<span>  <span class='nf'><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></span><span class='o'>(</span></span>
+<span>    data <span class='o'>=</span> <span class='nv'>data</span>,</span>
+<span>    nrow <span class='o'>=</span> <span class='nv'>dims</span>,</span>
+<span>    ncol <span class='o'>=</span> <span class='nv'>dims</span>,</span>
+<span>    byrow <span class='o'>=</span> <span class='kc'>TRUE</span></span>
+<span>  <span class='o'>)</span></span>
 <span><span class='o'>&#125;</span></span></code></pre>
 
 </div>
@@ -157,25 +161,24 @@ While we like these error messages, wrapping up the error messags as functions c
 
 <div class="highlight">
 
-<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='nv'>check_if_squarable</span> <span class='o'>&lt;-</span> <span class='kr'>function</span><span class='o'>(</span><span class='nv'>x</span><span class='o'>)</span><span class='o'>&#123;</span></span>
+<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='nv'>check_if_squarable</span> <span class='o'>&lt;-</span> <span class='kr'>function</span><span class='o'>(</span><span class='nv'>x</span><span class='o'>)</span> <span class='o'>&#123;</span></span>
 <span>  <span class='nv'>dims</span> <span class='o'>&lt;-</span> <span class='nf'><a href='https://rdrr.io/r/base/MathFun.html'>sqrt</a></span><span class='o'>(</span><span class='nf'><a href='https://rdrr.io/r/base/length.html'>length</a></span><span class='o'>(</span><span class='nv'>x</span><span class='o'>)</span><span class='o'>)</span></span>
 <span>  </span>
 <span>  <span class='nv'>squarable_length</span> <span class='o'>&lt;-</span> <span class='nf'><a href='https://rdrr.io/r/base/Round.html'>floor</a></span><span class='o'>(</span><span class='nv'>dims</span><span class='o'>)</span> <span class='o'>==</span> <span class='nv'>dims</span></span>
 <span>  </span>
-<span>  <span class='kr'>if</span> <span class='o'>(</span><span class='o'>!</span><span class='nv'>squarable_length</span><span class='o'>)</span><span class='o'>&#123;</span></span>
+<span>  <span class='kr'>if</span> <span class='o'>(</span><span class='o'>!</span><span class='nv'>squarable_length</span><span class='o'>)</span> <span class='o'>&#123;</span></span>
 <span>    <span class='nf'>cli</span><span class='nf'>::</span><span class='nf'><a href='https://cli.r-lib.org/reference/cli_abort.html'>cli_abort</a></span><span class='o'>(</span></span>
 <span>      <span class='nf'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='o'>(</span></span>
 <span>        <span class='s'>"Provided vector is not of a squarable length"</span>,</span>
 <span>        <span class='s'>"&#123;.var x&#125; is of length &#123;.num &#123;length(x)&#125;&#125;"</span>,</span>
 <span>        <span class='s'>"This cannot be represented as a square"</span>,</span>
 <span>        <span class='s'>"Square root of &#123;.var dim(x)&#125; is: &#123;.num &#123;round(dims, 3)&#125;&#125;."</span></span>
-<span>        <span class='o'>)</span></span>
+<span>      <span class='o'>)</span></span>
 <span>    <span class='o'>)</span></span>
 <span>  <span class='o'>&#125;</span></span>
 <span><span class='o'>&#125;</span></span>
 <span></span>
-<span><span class='nv'>check_if_not_numeric</span> <span class='o'>&lt;-</span> <span class='kr'>function</span><span class='o'>(</span><span class='nv'>x</span><span class='o'>)</span><span class='o'>&#123;</span></span>
-<span>  </span>
+<span><span class='nv'>check_if_not_numeric</span> <span class='o'>&lt;-</span> <span class='kr'>function</span><span class='o'>(</span><span class='nv'>x</span><span class='o'>)</span> <span class='o'>&#123;</span></span>
 <span>  <span class='kr'>if</span> <span class='o'>(</span><span class='o'>!</span><span class='nf'><a href='https://rdrr.io/r/base/numeric.html'>is.numeric</a></span><span class='o'>(</span><span class='nv'>x</span><span class='o'>)</span><span class='o'>)</span> <span class='o'>&#123;</span></span>
 <span>    <span class='nf'>cli</span><span class='nf'>::</span><span class='nf'><a href='https://cli.r-lib.org/reference/cli_abort.html'>cli_abort</a></span><span class='o'>(</span></span>
 <span>      <span class='nf'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='o'>(</span></span>
@@ -193,17 +196,18 @@ These error messages can then be put into the function like so:
 
 <div class="highlight">
 
-<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='nv'>vector_to_square</span> <span class='o'>&lt;-</span> <span class='kr'>function</span><span class='o'>(</span><span class='nv'>data</span><span class='o'>)</span><span class='o'>&#123;</span></span>
-<span>  </span>
+<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='nv'>vector_to_square</span> <span class='o'>&lt;-</span> <span class='kr'>function</span><span class='o'>(</span><span class='nv'>data</span><span class='o'>)</span> <span class='o'>&#123;</span></span>
 <span>  <span class='nf'>check_if_squarable</span><span class='o'>(</span><span class='nv'>data</span><span class='o'>)</span></span>
 <span>  <span class='nf'>check_if_not_numeric</span><span class='o'>(</span><span class='nv'>data</span><span class='o'>)</span></span>
 <span>  </span>
 <span>  <span class='nv'>dims</span> <span class='o'>&lt;-</span> <span class='nf'><a href='https://rdrr.io/r/base/MathFun.html'>sqrt</a></span><span class='o'>(</span><span class='nf'><a href='https://rdrr.io/r/base/length.html'>length</a></span><span class='o'>(</span><span class='nv'>data</span><span class='o'>)</span><span class='o'>)</span></span>
 <span>  </span>
-<span>  <span class='nf'><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></span><span class='o'>(</span>data <span class='o'>=</span> <span class='nv'>data</span>,</span>
-<span>         nrow <span class='o'>=</span> <span class='nv'>dims</span>,</span>
-<span>         ncol <span class='o'>=</span> <span class='nv'>dims</span>,</span>
-<span>         byrow <span class='o'>=</span> <span class='kc'>TRUE</span><span class='o'>)</span></span>
+<span>  <span class='nf'><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></span><span class='o'>(</span></span>
+<span>    data <span class='o'>=</span> <span class='nv'>data</span>,</span>
+<span>    nrow <span class='o'>=</span> <span class='nv'>dims</span>,</span>
+<span>    ncol <span class='o'>=</span> <span class='nv'>dims</span>,</span>
+<span>    byrow <span class='o'>=</span> <span class='kc'>TRUE</span></span>
+<span>  <span class='o'>)</span></span>
 <span><span class='o'>&#125;</span></span></code></pre>
 
 </div>
@@ -224,7 +228,7 @@ There are a couple of other benefits to this:
 -   I can find common cases of checking and improve them.
 -   I see two checking functions, and it invites me to think about other checks that I might want to perform.
 
-## But now the error smells.
+## But now the error smells
 
 Ah, but we didn't check to see what these new errors look like! My friend [Adam Gruer](https://adamgruer.rbind.io/) pointed out:
 
@@ -264,31 +268,30 @@ This is solved by passing the `check_` functions a `call` environment. So we add
 
 <div class="highlight">
 
-<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='nv'>check_if_squarable</span> <span class='o'>&lt;-</span> <span class='kr'>function</span><span class='o'>(</span><span class='nv'>x</span>, </span>
+<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='nv'>check_if_squarable</span> <span class='o'>&lt;-</span> <span class='kr'>function</span><span class='o'>(</span><span class='nv'>x</span>,</span>
 <span>                               <span class='c'># Add this</span></span>
-<span>                               <span class='nv'>call</span> <span class='o'>=</span> <span class='nf'>rlang</span><span class='nf'>::</span><span class='nf'><a href='https://rlang.r-lib.org/reference/stack.html'>caller_env</a></span><span class='o'>(</span><span class='o'>)</span><span class='o'>)</span><span class='o'>&#123;</span></span>
+<span>                               <span class='nv'>call</span> <span class='o'>=</span> <span class='nf'>rlang</span><span class='nf'>::</span><span class='nf'><a href='https://rlang.r-lib.org/reference/stack.html'>caller_env</a></span><span class='o'>(</span><span class='o'>)</span><span class='o'>)</span> <span class='o'>&#123;</span></span>
 <span>  <span class='nv'>dims</span> <span class='o'>&lt;-</span> <span class='nf'><a href='https://rdrr.io/r/base/MathFun.html'>sqrt</a></span><span class='o'>(</span><span class='nf'><a href='https://rdrr.io/r/base/length.html'>length</a></span><span class='o'>(</span><span class='nv'>x</span><span class='o'>)</span><span class='o'>)</span></span>
 <span>  </span>
 <span>  <span class='nv'>squarable_length</span> <span class='o'>&lt;-</span> <span class='nf'><a href='https://rdrr.io/r/base/Round.html'>floor</a></span><span class='o'>(</span><span class='nv'>dims</span><span class='o'>)</span> <span class='o'>==</span> <span class='nv'>dims</span></span>
 <span>  </span>
-<span>  <span class='kr'>if</span> <span class='o'>(</span><span class='o'>!</span><span class='nv'>squarable_length</span><span class='o'>)</span><span class='o'>&#123;</span></span>
+<span>  <span class='kr'>if</span> <span class='o'>(</span><span class='o'>!</span><span class='nv'>squarable_length</span><span class='o'>)</span> <span class='o'>&#123;</span></span>
 <span>    <span class='nf'>cli</span><span class='nf'>::</span><span class='nf'><a href='https://cli.r-lib.org/reference/cli_abort.html'>cli_abort</a></span><span class='o'>(</span></span>
 <span>      message <span class='o'>=</span> <span class='nf'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='o'>(</span></span>
 <span>        <span class='s'>"Provided vector is not of a squarable length"</span>,</span>
 <span>        <span class='s'>"&#123;.var x&#125; is of length &#123;.num &#123;length(x)&#125;&#125;"</span>,</span>
 <span>        <span class='s'>"This cannot be represented as a square"</span>,</span>
 <span>        <span class='s'>"Square root of &#123;.var dim(x)&#125; is: &#123;.num &#123;round(dims, 3)&#125;&#125;."</span></span>
-<span>        <span class='o'>)</span>,</span>
+<span>      <span class='o'>)</span>,</span>
 <span>      <span class='c'># And this</span></span>
 <span>      call <span class='o'>=</span> <span class='nv'>call</span></span>
 <span>    <span class='o'>)</span></span>
 <span>  <span class='o'>&#125;</span></span>
 <span><span class='o'>&#125;</span></span>
 <span></span>
-<span><span class='nv'>check_if_not_numeric</span> <span class='o'>&lt;-</span> <span class='kr'>function</span><span class='o'>(</span><span class='nv'>x</span>, </span>
+<span><span class='nv'>check_if_not_numeric</span> <span class='o'>&lt;-</span> <span class='kr'>function</span><span class='o'>(</span><span class='nv'>x</span>,</span>
 <span>                                 <span class='c'># Add this</span></span>
-<span>                                 <span class='nv'>call</span> <span class='o'>=</span> <span class='nf'>rlang</span><span class='nf'>::</span><span class='nf'><a href='https://rlang.r-lib.org/reference/stack.html'>caller_env</a></span><span class='o'>(</span><span class='o'>)</span><span class='o'>)</span><span class='o'>&#123;</span></span>
-<span>  </span>
+<span>                                 <span class='nv'>call</span> <span class='o'>=</span> <span class='nf'>rlang</span><span class='nf'>::</span><span class='nf'><a href='https://rlang.r-lib.org/reference/stack.html'>caller_env</a></span><span class='o'>(</span><span class='o'>)</span><span class='o'>)</span> <span class='o'>&#123;</span></span>
 <span>  <span class='kr'>if</span> <span class='o'>(</span><span class='o'>!</span><span class='nf'><a href='https://rdrr.io/r/base/numeric.html'>is.numeric</a></span><span class='o'>(</span><span class='nv'>x</span><span class='o'>)</span><span class='o'>)</span> <span class='o'>&#123;</span></span>
 <span>    <span class='nf'>cli</span><span class='nf'>::</span><span class='nf'><a href='https://cli.r-lib.org/reference/cli_abort.html'>cli_abort</a></span><span class='o'>(</span></span>
 <span>      message <span class='o'>=</span> <span class='nf'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='o'>(</span></span>
@@ -358,31 +361,29 @@ Let's demonstrate this - we change uses of `x` to using `arg` in the error messa
 
 <div class="highlight">
 
-<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='nv'>check_if_squarable</span> <span class='o'>&lt;-</span> <span class='kr'>function</span><span class='o'>(</span><span class='nv'>x</span>, </span>
+<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='nv'>check_if_squarable</span> <span class='o'>&lt;-</span> <span class='kr'>function</span><span class='o'>(</span><span class='nv'>x</span>,</span>
 <span>                               <span class='nv'>arg</span> <span class='o'>=</span> <span class='nf'>rlang</span><span class='nf'>::</span><span class='nf'><a href='https://rlang.r-lib.org/reference/caller_arg.html'>caller_arg</a></span><span class='o'>(</span><span class='nv'>x</span><span class='o'>)</span>,</span>
-<span>                               <span class='nv'>call</span> <span class='o'>=</span> <span class='nf'>rlang</span><span class='nf'>::</span><span class='nf'><a href='https://rlang.r-lib.org/reference/stack.html'>caller_env</a></span><span class='o'>(</span><span class='o'>)</span><span class='o'>)</span><span class='o'>&#123;</span></span>
-<span>  </span>
+<span>                               <span class='nv'>call</span> <span class='o'>=</span> <span class='nf'>rlang</span><span class='nf'>::</span><span class='nf'><a href='https://rlang.r-lib.org/reference/stack.html'>caller_env</a></span><span class='o'>(</span><span class='o'>)</span><span class='o'>)</span> <span class='o'>&#123;</span></span>
 <span>  <span class='nv'>x_len</span> <span class='o'>&lt;-</span> <span class='nf'><a href='https://rdrr.io/r/base/length.html'>length</a></span><span class='o'>(</span><span class='nv'>x</span><span class='o'>)</span></span>
 <span>  <span class='nv'>dims</span> <span class='o'>&lt;-</span> <span class='nf'><a href='https://rdrr.io/r/base/MathFun.html'>sqrt</a></span><span class='o'>(</span><span class='nv'>x_len</span><span class='o'>)</span></span>
 <span>  </span>
 <span>  <span class='nv'>squarable_length</span> <span class='o'>&lt;-</span> <span class='nf'><a href='https://rdrr.io/r/base/Round.html'>floor</a></span><span class='o'>(</span><span class='nv'>dims</span><span class='o'>)</span> <span class='o'>==</span> <span class='nv'>dims</span></span>
 <span>  </span>
-<span>  <span class='kr'>if</span> <span class='o'>(</span><span class='o'>!</span><span class='nv'>squarable_length</span><span class='o'>)</span><span class='o'>&#123;</span></span>
+<span>  <span class='kr'>if</span> <span class='o'>(</span><span class='o'>!</span><span class='nv'>squarable_length</span><span class='o'>)</span> <span class='o'>&#123;</span></span>
 <span>    <span class='nf'>cli</span><span class='nf'>::</span><span class='nf'><a href='https://cli.r-lib.org/reference/cli_abort.html'>cli_abort</a></span><span class='o'>(</span></span>
 <span>      message <span class='o'>=</span> <span class='nf'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='o'>(</span></span>
 <span>        <span class='s'>"Provided vector is not of a squarable length"</span>,</span>
 <span>        <span class='s'>"&#123;.arg &#123;arg&#125;&#125; is of length &#123;.num &#123;x_len&#125;&#125;"</span>,</span>
 <span>        <span class='s'>"This cannot be represented as a square"</span></span>
-<span>        <span class='o'>)</span>,</span>
+<span>      <span class='o'>)</span>,</span>
 <span>      call <span class='o'>=</span> <span class='nv'>call</span></span>
 <span>    <span class='o'>)</span></span>
 <span>  <span class='o'>&#125;</span></span>
 <span><span class='o'>&#125;</span></span>
 <span></span>
-<span><span class='nv'>check_if_not_numeric</span> <span class='o'>&lt;-</span> <span class='kr'>function</span><span class='o'>(</span><span class='nv'>x</span>, </span>
+<span><span class='nv'>check_if_not_numeric</span> <span class='o'>&lt;-</span> <span class='kr'>function</span><span class='o'>(</span><span class='nv'>x</span>,</span>
 <span>                                 <span class='nv'>arg</span> <span class='o'>=</span> <span class='nf'>rlang</span><span class='nf'>::</span><span class='nf'><a href='https://rlang.r-lib.org/reference/caller_arg.html'>caller_arg</a></span><span class='o'>(</span><span class='nv'>x</span><span class='o'>)</span>,</span>
-<span>                                 <span class='nv'>call</span> <span class='o'>=</span> <span class='nf'>rlang</span><span class='nf'>::</span><span class='nf'><a href='https://rlang.r-lib.org/reference/stack.html'>caller_env</a></span><span class='o'>(</span><span class='o'>)</span><span class='o'>)</span><span class='o'>&#123;</span></span>
-<span>  </span>
+<span>                                 <span class='nv'>call</span> <span class='o'>=</span> <span class='nf'>rlang</span><span class='nf'>::</span><span class='nf'><a href='https://rlang.r-lib.org/reference/stack.html'>caller_env</a></span><span class='o'>(</span><span class='o'>)</span><span class='o'>)</span> <span class='o'>&#123;</span></span>
 <span>  <span class='kr'>if</span> <span class='o'>(</span><span class='o'>!</span><span class='nf'><a href='https://rdrr.io/r/base/numeric.html'>is.numeric</a></span><span class='o'>(</span><span class='nv'>x</span><span class='o'>)</span><span class='o'>)</span> <span class='o'>&#123;</span></span>
 <span>    <span class='nf'>cli</span><span class='nf'>::</span><span class='nf'><a href='https://cli.r-lib.org/reference/cli_abort.html'>cli_abort</a></span><span class='o'>(</span></span>
 <span>      message <span class='o'>=</span> <span class='nf'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='o'>(</span></span>

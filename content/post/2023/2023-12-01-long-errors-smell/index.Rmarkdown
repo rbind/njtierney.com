@@ -60,19 +60,19 @@ I call this code smell, and "Error Handling Eclipse":
 The code smell looks like this:
 
 ```{r}
-vector_to_square <- function(data){
+vector_to_square <- function(data) {
   dims <- sqrt(length(data))
   
   squarable_length <- floor(dims) == dims
   
-  if (!squarable_length){
+  if (!squarable_length) {
     cli::cli_abort(
       c(
         "Provided vector is not of a squarable length",
         "{.var data} is of length {.num {length(data)}}",
         "This cannot be represented as a square",
         "Square root of {.var dim(data)} is: {.num {round(dims, 3)}}."
-        )
+      )
     )
   }
   
@@ -85,10 +85,12 @@ vector_to_square <- function(data){
     )
   }
   
-  matrix(data = data,
-         nrow = dims,
-         ncol = dims,
-         byrow = TRUE)
+  matrix(
+    data = data,
+    nrow = dims,
+    ncol = dims,
+    byrow = TRUE
+  )
 }
 ```
 
@@ -103,19 +105,19 @@ This code can be improved by refactoring the errors as `check_*` functions, some
 To demonstrate this, let's take a look again at the example code from above, a function that converts a vector into a square matrix:
 
 ```{r}
-vector_to_square <- function(data){
+vector_to_square <- function(data) {
   dims <- sqrt(length(data))
   
   squarable_length <- floor(dims) == dims
   
-  if (!squarable_length){
+  if (!squarable_length) {
     cli::cli_abort(
       c(
         "Provided vector is not of a squarable length",
         "{.var x} is of length {.num {length(data)}}",
         "This cannot be represented as a square",
         "Square root of {.var dim(data)} is: {.num {round(dims, 3)}}."
-        )
+      )
     )
   }
   
@@ -128,10 +130,12 @@ vector_to_square <- function(data){
     )
   }
   
-  matrix(data = data,
-         nrow = dims,
-         ncol = dims,
-         byrow = TRUE)
+  matrix(
+    data = data,
+    nrow = dims,
+    ncol = dims,
+    byrow = TRUE
+  )
 }
 ```
 
@@ -152,25 +156,24 @@ So we have some input checking code, which does two things:
 While we like these error messages, wrapping up the error messags as functions clarifies the intent of them, and avoids repitition:
 
 ```{r}
-check_if_squarable <- function(x){
+check_if_squarable <- function(x) {
   dims <- sqrt(length(x))
   
   squarable_length <- floor(dims) == dims
   
-  if (!squarable_length){
+  if (!squarable_length) {
     cli::cli_abort(
       c(
         "Provided vector is not of a squarable length",
         "{.var x} is of length {.num {length(x)}}",
         "This cannot be represented as a square",
         "Square root of {.var dim(x)} is: {.num {round(dims, 3)}}."
-        )
+      )
     )
   }
 }
 
-check_if_not_numeric <- function(x){
-  
+check_if_not_numeric <- function(x) {
   if (!is.numeric(x)) {
     cli::cli_abort(
       c(
@@ -186,17 +189,18 @@ check_if_not_numeric <- function(x){
 These error messages can then be put into the function like so:
 
 ```{r}
-vector_to_square <- function(data){
-  
+vector_to_square <- function(data) {
   check_if_squarable(data)
   check_if_not_numeric(data)
   
   dims <- sqrt(length(data))
   
-  matrix(data = data,
-         nrow = dims,
-         ncol = dims,
-         byrow = TRUE)
+  matrix(
+    data = data,
+    nrow = dims,
+    ncol = dims,
+    byrow = TRUE
+  )
 }
 ```
 
@@ -216,7 +220,7 @@ There are a couple of other benefits to this:
 -   I can find common cases of checking and improve them.
 -   I see two checking functions, and it invites me to think about other checks that I might want to perform.
 
-## But now the error smells.
+## But now the error smells
 
 Ah, but we didn't check to see what these new errors look like! My friend [Adam Gruer](https://adamgruer.rbind.io/) pointed out:
 
@@ -242,31 +246,30 @@ The first is how to make sure the input checking function references the functio
 This is solved by passing the `check_` functions a `call` environment. So we add `call = rlang::caller_env()` as an argument:
 
 ```{r}
-check_if_squarable <- function(x, 
+check_if_squarable <- function(x,
                                # Add this
-                               call = rlang::caller_env()){
+                               call = rlang::caller_env()) {
   dims <- sqrt(length(x))
   
   squarable_length <- floor(dims) == dims
   
-  if (!squarable_length){
+  if (!squarable_length) {
     cli::cli_abort(
       message = c(
         "Provided vector is not of a squarable length",
         "{.var x} is of length {.num {length(x)}}",
         "This cannot be represented as a square",
         "Square root of {.var dim(x)} is: {.num {round(dims, 3)}}."
-        ),
+      ),
       # And this
       call = call
     )
   }
 }
 
-check_if_not_numeric <- function(x, 
+check_if_not_numeric <- function(x,
                                  # Add this
-                                 call = rlang::caller_env()){
-  
+                                 call = rlang::caller_env()) {
   if (!is.numeric(x)) {
     cli::cli_abort(
       message = c(
@@ -308,31 +311,29 @@ Thankfully, yet again, the rlang team has thought about this, in [Input checkers
 Let's demonstrate this - we change uses of `x` to using `arg` in the error message. 
 
 ```{r}
-check_if_squarable <- function(x, 
+check_if_squarable <- function(x,
                                arg = rlang::caller_arg(x),
-                               call = rlang::caller_env()){
-  
+                               call = rlang::caller_env()) {
   x_len <- length(x)
   dims <- sqrt(x_len)
   
   squarable_length <- floor(dims) == dims
   
-  if (!squarable_length){
+  if (!squarable_length) {
     cli::cli_abort(
       message = c(
         "Provided vector is not of a squarable length",
         "{.arg {arg}} is of length {.num {x_len}}",
         "This cannot be represented as a square"
-        ),
+      ),
       call = call
     )
   }
 }
 
-check_if_not_numeric <- function(x, 
+check_if_not_numeric <- function(x,
                                  arg = rlang::caller_arg(x),
-                                 call = rlang::caller_env()){
-  
+                                 call = rlang::caller_env()) {
   if (!is.numeric(x)) {
     cli::cli_abort(
       message = c(
@@ -346,7 +347,7 @@ check_if_not_numeric <- function(x,
 }
 ```
 
- (in rewriting-ing this, I realised I don't need to include the square root of the length to explain to the user, so I deleted that part of the message)
+(in rewriting-ing this, I realised I don't need to include the square root of the length to explain to the user, so I deleted that part of the message)
 
 ```{r}
 #| error: true
