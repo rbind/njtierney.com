@@ -51,7 +51,7 @@ The talk is a delight, and watching it again was really awesome. If you haven't 
 
 Anyway, I digress. 
 
-I call this code smell, and "Error Handling Eclipse":
+I call this code smell, an "Error Handling Eclipse":
 
 > When error checking code totally eclipses the intent of the code.[^1]
 
