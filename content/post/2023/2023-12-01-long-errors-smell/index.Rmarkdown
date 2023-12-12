@@ -51,7 +51,7 @@ The talk is a delight, and watching it again was really awesome. If you haven't 
 
 Anyway, I digress. 
 
-I call this code smell, and "Error Handling Eclipse":
+I call this code smell, an "Error Handling Eclipse":
 
 > When error checking code totally eclipses the intent of the code.[^1]
 
@@ -94,7 +94,7 @@ vector_to_square <- function(data) {
 }
 ```
 
-The code smell, "error handling eclipse", can be seen here where the long error messages in the body of a function crow the intent. I believe the refactoring move here is to wrap these error functions into a function. This reduces repetition, and makes the intent of the code clearer, since you don't need to wade through error checking code. [The tidyverse design document on error checking](https://design.tidyverse.org/err-constructor.html)) mentions building these "error checking" functions when the error is used three times. I think there is more benefit to write it out every time.
+The code smell, "error handling eclipse", can be seen here where the long error messages in the body of a function crow the intent. I believe the refactoring move here is to wrap these error functions into a function. This reduces repetition, and makes the intent of the code clearer, since you don't need to wade through error checking code. [The tidyverse design document on error checking](https://design.tidyverse.org/err-constructor.html) mentions building these "error checking" functions when the error is used three times. I think there is more benefit to write it out every time.
 
 ## What's the solution?
 
