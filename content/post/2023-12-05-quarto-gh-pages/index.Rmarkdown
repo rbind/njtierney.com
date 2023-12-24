@@ -1,0 +1,59 @@
+---
+title: Publish a Quarto + r Book to Github Pages with Github Actions
+author: Nicholas Tierney
+date: '2023-12-05'
+slug: quarto-gh-pages
+categories:
+  - research software engineer
+  - quarto
+  - rstats
+  - teaching
+tags:
+  - data science
+  - quarto
+  - research software engineer
+  - rstats
+draft: yes
+output: hugodown::md_document
+---
+
+```{r setup, include = FALSE}
+options(cli.width = 70)  # For tidyverse loading messages
+knitr::opts_chunk$set(
+  tidy.opts = list(width.cutoff = 70),  # For code
+  width = 70,
+  collapse = TRUE, 
+  comment = "#>", 
+  fig.width = 7, 
+  fig.align = 'center',
+  fig.asp = 0.618, # 1 / phi
+  fig.retina = 2,
+  out.width = "700px"
+)
+```
+
+My goal is to write content in text only, and then have those changes (somewhat magically) render online and push to a book.
+
+Recently, I've been going through a few iterations of trying to get a quarto book onto github pages. It hasn't been as straightforward as I would like, and I've decided to write down the process, mostly for myself, and hopefully this helps other people. But also, maybe I'm doing something wrong, or could be doing something better. Let me know in the comments!
+
+
+## The process
+
+1. Create a quarto book via rstudio
+2. Create a github repo for this book
+3. [Push the repo onto github](https://github.com/njtierney/quarto-gh-pages-2/commits/main)
+4. Establish your R dependencies: Run `usethis::use_description(check_name = FALSE)`. This ensures the right packages are installed on github later. There are other approachs (like `renv`), but in my opinion this is easier. Make sure any packages you use in your work are in the DESCRIPTION file. See [my example DESCRIPTION as an example](https://github.com/njtierney/quarto-gh-pages-2/blob/main/DESCRIPTION). Note that rmarkdown and knitr should be there.
+5. Run `usethis::use_github_pages()`. This sets up a separate gh-pages branch for you to publish your work.
+6. Run `usethis::use_github_action(name = "quarto-publish", url = "https://github.com/njtierney/actions/blob/main/quarto-publish.yml")`. This uses a slightly tinkered version of the [quarto publish examples](), borrowing from other repos I've seen.
+7. [Push these changes onto github]()
+8. In a few minutes, your book should now be live at <username>.github.io/<reponame>, e.g., 
+
+There's a bunch of assumptions I've made here. Firstly, this only works for github pages. There are other places you can publish to, for example, netlify, or posit connect. You can read more about that on the [posit website](). I've also made assumptions about only using R. For me, that's what I use mostly, and so I've tried to demonstrate using R dependencies.
+
+# Thanks to all the documentation
+
+Thanks to all of the folks at posit for working on writing documentation and for writing github actions.
+
+# End
+
+I've tested out this process a couple of times, and it seems to be reliable, hopefully it helps you, too!
