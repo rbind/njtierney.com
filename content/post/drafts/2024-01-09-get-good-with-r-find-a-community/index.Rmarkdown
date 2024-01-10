@@ -1,0 +1,57 @@
+---
+title: 'Get Good with R: Find a Community'
+author: Nicholas Tierney
+date: '2024-01-09'
+slug: get-good-with-r-find-a-community
+categories:
+  - rstats
+  - functions
+tags:
+  - rstats
+  - functions
+draft: yes
+output: hugodown::md_document
+---
+
+```{r setup, include = FALSE}
+options(cli.width = 70)  # For tidyverse loading messages
+knitr::opts_chunk$set(
+  tidy.opts = list(width.cutoff = 70),  # For code
+  width = 70,
+  collapse = TRUE, 
+  comment = "#>", 
+  fig.width = 7, 
+  fig.align = 'center',
+  fig.asp = 0.618, # 1 / phi
+  fig.retina = 2,
+  out.width = "700px"
+)
+```
+
+
+## Find a community to share code/problems with
+
+**image of this**
+
+When I started out coding with R, I was in a statistics group that had about 20 PhD students and postdocs, and they all used R. They had all been through the process of learning R, and had had generous time given to them from previous post docs. It meant that I could ask someone something fundamental like, "how do I read in data?", "how do I create a line graph of people over time?", or "my code is frozen and I really don't know what to do", and I could have help from someone in the group relatively quickly, and they were kind. It was amazing. 
+
+I've realised over the years that this was not the most common situation people find themselves in - a lot of people using R might be one of a few in their group or department, or might be the only person. Being siloed like that can make it hard to be connected. So, how do you stay connected to people if they aren't in your office, or you're working remotely (like I am now). I've found joining slack teams useful, as well as talking to people online on twitter (although twitter is less useful now for me), and mastodon.
+
+Here are some slack groups that you could consider joining:
+
+- [Data Visualization Society](https://www.datavisualizationsociety.org/slack-community)
+- If you identify as a woman or gender minority, I have heard great things about the [R Ladies Slack](https://guide.rladies.org/comm/slack/) - although please note their conditions for joining at the link above. (If you are a cis-male (you were born male, and you also identify as male), do not sign up).
+- If you are an Australian who works in public policy or the public sector and use (or aspire to use) R, consider joining [runapp](https://runapp-aus.github.io/runapp_website/about.html)
+
+There are also online forums I would recommend as places to ask for help that are friendly:
+
+- [ropensci forum](https://discuss.ropensci.org/)
+- [posit community forum](https://community.rstudio.com/)
+
+I would also recommend joining an R user group, if there is one in your area. Google "R user group <placename>" to see if there is one near you. There are also R ladies meetups globally - you can find them listed [here](https://rladies.org/).
+
+I'd also highly recommend joining in an [rOpenSci social co working and office hours](https://ropensci.org/community/). 
+
+If there isn't a group near you, you could also consider starting a group of your own. It can be a bit of work, but it is also amazing to see R programmers wander out of the woodwork, and find your people. This could be an R user group for your city, or even a small R group for your workplace or research group or whatever. These can take various forms, as "hacky hour" one hour meetings, to "coding club" discussions on coding and show and tell.
+
+The point is that a helpful thing is to find people you can ask questions - and that can look like a lot of different things: from people in an office that you can physically see, to the unknown usernames of people on an online forum. I think having a support network, a place where you can look for help or give help to others, is a useful thing, that has helped me get better at programming.

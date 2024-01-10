@@ -28,13 +28,34 @@ knitr::opts_chunk$set(
 )
 ```
 
-Writing papers is hard, and a lot of work goes into 
+Writing papers is hard. But one of my favourite parts of them is creating nice figures. There's a deep satisfaction in creating a figure that simply displays the message you want. But you also do need to write captions. Sometimes I felt like my figures were strong enough that they needed very little in the captions But during my postdoc at Monash, my supervisor, [Professor Di Cook](https://www.dicook.org/),  gave me advice for how to write captions in a meeting, and it has stuck with me. The advice is now in the [proof reading checklists](https://journal.r-project.org/share/proofreading-checklist.pdf) for the [R Journal](https://journal.r-project.org/).
 
-This is taken from the proof reading checklists for the R Journal, which I first heard about from Dianne Cook. https://journal.r-project.org/share/proofreading-checklist.pdf
-These three checklists are:
+Again, I am not taking credit for this, but I just wanted to put this out there because I think it should be shared more widely.
 
-captions are appropriately constructed: should have three components: 
+Captions should have three components:
 
-(1) what is the plot/table about,
-(2) specific details of plot/table, like what type of display and how variables are mapped, 
-(3) the most important thing that the reader should learn.
+1. What is the plot/table about,
+2. Specific details of plot/table, like what type of display and how variables are mapped, 
+3. The most important thing that the reader should learn.
+
+Here's an example figure and caption:
+
+```{r}
+
+```
+
+
+And now here's the figure with the updated caption:
+
+```{r}
+
+```
+
+
+This piece of advice goes into nearly every single review that I write. It's changed the way I write, and it has also mildly cursed me in the same way that [XKCD's comic on kerning](https://xkcd.com/1015/) did. Too many times I now see something like:
+
+> "Figure 1. a heatmap of disease prevalance in <location>."
+
+So perhaps it is a blessing and a curse to have this knowledge. But I think the blessing is worth it.
+
+Thanks again to Di Cook for sharing this knowledge many years ago

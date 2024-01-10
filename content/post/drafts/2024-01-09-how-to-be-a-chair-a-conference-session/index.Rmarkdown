@@ -1,0 +1,57 @@
+---
+title: How to be a Chair a Conference Session
+author: Nicholas Tierney
+date: '2024-01-09'
+slug: how-to-be-a-chair-a-conference-session
+categories:
+  - rstats
+  - functions
+tags:
+  - rstats
+  - functions
+draft: yes
+output: hugodown::md_document
+---
+
+```{r setup, include = FALSE}
+options(cli.width = 70)  # For tidyverse loading messages
+knitr::opts_chunk$set(
+  tidy.opts = list(width.cutoff = 70),  # For code
+  width = 70,
+  collapse = TRUE, 
+  comment = "#>", 
+  fig.width = 7, 
+  fig.align = 'center',
+  fig.asp = 0.618, # 1 / phi
+  fig.retina = 2,
+  out.width = "700px"
+)
+```
+
+The key points are:
+
+1. Get the speakers name right. Ask them beforehand, if possible, or ask someone who knows. It feels really nice to have your name said properly.
+2. Stick to time. It can be awkward. That's OK. It's your job. No one wants to run 10 minutes into lunch, or their next class, or whatever.
+3. Have a one or two questions prepared at the end of their talk. Finishing your talk, the chair waiting a beat, and then saying, "no questions? OK, let's welcome the next speaker", feels really bad when you're a speaker.
+
+Some more detail.
+
+## Chairing a conference session
+
+1. Email or make contact with the speakers before the talk
+2. If there's time and it's practical, try and find the speaker before the session, have a chat with them. The goal is to be a friendly presence. Speaking is stressful, you want to help them.
+3. Before the session starts, get to the room and work out how the projector works, what the plan is for the speakers - is there one laptop with all the talks on it, do they plug in their own laptop, etc. Potentially co-ordinate with speakers beforehand to make sure they arrive beforehand to test everything works.
+4. Double check how to pronounce the speakers name.
+5. Alert the speakers to how you'll let them know minutes / time left in their talk. Use a bell, or hold up a card. Don't wait for the right moment to do it, you might have to briefly interrupt the speaker. It is worse to delay and try and find the right moment to interrupt them and they don't see you.
+6. The speaker can eat into their question time, but you can stand up and walk onto stage and get ready to wrap them up. If there's 2 minutes left of question time, you can say something like, "we have to bring the next speaker on in 2 minutes, I'm sorry, but I will need you to wrap up the talk"
+7. If they don't wrap up their talk, interrupt and say something like, "I'm so sorry, but we do need to wrap up the talk to stick to the schedule, (excuses: we've got another speaker / we have lunch / we have to clear the room by ...) can you all join me in thanking NAME for their talk." And then start clapping. It's awkward, and that's OK. Your job as chair is to keep things running to time. That's the job. People know it's awkward, it's OK. Embrace the awkwardness. People really appreciate it when you can keep things to time. The only exceptions to this that I can think of might be people of incredible importance at a significant event. For example, a head of state, a monarch, Vice Chancellor / President of a university, head of school, etc. Maybe. I dunno, I still feel like someone like Obama or Anthony Albanese would have enough experience to know that they need to finish their talk. Anyway.
+7. The most important point: When the talk has finished, have at least 2 questions prepared. There is often a pause of quiet at the end of a talk where the audience might be chewing on a thought or a question. DO NOT END THE SESSION WITHOUT THE SPEAKER GETTING A QUESTION. 
+
+The only exception is if the speaker has gone masssively overtime and are cutting into the next speakers talk time. 
+
+## 
+
+I 
+### morgue
+
+Now, the more detailed way to organise and chair a meeting. I've chaired a bunch of different meetings, some of them weekly / fortnightly department meetings, and at conferences. I'll go through the main gist of what I'd do for a conference first, and then discuss other details of lab meetings.

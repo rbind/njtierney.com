@@ -1,0 +1,79 @@
+---
+title: 'Get Good with R: Read Other People''s Code'
+author: Nicholas Tierney
+date: '2023-12-18'
+slug: get-good-read-code
+categories:
+  - rstats
+  - functions
+tags:
+  - rstats
+  - functions
+draft: yes
+output: hugodown::md_document
+---
+
+```{r setup, include = FALSE}
+options(cli.width = 70)  # For tidyverse loading messages
+knitr::opts_chunk$set(
+  tidy.opts = list(width.cutoff = 70),  # For code
+  width = 70,
+  collapse = TRUE, 
+  comment = "#>", 
+  fig.width = 7, 
+  fig.align = 'center',
+  fig.asp = 0.618, # 1 / phi
+  fig.retina = 2,
+  out.width = "700px"
+)
+```
+
+Previously, I wrote a blog post, ["How to get good with R"](), where I touched on a bunch of ideas on how to improve your R skills, focussing on the coding aspect. It is by no means definitive, and I kind of wish I had named it “How to improve your R skills” or something less grandiose. But it was a catchy title. Anyway, I digress. I said I would write another post about the non coding side, but it started to get really big, so I’m breaking them into smaller blog posts, as I think this gives me a bit more mental space to write well on a smaller topic. I will be linking the posts below here as I write them.
+
+- [Get Good with R: Typing Skills and Shortcuts](https://www.njtierney.com/post/2023/12/04/get-good-type-fast/)
+
+## Read other peoples code: blogs
+
+Blogs are a great way to learn new things. [Maëlle Salmon]() has got a great blog post series that you can search for by tag, [useful-functions](https://masalmon.eu/tags/useful-functions/). It's a joy to discover functions, a lot of these functions I've never heard of, like `str_squish()` for removing useless whitespace, as Maëlle demonstrates:
+
+```{r}
+text <- " So much\n\n useless    whitespace    ,but thank you Maëlle for writing this!"
+text
+stringr::str_squish(text)
+```
+
+[Nicola Rennie's](https://nrennie.rbind.io/) recent blog post, [Creating typewriter-styled maps in {ggplot2}](https://nrennie.rbind.io/blog/creating-typewriter-maps-r/) taught me about the [elevatr](https://github.com/jhollist/elevatr) package for getting elevation data, the [showtext](https://github.com/yixuan/showtext) R package for getting fonts, and then from that, [how to add social media icons to charts with ggplot](https://nrennie.rbind.io/blog/adding-social-media-icons-ggplot2/). 
+
+[Yihui Xie]() has a neat post on [How to fold messages and warnings in knitr](https://yihui.org/en/2023/05/fold-messages/)
+
+What I really enjoy about this is 
+
+## Look at the source
+
+How this has arisen for me is to be curious about how someone solved a problem or gets a function to work. Browsing the source of their code on github, or sometimes if it is a bit hard to find you can use [Jim Hester's](https://www.jimhester.com/) [`lookup` package](https://github.com/jimhester/lookup).
+
+- getAnywhere, `?` vs `??`.
+
+It is useful, say, to have a good golden standard of an R package layout - I find myself looking at how things are organised in [`dplyr`](https://github.com/tidyverse/dplyr) - things like how is their DESCRIPTION file laid out. Or how they [only got 4 rows of their tibbles to print in a vignette](https://github.com/tidyverse/dplyr/blob/main/vignettes/base.Rmd#L16).
+
+I'm coming up short with other examples at the moment of browsing through R code on github. But the message I want to convey is: 
+
+> Don't be afraid of jumping into the source code. You'll probably learn a few things.
+
+You might learn about a new package, or a new way of solving a coding problem. Sometimes you look at code and it looks familiar, they might use the same functions you use. We call this a pattern. And sometimes - sometimes often - you have no idea what the code is doing, and you can just browse on by.
+
+## Some people's blog posts I've enjoyed
+
+I thought I'd wrap this up by showcasing a few R people's blogs that I try and follow. I really should just use an RSS feed like `feedbin` or something...
+
+- [Maëlle Salmon]()
+- [Yihui Xie]()
+- [Nicola Rennie](https://nrennie.rbind.io/)
+- [Jono Carroll](https://jcarroll.com.au/)
+- [Rasmus Bååth](https://www.sumsar.net/)
+- [Di Cook](https://www.dicook.org/)
+- [Miles McBain]()
+- [Rob Hyndman]()
+- [coolbutuseless](https://coolbutuseless.github.io/)
+
+## End

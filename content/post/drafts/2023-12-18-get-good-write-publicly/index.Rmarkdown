@@ -1,0 +1,61 @@
+---
+title: 'Get Good with R: Write About your Work Publicly'
+author: Nicholas Tierney
+date: '2023-12-18'
+slug: get-good-write-publicly
+categories:
+  - blag
+  - Blag
+  - research software engineer
+  - rse
+  - rstats
+tags:
+  - rbloggers
+  - research software engineer
+  - rse
+  - rstats
+draft: yes
+output: hugodown::md_document
+---
+
+```{r setup, include = FALSE}
+options(cli.width = 70)  # For tidyverse loading messages
+knitr::opts_chunk$set(
+  tidy.opts = list(width.cutoff = 70),  # For code
+  width = 70,
+  collapse = TRUE, 
+  comment = "#>", 
+  fig.width = 7, 
+  fig.align = 'center',
+  fig.asp = 0.618, # 1 / phi
+  fig.retina = 2,
+  out.width = "700px"
+)
+```
+
+Previously, I wrote a blog post, ["How to get good with R"](), where I touched on a bunch of ideas on how to improve your R skills, focussing on the coding aspect. It is by no means definitive, and I kind of wish I had named it “How to improve your R skills” or something less grandiose. But it was a catchy title. Anyway, I digress. I said I would write another post about the non coding side, but it started to get really big, so I’m breaking them into smaller blog posts, as I think this gives me a bit more mental space to write well on a smaller topic. I will be linking the posts below here as I write them.
+
+- [Get Good with R: Typing Skills and Shortcuts](https://www.njtierney.com/post/2023/12/04/get-good-type-fast/)
+
+## Motivation
+
+I really do think writing about your work publicly can be really beneficial. Why write a blog? I shall quote an internet acquaintance, [Brendan Rocks](http://brendanrocks.com/about/), who wrote ["Blogging with rmarkdown, knitr, and jekyll"](http://brendanrocks.com/blogging-with-rmarkdown-knitr-jekyll/), which contains some great advice on why you should write a blog in the first place:
+
+> **They’re some of the best resources available**. How many times has a blog post walked you through a complex subject with accessible writing, and code you can easily try out? More than you times than you deserve, and less times than you’d like!
+
+> **You know less than you thought, and your memory is horrible**. The process of writing, especially publicly for your peers, is the best way to challenge and hone your understanding. At the same time, a blog-post fills the effort/usefulness chasm between a research paper, and crappy notes in your code
+
+> **Exploit the kindness/boredom of experts**. Twitter, rbloggers, hacker news, and the rest are teeming with people much cleverer than you, often willing to offer advice and encouragement
+
+> **Bonus Reason: Because Hadley Wickham told you to**. "If you want to give back, I think writing a blog is a great way. Many of the things that you struggle with will be common problems. Think about how to solve them well and describe your solution to others." -- From Hadley’s Reddit AMA
+
+This advice is solid, I especially resonate with the ideas that the **process** of writing in a public setting helps clarify your understanding of topics, and Hadley's point that many of the things you struggle with are common problems. We know more than we think! While Brendan hasn't blogged in a while, his blog post from 2015 helped me get my blog working with R, back in the dark days before `blogdown` and co. 
+
+[Dave Robinson also has a great talk on this, "The unreasonable effectiveness of public work"](https://posit.co/resources/videos/the-unreasonable-effectiveness-of-public-work/), following on from his blog post ["Advice to aspiring data scientists: start a blog"](http://varianceexplained.org/r/start-blog/), he says:
+
+> When you’ve written the same code 3 times, write a function
+> When you’ve given the same in-person advice 3 times, write a blog post
+
+Following his advice here, it is worthwhile to document how you solved a problem. I often do this because I forget how to do something, and writing it down somewhere means I can come back to it. And in doing the writing it down, I have understood the problem a bit deeper. And I also clean up my code a little bit more. Kind of like when you have guests over at your house - you want to clean up a bit and make it look presentable. 
+
+So this is an argument for starting and writing a blog. But it's also an argument for putting your work out there, online. Sharing your code on github or another platform (gitlab, bitbucket) is a good habit to get into. I used to worry that when I put up code online some troll, or worse, someone I admire, might read over my code and balk at the errors I'd made. It's never happened to me, but putting my code up online does make me clean up things a little, just like I said above about blogging.

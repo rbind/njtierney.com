@@ -70,44 +70,6 @@ If there isn't a group near you, you could also consider starting a group of you
 
 The point is that a helpful thing is to find people you can ask questions - and that can look like a lot of different things: from people in an office that you can physically see, to the unknown usernames of people on an online forum. I think having a support network, a place where you can look for help or give help to others, is a useful thing, that has helped me get better at programming.
 
-
-## Read other peoples code
-
-Read other peoples code! What does this look like? How this has arisen for me is to be curious about how someone solved a problem or gets a function to work. Browsing the source of their code on github, or sometimes if it is a bit hard to find you can use [Jim Hester's](https://www.jimhester.com/) [`lookup` package](https://github.com/jimhester/lookup).
-
-It is useful, say, to have a good golden standard of an R package layout - I find myself looking at how things are organised in [`dplyr`](https://github.com/tidyverse/dplyr) - things like how is their DESCRIPTION file laid out. Or how they [only got 4 rows of their tibbles to print in a vignette](https://github.com/tidyverse/dplyr/blob/main/vignettes/base.Rmd#L16).
-
-I'm coming up short with other examples at the moment of browsing through R code on github. But the message I want to convey is: 
-
-> Don't be afraid of jumping into the source code. You'll probably learn a few things.
-
-You might learn about a new package, or a new way of solving a coding problem. Sometimes you look at code and it looks familiar, they might use the same functions you use. We call this a pattern. And sometimes - sometimes often - you have no idea what the code is doing, and you can just browse on by. 
-
-Reading blog posts is also a great way to learn new things. I'm a fan of [Nicola Rennie's](https://nrennie.rbind.io/) work, and her recent blog post, [Creating typewriter-styled maps in {ggplot2}](https://nrennie.rbind.io/blog/creating-typewriter-maps-r/) was super cool. Reading this I learnt about the [elevatr](https://github.com/jhollist/elevatr) R package for getting elevation data, the [showtext](https://github.com/yixuan/showtext) R package for getting fonts, and then from that, [how to add social media icons to charts with ggplot](https://nrennie.rbind.io/blog/adding-social-media-icons-ggplot2/). 
-
-## Write about your work publicly
-
-On the note of blog posts above, I really do think writing about your work publicly can be really beneficial. Why write a blog? I shall quote an internet acquaintance, Brendan Rocks (his real name, which is awesome), who wrote ["Blogging with rmarkdown, knitr, and jekyll"](http://brendanrocks.com/blogging-with-rmarkdown-knitr-jekyll/), which contains some great advice on why you should write a blog in the first place:
-
-> **They’re some of the best resources available**. How many times has a blog post walked you through a complex subject with accessible writing, and code you can easily try out? More than you times than you deserve, and less times than you’d like!
-
-> **You know less than you thought, and your memory is horrible**. The process of writing, especially publicly for your peers, is the best way to challenge and hone your understanding. At the same time, a blog-post fills the effort/usefulness chasm between a research paper, and crappy notes in your code
-
-> **Exploit the kindness/boredom of experts**. Twitter, rbloggers, hacker news, and the rest are teeming with people much cleverer than you, often willing to offer advice and encouragement
-
-> **Bonus Reason: Because Hadley Wickham told you to**. "If you want to give back, I think writing a blog is a great way. Many of the things that you struggle with will be common problems. Think about how to solve them well and describe your solution to others." -- From Hadley’s Reddit AMA
-
-This advice is solid, I especially resonate with the ideas that the **process** of writing in a public setting helps clarify your understanding of topics, and Hadley's point that many of the things you struggle with are common problems. We know more than we think! While Brendan hasn't blogged in a while, his blog post from 2015 helped me get my blog working with R, back in the dark days before `blogdown` and co. 
-
-[Dave Robinson also has a great talk on this, "The unreasonable effectiveness of public work"](https://posit.co/resources/videos/the-unreasonable-effectiveness-of-public-work/), following on from his blog post ["Advice to aspiring data scientists: start a blog"](http://varianceexplained.org/r/start-blog/), he says:
-
-> When you’ve written the same code 3 times, write a function
-> When you’ve given the same in-person advice 3 times, write a blog post
-
-Following his advice here, it is worthwhile to document how you solved a problem. I often do this because I forget how to do something, and writing it down somewhere means I can come back to it. And in doing the writing it down, I have understood the problem a bit deeper. And I also clean up my code a little bit more. Kind of like when you have guests over at your house - you want to clean up a bit and make it look presentable. 
-
-So this is an argument for starting and writing a blog. But it's also an argument for putting your work out there, online. Sharing your code on github or another platform (gitlab, bitbucket) is a good habit to get into. I used to worry that when I put up code online some troll, or worse, someone I admire, might read over my code and balk at the errors I'd made. It's never happened to me, but putting my code up online does make me clean up things a little, just like I said above about blogging.
-
 ## Get used to reading documentation 
 
 **photo of reading**
@@ -180,15 +142,19 @@ Some examples of this:
 - Developing an object oriented class structure. I've spent a bit of time trying to decompose a problem into a series of classes to encapsulate the work. However, I've found myself in the weeds of defining classes and inheritance, before I've even solved the actual problem that I want some of these classes to help me with. This isn't to say that classes and OO style programming isn't a good way to solve problems; they are great. This is to say that sometimes you _don't really need that complexity to solve your problem effectively_.
 
 
-## Offload ideas and tasks onto github issues (or another system)
+## Offload ideas and tasks onto an exocortex
 
 **photo of offloading**
+
+
 
 Carrying around ideas in your head can be surprisingly tiring. You might not 
 even realise that you're spending brain cycles holding onto this information
 until you dump it somewhere. I have a to do list app, where I dump things I need
 to do onto. It's not perfect, and it means I have a lot of things to do, but at 
 least they have a home.
+
+For my new ideas, I have a private github repo, `njtierney/ideas`, which I have a bookmark saved to for new ideas: `njtierney/ideas/issues/new`.
 
 Similarly, for projects that live on github, I try and dump ideas and bugs as
 soon as I can onto them. I had the luck to be a TA for Hadley Wickham's advanced
