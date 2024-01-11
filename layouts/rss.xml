@@ -49,7 +49,7 @@
     <link>{{ .Permalink }}</link>
     <description>Recent content {{ if ne .Title .Site.Title }}{{ with .Title }}in {{ . }} {{ end }}{{ end }}on {{ .Site.Title }}</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>{{ site.Language.LanguageCode }}</language>{{ with $authorEmail }}
+    <language>en</language>{{ with $authorEmail }}
     <managingEditor>{{.}}{{ with $authorName }} ({{ . }}){{ end }}</managingEditor>{{ end }}{{ with $authorEmail }}
     <webMaster>{{ . }}{{ with $authorName }} ({{ . }}){{ end }}</webMaster>{{ end }}{{ with .Site.Copyright }}
     <copyright>{{ . }}</copyright>{{ end }}{{ if not .Date.IsZero }}
@@ -64,7 +64,7 @@
       <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
       {{- with $authorEmail }}<author>{{ . }}{{ with $authorName }} ({{ . }}){{ end }}</author>{{ end }}
       <guid>{{ .Permalink }}</guid>
-      <description>{{ .Content | transform.XMLEscape | safeHTML }}</description>
+      <description>{{ .Content | html }}</description>
     </item>
     {{- end }}
   </channel>
