@@ -14,9 +14,8 @@ tags:
   - missing-data
   - rbloggers
   - research software engineer
-draft: yes
 output: hugodown::md_document
-rmd_hash: 6a0d385d2efa30e2
+rmd_hash: 5eba1fcef588fcd8
 
 ---
 
@@ -50,12 +49,12 @@ To demonstrate these imputation functions, let's create a vector of missing valu
 <span><span class='nv'>vec_fct</span> <span class='o'>&lt;-</span> <span class='nf'><a href='http://naniar.njtierney.com/reference/set-prop-n-miss.html'>set_prop_miss</a></span><span class='o'>(</span><span class='nv'>vec_fct</span>, <span class='m'>0.4</span><span class='o'>)</span></span>
 <span></span>
 <span><span class='nv'>vec_num</span></span>
-<span><span class='c'>#&gt;  [1]  1.87371206          NA -0.90059805  1.31362879          NA  0.07711425</span></span>
-<span><span class='c'>#&gt;  [7]          NA  0.30432878          NA -0.38494202</span></span>
+<span><span class='c'>#&gt;  [1]         NA  0.9232763         NA  0.5265162         NA         NA</span></span>
+<span><span class='c'>#&gt;  [7]  1.4260531  1.3793303 -0.7855565 -0.5928170</span></span>
 <span></span><span><span class='nv'>vec_int</span></span>
-<span><span class='c'>#&gt;  [1]  4  5 NA NA  2 NA  5  5 NA  7</span></span>
+<span><span class='c'>#&gt;  [1] NA  5  6  5  5 NA NA  6 NA  6</span></span>
 <span></span><span><span class='nv'>vec_fct</span></span>
-<span><span class='c'>#&gt;  [1] &lt;NA&gt; B    C    D    &lt;NA&gt; &lt;NA&gt; G    H    I    &lt;NA&gt;</span></span>
+<span><span class='c'>#&gt;  [1] &lt;NA&gt; B    &lt;NA&gt; D    &lt;NA&gt; F    G    &lt;NA&gt; I    J   </span></span>
 <span><span class='c'>#&gt; Levels: A B C D E F G H I J</span></span>
 <span></span></code></pre>
 
@@ -66,10 +65,10 @@ We can use [`impute_fixed()`](http://naniar.njtierney.com/reference/impute_fixed
 <div class="highlight">
 
 <pre class='chroma'><code class='language-r' data-lang='r'><span><span class='nf'><a href='http://naniar.njtierney.com/reference/impute_fixed.html'>impute_fixed</a></span><span class='o'>(</span><span class='nv'>vec_num</span>, <span class='o'>-</span><span class='m'>999</span><span class='o'>)</span></span>
-<span><span class='c'>#&gt;  [1]    1.87371206 -999.00000000   -0.90059805    1.31362879 -999.00000000</span></span>
-<span><span class='c'>#&gt;  [6]    0.07711425 -999.00000000    0.30432878 -999.00000000   -0.38494202</span></span>
+<span><span class='c'>#&gt;  [1] -999.0000000    0.9232763 -999.0000000    0.5265162 -999.0000000</span></span>
+<span><span class='c'>#&gt;  [6] -999.0000000    1.4260531    1.3793303   -0.7855565   -0.5928170</span></span>
 <span></span><span><span class='nf'><a href='http://naniar.njtierney.com/reference/impute_fixed.html'>impute_fixed</a></span><span class='o'>(</span><span class='nv'>vec_int</span>, <span class='o'>-</span><span class='m'>999</span><span class='o'>)</span></span>
-<span><span class='c'>#&gt;  [1]    4    5 -999 -999    2 -999    5    5 -999    7</span></span>
+<span><span class='c'>#&gt;  [1] -999    5    6    5    5 -999 -999    6 -999    6</span></span>
 <span></span></code></pre>
 
 </div>
@@ -79,10 +78,10 @@ And `impute_zero` is just a special case of `impute_fixed`, where the fixed valu
 <div class="highlight">
 
 <pre class='chroma'><code class='language-r' data-lang='r'><span><span class='nf'><a href='http://naniar.njtierney.com/reference/impute_zero.html'>impute_zero</a></span><span class='o'>(</span><span class='nv'>vec_num</span><span class='o'>)</span></span>
-<span><span class='c'>#&gt;  [1]  1.87371206  0.00000000 -0.90059805  1.31362879  0.00000000  0.07711425</span></span>
-<span><span class='c'>#&gt;  [7]  0.00000000  0.30432878  0.00000000 -0.38494202</span></span>
+<span><span class='c'>#&gt;  [1]  0.0000000  0.9232763  0.0000000  0.5265162  0.0000000  0.0000000</span></span>
+<span><span class='c'>#&gt;  [7]  1.4260531  1.3793303 -0.7855565 -0.5928170</span></span>
 <span></span><span><span class='nf'><a href='http://naniar.njtierney.com/reference/impute_zero.html'>impute_zero</a></span><span class='o'>(</span><span class='nv'>vec_int</span><span class='o'>)</span></span>
-<span><span class='c'>#&gt;  [1] 4 5 0 0 2 0 5 5 0 7</span></span>
+<span><span class='c'>#&gt;  [1] 0 5 6 5 5 0 0 6 0 6</span></span>
 <span></span></code></pre>
 
 </div>
@@ -92,10 +91,10 @@ Similar to [`impute_mean()`](http://naniar.njtierney.com/reference/impute_mean.h
 <div class="highlight">
 
 <pre class='chroma'><code class='language-r' data-lang='r'><span><span class='nf'><a href='http://naniar.njtierney.com/reference/impute_mode.html'>impute_mode</a></span><span class='o'>(</span><span class='nv'>vec_num</span><span class='o'>)</span></span>
-<span><span class='c'>#&gt;  [1]  1.87371206 -0.09415794 -0.90059805  1.31362879 -0.09415794  0.07711425</span></span>
-<span><span class='c'>#&gt;  [7] -0.09415794  0.30432878 -0.09415794 -0.38494202</span></span>
+<span><span class='c'>#&gt;  [1]  1.0704569  0.9232763  1.0704569  0.5265162  1.0704569  1.0704569</span></span>
+<span><span class='c'>#&gt;  [7]  1.4260531  1.3793303 -0.7855565 -0.5928170</span></span>
 <span></span><span><span class='nf'><a href='http://naniar.njtierney.com/reference/impute_mode.html'>impute_mode</a></span><span class='o'>(</span><span class='nv'>vec_int</span><span class='o'>)</span></span>
-<span><span class='c'>#&gt;  [1] 4 5 5 5 2 5 5 5 5 7</span></span>
+<span><span class='c'>#&gt;  [1] 6 5 6 5 5 6 6 6 6 6</span></span>
 <span></span></code></pre>
 
 </div>
@@ -106,15 +105,15 @@ You can't however use [`impute_fixed()`](http://naniar.njtierney.com/reference/i
 
 <pre class='chroma'><code class='language-r' data-lang='r'><span><span class='nf'><a href='http://naniar.njtierney.com/reference/impute_fixed.html'>impute_fixed</a></span><span class='o'>(</span><span class='nv'>vec_fct</span>, <span class='o'>-</span><span class='m'>999</span><span class='o'>)</span></span>
 <span><span class='c'>#&gt; Warning in `[&lt;-.factor`(`*tmp*`, is.na(x), value = -999): invalid factor level, NA generated</span></span>
-<span></span><span><span class='c'>#&gt;  [1] &lt;NA&gt; B    C    D    &lt;NA&gt; &lt;NA&gt; G    H    I    &lt;NA&gt;</span></span>
+<span></span><span><span class='c'>#&gt;  [1] &lt;NA&gt; B    &lt;NA&gt; D    &lt;NA&gt; F    G    &lt;NA&gt; I    J   </span></span>
 <span><span class='c'>#&gt; Levels: A B C D E F G H I J</span></span>
 <span></span><span><span class='nf'><a href='http://naniar.njtierney.com/reference/impute_zero.html'>impute_zero</a></span><span class='o'>(</span><span class='nv'>vec_fct</span><span class='o'>)</span></span>
 <span><span class='c'>#&gt; Warning in `[&lt;-.factor`(`*tmp*`, is.na(x), value = 0): invalid factor level, NA generated</span></span>
-<span></span><span><span class='c'>#&gt;  [1] &lt;NA&gt; B    C    D    &lt;NA&gt; &lt;NA&gt; G    H    I    &lt;NA&gt;</span></span>
+<span></span><span><span class='c'>#&gt;  [1] &lt;NA&gt; B    &lt;NA&gt; D    &lt;NA&gt; F    G    &lt;NA&gt; I    J   </span></span>
 <span><span class='c'>#&gt; Levels: A B C D E F G H I J</span></span>
 <span></span><span><span class='nf'><a href='http://naniar.njtierney.com/reference/impute_fixed.html'>impute_fixed</a></span><span class='o'>(</span><span class='nv'>vec_fct</span>, <span class='s'>"ZZ"</span><span class='o'>)</span></span>
 <span><span class='c'>#&gt; Warning in `[&lt;-.factor`(`*tmp*`, is.na(x), value = "ZZ"): invalid factor level, NA generated</span></span>
-<span></span><span><span class='c'>#&gt;  [1] &lt;NA&gt; B    C    D    &lt;NA&gt; &lt;NA&gt; G    H    I    &lt;NA&gt;</span></span>
+<span></span><span><span class='c'>#&gt;  [1] &lt;NA&gt; B    &lt;NA&gt; D    &lt;NA&gt; F    G    &lt;NA&gt; I    J   </span></span>
 <span><span class='c'>#&gt; Levels: A B C D E F G H I J</span></span>
 <span></span></code></pre>
 
@@ -125,7 +124,7 @@ However, you can use [`impute_mode()`](http://naniar.njtierney.com/reference/imp
 <div class="highlight">
 
 <pre class='chroma'><code class='language-r' data-lang='r'><span><span class='nf'><a href='http://naniar.njtierney.com/reference/impute_mode.html'>impute_mode</a></span><span class='o'>(</span><span class='nv'>vec_fct</span><span class='o'>)</span></span>
-<span><span class='c'>#&gt;  [1] G B C D G G G H I G</span></span>
+<span><span class='c'>#&gt;  [1] I B I D I F G I I J</span></span>
 <span><span class='c'>#&gt; Levels: A B C D E F G H I J</span></span>
 <span></span></code></pre>
 
@@ -136,7 +135,7 @@ For factors, you can impute a specific value:
 <div class="highlight">
 
 <pre class='chroma'><code class='language-r' data-lang='r'><span><span class='nf'><a href='http://naniar.njtierney.com/reference/impute_factor.html'>impute_factor</a></span><span class='o'>(</span><span class='nv'>vec_fct</span>, value <span class='o'>=</span> <span class='s'>"ZZ"</span><span class='o'>)</span></span>
-<span><span class='c'>#&gt;  [1] ZZ B  C  D  ZZ ZZ G  H  I  ZZ</span></span>
+<span><span class='c'>#&gt;  [1] ZZ B  ZZ D  ZZ F  G  ZZ I  J </span></span>
 <span><span class='c'>#&gt; Levels: A B C D E F G H I J ZZ</span></span>
 <span></span></code></pre>
 
@@ -158,18 +157,18 @@ Now let's demonstrate how to do this in a data frame. First we create the data
 <span></span>
 <span><span class='nv'>dat</span></span>
 <span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 10 × 3</span></span></span>
-<span><span class='c'>#&gt;        num   int fct  </span></span>
-<span><span class='c'>#&gt;      <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;int&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span></span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 1</span>  1.87       4 <span style='color: #BB0000;'>NA</span>   </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 2</span> <span style='color: #BB0000;'>NA</span>          5 B    </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 3</span> -<span style='color: #BB0000;'>0.901</span>     <span style='color: #BB0000;'>NA</span> C    </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 4</span>  1.31      <span style='color: #BB0000;'>NA</span> D    </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 5</span> <span style='color: #BB0000;'>NA</span>          2 <span style='color: #BB0000;'>NA</span>   </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 6</span>  0.077<span style='text-decoration: underline;'>1</span>    <span style='color: #BB0000;'>NA</span> <span style='color: #BB0000;'>NA</span>   </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 7</span> <span style='color: #BB0000;'>NA</span>          5 G    </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 8</span>  0.304      5 H    </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 9</span> <span style='color: #BB0000;'>NA</span>         <span style='color: #BB0000;'>NA</span> I    </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>10</span> -<span style='color: #BB0000;'>0.385</span>      7 <span style='color: #BB0000;'>NA</span></span></span>
+<span><span class='c'>#&gt;       num   int fct  </span></span>
+<span><span class='c'>#&gt;     <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;int&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span></span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 1</span> <span style='color: #BB0000;'>NA</span>        <span style='color: #BB0000;'>NA</span> <span style='color: #BB0000;'>NA</span>   </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 2</span>  0.923     5 B    </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 3</span> <span style='color: #BB0000;'>NA</span>         6 <span style='color: #BB0000;'>NA</span>   </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 4</span>  0.527     5 D    </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 5</span> <span style='color: #BB0000;'>NA</span>         5 <span style='color: #BB0000;'>NA</span>   </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 6</span> <span style='color: #BB0000;'>NA</span>        <span style='color: #BB0000;'>NA</span> F    </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 7</span>  1.43     <span style='color: #BB0000;'>NA</span> G    </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 8</span>  1.38      6 <span style='color: #BB0000;'>NA</span>   </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 9</span> -<span style='color: #BB0000;'>0.786</span>    <span style='color: #BB0000;'>NA</span> I    </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>10</span> -<span style='color: #BB0000;'>0.593</span>     6 J</span></span>
 <span></span></code></pre>
 
 </div>
@@ -185,18 +184,18 @@ You can use it inside mutate like so:
 <span>    fct <span class='o'>=</span> <span class='nf'><a href='http://naniar.njtierney.com/reference/impute_factor.html'>impute_factor</a></span><span class='o'>(</span><span class='nv'>fct</span>, <span class='s'>"out"</span><span class='o'>)</span></span>
 <span>  <span class='o'>)</span></span>
 <span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 10 × 3</span></span></span>
-<span><span class='c'>#&gt;           num   int fct  </span></span>
-<span><span class='c'>#&gt;         <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span></span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 1</span>     1.87       4 out  </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 2</span> -<span style='color: #BB0000; text-decoration: underline;'>9</span><span style='color: #BB0000;'>999</span>          5 B    </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 3</span>    -<span style='color: #BB0000;'>0.901</span>      0 C    </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 4</span>     1.31       0 D    </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 5</span> -<span style='color: #BB0000; text-decoration: underline;'>9</span><span style='color: #BB0000;'>999</span>          2 out  </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 6</span>     0.077<span style='text-decoration: underline;'>1</span>     0 out  </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 7</span> -<span style='color: #BB0000; text-decoration: underline;'>9</span><span style='color: #BB0000;'>999</span>          5 G    </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 8</span>     0.304      5 H    </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 9</span> -<span style='color: #BB0000; text-decoration: underline;'>9</span><span style='color: #BB0000;'>999</span>          0 I    </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>10</span>    -<span style='color: #BB0000;'>0.385</span>      7 out</span></span>
+<span><span class='c'>#&gt;          num   int fct  </span></span>
+<span><span class='c'>#&gt;        <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span></span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 1</span> -<span style='color: #BB0000; text-decoration: underline;'>9</span><span style='color: #BB0000;'>999</span>         0 out  </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 2</span>     0.923     5 B    </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 3</span> -<span style='color: #BB0000; text-decoration: underline;'>9</span><span style='color: #BB0000;'>999</span>         6 out  </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 4</span>     0.527     5 D    </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 5</span> -<span style='color: #BB0000; text-decoration: underline;'>9</span><span style='color: #BB0000;'>999</span>         5 out  </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 6</span> -<span style='color: #BB0000; text-decoration: underline;'>9</span><span style='color: #BB0000;'>999</span>         0 F    </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 7</span>     1.43      0 G    </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 8</span>     1.38      6 out  </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 9</span>    -<span style='color: #BB0000;'>0.786</span>     0 I    </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>10</span>    -<span style='color: #BB0000;'>0.593</span>     6 J</span></span>
 <span></span></code></pre>
 
 </div>
@@ -213,18 +212,18 @@ Or if you want to impute across all applicable variables with a single function,
 <span>    <span class='o'>)</span></span>
 <span>  <span class='o'>)</span></span>
 <span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 10 × 3</span></span></span>
-<span><span class='c'>#&gt;        num   int fct  </span></span>
-<span><span class='c'>#&gt;      <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span></span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 1</span>  1.87       4 <span style='color: #BB0000;'>NA</span>   </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 2</span>  0          5 B    </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 3</span> -<span style='color: #BB0000;'>0.901</span>      0 C    </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 4</span>  1.31       0 D    </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 5</span>  0          2 <span style='color: #BB0000;'>NA</span>   </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 6</span>  0.077<span style='text-decoration: underline;'>1</span>     0 <span style='color: #BB0000;'>NA</span>   </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 7</span>  0          5 G    </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 8</span>  0.304      5 H    </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 9</span>  0          0 I    </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>10</span> -<span style='color: #BB0000;'>0.385</span>      7 <span style='color: #BB0000;'>NA</span></span></span>
+<span><span class='c'>#&gt;       num   int fct  </span></span>
+<span><span class='c'>#&gt;     <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span></span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 1</span>  0         0 <span style='color: #BB0000;'>NA</span>   </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 2</span>  0.923     5 B    </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 3</span>  0         6 <span style='color: #BB0000;'>NA</span>   </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 4</span>  0.527     5 D    </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 5</span>  0         5 <span style='color: #BB0000;'>NA</span>   </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 6</span>  0         0 F    </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 7</span>  1.43      0 G    </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 8</span>  1.38      6 <span style='color: #BB0000;'>NA</span>   </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 9</span> -<span style='color: #BB0000;'>0.786</span>     0 I    </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>10</span> -<span style='color: #BB0000;'>0.593</span>     6 J</span></span>
 <span></span><span></span>
 <span><span class='nv'>dat</span> <span class='o'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span></span>
 <span>  <span class='nf'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='o'>(</span></span>
@@ -234,18 +233,18 @@ Or if you want to impute across all applicable variables with a single function,
 <span>    <span class='o'>)</span></span>
 <span>  <span class='o'>)</span></span>
 <span><span class='c'>#&gt; <span style='color: #555555;'># A tibble: 10 × 3</span></span></span>
-<span><span class='c'>#&gt;         num   int fct  </span></span>
-<span><span class='c'>#&gt;       <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span></span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 1</span>   1.87       4 <span style='color: #BB0000;'>NA</span>   </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 2</span> -<span style='color: #BB0000;'>99</span>          5 B    </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 3</span>  -<span style='color: #BB0000;'>0.901</span>    -<span style='color: #BB0000;'>99</span> C    </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 4</span>   1.31     -<span style='color: #BB0000;'>99</span> D    </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 5</span> -<span style='color: #BB0000;'>99</span>          2 <span style='color: #BB0000;'>NA</span>   </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 6</span>   0.077<span style='text-decoration: underline;'>1</span>   -<span style='color: #BB0000;'>99</span> <span style='color: #BB0000;'>NA</span>   </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 7</span> -<span style='color: #BB0000;'>99</span>          5 G    </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 8</span>   0.304      5 H    </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'> 9</span> -<span style='color: #BB0000;'>99</span>        -<span style='color: #BB0000;'>99</span> I    </span></span>
-<span><span class='c'>#&gt; <span style='color: #555555;'>10</span>  -<span style='color: #BB0000;'>0.385</span>      7 <span style='color: #BB0000;'>NA</span></span></span>
+<span><span class='c'>#&gt;        num   int fct  </span></span>
+<span><span class='c'>#&gt;      <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #555555; font-style: italic;'>&lt;fct&gt;</span></span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 1</span> -<span style='color: #BB0000;'>99</span>       -<span style='color: #BB0000;'>99</span> <span style='color: #BB0000;'>NA</span>   </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 2</span>   0.923     5 B    </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 3</span> -<span style='color: #BB0000;'>99</span>         6 <span style='color: #BB0000;'>NA</span>   </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 4</span>   0.527     5 D    </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 5</span> -<span style='color: #BB0000;'>99</span>         5 <span style='color: #BB0000;'>NA</span>   </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 6</span> -<span style='color: #BB0000;'>99</span>       -<span style='color: #BB0000;'>99</span> F    </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 7</span>   1.43    -<span style='color: #BB0000;'>99</span> G    </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 8</span>   1.38      6 <span style='color: #BB0000;'>NA</span>   </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'> 9</span>  -<span style='color: #BB0000;'>0.786</span>   -<span style='color: #BB0000;'>99</span> I    </span></span>
+<span><span class='c'>#&gt; <span style='color: #555555;'>10</span>  -<span style='color: #BB0000;'>0.593</span>     6 J</span></span>
 <span></span></code></pre>
 
 </div>

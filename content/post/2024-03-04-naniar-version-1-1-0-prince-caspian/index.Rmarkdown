@@ -14,7 +14,6 @@ tags:
   - missing-data
   - rbloggers
   - research software engineer
-draft: yes
 output: hugodown::md_document
 ---
 
