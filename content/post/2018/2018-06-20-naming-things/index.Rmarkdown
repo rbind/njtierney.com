@@ -175,6 +175,6 @@ it to a few people. I find that once I state the name of the package to them, th
   
 I would look at the [`available`](https://github.com/ropenscilabs/available) package for checking if the name exists. Maybe one day this will come up with something creative or unusual.
 
-Hadley has a [good guide](http://r-pkgs.had.co.nz/package.html) to naming packages, but I think that this process requires a few iterations.
+Hadley and Jenny have a [good guide](https://r-pkgs.org/workflow101.html#name-your-package) to naming packages, but I think that this process requires a few iterations.
 
 Also another post by [Yihui Xie](https://yihui.name/en/2017/12/typing-names/) has a good post on naming things - make sure it is easy to type!
