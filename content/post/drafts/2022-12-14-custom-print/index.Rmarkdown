@@ -33,3 +33,5 @@ Recently I wrote a [new print method for an object in an R package](), and I ran
 You might not! But they are fun.
 
 My use case was that I had an object that was a list of matrices. These matrices were kind of big and cumbersome. Each matrix needed it's own class so that I could do some custom plots
+
+Essentially the issue

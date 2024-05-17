@@ -1,14 +1,18 @@
 ---
-title: Name things `dat` over `df` or `data`
+title: {geotargets} 0.1.0
 author: Nicholas Tierney
-date: '2023-10-30'
-slug: dat-not-data
+date: '2024-05-16'
+slug: geotargets-0-1-0
 categories:
+  - geospatial
   - rstats
-  - functions
+  - targets
+  - packages
 tags:
+  - geospatial
   - rstats
-  - functions
+  - targets
+  - packages
 draft: yes
 output: hugodown::md_document
 ---
@@ -27,14 +31,3 @@ knitr::opts_chunk$set(
   out.width = "700px"
 )
 ```
-
-Every now and again I run into an error in R that looks like this:
-
-```{r}
-round_mean <- function(data){
-  round(data$, 0)
-}
-
-```
-
-I would recommend avoiding naming things `df`, and `data`. This is because `df` is also a function, and so is `data`. This can lead to some strange behaviour when you put these inside functions.

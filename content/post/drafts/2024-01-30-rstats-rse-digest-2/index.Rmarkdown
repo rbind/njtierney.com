@@ -1,0 +1,265 @@
+---
+title: Rstats RSE part 2 2024 Digest
+author: Nicholas Tierney
+date: '2023-12-22'
+slug: rstats-rse-january-2024-digest
+categories:
+  - rstats
+  - research software engineer
+  - rse
+  - digest
+tags:
+  - rstats
+  - research software engineer
+  - rse
+  - digest
+draft: yes
+output: hugodown::md_document
+---
+
+```{r setup, include = FALSE}
+options(cli.width = 70)  # For tidyverse loading messages
+knitr::opts_chunk$set(
+  tidy.opts = list(width.cutoff = 70),  # For code
+  width = 70,
+  collapse = TRUE, 
+  comment = "#>", 
+  fig.width = 7, 
+  fig.align = 'center',
+  fig.asp = 0.618, # 1 / phi
+  fig.retina = 2,
+  out.width = "700px"
+)
+```
+
+This is the second issue of the Rstats RSE part 2 2024 Digest
+
+I've been trying to read a bit more widely about R programming and other features of programming lately. I wanted to collect my monthly reading notes into a blog post / digest / newsletter type thing.
+
+Maybe this will continue, maybe it'll just be this one time, I dunno! But I want to do it for the following reasons:
+
+1. Help me share bulk links of interest to the Research Software Engineer, with a focus being on those who use R
+2. Force me to read these links so I can provide a little summary of the content.
+3. Engage more broadly with the RSE rstats community.
+4. Somewhat catch up on the technology/rstats world since I went hiking from April - October 2023.
+
+My intention is for these to be short lists. This might be something regular, or something irregular. Who knows, maybe it's just a one off. But here we go.
+
+# Blog / news posts
+
+https://www.brodrigues.co/blog/2022-04-11-monads/
+
+https://blog.r-hub.io/2022/03/10/input-checking/
+
+https://masalmon.eu/2023/12/07/two-phases-git-branches/
+
+https://www.milesmcbain.com/posts/2018-in-pursuit-of-productivity/
+
+https://epiverse-trace.github.io/posts/for-vs-apply/
+
+https://www.pipinghotdata.com/talks/2022-11-11-debugging/
+
+https://masalmon.eu/2023/10/19/reading-notes-philosophy-software-design/#tactical-vs-strategic-programming
+
+https://www.pipinghotdata.com/talks/2022-11-11-debugging/ (HT Maelle)
+
+https://vickiboykis.com/2019/02/10/commit-to-your-lock-in/ (HT Maelle)
+
+https://masalmon.eu/tags/useful-functions/ (HT Maelle)
+
+https://blog.keras.io/user-experience-design-for-apis.html (HT Maelle)
+
+[Mapping the Impact of Software in Science, Notes from the 2023 hackathon hosted by the Chan Zuckerberg Initiative](https://cziscience.medium.com/mapping-the-impact-of-software-in-science-92c1b5126a34)
+
+https://github.com/chanzuckerberg/software-impact-hackathon-2023
+
+https://www.apreshill.com/blog/2020-02-take-a-sad-script-make-it-better-tidymodels-edition/
+
+[Research Software Engineers: Creating a Career Path—and a Career](https://zenodo.org/records/10073233)
+
+https://research-it.manchester.ac.uk/news/2023/10/24/the-next-generation-of-rses/
+
+[Diversity and inclusion in research software: Insights from an international workshop](https://urssi.us/blog/2023/10/26/diversity-and-inclusion-in-research-software-insights-from-an-international-workshop/)
+
+[](https://urssi.us/blog/2023/10/24/what-we-learned-about-research-software-careers-from-a-recent-international-workshop/)
+
+https://pluralistic.net/
+
+https://adore.software/
+
+https://makedatacount.org/
+
+https://github.com/chanzuckerberg/software-mentions
+
+https://www.nature.com/articles/d41586-023-00053-w
+
+https://github.com/howisonlab/softcite-dataset
+
+https://data.gesis.org/somesci/
+
+[Valuing a broad range of research contributions through Team Infrastructure Roles: Why CRediT is not enough](https://commonplace.knowledgefutures.org/pub/c69y2lr3/release/1)
+
+[Researchers are embracing visual tools to give fair credit for work on papers](https://www.nature.com/nature-index/news/researchers-embracing-visual-tools-contribution-matrix-give-fair-credit-authors-scientific-papers)
+
+https://code4math.org/
+
+https://github.com/kevquirk/simple.css/wiki/Getting-Started-With-Simple.css
+
+https://digital-research.academy/train-the-trainer/
+
+https://hookedondata.org/posts/2017-08-14_giving-your-first-data-science-talk/
+
+https://davidmytton.blog/keep-a-copy/
+
+One of my favourite Youtubers, Tom Scott, recently stopped a series they'd been doing for 10 years. They have some really good content, ranging from, ..., to .... But they've been making videos for 17 years, and I found these two gems that just brought a lot of joy to me:
+
+- [Breakfast: fortified with iron](https://www.youtube.com/watch?v=MrppkAIVhH4) (where they cook bacon, eggs, and toast, with an iron)
+- [Cooking salmon in a dishwasher](https://www.youtube.com/watch?v=6N8q2xkirCQ)
+
+It's just wonderful silly stuff. It's a reminder of a simpler time of the internet. I could sit here and fire off Tom Scott content for a while. Maybe this will be a recurring segment. OK just one more [Two Drums and a Cymbal Fall off a Cliff](https://www.youtube.com/watch?v=8eXj97stbG8).
+
+
+HT Ben Wee on runapp slack:
+
+- https://ericmjl.github.io/blog/2022/4/1/functional-over-object-oriented-style-for-pipeline-esque-code/ 
+- https://ericmjl.github.io/blog/2023/12/12/classes-functions-both/
+https://mjkerrison.com/R+and+Data/Design+patterns#*Method*-oriented+analytics
+
+https://jamesgoldie.dev/writing/your-new-r-package-webr/
+
+https://benharrap.com/post/2024-01-19-rstudio-noodle-theme/
+
+https://blog.joss.theoj.org/2024/01/introducing-josscast
+
+# Other software
+
+Not "new" news, but [Obsidian]() is a really nice markdown editor. It is free, uses plain text, and has powerful extentions that make it more than just a markdown editor, but a way to store knowledge in a wiki-like way. There's a [great video by noboilerplate]() on this, here are [their notes]()https://github.com/0atman/noboilerplate/blob/main/scripts/29-obsidian.md). How is this free? My understanding
+
+https://shottr.cc/
+
+# R Packages
+
+https://cran.r-project.org/web/packages/healthyAddress/index.html
+
+https://docs.ropensci.org/autotest/
+
+From [Garrick Aden Buie](), commenting on [my blog post]():
+
+> icymi and because it’s not widely publicized, there are type checking functions in {rlang} that you can copy into your package code with usethis::use_standalone()
+
+https://github.com/r-lib/rlang/blob/main/R/standalone-types-check.R
+
+# Talks / Videos
+
+In part of writing a bit recently, I was reminded by a friend of Jenny Bryan's UseR! keynote from 2018, [Code Smells and Feels](). It is one of my favourite talks. I was there a few rows from the front when she gave it, but taking time to watch it again has been really great. Jenny is a talented communicator, and I think my takeaways from the talk are:
+
+- use functions
+- a few little functions are much better than a monster function
+- small well-named helper function >> commented code
+- Tip#4
+  - Use proper functions for handling class and type
+  - Use simple conditions
+  - Extract fussy condition logic into well-named functions
+- Tip#5
+  - Hoist your quick `stop()`s and `return()`s to the top, i.e., use a **guard clause**
+  - Clarify and emphasise the **happy path**
+- There is no **else** there is only **if**
+  - Every if does not need an else, if you exit or return early.
+- Jenny's Total Meat Indentation metric, measuring the number of indents to understand where the important bits of code are. The idea is that keeping this number low means that you are going to have more fun/easier to debug there
+- Tip #5C
+  - An if block that ends with `stop()` or `return()` does not require `else`
+  - recognise your early exits
+  - less indentation >> lots of indentation
+- A special roast of Roger Peng's 8 space (!) indentation. 
+- Tip #6
+  - If your conditions deal with **class**, it's time to get object oriented (OO). In CS jargon, use **polymorphism**
+- 
+
+I don't want to start just listing the content out from the talk, but these tips will make the most sense alongside Jenny's talk. 
+
+[Managing many models with R](https://www.youtube.com/watch?v=rz3_FDVt9eg) by Hadley Wickham. I couldn't find the original keynote that I saw of this, which was at the [WOMBAT 2016 conference](). The main takeaway from this for me was understanding one of the major benefits of using functions, and understanding how to use `map`. 
+
+[The Rise of the Research Software Engineer](https://www.youtube.com/live/8ZSaAM8hhJ4?si=o_tB4C8bsNezNyZ4), by [Mike Croucher]()
+
+[Object of type 'closure' is not subsettable](https://www.youtube.com/watch?v=vgYS-F8opgE)
+
+[What editor do you use?](https://www.youtube.com/watch?v=dIjKJjzRX_E), Fun Fun Function
+- Gear is the ultimate procrastination, Max Joseph
+
+- [A few common code smells to be aware of and how to fix them](https://www.youtube.com/watch?v=KGsnhdcBvd0), by ShaggDev is a short 6 minute video covering these code smells:
+  - long functions, long parameter (argument) input, duplicating code, 
+  - God objects: object with no singular purpose that acts as a single place to dump, for data and  functions you couldn't decide to otherwise place. These make it harder to maintain and update
+  - Asks key questions to help avoid these patterns:
+    - What is required
+    - What is likely needed
+    - what is the scope and impact. 
+      - High impact code should get more attention than low impact/scope functions.
+      
+
+- 
+- On how to build an RSE team
+
+[vctrs: Creating custom vector classes with the vctrs package]()
+
+https://www.youtube.com/watch?v=q1qKv5TBaOA
+
+https://www.youtube.com/watch?v=HlgG395PQWw
+
+https://puri.sm/posts/centralized-or-decentralized-there-is-no-question/
+
+https://emilyriederer.netlify.app/post/py-rgo/:
+
+> When in Rome, do as the Romans do – but if you’re coming from the U.S. that doesn’t mean you can’t bring a universal adapter that can help charge your devices in European outlets.
+
+https://dubroy.com/blog/cold-blooded-software/
+
+https://ropensci.org/blog/2024/02/06/verbosity-control-packages/
+
+
+
+# Papers
+
+[Lexical Scope and Statistical Computing, by Robert Gentleman and Ross Ihaka](https://www.stat.auckland.ac.nz/~ihaka/downloads/lexical.pdf). This is a delightful paper that discusses the benefits of the scoping rules in R and how it improves doing data analysis. They provide really nice definitions throughout. For me I had internalised a lot of these rules about how functions evaluate, and I think in the past when I did a deep dive into [advanced R](), I understood these better. But, like a lot of things in life, revisiting the things you thought you knew leads to more comprehensive understanding.
+
+Through great fortune I met [Ray Huey](), an Emeritus Professor from University of Washington in the the USA. He has a great paper, ["On Becoming a better scientist"](https://raymond-b-huey.netlify.app/OnBetterScience2011.pdf) which has really helped me in the past few months. My biggest takeaway was this piece of advice:
+
+> 
+
+Ray is a very kind man, and I'd like to tell a brief story about him. When I ran a workshop on rmarkdown for scientists in Washington in February 2020 (just around when COVID was maybe a concern), he sent me an email ahead of time asking if I was interested
+
+[Model Diagnostics and Forecast Evaluation for Quantiles](https://www.annualreviews.org/doi/full/10.1146/annurev-statistics-032921-020240)
+
+https://www.stat.berkeley.edu/~aldous/157/Papers/shmueli.pdf
+
+[Design Principles for Data Analysis](https://www.tandfonline.com/doi/full/10.1080/10618600.2022.2104290), Lucy D'Agastino McGowan
+
+[Statistical Modeling: The Two Cultures (with comments and a rejoinder by the author)](https://projecteuclid.org/journals/statistical-science/volume-16/issue-3/Statistical-Modeling--The-Two-Cultures-with-comments-and-a/10.1214/ss/1009213726.full)
+
+
+
+# Other newsletters
+
+I get a lot of these links from trawling through various newsletters and things on twitter and mastodon
+
+Monday Morning Data Science by the Fred Hutch group is great
+
+Heidi Seibold has a nice newsletter that I enjoy reading: https://heidiseibold.com/
+
+# Book recommendations
+
+I've been meaning to collect together a list of books for programming. Mostly through conversations with Maëlle Salmon, I've got a few books I'd like to read. I basically just sifted through Maëlle's list of book notes and have put a couple here. 
+
+- The Pragmatic Programmer - see some reading notes by [Maëlle Salmon](https://masalmon.eu/2023/12/11/reading-notes-pragmatic-programmer/)
+- A Philosophy of Software Design
+- Kill It with Fire
+- Refactoring 
+
+https://www.goodreads.com/book/show/4268.How_to_Be_Good
+
+https://www.goodreads.com/book/show/37880811-make-time
+
+https://itrevolution.com/product/the-unicorn-project/
+
+# Something random
+
+

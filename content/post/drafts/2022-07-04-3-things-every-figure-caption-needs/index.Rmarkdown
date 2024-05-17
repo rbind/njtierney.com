@@ -1,14 +1,17 @@
 ---
 title: The Three Things Every Figure Caption Needs
 author: Nicholas Tierney
-date: '2022-07-04'
+# date: '2022-07-04'
+date: '2024-05-03'
 slug: 3-things-every-caption-needs
 categories:
   - rstats
-  - functions
+  - figures
+  - captions
 tags:
   - rstats
-  - functions
+  - figures
+  - captions
 draft: yes
 output: hugodown::md_document
 ---
@@ -28,22 +31,25 @@ knitr::opts_chunk$set(
 )
 ```
 
-Writing papers is hard. But one of my favourite parts of them is creating nice figures. There's a deep satisfaction in creating a figure that simply displays the message you want. But you also do need to write captions. Sometimes I felt like my figures were strong enough that they needed very little in the captions But during my postdoc at Monash, my supervisor, [Professor Di Cook](https://www.dicook.org/),  gave me advice for how to write captions in a meeting, and it has stuck with me. The advice is now in the [proof reading checklists](https://journal.r-project.org/share/proofreading-checklist.pdf) for the [R Journal](https://journal.r-project.org/).
+At the risk of stating the obvious, Writing papers is hard.
 
-Again, I am not taking credit for this, but I just wanted to put this out there because I think it should be shared more widely.
+But, one of my favourite parts of them is creating nice figures. There's a deep satisfaction in creating a figure that simply displays the message you want. But you also do need to write captions. Sometimes I felt like my figures were strong enough that they needed very little in the captions. But captions serve an important point, beyond being able to just identify/distinguish between certain figures. There is utility in being able to say, "I didn't understand figure 1", and it is unambiguous which figure you are talking about.
 
-Captions should have three components:
+During my postdoc at Monash, my supervisor, [Professor Di Cook](https://www.dicook.org/), gave me advice for how to write captions in a meeting, and it has stuck with me. The advice is now in the [proof reading checklists](https://journal.r-project.org/share/proofreading-checklist.pdf) for the [R Journal](https://journal.r-project.org/).
 
-1. What is the plot/table about,
-2. Specific details of plot/table, like what type of display and how variables are mapped, 
+Again, I want to emphasise that I am _not taking credit for this_, I first heard this from Di Cook, but I just wanted to put this out there because I think it should be shared more widely.
+
+Di told me: Captions should have three components:
+
+1. What is the plot/table about
+2. Specific details of plot/table, like what type of display and how variables are mapped.
 3. The most important thing that the reader should learn.
 
-Here's an example figure and caption:
+Here's an example figure and caption with little information:
 
 ```{r}
 
 ```
-
 
 And now here's the figure with the updated caption:
 
@@ -54,8 +60,10 @@ And now here's the figure with the updated caption:
 
 This piece of advice goes into nearly every single review that I write. It's changed the way I write, and it has also mildly cursed me in the same way that [XKCD's comic on kerning](https://xkcd.com/1015/) did. Too many times I now see something like:
 
-> "Figure 1. a heatmap of disease prevalance in <location>."
+> "Figure 1. A heatmap of disease prevalance in <location>."
+
+And I know how to make it better, but I wish the authors did as well.
 
 So perhaps it is a blessing and a curse to have this knowledge. But I think the blessing is worth it.
 
-Thanks again to Di Cook for sharing this knowledge many years ago
+Thanks again to [Di Cook]() for sharing this knowledge with me.
