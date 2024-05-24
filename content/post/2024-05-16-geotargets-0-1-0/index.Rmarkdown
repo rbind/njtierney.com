@@ -1,5 +1,5 @@
 ---
-title: {geotargets} 0.1.0
+title: "{geotargets} 0.1.0"
 author: Nicholas Tierney
 date: '2024-05-16'
 slug: geotargets-0-1-0
@@ -31,3 +31,92 @@ knitr::opts_chunk$set(
   out.width = "700px"
 )
 ```
+
+I'm very happy to announce {geotargets} version 0.1.0! The {geotargets} package extends [{targets}]() to work with geospatial data formats. Version  0.1.0 supports `terra::vect()`, `terra::rast()` and `terra::sprc()` formats. This R package is only possible due to the great work by [Eric Scott](https://ericrscott.com/) and [Andrew Brown](https://humus.rocks/). While this blog post is on my website, I want to emphasise that this project is very much a team effort.
+
+You can download {geotargets} from the R universe like so:
+
+```r
+install.packages("geotargets", repos = c("https://njtierney.r-universe.dev", "https://cran.r-project.org"))
+```
+
+# What is targets? Why do I need geotargets?
+
+The targets package is an R package for managing analytic pipelines. It means that you can write out an analysis in a specific manner, and then as you update code, it will only rerun the necessary parts. Essentially it helps you avoid running large pieces of analysis when you don't need to. To learn more about targets, I'd highly recommend [reading the documentation]().
+
+Let's show an example. Let's say we want to get an example raster file from terra, we can do the following:
+
+```{r}
+terra_rast_example <- system.file(
+  "ex/elev.tif", 
+  package = "terra"
+  ) |>
+  terra::rast()
+
+terra_rast_example
+```
+
+Here is the equivalent code in a targets pipeline - the reason we want to use targets here is we save the results so we don't need to run them again. In this case the example code doesn't take long to run. But imagine reading in the raster  was hugely time and computer expensive and we didn't want to do it again. Targets stores the information so we can just read it back in later, and if we try and run the code again it will not update the code unless the data input has changed. Neat, right?
+
+```{r}
+library(targets)
+tar_dir({ # tar_dir() runs code from a temporary directory.
+  tar_script({
+    library(targets)
+    list(
+      tar_target(
+        terra_rast_example,
+        system.file("ex/elev.tif", package = "terra") |> terra::rast()
+      )
+    )
+  })
+  tar_make()
+  x <- tar_read(terra_rast_example)
+  x
+})
+```
+
+We get an error!
+
+```
+Error: external pointer is not valid
+```
+
+This is a relatively common gotcha moment when using libraries like `terra`. This is due to limitations with its underlying C++ implementation. There are specific ways to write and read these objects. See `?terra` for details. 
+
+But how do we use geotargets to help with this? It helps handle these write and read steps, so you don’t have to worry about them and can use targets as you are used to.
+
+So instead of `tar_target`, you use `tar_terra_rast` to save a terra raster:
+
+```{r}
+library(targets)
+tar_dir({ # tar_dir() runs code from a temporary directory.
+  tar_script({
+    library(targets)
+    library(geotargets)
+    list(
+      tar_terra_rast(
+        terra_rast_example,
+        system.file("ex/elev.tif", package = "terra") |> terra::rast()
+      )
+    )
+  })
+  tar_make()
+  x <- tar_read(terra_rast_example)
+  x
+})
+```
+
+Similarly, there are `tar_terra_vect()` and `tar_terra_sprc()` for dealing with vector (shapefile) and sprc (collections of rasters). See the [README example](https://github.com/njtierney/geotargets?tab=readme-ov-file#examples) for more information.
+
+If you'd like to see these functions being used in a more practical context, see the [demo-geotargets](https://github.com/njtierney/demo-geotargets) repository.
+
+# What's next?
+
+We are actively developing geotargets, and the next release will focus on adding support for [splitting rasters into tiles](https://github.com/njtierney/geotargets/pull/76), [preserving SpatRaster metadata](https://github.com/njtierney/geotargets/pull/63), and adding [support for stars](https://github.com/njtierney/geotargets/pull/33). You can see the [full list of issues](https://github.com/njtierney/geotargets/issues) for more detail on what we are working on. 
+
+# Thanks
+
+We have recently generously received support from the R Consortium for our project, ["{geotargets}: Enabling geospatial workflow management with {targets}"](https://github.com/cct-datascience/geotargets-isc-proposal), and so we would like to thank them for their support.
+
+I'd also like to thank [Michael Sumner](https://github.com/mdsumner), [Anthony North](https://github.com/anthonynorth), and [Miles McBain](https://milesmcbain.xyz/) for their helpful discussions, as well as [Will Landau](https://wlandau.github.io/) for writing targets, and being incredibly responsive and helpful to the issues and questions we have asked as we wrote geotargets.
