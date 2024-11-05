@@ -3,7 +3,7 @@ title: About Me
 disable_comments: false
 ---
 
-My name is Nick Tierney. I have an bachelors and honours degree in Psychological Science, and completed my PhD in Statistics (under [Kerrie Mengersen](https://en.wikipedia.org/wiki/Kerrie_Mengersen)) in 2018. I work as a research software engineer, with [Nick Golding](https://www.telethonkids.org.au/contact-us/our-people/g/nick-golding/) on the [greta](https://greta-stats.org/) R package for statistical modelling, and implementing novel statistical methods for infectious diseases like COVID19 and malaria. I work at the [Telethon Kids Institute](https://www.telethonkids.org.au/), which is based in Perth, Western Australia, but I work remotely in Launceston, Tasmania. 
+My name is Nick Tierney. I have an bachelors and honours degree in Psychological Science, and completed my PhD in Statistics (under [Kerrie Mengersen](https://en.wikipedia.org/wiki/Kerrie_Mengersen)) in 2018. I work as a research software engineer, with [Nick Golding](https://www.telethonkids.org.au/contact-us/our-people/g/nick-golding/) on the [greta](https://greta-stats.org/) R package for statistical modelling, and implementing novel statistical methods for infectious diseases like COVID19 and malaria. I work at the [Telethon Kids Institute](https://www.telethonkids.org.au/), which is based in Perth, Western Australia, but I work remotely in Hobart, Tasmania. 
 
 I am a strong advocate for free and open source software, and have written several R packages to improve data analysis. These can be seen on my [software page](http://njtierney.com/software).
 
