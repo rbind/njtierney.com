@@ -165,8 +165,7 @@ sources(r2)
 tile_blocksize(r2)
 ```
 
-For more detail on using this in 
-
+For more detail on using this in targets, please see the geotargets vignette, ["Dynamic branching with raster tiles"]()
 
 ## Preserving spatRaster metadata
 
@@ -174,7 +173,7 @@ For more detail on using this in
 
 ## Support of `stars` and `stars_proxy`
 
-We have created `tar_stars()` and `tar_stars_proxy()` that create `stars` and `stars_proxy` objects, respectively.
+We have created `tar_stars()` and `tar_stars_proxy()` that create `stars` and `stars_proxy` objects, respectively. These are currently experimental.
 
 # Minor changes in 0.2.0
 
@@ -190,7 +189,7 @@ Other changes include:
 
 # What's next?
 
-We are actively developing [{geotargets}](https://njtierney.github.io/geotargets/), and the next release will focus on adding support for ...
+We are actively developing [{geotargets}](https://njtierney.github.io/geotargets/), and the next release will focus on adding support for:
 
 - [Add support for ArcGIS services using {arcgislayers}](https://github.com/njtierney/geotargets/issues/110)
 
