@@ -1,7 +1,7 @@
 ---
-title: {geotargets} 0.2.0
+title: "{geotargets} 0.2.0"
 author: Nicholas Tierney
-date: '2024-11-22'
+date: '2024-11-27'
 slug: geotargets-0-2-0
 categories:
   - rstats
@@ -43,9 +43,11 @@ install.packages("geotargets", repos = c("https://njtierney.r-universe.dev", "ht
 
 # Why should I use geotargets and targets?
 
-You could benefit from using targets and geotargets if you do data analysis involving rasters or shapefiles with the terra R package. For example, if you are doing large downloads of rasters, then operations like cropping, reprojection, resampling, masking.
+You could benefit from using targets and geotargets if you do geospatial data analysis involving rasters or shapefiles, specifically with terra or stars R packages. For example, if you are doing large downloads of rasters, then operations like cropping, reprojection, resampling, and masking.
 
-The main benefit to using targets and geotargets is that your analysis will only rerun when you change relevant parts of your data analysis. For more details on what targets is, and why we need geotargets, I would recommend reading the [0.1.0 release blog post](https://www.njtierney.com/post/2024/05/27/geotargets-0-1-0/), as well as [reading the {targets} manual](https://books.ropensci.org/targets/).
+The main benefit to using targets and geotargets is your analysis will only rerun when you change relevant parts of your data analysis. For example, you might do a lot of geospatial data processing that feeds downstream into a machine learning model to make predictions on bushfire risk. Writing with targets and geotargets means if you change the parts of the code that related to the machine learning components, then only the relevant parts with machine learning would change. This means you can save time by avoiding running computational expensive spatial data processing.
+
+For more details on what targets is, and why we need geotargets, I would recommend reading the [0.1.0 release blog post](https://www.njtierney.com/post/2024/05/27/geotargets-0-1-0/), as well as [reading the {targets} manual](https://books.ropensci.org/targets/). The ["Get started in 4 minutes"](https://github.com/ropensci/targets/?tab=readme-ov-file#get-started-in-4-minutes) guide to targets is also excellent.
 
 # Main changes in 0.2.0?
 
@@ -54,6 +56,12 @@ In addition to smaller changes and improvements, there are three main additions 
 - Support for [dynamic branching](https://books.ropensci.org/targets/dynamic.html#about-dynamic-branching).
 - Preserving spatRaster metadata.
 - Support of `stars` and `stars_proxy`.
+
+And very in very exciting news, we have a new hex sticker!
+
+Thanks to Eric Scott and ... for their work on getting this together, we are really happy with the new sticker.
+
+![]()
 
 ## Dynamic Branching
 
@@ -65,7 +73,16 @@ As part of this addition, we created helper functions:
 - `tile_grid()`, and 
 - `tile_blocksize()`. 
 
-These help us define different extents that we can pass along as different parts of the dynamic branches. Let's briefly unpack these, and then show how these would be used in dynamic branching.
+These help us define different extents that we can pass along as different parts of the dynamic branches. You can think of these as tools that we can use to specify how to slice, or tile up, a raster into smaller pieces that we can then do analysis on separately and combine later.
+
+Let's briefly unpack these, and then show how these would be used in dynamic branching. First let's read in some example elevation data from terra and plot it:
+
+```{r}
+f <- system.file("ex/elev.tif", package="terra")
+r <- rast(f)
+plot(r)
+```
+
 
 ### `tile_n()`
 
@@ -84,13 +101,6 @@ rect_extent <- function(x, ...) {
 plot_extents <- function(x, ...) {
   invisible(lapply(x, rect_extent, border = "hotpink", lwd = 2))
 }
-```
-
-```{r}
-#example SpatRaster
-f <- system.file("ex/elev.tif", package="terra")
-r <- rast(f)
-r
 ```
 
 ```{r}
@@ -165,11 +175,11 @@ sources(r2)
 tile_blocksize(r2)
 ```
 
-For more detail on using this in targets, please see the geotargets vignette, ["Dynamic branching with raster tiles"]()
+For more detail on using this in targets, please see the geotargets vignette, ["Dynamic branching with raster tiles"](https://njtierney.github.io/geotargets/articles/tar_terra_tiles.html)
 
 ## Preserving spatRaster metadata
 
-`tar_terra_rast()` gains a `preserve_metadata` option that when set to `"zip"` reads/writes targets as zip archives that include aux.json "sidecar" files sometimes written by `terra` (#58).
+`tar_terra_rast()` gains a `preserve_metadata` option that when set to `"zip"` reads/writes targets as zip archives that include aux.json "sidecar" files sometimes written by `terra` ([#58](https://github.com/njtierney/geotargets/issues/58)).
 
 ## Support of `stars` and `stars_proxy`
 
@@ -182,14 +192,16 @@ Other changes include:
 * Created utility function `set_window()` mostly for internal use within `tar_terra_tiles()`.
 * Removes the `iteration` argument from all `tar_*()` functions.  `iteration` now hard-coded as `"list"` since it is the only option that works (for now at least).
 * Added the `description` argument to all `tar_*()` functions which is passed to `tar_target()`.
-* Suppressed the warning "[rast] skipped sub-datasets" from `tar_terra_sprc()`, which is misleading in this context (#92, #104).
-* Requires GDAL 3.1 or greater to use "ESRI Shapefile" driver in `tar_terra_vect()` (#71, #97)
+* Suppressed the warning "[rast] skipped sub-datasets" from `tar_terra_sprc()`, which is misleading in this context ([#92](https://github.com/njtierney/geotargets/issues/92), [#104](https://github.com/njtierney/geotargets/issues/104)).
+* Requires GDAL 3.1 or greater to use "ESRI Shapefile" driver in `tar_terra_vect()` ([#71](https://github.com/njtierney/geotargets/issues/71), [#97](https://github.com/njtierney/geotargets/pull/97))
 * `geotargets` now requires `targets` version 1.8.0 or higher
 * `terra` (>= 1.7.71), `withr` (>= 3.0.0), and `zip` are now required dependencies of `geotargets` (moved from `Suggests` to `Imports`)
 
 # What's next?
 
-We are actively developing [{geotargets}](https://njtierney.github.io/geotargets/), and the next release will focus on adding support for:
+We have finished developing the main milestones for geotargets, but will continue actively developing it. Soon we will be submitting the package for review by rOpenSci, and subsequently submit the work to the Journal of Open Source Software (JOSS), and then submit to CRAN.
+
+Currently, the next release will focus on adding support for:
 
 - [Add support for ArcGIS services using {arcgislayers}](https://github.com/njtierney/geotargets/issues/110)
 
@@ -199,7 +211,7 @@ We are actively developing [{geotargets}](https://njtierney.github.io/geotargets
 
 - [Add support for terra SpatVectorProxy, and format="file" for SpatRaster](https://github.com/njtierney/geotargets/issues/42)
 
-You can see the [full list of issues](https://github.com/njtierney/geotargets/issues) for more detail on what we are working on. 
+You can see the [full list of issues](https://github.com/njtierney/geotargets/issues) for more detail on what we are working on.
 
 # Thanks
 
