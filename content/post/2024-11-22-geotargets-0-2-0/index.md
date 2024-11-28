@@ -9,9 +9,8 @@ categories:
 tags:
   - rstats
   - functions
-draft: yes
 output: hugodown::md_document
-rmd_hash: fb6732ac96f8294e
+rmd_hash: 16da9f01be5f7cb1
 
 ---
 
@@ -40,6 +39,12 @@ In addition to smaller changes and improvements, there are three main additions 
 -   Support for [dynamic branching](https://books.ropensci.org/targets/dynamic.html#about-dynamic-branching).
 -   Preserving spatRaster metadata.
 -   Support of `stars` and `stars_proxy`.
+
+And very in very exciting news, we have a new hex sticker!
+
+Thanks to Eric Scott and ... for their work on getting this together, we are really happy with the new sticker.
+
+![]()
 
 ## Dynamic Branching
 

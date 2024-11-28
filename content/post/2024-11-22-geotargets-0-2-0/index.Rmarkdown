@@ -9,7 +9,6 @@ categories:
 tags:
   - rstats
   - functions
-draft: yes
 output: hugodown::md_document
 ---
 
