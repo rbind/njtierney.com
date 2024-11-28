@@ -10,7 +10,7 @@ tags:
   - rstats
   - functions
 output: hugodown::md_document
-rmd_hash: 16da9f01be5f7cb1
+rmd_hash: 29a39c77446ad83d
 
 ---
 
@@ -42,9 +42,12 @@ In addition to smaller changes and improvements, there are three main additions 
 
 And very in very exciting news, we have a new hex sticker!
 
-Thanks to Eric Scott and ... for their work on getting this together, we are really happy with the new sticker.
+Thanks to [Eric Scott](https://ericrscott.com/) and [Hubert Hałun](https://www.linkedin.com/in/huberthalun/?originalSubdomain=pl) for their work on getting this together, we are really happy with the new sticker!
 
-![]()
+<figure>
+<img src="figs/Geotarget_Hex.png" alt="geotargets hex sticker" />
+<figcaption aria-hidden="true">geotargets hex sticker</figcaption>
+</figure>
 
 ## Dynamic Branching
 
