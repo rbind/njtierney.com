@@ -47,7 +47,7 @@ pygmentsUseClasses = true
 [params]
     description = "Credibly Curious"
     GithubEdit = "https://github.com/rbind/njtierney.com/edit/master/content/"
-    footer = "&copy; [Nicholas Tierney](https://njtierney.com) 2013-24 | [Github](https://github.com/njtierney) | [Twitter](https://twitter.com/nj_tierney) | [RSS](https://www.njtierney.com/post/index.xml)"
+    footer = "&copy; [Nicholas Tierney](https://njtierney.com) 2013-24 | [Github](https://github.com/njtierney) | [Blue Sky](https://bsky.app/profile/njtierney.bsky.social) | [RSS](https://www.njtierney.com/post/index.xml)"
 
 [services]
   [services.rss]
