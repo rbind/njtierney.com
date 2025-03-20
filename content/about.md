@@ -5,7 +5,7 @@ disable_comments: false
 
 My name is Nick Tierney. I have an bachelors and honours degree in Psychological Science, and completed my PhD in Statistics (under [Kerrie Mengersen](https://en.wikipedia.org/wiki/Kerrie_Mengersen)) in 2018. I currently work as a research software engineer, with [Nick Golding](https://www.telethonkids.org.au/contact-us/our-people/g/nick-golding/) on the [greta](https://greta-stats.org/) R package for statistical modelling, and implementing novel statistical methods for infectious diseases like COVID19 and malaria.
 
-I am about to start a new foray into consulting. From May 2025, I will be taking clients for data analytics, modelling, code review, research software engineering, R package development, targets pipelines, teaching, mentoring and R coaching.
+I am about to start a new foray into consulting, which is very exciting! From May 2025, I will be taking clients for data analytics, modelling, code review, research software engineering, R package development, targets pipelines, teaching, mentoring and R coaching.
 
 I've had a great journey in academia working with brilliant people, and while it's bittersweet (and a bit scary!), I'm excited for this next step. I'll still be maintaining [greta](https://greta-stats.org/), and am hoping to be even more involved with the R community.
 
