@@ -7,3 +7,5 @@ blogdown
 .DS_Store
 .httr-oauth
 .Rdata
+
+/.quarto/
