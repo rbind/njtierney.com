@@ -14,7 +14,7 @@ tags:
   - rse
   - Research Software Engineer
 output: hugodown::md_document
-rmd_hash: 8c2376c9654675f1
+rmd_hash: bb07b31b2990edff
 
 ---
 
@@ -30,7 +30,42 @@ The new R version 4.5.0 is out, and you should get it!
 
 I've read through [the NEWS file](https://cran.r-project.org/doc/manuals/r-release/NEWS.html), which details every change - there are many! I would recommend having a skim.
 
-I thought I'd share a couple of changes that jumped out at me as particularly interesting. This isn't to say that the changes in R are boring - more so there **are a lot of changes**, so I just thought I'd highlight a couple.
+If you'd like to have a skim of the news file, you even use the [`news()`](https://rdrr.io/r/utils/news.html) R function, which will open the NEWS file to your help file pane in RStudio. This can also tell us how many news bullets were added:
+
+<div class="highlight">
+
+<pre class='chroma'><code class='language-r' data-lang='r'><span><span class='nv'>news_4_5_0</span> <span class='o'>&lt;-</span> <span class='nf'><a href='https://rdrr.io/r/utils/news.html'>news</a></span><span class='o'>(</span><span class='nv'>Version</span> <span class='o'>==</span> <span class='s'>"4.5.0"</span><span class='o'>)</span></span>
+<span><span class='c'># just show the first 5</span></span>
+<span><span class='nf'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='o'>(</span><span class='nv'>news_4_5_0</span><span class='o'>)</span></span>
+<span><span class='c'>#&gt;                         Changes in version 4.5.0                        </span></span>
+<span><span class='c'>#&gt; </span></span>
+<span><span class='c'>#&gt; NEW FEATURES</span></span>
+<span><span class='c'>#&gt; </span></span>
+<span><span class='c'>#&gt;     o   as.integer(rl) and hence as.raw(rl) now work for a list of</span></span>
+<span><span class='c'>#&gt;   raw(1) elements, as proposed by Michael Chirico's PR#18696.</span></span>
+<span><span class='c'>#&gt; </span></span>
+<span><span class='c'>#&gt;     o   graphics' grid() gains optional argument nintLog.</span></span>
+<span><span class='c'>#&gt; </span></span>
+<span><span class='c'>#&gt;     o   New functions check_package_urls() and check_package_dois() in</span></span>
+<span><span class='c'>#&gt;   package tools for checking URLs and DOIs in package sources.</span></span>
+<span><span class='c'>#&gt; </span></span>
+<span><span class='c'>#&gt;     o   New head() and tail() methods for class "ts" time series,</span></span>
+<span><span class='c'>#&gt;   proposed by Spencer Graves on R-devel.</span></span>
+<span><span class='c'>#&gt; </span></span>
+<span><span class='c'>#&gt;     o   New qr.influence() function, a "bare bones" interface to the</span></span>
+<span><span class='c'>#&gt;   lm.influence() leave-one-out diagnostics computations; wished</span></span>
+<span><span class='c'>#&gt;   for in PR#18739.</span></span>
+<span><span class='c'>#&gt; </span></span>
+<span><span class='c'>#&gt;     o   Package citation() results auto-generated from the package</span></span>
+<span><span class='c'>#&gt;   metadata now also provide package DOIs for CRAN and</span></span>
+<span><span class='c'>#&gt;   Bioconductor packages.</span></span>
+<span></span></code></pre>
+
+</div>
+
+The work of this release involved many people, and there are 150 changes. I think it's worthwhile reading over these changes, and I am incredibly grateful to all the amazing volunteers who put their time and energy into continuing to make R stable, and awesome.
+
+I thought I'd share just a couple of the changes that jumped out at me as I was reading.
 
 # Installation is now faster
 

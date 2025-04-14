@@ -45,7 +45,18 @@ The new R version 4.5.0 is out, and you should get it!
 
 I've read through [the NEWS file](https://cran.r-project.org/doc/manuals/r-release/NEWS.html), which details every change - there are many! I would recommend having a skim.
 
-I thought I'd share a couple of changes that jumped out at me as particularly interesting. This isn't to say that the changes in R are boring - more so there __are a lot of changes__, so I just thought I'd highlight a couple.
+If you'd like to have a skim of the news file, you even use the `news()` R function, which will open the NEWS file to your help file pane in RStudio. This can also tell us how many news bullets were added:
+
+```{r}
+#| label: print-news-4-5-0
+news_4_5_0 <- news(Version == "4.5.0")
+# just show the first 5
+head(news_4_5_0)
+```
+
+The work of this release involved many people, and there are `r length(news_4_5_0$Text)` changes. I think it's worthwhile reading over these changes, and I am incredibly grateful to all the amazing volunteers who put their time and energy into continuing to make R stable, and awesome.
+
+I thought I'd share just a couple of the changes that jumped out at me as I was reading. 
 
 # Installation is now faster
 
