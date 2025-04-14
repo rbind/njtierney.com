@@ -145,7 +145,6 @@ It is worth noting the references for this data:
 
 - Ramsay, J. (2023) fda: Functional Data Analysis. R package version 6.1.4, [https://CRAN.R-project.org/package=fda](https://CRAN.R-project.org/package=fda).
 
-
 # BLAS and LAPACK update
 
 > The bundled BLAS and LAPACK sources have been updated to those shipped as part of January 2025's LAPACK 3.12.1.
