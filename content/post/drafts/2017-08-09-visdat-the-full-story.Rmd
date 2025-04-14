@@ -11,6 +11,7 @@ tags: []
 output: hugodown::hugo_document
 ---
 
+This blog post has been sitting in my drafts folder since 2017. I'm in the process of starting a new business, which also means I've got a bit more time on my hands. So, I'm on a bit of a mission to get a lot of my old ideas out there.
 
 The motivation for visdat came from some chance interactions from a few key people. The first was Ivan Hanigan, who made [a comment](http://www.njtierney.com/r/missing%20data/rbloggers/2015/12/01/ggplot-missing-data/#comment-2388263747) on an early version of what became the [vis_miss](http://visdat.njtierney.com/reference/vis_miss.html) plot that I made on my blog, out of frustration for the current alternatives provided by `Amelia` (missmap) and mi (missingness.pattern.plot), which typically involved tinkering of the legend and colour sceheme to make them to look nice - not completely trivial in baseplot.
 
@@ -18,17 +19,13 @@ Ivan made mention of [csv-fingerprint](https://github.com/setosa/csv-fingerprint
 
 That evening I made an initial prototype package called `footprintr`. Jenny, being awesome, made a [nice pull request](https://github.com/ropensci/visdat/pull/1) that made the package actually isntall and fix a few other things.`visdat` was born.
 
-I ended up giving a talk about visdat and naniar (then named ggmissing), at the [2016 WOMBAT conference](). This helped me clarify why I thought it was important; it was simple, and had a narrow focus of visualising whole dataframes and nothing else. Being just a single idea means that you can spend more time on that idea, and iterate quicker. This thinking started to yield other ideas - and feedback from [Noam Ross suggesting that I should use plotly to make it interactive](https://github.com/ropensci/visdat/issues/2), and then other ideas started to flow - some extra functions like `vis_compare` to compare two dataframes, and `vis_guess` to guess the contents of every single cell.
+I ended up giving a talk about `visdat` and `naniar` (then named `ggmissing`), at the [2016 WOMBAT conference](). This helped me clarify why I thought it was important; it was simple, and had a narrow focus of visualising whole dataframes and nothing else. Being just a single idea means that you can spend more time on that idea, and iterate quicker.  This thinking started to yield other ideas - and feedback from [Noam Ross suggesting that I should use plotly to make it interactive](https://github.com/ropensci/visdat/issues/2), and then other ideas started to flow - some extra functions like `vis_compare` to compare two dataframes, and `vis_guess` to guess the contents of every single cell.
 
-A few presentations later, and visdat had started to gain some traction. I was using it when I got new data, and so were some of my colleagues. People seemed to like it, and I was happy to grow my side project some more and make it more awesome. 
+A few presentations later, and visdat had started to gain some traction. I was using it when I got new data, and so were some of my colleagues. People seemed to like it, and I was happy to grow my side project some more and make it more awesome.
 
-
-
- To top things off, the rOpenSci onboarding process can link up with JOSS - the [Journal of Open Source Software](), through an fast-track publication.
+To top things off, the rOpenSci onboarding process can link up with JOSS - the [Journal of Open Source Software](), through an fast-track publication.
 
 I think that JOSS is a great journal, because it has full peer review of the software and the documentation. It does not, however, require you to write an entire paper - something referred to as "writing it twice": The first time to do the documentation, and the second time to do the paper. 
-
-
 
 You can submit a package to be onboarded onto rOpenSci's repository through their onboarding process. This process is a transparent peer review of an R package. Providing your R package is [in-scope](https://github.com/ropensci/onboarding/blob/master/policies.md#aims-and-scope), two friendly folks read through your code, give you feedback, tell you how to make it better, and there's even the option for fast-track publication through an awesome online journal - [JOSS](http://joss.theoj.org/).
 
@@ -46,15 +43,12 @@ To be more precide, two reviews go through an R package and read through and che
 - Is there testing
 - Are there packaging guidelines.
 
-In addition to providing this, rOpenSci have a more generally awesome guide on the requirements for [making an awesome R package](https://github.com/ropensci/onboarding/blob/master/packaging_guide.md), which I would recommend to anyone who is writing an R apckage. It provides practical advice from how to name your R package, functions, and variables, to making a great README, including a code of conduct, having great documentation, to testing guidelines, softeware scoffaolding, CRAN gotchas, and more.
-
+In addition to providing this, rOpenSci have a more generally awesome guide on the requirements for [making an awesome R package](https://github.com/ropensci/onboarding/blob/master/packaging_guide.md), which I would recommend to anyone who is writing an R apckage. It provides practical advice from how to name your R package, functions, and variables, to making a great README, including a code of conduct, having great documentation, to testing guidelines, software scoffaolding, CRAN gotchas, and more.
 
 Text summaries such as `dplyr::glimpse` or `base::str`, and `base::summary` will give you some basic information about your data. But for larger datasets, manually inspecting such text information is time expensive. A simple visualisation, on the other hand, can present basic information about your new dataset - what you need is a way to see it all at once,a _preliminary visualisation_.
 
 ## Preliminary visualisation?
 
 This sort of tool for preliminary inspection of data has been made available in [CSV fingerprint](http://setosa.io/blog/2014/08/03/csv-fingerprints/) - an interactive tool for exploring data. Unfortunately this isn't available in R. I was made aware of this when I made a blog post about [ggploting your missing data](http://www.njtierney.com/post/2015/11/12/ggplot-missing-data/). [Ivan Hanigan pointed me to CSV fingerprint](http://www.njtierney.com/r/missing%20data/rbloggers/2015/12/01/ggplot-missing-data/#comment-2388263747), and not long afterwards, [Jenny Bryan tweeted a similar question](https://twitter.com/JennyBryan/status/679011378414268416).
-
-
 
 I knew how to solve this problem. Although there were similar ideas in plots such as `missing.pattern.plot` from the `mi` package, and `missmap` from `Amelia`, or `table_heat` from `wakefield`. These functions are useful tools in otherwise specialised packages that work with missing data or generating new random data. This means that whilst the intent of these graphics is good, it is not the main reason for the package, so it doens't get top priority.
