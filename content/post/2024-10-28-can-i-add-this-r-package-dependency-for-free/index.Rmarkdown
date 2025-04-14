@@ -1,0 +1,273 @@
+---
+title: Can I Add this R Package Dependency for Free.
+author: Nicholas Tierney
+date: '2024-10-28'
+slug: can-i-add-this-r-package-dependency-for-free
+categories:
+  - rstats
+  - functions
+tags:
+  - rstats
+  - functions
+draft: yes
+output: hugodown::md_document
+---
+
+```{r setup, include = FALSE}
+options(cli.width = 70)  # For tidyverse loading messages
+knitr::opts_chunk$set(
+  tidy.opts = list(width.cutoff = 70),  # For code
+  width = 70,
+  collapse = TRUE, 
+  comment = "#>", 
+  fig.width = 7, 
+  fig.align = 'center',
+  fig.asp = 0.618, # 1 / phi
+  fig.retina = 2,
+  out.width = "700px"
+)
+```
+
+Recently I needed to check if we could add a dependency for free to an R package.
+
+> OK, what does that mean?
+
+Fair question. Let's break it down to first understand three core parts of that sentence:
+
+1. An R package
+2. Adding a dependency
+3. Adding a dependency for free
+
+# An R package
+
+An R package is a way of sharing code. This means (generally) sharing functions. A function is a way of managing some aspect of complexity. Your R package (ideally!) reduces complexity. What does reducing complexity look like? Let's go from less complex to more complex.
+
+## Less complex: The `syn` package
+
+The [`syn`](https://syn.njtierney.com) package is built around the idea of making it easier to look up synonyms. 
+
+```{r}
+syn::syn("wow")
+```
+
+It has **zero** dependencies. This is like being able to run an R script without calling `library`. E.g.,
+
+```{r}
+airquality |> 
+  transform(temp_c = (Temp - 32) / 1.8)
+```
+
+vs
+
+```{r}
+library(dplyr)
+airquality |> 
+  mutate(temp_c = (Temp - 32) / 1.8)
+```
+
+Instead, the "magic", so to speak, of `syn` is provided via [a nifty way of structuring the data of synonyms](). But calling the function `syn()` doesn't depend on another package.
+
+## More complex: the `ggplot2` package
+
+At the other end of complexity, `ggplot2`. Perhaps my favourite package.
+
+The takeaway here is: R packages manage complexity. In order to do that, they build off of other pieces of work and software. You can write things from scratch, if you want. But it's nice to not re-invent the wheel.
+
+# Adding a dependency to an R package
+
+As a user, we use packages by calling `library(<package>)`. But you cannot do that when you are writing an R package. The reason is essentially that by calling `library(<package>)`, you are bringing that entire package's functions to the party, and getting it to set up in your home. We don't always want that. Some homes are small. And too many guests can be a strain. Or sometimes, you have unexpected guests who leave a mess. A minor strain of an analogy, perhaps.
+
+There's an interesting case to consider here. What if your package is already making heavy use of `ggplot2`, and so is a guaranteed package you will depend upon? Well, now you are also depending on every single package that `ggplot2` imports. 
+
+# Recap
+
+- A R package contains (generally more than one) function(s).
+- If you use another function from another package, that is a dependency.
+- For example, your package might write a function that creates a ggplot figure.
+- This means your package depends on everything ggplot imports
+- This means, for example, that you can import "
+
+# "Should we depend upon this package?"
+
+This is a question I'd like to answer. Sometimes people walk the line of "Should I import this package, I don't want to import everything". This is a worthwhile question to ask, but I think sometimes people can make their life harder by resisting importing a package.
+
+For example, you might want to import the `glue` package, but you might feel that it isn't really something you want to depend upon - "just one more thing" you might say. However, if your package depends on `ggplot2`, which depends on `cli`, which imports `glue`. So, you don't need to worry "should I add this package", because you already depend upon it.
+
+> How do you know this?
+
+You can look it up in the DESCRIPTION file. For example, you could visit the [CRAN]() page, or the [GitHub]() page. This can get pretty tricky soon, if you think about it - following ggplot2, we see it depends on..., which itself has dependencies..., which has dependencies...
+
+Thankfully, there are tools to help simplify this that we can use.
+
+Also as you get more experience, you start to internalise these dependencies. Which is very nerdy, but also very cool. I think, at least it is.
+
+# Adding a dependency for free
+
+OK so now we understand the following:
+
+- R packages manage complexity
+- R packages can use other R packages, which is called "having a dependency"
+
+One of the ways we can look up the dependencies of an R package using the [`pak`]() package. The `pak` package is mostly a newer take on `install.packages`. (footnote: it essentially helps solve the DLL problem in windows, and won't install a package if you've already got it installed and it is up to date, and also lets you install things from github with `username/pkg` format).
+
+One of the functions in it is `pak::pkg_deps()`, which allows you to look up the dependencies of a given package. For example, let's look at the dependencies of `ggplot2`.
+
+```{r}
+ggplot2_deps <- pak::pkg_deps("ggplot2")
+ggplot2_deps
+```
+
+(note that this requires an internet connection).
+
+
+
+```{r}
+# on master/main branch
+can_we_add_a_dep_for_free <- function(deps){
+    
+    local_deps <- pak::pkg_deps(".")
+    
+    are_deps_already_free <- deps %in% local_deps$ref
+    
+    names(are_deps_already_free) <- deps
+    
+    if (are_deps_already_free) {
+        cli::cli_inform(
+            message = c(
+                "{.pkg {deps}} can be added for free:",
+                "Explanation:")
+        )
+        print(pak::local_deps_explain(deps = deps))
+    }
+    
+    if (!are_deps_already_free){
+        cli::cli_inform(
+            message = c(
+                "{.pkg {deps}} can not be added for free :("
+            )
+        )
+    }
+    
+}
+
+can_we_add_a_dep_for_free("withr")
+#> ℹ Loading metadata database
+#> ✔ Loading metadata database ... done
+#> 
+#> withr can be added for free:
+#> Explanation:
+#> geotargets -> targets -> tidyselect -> withr
+can_we_add_a_dep_for_free("fs")
+#> fs can not be added for free :(
+```
+
+
+
+## A philosophical note: should I care about adding dependencies anyway?
+
+You should depend on as many R packages as you like! It's far faster, I think, to depend on packages that get the job done, and then later trim back some dependencies and rewrite code. 
+
+Adding dependencies in R is cheap in terms of human cycles, and not a big burden on your machine. I don't want to sit down and rewrite the magic of `ggplot2` or `dplyr`.
+
+So, be greedy, add dependencies, then prune back.
+
+What to prune? An example could be if you are only using a couple of functions from a given package. E.g., you might be only using `mutate` from dplyr, and you might not use it that much. You might be able to remove one of the calls.
+
+But the overall point I want to make clear is that __you really should check if you can add the dependency for free__. Because the situation that you really want to avoid is this shyness to add a dependency, and then spending time writing your own version of a function, only to find that your package already inadverdently depended upon it.
+
+## Reasons to not add packages?
+
+
+## Prior Art
+
+This post is partly inspired by Jim Hester's "It Depends" talk, from ... . you can read the [accompanying blog post](), which I recommend you do!
+
+So overall, the ideas in this blog post that I want to communicate are:
+
+- Add dependencies to your R package
+
+
+# Incorporating my older blog post, "rant: you probably don't need to care about dependencies"
+
+## Times where I think you care about reducing dependencies
+
+- You run some code in the cloud or on a high performance computer, and installing all the R packages each time takes valuable time. So if you can get the installation time down, then you can save yourself a large amount of time, money, and pain.
+- R packages sometimes have limits on the number of dependencies
+- You like the idea of having something with 0 dependencies (which I'm guilty of - see the [`syn` package]())
+
+And there are probably more reasons. But I can't think of them right now. And hey, maybe I'm wrong.
+
+But I reckon that the majority of R users don't need to worry about adding dependencies to their code. This is because I think that most R users are doing data analysis, and not developing code that needs to be run in production, or code for other users.
+
+## R was made to have dependencies
+
+Time for some brief history on R. 
+
+R was based off of a language called [S](). One of the important design principles of S was that it would be a "glue language". John Chambers talks about this in his book, ["Extending R"](). The idea was the software would connect to other languages, like FORTRAN, or C, which could do all the computation. So then the user could write code to fit a linear model, but wouldn't need to worry about writing all of the mathematical code to do this. They interacted with the outside layer that they cared about.
+
+This is one of the greatest things about R - it is designed to be extended. You can stand on top of the shoulders of giants.
+
+## Some concerns people might have about adding dependencies
+
+- My code might break if I use dependencies / I want my code to be able to run forever
+
+# But my code might break if I use dependencies?
+
+I mean, maybe. But I think you should probably be far more worried about your own time spent writing things, and the hidden bugs in your own code.
+
+One argument that I hear sometimes is "Then I won't have to worry about some developer changing some code and then my code breaks". Sure - that can be really annoying. However, that is I think the price that you pay for getting the abstraction of the code that developer wrote. In addition, you are paying for the benefit of the package author fixing bugs.
+
+For example, if I'm using `tidyr::pivot_wider()` or `tidyr::pivot_longer()`, you can bet that I'm not going to write that myself. That code is abstracting away __one of the hardest problems in data science__.
+
+## I want my code to be able to run forever
+
+I saw a talk by someone who once said that they only use base R, so their code can always run.
+
+There is definitely truth in that. But I think if your primary concern is:
+
+> I want my code to always run
+
+Then you are drifting close to some of the ideas of running code in production. Where your code might need to be run regularly, on someone elses machine, well into the future. Or that you want your code to be reproducible, forever.
+
+My thoughts on this are basically:
+
+- Many R users don't need to run things in production
+- If you want your code to be reproducible forever, this isn't actually the solution. The solution is a Docker image.
+
+Essentially, you might be solving a problem that doesn't actually exist.
+
+## Should I be mindful of dependencies?
+
+You can, and that's fine! I just think that in the first instance you should take advantage of the incredibly rich sea of R packages to do what you want to do, and then you can examine your dependencies later. You can think of this as a greedy approach. Use ALL the packages that you want to do your task. Then, later on, you can examine the code and prune it back.
+
+The reason I think this is useful is because it means you can let your mind do the hard work of thinking through your programming task and problems. That can be using whatever R packages you are familiar with. The idea is to try and solve the programming task you want to at the time. 
+
+What I think is a sub-optimal use of your time, is to try and solve a programming problem, and then each time you want to do something that involves another package, you have to re-implement the solution yourself. This is distracting, and it involves you going down many rabbit holes. You are then solving another sub-problem after sub-problem, and then when you've solved those problems, you need to go back, resurface to the original problem you were trying to solve, and then go "what was I even trying to do again?"
+
+We aren't writing in assembly code, we aren't writing in C with no header files. We are writing in R, and R is _designed_ to have dependencies.
+
+## How to explore whether a new dependency adds any complexity?
+
+```{r}
+library(pkgdepends)
+
+conmat_deps <- new_pkg_deps("njtierney/conmat")
+conmat_deps$solve()
+conmat_deps$draw()
+solution <- conmat_deps$get_solution()
+
+solution$data
+
+"scales" %in% solution$data$package
+```
+
+
+## An example way to cut down dependencies
+
+In package development, you might search the number of times you use a given package. For example, in my `maxcovr` package, I was using `dplyr` purely to do `select`. I didn't really need to use dplyr for that.
+
+# Some times where 0 or low dependency packages make sense
+
+If you are writing an R package that you expect to be a core library that solves a particular general problem, it might be worthwhile to think about 
+
+
