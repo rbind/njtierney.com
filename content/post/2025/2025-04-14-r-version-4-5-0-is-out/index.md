@@ -14,7 +14,7 @@ tags:
   - rse
   - Research Software Engineer
 output: hugodown::md_document
-rmd_hash: bb07b31b2990edff
+rmd_hash: 97a33e21c3b50914
 
 ---
 
@@ -283,7 +283,7 @@ Resulted in a breaking change in greta, that I was able [to identify and fix](ht
 
 Another time that I find it useful to know how to look up the NEWS file is remembering when some key new features were introduced. For example, knowing that the native pipe `|>` was introduced in 4.1.0, but the underscore `_` placeholder was only introduced in 4.2.0 is really useful if I'm developing packages to know which version of R to depend on.
 
-I also often visit the ["Previous releases of R for Windows"](https://cran.r-project.org/bin/windows/base/old/) page to see *when* a version of R was released. This is for my (somewhat) arbitrary rule that
+I also often visit the ["Previous releases of R for Windows"](https://cran.r-project.org/bin/windows/base/old/) page to see *when* a version of R was released. This is to check if a version of R is more than three years old, which to me, is about old enough that people shouldn't be depending on it on a regular basis, or if they are and it is mission critical, they would also have other things set up to maintain it. The tidyverse maintains backward compatibility with [the past 5 (minor) versions of R](https://www.tidyverse.org/blog/2019/04/r-version-support/) - which ends up being about 4 years. I figure 3 years should be good enough for my work.
 
 # Yes, it **is annoying** to reinstall R packages again.
 
