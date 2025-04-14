@@ -1,14 +1,18 @@
 ---
-title: 'R Version 4.5.0 is Out! '
+title: 'R Version 4.5.0 is Out!'
 author: Nicholas Tierney
 date: '2025-04-14'
 slug: r-version-4-5-0-is-out
 categories:
   - rstats
-  - functions
+  - CRAN
+  - rse
+  - Research Software Engineer
 tags:
   - rstats
-  - functions
+  - CRAN
+  - rse
+  - Research Software Engineer
 output: hugodown::md_document
 ---
 
@@ -28,6 +32,14 @@ knitr::opts_chunk$set(
   out.width = "700px"
 )
 ```
+
+```{r}
+#| label: pic-windows
+#| echo: false
+knitr::include_graphics("figs/windows-olympus-xa-portra-800.jpg")
+```
+
+_Some windows. Olympus XA, Portra 800. Photo by Nicholas Tierney_
 
 The new R version 4.5.0 is out, and you should get it!
 
