@@ -55,12 +55,12 @@ I'm **currently accepting** select clients for new projects. My approach is tail
 
 My work extends beyond academia into practical applications:
 
-- Supporting infectious disease modelling during my time with [Prof. Nick Golding's](https://www.thekids.org.au/contact-us/our-people/g/nick-golding/) [IDEM team](https://www.thekids.org.au/our-research/brain-and-behaviour/child-health-analytics-research-program/infectious-disease-ecology-and-modelling/) (2021-2025). I provided assistance in developing the [Doherty Institute Modelling Report](https://www.doherty.edu.au/our-work/institute-themes/viral-infectious-diseases/covid-19/covid-19-modelling/modelling) to advise on the National Plan to transition Australia's National COVID Response.
+- Supporting infectious disease modelling during my time with [Prof. Nick Golding's](https://www.thekids.org.au/contact-us/our-people/g/nick-golding/) [IDEM team](https://www.thekids.org.au/our-research/brain-and-behaviour/child-health-analytics-research-program/infectious-disease-ecology-and-modelling/) (2021-2025). I developed the [conmat package](https://github.com/idem-lab/conmat) with [Prof. Nick Golding](https://www.thekids.org.au/contact-us/our-people/g/nick-golding/) and [Dr. Michael Lydeamore](https://www.michaellydeamore.com/) and others, which was formed an important component of the [Doherty Institute Modelling Report](https://www.doherty.edu.au/our-work/institute-themes/viral-infectious-diseases/covid-19/covid-19-modelling/modelling), which was used to advise on the National Plan to transition Australia's National COVID Response.
 - Developing optimisation solutions with [maxcovr](https://github.com/njtierney/maxcovr) for resource allocation problems. In my PhD I developed methods to [identify new locations for Automatic External Defibrillator (AEDs) in Switzerland](https://www.sciencedirect.com/science/article/pii/S0300957218300650).
 
 # About Dr. Nick Tierney
 
-Beyond my technical work, I really enjoy getting outside. I completed the 4,270km Pacific Crest Trail hike in 2023, demonstrating the same persistence and problem-solving approach I bring to complex data analysis. This experience reinforced my belief that careful planning, adaptability, and determination are key to successfully navigating both wilderness trails, and data landscapes. You can read more about me at [bio](https://www.njtierney.com/bio/).
+Beyond my technical work, I really enjoy getting outside. I completed the 4,270km [Pacific Crest Trail](https://en.wikipedia.org/wiki/Pacific_Crest_Trail) hike in 2023, demonstrating the same persistence and problem-solving approach I bring to complex data analysis. This experience reinforced my belief that careful planning, adaptability, and determination are key to successfully navigating both wilderness trails, and data landscapes. You can read more about me at [bio](https://www.njtierney.com/bio/).
 
 # Let's Solve Your Data Challenges
 
