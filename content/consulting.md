@@ -3,15 +3,15 @@ title: Consulting
 disable_comments: false
 ---
 
-Do you have problems with your data? Too big? Can't read it in? Too messy? Too much missing? **I can help with that.**
+**Struggling with your data?** Too big? Too messy? Missing? **I can help with that.**
 
-Maybe you need your data analysis to run faster, you have a large code base that is hard to understand, or you need to turn some existing code into a pipeline, or an R package? **I'd love nothing more than to help.**
+Need your analyses to run faster? Have a tangled codebase that needs organising into a pipeline or R package? **That's exactly what I love solving.** 
 
-Or maybe you just don't even know where to start with your data? You're not sure what questions to ask, or what analysis to run? Or you want to build capacity in your team. **I can explore the data, I can help teach you the skills and provide mentoring.**
+Not even sure where to begin with your data or what questions to ask? Want to build your team's analytical skills? **I'll explore your data with you and provide the teaching and mentoring you need.**
 
-I think the reason I can help with all these problems are that I have a **unique combination** of technical expertise and communication skills. I have a PhD in statistics, with 12+ years in academia (2013-2025) and a Bachelors + Honours in Psychological Science.
+I have a unique combination of technical expertise and communication skills: a Bachelors + Honours in Psychological Science, and a PhD in statistics, with 12+ years in academia (2013-2025).
 
-# Limited Consulting Opportunities Available
+# Work with me!
 
 I'm **currently accepting** select clients for new projects. My approach is tailored to your needs, and generally looks like the following:
 
@@ -37,30 +37,11 @@ I'm **currently accepting** select clients for new projects. My approach is tail
 
 - **Code Review & Optimisation**: Applying principles refined through years of collaborative development and maintenance of open-source statistical software. I can help make your code easier to read and maintain, and make your code run faster.
 
-## Knowledge Transfer
+## Training
 
-- **Teaching**: Building on my experience as a university lecturer in data analysis and business analytics at Monash University. I can deliver courses on the Tidyverse, Quarto, R package development, data visualisation, data analytics, exploratory data analysis, general R programming skills, using git and github, and developing reproducible pipelines using targets.
+- **Teaching**: Building on my experience as a university lecturer in data analysis and business analytics at Monash University. I can deliver courses on the Tidyverse, [Quarto](https://qmd4sci.njtierney.com/), [R package development](https://rpkgess.njtierney.com/), data visualisation, data analytics, exploratory data analysis, general R programming skills, using git and github, and [developing reproducible pipelines using targets](https://github.com/njtierney/gentle-intro-targets).
 
-- **Mentoring**: I can meet with you or a small group on a regular basis to develop customised material and code review, so you can improve your data analytic skills.
-
-# My Approach
-
-1. **Understand**: Applying active listening techniques from my counselling training to fully grasp your challenges
-2. **Analyse**: Examining your data and workflow to identify opportunities for improvement
-3. **Develop**: Creating bespoke solutions using state-of-the-art methods
-4. **Implement**: Providing clear documentation to facilitate knowledge transfer
-5. **Refine**: Iteratively improve solutions based on feedback and results
-
-# Real-World Impact
-
-My work extends beyond academia into practical applications:
-
-- Supporting infectious disease modelling during my time with [Prof. Nick Golding's](https://www.thekids.org.au/contact-us/our-people/g/nick-golding/) [IDEM team](https://www.thekids.org.au/our-research/brain-and-behaviour/child-health-analytics-research-program/infectious-disease-ecology-and-modelling/) (2021-2025). I developed the [conmat package](https://github.com/idem-lab/conmat) with [Prof. Nick Golding](https://www.thekids.org.au/contact-us/our-people/g/nick-golding/) and [Dr. Michael Lydeamore](https://www.michaellydeamore.com/) and others, which was formed an important component of the [Doherty Institute Modelling Report](https://www.doherty.edu.au/our-work/institute-themes/viral-infectious-diseases/covid-19/covid-19-modelling/modelling), which was used to advise on the National Plan to transition Australia's National COVID Response.
-- Developing optimisation solutions with [maxcovr](https://github.com/njtierney/maxcovr) for resource allocation problems. In my PhD I developed methods to [identify new locations for Automatic External Defibrillator (AEDs) in Switzerland](https://www.sciencedirect.com/science/article/pii/S0300957218300650).
-
-# About Dr. Nick Tierney
-
-Beyond my technical work, I really enjoy getting outside. I completed the 4,270km [Pacific Crest Trail](https://en.wikipedia.org/wiki/Pacific_Crest_Trail) hike in 2023, demonstrating the same persistence and problem-solving approach I bring to complex data analysis. This experience reinforced my belief that careful planning, adaptability, and determination are key to successfully navigating both wilderness trails, and data landscapes. You can read more about me at [bio](https://www.njtierney.com/bio/).
+- **Mentoring**: I can meet with you or a small group on a regular basis to develop customised material and code review, so you can improve your data analytic skills. I've previously run code review in the [infectious disease ecology and modelling team](https://www.thekids.org.au/our-research/brain-and-behaviour/child-health-analytics-research-program/infectious-disease-ecology-and-modelling/), [live streamed my review of R packages](https://www.youtube.com/@NicholasTierney/streams), and also led [rOpenSci coworking sessions](https://ropensci.org/coworking/).
 
 # Let's Solve Your Data Challenges
 
