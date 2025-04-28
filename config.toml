@@ -24,12 +24,12 @@ pygmentsUseClasses = true
     url = "/"
     weight = 1
 [[menu.main]]
-    name = "About"
-    url = "/about/"
+    name = "Bio"
+    url = "/bio/"
     weight = 2
 [[menu.main]]
-    name = "CV"
-    url = "/cv/"
+    name = "Consulting"
+    url = "/consulting/"
     weight = 3
 [[menu.main]]
     name = "Talks"
