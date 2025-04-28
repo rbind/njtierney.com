@@ -3,17 +3,17 @@ title: Consulting
 disable_comments: false
 ---
 
-Do you have problems with your data? Too big? Can't read it in? Too messy? Too much missing? I can help with that.
+Do you have problems with your data? Too big? Can't read it in? Too messy? Too much missing? **I can help with that.**
 
-Maybe you need your data analysis to run faster, you have a large code base that is hard to understand, or you need to turn some existing code into a pipeline, or an R package? I'd love nothing more than to help.
+Maybe you need your data analysis to run faster, you have a large code base that is hard to understand, or you need to turn some existing code into a pipeline, or an R package? **I'd love nothing more than to help.**
 
-Or maybe you just don't even know where to start with your data? You're not sure what questions to ask, or what analysis to run? Or you want to build capacity in your team. I can explore the data, and help teach you the skills and provide mentoring.
+Or maybe you just don't even know where to start with your data? You're not sure what questions to ask, or what analysis to run? Or you want to build capacity in your team. **I can explore the data, I can help teach you the skills and provide mentoring.**
 
-I think the reason I can help with all these problems are that I have a unique combination of technical expertise and communication skills. I have a PhD in statistics, with 12+ years in academia (2013-2025) and a Bachelors + Honours in Psychological Science.
+I think the reason I can help with all these problems are that I have a **unique combination** of technical expertise and communication skills. I have a PhD in statistics, with 12+ years in academia (2013-2025) and a Bachelors + Honours in Psychological Science.
 
 # Limited Consulting Opportunities Available
 
-I'm currently accepting select clients for new projects. My approach is tailored to your needs, and generally looks like the following:
+I'm **currently accepting** select clients for new projects. My approach is tailored to your needs, and generally looks like the following:
 
 - **Discovery**: Complimentary call to understand your specific needs
 - **Customised proposal**: Clear deliverables, timeline, and pricing structure
@@ -55,10 +55,8 @@ I'm currently accepting select clients for new projects. My approach is tailored
 
 My work extends beyond academia into practical applications:
 
-- Supporting infectious disease modelling during my time with [Prof. Nick Golding's](https://www.thekids.org.au/contact-us/our-people/g/nick-golding/) [IDEM team](https://www.thekids.org.au/our-research/brain-and-behaviour/child-health-analytics-research-program/infectious-disease-ecology-and-modelling/) (2021-2025)
-  - An author of the [Doherty Institute Modelling Report](https://www.doherty.edu.au/our-work/institute-themes/viral-infectious-diseases/covid-19/covid-19-modelling/modelling) to advise on the National Plan to transition Australia's National COVID Response.
-- Developing optimisation solutions with [maxcovr](https://github.com/njtierney/maxcovr) for resource allocation problems. 
-  - In my PhD I developed methods to [identify new locations for Automatic External Defibrillator (AEDs) in Switzerland](https://www.sciencedirect.com/science/article/pii/S0300957218300650).
+- Supporting infectious disease modelling during my time with [Prof. Nick Golding's](https://www.thekids.org.au/contact-us/our-people/g/nick-golding/) [IDEM team](https://www.thekids.org.au/our-research/brain-and-behaviour/child-health-analytics-research-program/infectious-disease-ecology-and-modelling/) (2021-2025). I provided assistance in developing the [Doherty Institute Modelling Report](https://www.doherty.edu.au/our-work/institute-themes/viral-infectious-diseases/covid-19/covid-19-modelling/modelling) to advise on the National Plan to transition Australia's National COVID Response.
+- Developing optimisation solutions with [maxcovr](https://github.com/njtierney/maxcovr) for resource allocation problems. In my PhD I developed methods to [identify new locations for Automatic External Defibrillator (AEDs) in Switzerland](https://www.sciencedirect.com/science/article/pii/S0300957218300650).
 
 # About Dr. Nick Tierney
 
