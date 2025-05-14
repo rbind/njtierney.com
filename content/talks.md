@@ -2,6 +2,20 @@
 title: Talks
 ---
 
+# 2025
+
+- [2025-05-12: "Career QnA", nipaluna, lutruwita (Hobart, Tasmania), Ziggy Lab groupd meeting (online)](https://njtierney.github.io/ziggy-lab-talk/)
+- [2025-04-15: "Practical Functions: Practically Magic", Curtin University, Perth, Western Australia](https://njtierney.github.io/funfun-curtin/)
+
+# 2024
+
+- [2024-10-24: "Extendable projection of social contact matrices", Non-Uniform Business Analytic Team (NUMBAT) meeting, Monash University, Melbourne, Australia](https://njtierney.github.io/conmat-numbat-2024/)
+- [2024-09-09: "A brief canvas of some research software + contact matrices", London School of Hygiene and Tropical Medicine, London, UK](https://njtierney.github.io/lshtm-2024/)
+- [2024-09-03: "A gentle guide to using the {targets} package for analytic pipelines", RSECon2025, Newcastle, UK](https://njtierney.github.io/gentle-intro-targets/)
+- [2024-07-24: "Extendable projection of social contact matrices", Telethon Kids Institute, Australia](https://njtierney.github.io/talk-conmat-idm/)
+- [2024-03-21: "Practical Functions: Practically Magic", University of Auckland, **invited seminar**, online.](https://njtierney.github.io/funfun/)
+- [2024-01-31: "Better Software, Better Research", Institute for Marine and Antarctic Science, Hobart, Tasmania](https://njtierney.github.io/imas-bsbr/)
+
 # 2023
 
 - [2023-02-15: "Extending and comparing methods for projecting social contact matrices", Spark Spectrum Annual Meeting, Lightning Talk, Cape Schanck, Australia"](https://njtierney.github.io/talk-spark-2023/)
