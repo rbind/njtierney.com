@@ -1,0 +1,270 @@
+---
+title: What I Do when I Review R Packages
+author: Nicholas Tierney
+date: '2025-08-25'
+slug: what-i-do-when-i-review-r-packages
+categories:
+  - rstats
+  - functions
+tags:
+  - rstats
+  - functions
+draft: yes
+output: hugodown::md_document
+---
+
+```{r setup, include = FALSE}
+options(cli.width = 70)  # For tidyverse loading messages
+knitr::opts_chunk$set(
+  tidy.opts = list(width.cutoff = 70),  # For code
+  width = 70,
+  collapse = TRUE, 
+  comment = "#>", 
+  fig.width = 7, 
+  fig.align = 'center',
+  fig.asp = 0.618, # 1 / phi
+  fig.retina = 2,
+  out.width = "700px"
+)
+```
+
+I was recently on an R package panel review for the [Di Cook award](https://www.statsoc.org.au/Di-Cook-Award), which is a student software award run by the [Statistics Society of Australia](https://www.statsoc.org.au/), to encourage and acknowledge the importance of statistical software, with this award being focussed on students.
+
+In the panel, we gave advice to students on how to submit a good R package.
+
+It was a great panel: [Di Cook](https://www.dicook.org/), [Tomasz Wozniak](https://github.com/donotdespair), [Fonti Kar](https://fontikar.github.io/), [Patrick Li](https://github.com/TengMCing), and chaired by [Daniela Vasco](linkedin.com/in/daniela-vasco-49195566).
+
+Daniela provided a really nice set of questions and facilitated the discussion, and in particular one question got me writing down a bit of a list of things that I check for software review:
+
+> What makes a strong application
+
+I have a lot of thoughts and opinions on R package development, and these are
+mostly informed by the following resources:
+
+- [R Packages](https://r-pkgs.org/)
+- [rOpenSci dev guide](https://devguide.ropensci.org/)
+- [Design manual for tidyverse](https://design.tidyverse.org/)
+- [Style guide for the tidyverse](https://style.tidyverse.org/)
+
+If you are just starting out, I think you will get a lot out of reading [Hilary Parker's](https://hilaryparker.com/) ["Writing an R package from scratch"](https://hilaryparker.com/2014/04/29/writing-an-r-package-from-scratch/) article.
+
+Reading the "R Packages" book is a great way to get the in depth experience, and then I think the rOpenSci dev guide, the design manual, and the stlye guide, all form good resources.
+
+# What I look at when I'm reviewing
+
+Here are some of the things I check when I'm doing code review, which I think provide good return on investment for the user. I'll expand on each of these below, but here is the tl;dr:
+
+- Code is hosted online with version control (`usethis::use_git()`/`usethis::use_github()`)
+- Style code with an auto formatter (`usethis::use_air()`)
+- Have a good README (`usethis::use_readme_rmd()`)
+- Pass `devtools::test()`
+- Good code coverage - use `covr::report()`
+- Pass `devtools::check()`
+- Has continuous integration (CI) - `usethis::use_github_action()`
+- Pass `lintr::lint_package()`
+- Pass `goodpractice::gp()`
+- Pass `spelling::spell_check_package()`
+- Consistency in variable and function names (`get.data()` vs `getData()` vs `get_data()`)
+- Has a vignette
+- Has a website
+
+At the end of this I'll also post a couple of other small checks I do, and share some thoughts on what makes packages, and code, good. The overall theme of this is that tools like `usethis` and `devtools` have improved the quality of life for writing and maintaining R packages, and that these are all things that are worthwhile doing. Whilst a lot of these might be "one liners" to add, it does take some time to do these things properly, so I don't want to give the impression that this is easy, but rather that getting started is now easier, and I think there is a much gentler on-ramp to making things good/better/betterer.
+
+## Code is hosted online with version control (`usethis::use_git()`/`usethis::use_github()`)
+
+Your code should be hosted somewhere that the public can see it, and should be using version control like git. You can host your code for free on github, but other places such as bitbucket, codeberg, or gitlab are great options, too.
+
+If we can see your code, then we can trust it.
+
+
+## Style code with an auto formatter (`usethis::use_air()`)
+
+This is great value. I cannot highly recommend using the `{air}` package enough, but the real superpower/usecase for this comes from enabling format on save. Check this out:
+
+![](gifs/air-demo.gif)
+
+Here I saved the R file and it automatically formatted the code. `{air}` is a great name because it really is a breath of fresh air. I didn't realise that I had all these little habits to go back through my code and clean it up after I wrote it. Not it's all taken care of, and I can remove those tiny little bits of mental effort that started to accumulate.
+
+To install `{air}`, see https://posit-dev.github.io/air/. Note that it works on a bunch of platforms, not just RStudio, but positron, VS Code, Zed, Neovim, and Helix. See supported editors here: https://posit-dev.github.io/air/editors.html.
+
+And to run air on your code, as it is a command line interface, after installing, you open up a terminal and navigate to your package, and type:
+
+```bash
+air format .
+```
+
+There are minimal configuration options for how to format your code, which I actually think is a good thing. To read more about formatting options and using air, have a read of https://posit-dev.github.io/air/formatter.html
+
+## Have a good README
+
+You can add a README in your R package with:
+
+```r
+usethis::use_readme_rmd()
+```
+
+Which will create an Rmarkdown file for your README. The benefit to this is that you render this file and it will create a README.md file, which can provide nice illustrations of your package in action.
+
+As they say in the [R packages book section on README](https://r-pkgs.org/other-markdown.html#sec-readme)
+
+> The goal of the README is to answer the following questions about your package:
+>
+> - Why should I use it?
+> - How do I use it?
+> - How do I get it?
+
+As you start to answer these questions, you will start to engage in _README driven development_, where as you use the tool, and explain it, you might start to make other improvements.
+
+Some other good resources on writing README files are:
+
+- https://devguide.ropensci.org/pkg_building.html#readme
+- https://github.com/banesullivan/README
+
+
+## Pass `devtools::test()`
+
+Having tests in your code is a sign that the developer wants their code to be sustainable, and work as they expect. I would expect that when a package is up for review, that the tests pass.
+
+Writing tests is a bit of a journey, and starting out can be hard, but starting somewhere is better. Read more on writing tests at https://devguide.ropensci.org/pkg_building.html#testing and https://r-pkgs.org/testing-basics.html.
+
+You want to ahve good coverage of your tests. This means that your tests cover a certain percentage of lines of code. A benefit of this is when you go on to make changes in your code, you don't have the mentally hold in your head the impacts this might have in your code, or what might break. Your tests should let you know if something doesn't work as you expect. But remember tests aren't perfect, they are only guard rails. Your code still has to have good intentions - just as you don't drive your carh by riding along the guard rails, lots of tests don't mean you have good code.
+
+You should aim for good test coverage, at least 50%. More on this in the next section.
+
+## Good code coverage - use `covr::report()`
+
+When you are writing tests, you can get a nice summary of the percentage of test coverage locally by running `covr::report()`, which produces a sortable table of the number of lines covered. See for example the visdat coverage below, which tells us that overall we have 96% coverage, but the "abbreviation" code has 0% coverage:
+
+![](imgs/covr-visdat-summary.png)
+![](imgs/covr-visdat-item.png)
+
+## Pass `devtools::check()`
+
+I expect if your package is up for formal review that it passes all or most CRAN checks. You can test this yourself with `devtools::check()`. Passing all checks tells me that the package author has worked to ensure the package will install cleanly. If it doesn't install, I can't test it.
+
+## Has tests for continuous integration
+
+To help formalise tests and checks, and to save you from running these tests every time locally, you can run these tests up on continuous integration, which basically means they are running on someone elses computer (the cloud) every time you push code.
+
+Setting this up is relatively straightforward, and you can get a lot of bang for your buck with:
+
+```r
+usethis::use_github_action()
+```
+
+And then follow the prompts.
+
+Read https://usethis.r-lib.org/reference/use_github_action.html for more info.
+
+## Pass `lintr::lint_package()`
+
+This does "linting" which essentially looks at the code and identifies ways to improve how the code is written. This is called ["static program analysis"](https://en.wikipedia.org/wiki/Static_program_analysis), where you look at the code without running it. This is kind of like when you read over some code you see in your head and think about some changes to improve it - you haven't actually run it yet when you do that.
+
+I only started using `{lintr}` this year, but it is so great! It picks up on a lot of anti-patterns - things that are known suboptimal practices when writing code. You can run linting checks with:
+
+```r
+lintr::lint_package()
+```
+
+As an example, running this on my visdat package recently picked up the following:
+
+- Styling and formatting (I haven't set up {air} with visdat)
+- Consistency in using double quotes over single quotes
+- Suggestions on removing commented code (the old lettuce^[naming credit, Miles McBain] in your fridge - you have hopefully put it there but it is now sad and daggy and needs to go; you can't eat it anymore)
+- Suggestions to avoid using `1:nrow(x)` and to use `seq_len(nrow(x))`
+
+Sometimes you don't want to have certain linters, or might want to add other linters as well, see their ["getting started" vignette](https://lintr.r-lib.org/articles/lintr.html) for more details.
+
+I believe that if you fix all the lints in your code, and have a regular habit of fixing them, that your code will be easier to read, understand, and maintain. On that note, you can read more about setting up linters with continuous integration in the ["continuous integration"](https://lintr.r-lib.org/articles/continuous-integration.html) vignette.
+
+Evidently I still need to take my own advice here, but all the same, I think it is decent advice.
+
+## Pass `goodpractice::gp()`
+
+Running `goodpractice::gp()` will run R CMD Check (`devtools::check()`), as well as  linters, and a nice host of other checks in your R package.
+
+## Pass `spelling::spell_check_package()`
+
+This will check your package for spelling mistakes, putting all misspelt words into an inst/WORDLIST file. It's nice to catch the spolling misteakes.
+
+## Consistency in variable and function names (`get.data()` vs `getData()` vs `get_data()`)
+
+You should pick a consistent style for how to name your functions, and their arguments. Personally I recommend `snake_case`, where variables and functions are named with underscores (`_`) separating the words. But the most important thing is to be consistent. Don't mix them up, e.g.,
+
+Good
+
+```r
+read_custom_format()
+calculate_diagnostics()
+visualise_diagnostics()
+```
+
+Bad
+
+```r
+read_custom.Format()
+calculateDiagnostics()
+Visualise_Diagnostics()
+```
+
+You should also make sure you have consistent arguments for your functions. For example, if your function has an argument named `data`, then all other functions using data should probably be called `data`, and not `x` or `tbl` etc. The order should also stay the same - e.g., `data` first, then `x`, then `y`.
+
+Good
+
+```r
+clean_data <- read_custom_format(data = airquality)
+result_diagnostics <- calculate_diagnostics(data = clean_data, diagnostics = "mean", x = "Solar.R", y = "Ozone")
+visualise_diagnostics(data = result_diagnostics, diagnostics  = "mean", x = "Solar.R", y = "Ozone", )
+```
+
+
+Bad
+
+```r
+clean_data <- read_custom_format(x = airquality)
+result_diagnostics <- calculate_diagnostics(tbl = clean_data, diagnostics = "mean", xvar = "Solar.R", y = "Ozone")
+visualise_diagnostics(data = diagnostics, yvar = "Ozone", x = "Solar.R", diagnostics  = "mean")
+```
+
+## Has vignettes
+
+There should be at least a "get started" vignette. 
+
+## Has a website
+
+You have written your R package, your code, and your vignette. You should treat yourself to writing a website using something like `{pkgdown}`. This is now as simple as a single line of code:
+
+```r
+usethis::use_pkgdown()
+```
+
+Which sets builds a website rendering all your help files, examples, readme, and vignettes into a single source.
+
+And then you can run:
+
+```r
+usethis::use_pkgdown_github_pages()
+```
+
+To set up pkgdown so it is updated every time you push code.
+
+I would recommend running `usethis::use_pkgdown_github_pages()` first, and following the instructions there. The benefit is that then you don't need to manually watch all the HTML files and commit those to github, it handles all that for you.
+
+For more information, read https://usethis.r-lib.org/reference/use_pkgdown.html
+
+## Other Miscellaneous ideas
+
+- Make sure your DESCRIPTION file has tidy links
+- DESCRIPTION file has packages in alphabetical order
+- Package uses a pkg-doc.R file
+
+## Some thoughts on what makes code "good"
+
+A lot of what makes good code good, is similar to what makes good writing good. If I don't understand the point of a paragraph of text, that makes it less good - similarly, if I don't understand why I would use a function, or why I would use a package, that will make it less good than a function that I understand _why_ I would use it. 
+
+Overall, I think what makes an R package useful and good, is that it solves a problem. This will always be the most important thing.
+
+And my own personal coding has been very much influenced by others in the R community. Really, I feel like a lot of the time I'm just looking around at
+what the people I admire are doing, and try to do similar standards of work from them. Here are some of 
+
+I think if you are writing an R package for the first time, you should first make sure you have a _good motivation_ for why you want to write it. In my experience, the best motivation is when you really want to make something easier, or remove some painful process
