@@ -32,17 +32,21 @@ pygmentsUseClasses = true
     url = "/consulting/"
     weight = 3
 [[menu.main]]
+    name = "Training"
+    url = "https://training.njtierney.com"
+    weight = 4
+[[menu.main]]
     name = "Talks"
     url = "/talks/"
-    weight = 4
+    weight = 5
 [[menu.main]]
     name = "Resources"
     url = "/resources/"
-    weight = 5
+    weight = 6
 [[menu.main]]
     name = "Software"
     url = "/software/"
-    weight = 6
+    weight = 7
 
 [params]
     description = "Credibly Curious"

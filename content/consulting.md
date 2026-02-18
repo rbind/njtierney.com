@@ -33,7 +33,7 @@ I'm **currently accepting** select clients for new projects. My approach is tail
 
 - **R Package Development**: Create user-centred tools following [rOpenSci Standards](https://ropensci.org/software-review/). I have been teaching how to develop R packages since 2016. See my course, ["R package essentials"](https://rpkgess.njtierney.com/).
 
-- **Research Software Engineering**: I combine my understanding of research  with programming skills to translate methods into software. For example, [conmat](https://github.com/idem-lab/conmat) for use in infectious disease modelling, and [geotargets](https://github.com/njtierney/geotargets) for geospatial pipelines, (developed alongside collaborators [Eric Scott](https://ericrscott.com/), and [Andrew Gene Brown](https://humus.rocks/)).
+- **Research Software Engineering**: I combine my understanding of research  with programming skills to translate methods into software. For example, [conmat](https://github.com/idem-lab/conmat) for use in infectious disease modelling, and [geotargets](https://github.com/njtierney/geotargets) for geospatial pipelines. Notably, `geotargets` was only made possible by collaborators [Eric Scott](https://ericrscott.com/), and [Andrew Gene Brown](https://humus.rocks/).
 
 - **Code Review & Optimisation**: Applying principles refined through years of collaborative development and maintenance of free and open-source statistical software. I can help make your code faster to run, and easier to read and maintain.
 
