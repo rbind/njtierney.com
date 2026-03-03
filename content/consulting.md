@@ -45,4 +45,4 @@ I'm **currently accepting** select clients for new projects. My approach is tail
 
 # Let's Solve Your Data Challenges
 
-I'm **currently accepting** projects. Contact me at nicholas `<dot>` tierney `{at}` `[gmail]` `(dot)` com to discuss how we can work together. Initial consultations are complimentary and without obligation.
+I'm **currently accepting** projects. Contact me at info `{at}` `[njtierney]` `(dot)` com to discuss how we can work together. Initial consultations are complimentary and without obligation.
