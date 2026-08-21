@@ -13,7 +13,7 @@ aliases:
 
 I'm working on an experiment with [Adam Sparks](https://adamhsparks.com/) on how people read maps. As a part of the experiment, we wanted to assess whether people were colourblind. I thought we could use something like an [ishihara test](https://en.wikipedia.org/wiki/Ishihara_test) to assess this. You might have seen this plates before, they look like this:
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Ishihara_9.png/560px-Ishihara_9.png" width="40%" style="display: block; margin: auto;" />
+<img src="figs/Ishihara_9.svg.webp" width="40%" style="display: block; margin: auto;" />
 
 The idea being that if you are not colourblind, you can identify a number or letter in these plates, and if you have colourblindness, you cannot identify the number (which should be 74).
 
